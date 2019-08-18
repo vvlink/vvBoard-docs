@@ -1,4 +1,4 @@
-.. SIoT documentation master file, created by
+.. vvBoard documentation master file, created by
    sphinx-quickstart on Thu May  2 18:24:36 2019.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -11,3 +11,9 @@
     :glob:
     
     01.about/index
+    02.quick/index
+    03.basic/index
+    04.gpio/index
+    05.soft/index
+    06.edu/index
+    07.advanced/index
