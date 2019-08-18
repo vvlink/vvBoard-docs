@@ -2,4 +2,8 @@
 Jupyter
 ===========================
 
+Jupyter的全称为Jupyter Notebook（此前被称为 IPython notebook），是一个交互式笔记本，支持运行40多种编程语言。
 
+JupyterNotebook的本质是一个 Web 应用程序，便于创建和共享文学化程序文档，支持实时代码，数学方程，可视化和 markdown。
+
+通过Jupyter，可以通过Web页面在虚谷号上运行Python代码和Linux命令。
