@@ -46,9 +46,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'SIoT使用手册'
-copyright = '2019, VVlink'
-author = 'VVlink'
+project = '虚谷号使用手册'
+copyright = '2019, vvBoard'
+author = 'vvBoard'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -115,7 +115,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SIoTdoc'
+htmlhelp_basename = 'vvBoarddoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -142,8 +142,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'SIoT.tex', 'SIoT Documentation',
-     'VVlink', 'manual'),
+    (master_doc, 'vvBoard.tex', 'SIoT Documentation',
+     'vvBoard', 'manual'),
 ]
 
 
@@ -152,7 +152,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'siot', 'SIoT Documentation',
+    (master_doc, 'vvBoard', 'vvBoard Documentation',
      [author], 1)
 ]
 
@@ -163,8 +163,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'SIoT', 'SIoT Documentation',
-     author, 'SIoT', 'One line description of project.',
+    (master_doc, 'vvBoard', 'vvBoard Documentation',
+     author, 'vvBoard', 'One line description of project.',
      'Miscellaneous'),
 ]
 
