@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Arduino &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>3. Arduino IDE &mdash; 虚谷号使用手册 1.0 documentation</title>
   
 
   
@@ -101,7 +101,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号软件资源简介</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="5.1.html">1. S4A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.2.html">2. mPythonX</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Arduino</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Arduino IDE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.4.html">4. Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.5.html">5. Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.6.html">6. SIoT</a></li>
@@ -157,7 +157,7 @@
         
           <li><a href="index.html">虚谷号软件资源简介</a> &raquo;</li>
         
-      <li>3. Arduino</li>
+      <li>3. Arduino IDE</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,8 +176,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="arduino">
-<h1>3. Arduino<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="arduino-ide">
+<h1>3. Arduino IDE<a class="headerlink" href="#arduino-ide" title="Permalink to this headline">¶</a></h1>
+<p>Arduino于2005年开发，起初仅为了方便设计学院的大学生设计互动作品，后来因为开源而快速发展为全球知名的开源硬件平台。Arduino包含硬件（各种型号的Arduino主板）和软件（Arduino IDE) 。虚谷号板载了Arduino UNO版本，也内置了Arduino IDE。</p>
+<p>Arduino 语言建立在 C/C++ 基础上，保留了 C/C++的语法规范，并对 Arduino主控芯片底层进行了二次封装，使开发者无需考虑芯片的底层操作，只通过编写简单的代码就可以实现对Arduino芯片的控制。</p>
+<p>Arduino 语言常用于兼容Arduino的开源硬件的编程，是目前最流行的开源硬件编程语言之一。下面是Arduino读取模拟接口并打印的示例代码。</p>
+<blockquote>
+<div></div></blockquote>
+<dl class="docutils">
+<dt>void setup() {                          //初始化函数，只在上电时运行一次</dt>
+<dd>Serial.begin(9600);           //设置串口通信波特率，启动串口通信</dd>
+</dl>
+<p>}
+void loop() {                           //循环函数，在初始化函数之后一直循环运行</p>
+<blockquote>
+<div>int sensorValue = analogRead(A0);//设置变量，变量值为模拟口A0的输入
+Serial.println(sensorValue);          //通过串口打印变量sensorValue 的值
+delay(1);                                                     //延时1毫秒</div></blockquote>
+<p>}</p>
+<blockquote>
+<div></div></blockquote>
 </div>
 
 

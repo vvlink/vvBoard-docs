@@ -101,7 +101,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号软件资源简介</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="5.1.html">1. S4A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.2.html">2. mPythonX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5.3.html">3. Arduino</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.3.html">3. Arduino IDE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.4.html">4. Jupyter</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5. Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.6.html">6. SIoT</a></li>
@@ -178,6 +178,19 @@
             
   <div class="section" id="python">
 <h1>5. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>Python 是一种面向对象的解释型程序设计语言，是纯粹的开源软件，源代码和解释 器 CPython 遵循 GPL(GNUGeneral Public License)协议。</p>
+<p>Python 语法简洁、清晰、自由、灵活，具有丰富和强大的库，常被昵称为“胶水语言”，能够把其他语言(尤其是 C/C++)编写的各种模块很轻松地“粘合”、联结在一起。</p>
+<p>例如，在虚谷号中控制引脚的高低电平，让连接在引脚上的LED灯闪烁，代码如下：
+::
+from xugu import pin
+import time
+led = Pin(13, Pin.OUT) # led引脚初始化
+while True:</p>
+<blockquote>
+<div>led.on()
+time.sleep(1)
+led.off()
+time.sleep(1)</div></blockquote>
 </div>
 
 
