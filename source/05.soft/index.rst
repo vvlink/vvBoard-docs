@@ -8,10 +8,10 @@
     :maxdepth: 2
     :numbered: 2
 
-    5.1
-    5.2
-    5.3
-    5.4
-    5.5
-    5.6
+    5.1-s4a
+    5.2-mPythonX
+    5.3-arduino
+    5.4-Jupyter
+    5.5-Python
+    5.6-SIoT
 

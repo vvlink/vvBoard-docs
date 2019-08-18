@@ -3,19 +3,21 @@ Python
 ===========================
 
 
-Python 是一种面向对象的解释型程序设计语言，是纯粹的开源软件，源代码和解释 器 CPython 遵循 GPL(GNUGeneral Public License)协议。
+Python是一种面向对象的解释型程序设计语言，是纯粹的开源软件，源代码和解释 器 CPython 遵循 GPL(GNUGeneral Public License)协议。
 
 Python 语法简洁、清晰、自由、灵活，具有丰富和强大的库，常被昵称为“胶水语言”，能够把其他语言(尤其是 C/C++)编写的各种模块很轻松地“粘合”、联结在一起。
 
 例如，在虚谷号中控制引脚的高低电平，让连接在引脚上的LED灯闪烁，代码如下：
-::
-from xugu import pin
-import time
-led = Pin(13, Pin.OUT) # led引脚初始化
-while True:
-    led.on()
-    time.sleep(1)
-    led.off()
-    time.sleep(1)
 
-::
+ ::
+
+	from xugu import pin
+	import time
+	led = Pin(13, Pin.OUT) # led引脚初始化
+	while True:
+    		led.on()
+    		time.sleep(1)
+    		led.off()
+    		time.sleep(1)
+
+ ::

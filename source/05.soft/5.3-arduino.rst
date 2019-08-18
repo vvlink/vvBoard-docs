@@ -10,14 +10,14 @@ Arduino 语言常用于兼容Arduino的开源硬件的编程，是目前最流�
 
  :: 
 
-void setup() {				//初始化函数，只在上电时运行一次
-  Serial.begin(9600);		//设置串口通信波特率，启动串口通信
-}
-void loop() {				//循环函数，在初始化函数之后一直循环运行
-  int sensorValue = analogRead(A0);//设置变量，变量值为模拟口A0的输入
-  Serial.println(sensorValue);		//通过串口打印变量sensorValue 的值
-  delay(1); 							//延时1毫秒
-}
+	void setup() {				//初始化函数，只在上电时运行一次
+  		Serial.begin(9600);		//设置串口通信波特率，启动串口通信
+	}
+	void loop() {				//循环函数，在初始化函数之后一直循环运行
+  		int sensorValue = analogRead(A0);//设置变量，变量值为模拟口A0的输入
+  		Serial.println(sensorValue);		//通过串口打印变量sensorValue 的值
+  		delay(1); 							//延时1毫秒
+	}
 
  :: 
 
