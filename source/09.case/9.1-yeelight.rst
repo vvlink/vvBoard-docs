@@ -17,4 +17,57 @@
 
 这个智能变色灯需要的器材很少，只需要虚谷号加yeelight智能灯泡、摄像头就可以了，作品的工作流程图如下。
 
-.. image::../images/09/yeelight01.png
+.. image:: ../images/09/yeelight01.png
+
+用摄像头获取物体颜色的代码实现
+=============================
+
+摄像头前物体是什么颜色？看起来问题很简单，但是让计算机来回答并不容易。当我们要判断某个物体是什么颜色的时候，往往会先找出这一物体的最主要颜色，再判断这一颜色和哪种颜色最接近。计算机虽然说不出天蓝、橘黄之类的色彩名词，但可以精确地分析出图像中某一个像素点的RGB值，即RGB三种颜色的具体组成，但一个物体往往不会是纯色的，所以要确定一张含有多种颜色的图像的“颜色”，需要确定一个算法。
+
+算法一：将这个图像的所有像素点的RGB值分别相加，取出RGB三种颜色的平均值。如果担心计算的效率太低，可以均匀地取出部分像素，应该可以得到大致的颜色平均值。
+
+算法二：利用滤镜功能，给这个图像加上RGB三种颜色遮罩，处理为黑白图片，然后通过计算分别得到图像的白色区域面积大小，换算为0-255之间的数值。
+
+.. image:: ../images/09/yeelight02.png
+
+其实，这两种算法的原理是差不多的，只不过实现的方式不一样。OpenCV库作为著名的跨平台计算机视觉库，提供了很多图像处理和计算机视觉方面的通用算法，可以很简单地帮我们完成颜色分析的功能。
+
+算法一（遮罩法）代码：
+-----------------------------------
+'''
+def get_pic():   #调用摄像头拍摄图像
+    cap=cv2.VideoCapture(0)
+    sucess,img=cap.read()
+    cv2.imwrite("CachePhoto/image.jpg",img)
+    cap.release()
+def get_color(frame):   #处理图像，返回颜色值
+    maxsum = -100
+    color = None
+#将RGB图像转化为HSV图像，HSV空间比在BGR空间中更容易表示一个特定的颜色
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    #导入预设的颜色字典，即RGB三种颜色
+    color_dict = colorList.getColorList()
+    #遍历颜色字典，选取不同的颜色来与原图进行比较
+    for d in color_dict:
+        #为当前颜色添加遮罩，变成白色，其他颜色变成黑色
+        mask = cv2.inRange(hsv, color_dict[d][0], color_dict[d][1])
+        #将这张黑白照片存入本地以便调试查看
+        cv2.imwrite('CachePhoto/' + d +'.jpg', mask)
+        #为了保证图像的质量，对这张黑白照片进行降噪处理，凸显轮廓
+        binary = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)[1]
+        binary = cv2.dilate(binary, None, iterations=2)
+        #寻找轮廓函数，使用countours得到每张图像白色部分的面积
+        img, countours, hierarchy = cv2.findContours(binary.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        sum = 0
+        # cv2.contourArea()用于计算轮廓的面积，我们用它在代表不同颜色的许多图像中，找到白色轮廓面积最大的图像
+        for cnts in countours:
+            sum += cv2.contourArea(cnts)   
+        if sum > maxsum:
+            maxsum = sum
+            color = d
+    return color
+
+'''
+
+算法二（取点法）代码：
+-----------------------------------
