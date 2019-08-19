@@ -39,9 +39,11 @@
 引脚说明
 ==============================
 
-.. image:: ../images/08/houwu01.png
+.. image:: ../images/07/houwu01.png
 
-.. image:: ../images/08/houwu02.png
+
+
+.. image:: ../images/07/houwu02.png
 
 使用教程
 ==============================
