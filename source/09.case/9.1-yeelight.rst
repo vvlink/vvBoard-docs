@@ -36,36 +36,36 @@
 -----------------------------------
 '''
     def get_pic():   #调用摄像头拍摄图像
-        cap=cv2.VideoCapture(0)
-        sucess,img=cap.read()
-        cv2.imwrite("CachePhoto/image.jpg",img)
-        cap.release()
+    cap=cv2.VideoCapture(0)
+    sucess,img=cap.read()
+    cv2.imwrite("CachePhoto/image.jpg",img)
+    cap.release()
     def get_color(frame):   #处理图像，返回颜色值
-        maxsum = -100
-        color = None
+    maxsum = -100
+    color = None
     #将RGB图像转化为HSV图像，HSV空间比在BGR空间中更容易表示一个特定的颜色
-        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-        #导入预设的颜色字典，即RGB三种颜色
-        color_dict = colorList.getColorList()
-        #遍历颜色字典，选取不同的颜色来与原图进行比较
-        for d in color_dict:
-            #为当前颜色添加遮罩，变成白色，其他颜色变成黑色
-            mask = cv2.inRange(hsv, color_dict[d][0], color_dict[d][1])
-            #将这张黑白照片存入本地以便调试查看
-            cv2.imwrite('CachePhoto/' + d +'.jpg', mask)
-            #为了保证图像的质量，对这张黑白照片进行降噪处理，凸显轮廓
-            binary = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)[1]
-            binary = cv2.dilate(binary, None, iterations=2)
-            #寻找轮廓函数，使用countours得到每张图像白色部分的面积
-            img, countours, hierarchy = cv2.findContours(binary.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            sum = 0
-            # cv2.contourArea()用于计算轮廓的面积，我们用它在代表不同颜色的许多图像中，找到白色轮廓面积最大的图像
-            for cnts in countours:
-                sum += cv2.contourArea(cnts)   
-            if sum > maxsum:
-                maxsum = sum
-                color = d
-        return color
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    #导入预设的颜色字典，即RGB三种颜色
+    color_dict = colorList.getColorList()
+    #遍历颜色字典，选取不同的颜色来与原图进行比较
+    for d in color_dict:
+        #为当前颜色添加遮罩，变成白色，其他颜色变成黑色
+        mask = cv2.inRange(hsv, color_dict[d][0], color_dict[d][1])
+        #将这张黑白照片存入本地以便调试查看
+        cv2.imwrite('CachePhoto/' + d +'.jpg', mask)
+        #为了保证图像的质量，对这张黑白照片进行降噪处理，凸显轮廓
+        binary = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)[1]
+        binary = cv2.dilate(binary, None, iterations=2)
+        #寻找轮廓函数，使用countours得到每张图像白色部分的面积
+        img, countours, hierarchy = cv2.findContours(binary.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        sum = 0
+        # cv2.contourArea()用于计算轮廓的面积，我们用它在代表不同颜色的许多图像中，找到白色轮廓面积最大的图像
+        for cnts in countours:
+            sum += cv2.contourArea(cnts)   
+        if sum > maxsum:
+            maxsum = sum
+            color = d
+    return color
 
 '''
 
