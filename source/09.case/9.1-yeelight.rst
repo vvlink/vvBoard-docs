@@ -32,42 +32,67 @@
 
 其实，这两种算法的原理是差不多的，只不过实现的方式不一样。OpenCV库作为著名的跨平台计算机视觉库，提供了很多图像处理和计算机视觉方面的通用算法，可以很简单地帮我们完成颜色分析的功能。
 
-算法一（遮罩法）代码：
+算法一（遮罩法）部分代码：
 -----------------------------------
-'''
-    def get_pic():   #调用摄像头拍摄图像
-    cap=cv2.VideoCapture(0)
-    sucess,img=cap.read()
-    cv2.imwrite("CachePhoto/image.jpg",img)
-    cap.release()
-    def get_color(frame):   #处理图像，返回颜色值
-    maxsum = -100
-    color = None
-    #将RGB图像转化为HSV图像，HSV空间比在BGR空间中更容易表示一个特定的颜色
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    #导入预设的颜色字典，即RGB三种颜色
-    color_dict = colorList.getColorList()
-    #遍历颜色字典，选取不同的颜色来与原图进行比较
-    for d in color_dict:
-        #为当前颜色添加遮罩，变成白色，其他颜色变成黑色
-        mask = cv2.inRange(hsv, color_dict[d][0], color_dict[d][1])
-        #将这张黑白照片存入本地以便调试查看
-        cv2.imwrite('CachePhoto/' + d +'.jpg', mask)
-        #为了保证图像的质量，对这张黑白照片进行降噪处理，凸显轮廓
-        binary = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)[1]
-        binary = cv2.dilate(binary, None, iterations=2)
-        #寻找轮廓函数，使用countours得到每张图像白色部分的面积
-        img, countours, hierarchy = cv2.findContours(binary.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        sum = 0
-        # cv2.contourArea()用于计算轮廓的面积，我们用它在代表不同颜色的许多图像中，找到白色轮廓面积最大的图像
-        for cnts in countours:
-            sum += cv2.contourArea(cnts)   
-        if sum > maxsum:
-            maxsum = sum
-            color = d
-    return color
 
-'''
+.. image:: ../images/09/yeelight03.png
 
-算法二（取点法）代码：
+
+
+算法二（取点法）部分代码：
 -----------------------------------
+
+.. image:: ../images/09/yeelight04.png
+
+虚谷号控制物联网灯泡的代码实现
+=============================
+
+为方便用户控制灯泡，Yeelight公司提供的一个小型库，可让用户通过Wi-Fi发送指令来控制Yeelight灯泡。只要获取了设备的IP地址，通过ON、OFF、Set_Color等简单的函数，就能调整灯泡的开关、颜色、亮度等参数。
+
+需要强调的是，Yeelight灯泡要开启“局域网控制”功能，默认情况下这一功能是关闭的。另外，虚谷号和Yeelight灯泡一定要处于同一局域网，即连接同一个无线路由器，才能通过指令来找到设备的IP地址。
+
+控制灯泡颜色的参考代码如下：
+
+.. image:: ../images/09/yeelight05.png
+
+
+我们在虚谷号的论坛中，提供了更多关于Yeelight库的教程，可以在”创意项目”中找到，地址如下：
+http://vvboard.net.cn/bbs/
+
+
+实例运行
+=============================
+
+.. image:: ../images/09/yeelight06.png
+
+其他有关yeelight的案例
+=============================
+
+我们还提供了有关yeelight灯泡的一系列课程，包括
+
+基本操作
+- 01	寻找设备（列出地址）
+- 02	控制单一设备状态（两种方式）
+- 03	控制单一设备亮度
+- 04	控制单一设备色彩（RGB方式）
+- 05	控制多个设备联动（逐个亮起）
+
+互动操作（使用xugu库）
+- 06	按钮控制灯（按钮传感器）；
+    用按钮控制开、关灯，使用切换状态函数。
+- 07	人体红外感应灯（人体红外热释电）；
+    感应人体活动信息后，延时1分钟（采用计时的方式）
+- 08	自动感应夜灯（光敏、声音）；
+    光线暗时，听到声音就亮起，一会儿关闭；
+
+综合应用
+- 11	调色灯
+        使用三个旋钮控制RGB数值
+用Python做调色板来控制灯
+- 12	智能变色灯（摄像头）
+        在摄像头放置不同颜色的物体，灯泡自动改变颜色。
+- 13	天气灯
+        定时自动获取天气，设置相应的灯泡颜色
+- 14	语音智能灯（麦克风、百度AI）
+用语音控制开灯、关灯和亮度等指令
+
