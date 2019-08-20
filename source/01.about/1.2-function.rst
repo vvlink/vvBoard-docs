@@ -37,9 +37,23 @@
 外部硬件接口
 ----------------------------
 
-	- mini HDMI: 1. HDMI 2.0a支持4K×2K 60Hz显示， 支持HDCP 1.4/2.2；2. HDMI type C
-	- USB: 1. 1个Micro OTG接口，OTG模式支持U盘模式(device 模式)。2. 1个Micro USB作备用电源接口;3. USB2.0的HOST A type接口;4. USB3.0 HOST A Type 接口;
+	- mini HDMI: 1.HDMI 2.0a支持4K×2K 60Hz显示，支持HDCP 1.4/2.2；2.HDMI type C
+	- USB: 1. 1个Micro OTG接口，OTG模式支持U盘模式(device 模式)；2. 1个Micro USB作备用电源接口；3. USB2.0、USB3.0接口各一个（HOST A Type）;
 	- KEY: Linux系统复位按键
 	- WIFI/BT: WIFI IEEE 802.11 b/g/n; Bluetooth V4.0(HS) 
 	- LED: 3个LED灯用于指示虚谷号的运行状态
+
+----------------------------
+自带软件
+----------------------------
+
+	- Python（）
+	- Arduino（）
+	- MpythonX（）
+	- Processing（）
+	- S4A（1.6版）
+	- SIoT（1.2版）
+
+
+
 
