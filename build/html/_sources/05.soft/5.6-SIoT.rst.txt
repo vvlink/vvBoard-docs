@@ -1,0 +1,11 @@
+
+SIoT
+===========================
+
+
+SIoT是一款为中小学STEM教育定制的开源MQTT服务器程序，S指科学（Science）、简单（Simple）的意思。SIoT支持Win10、Win7、Mac和Linux等操作系统，一键启动，无需注册和设置即可使用。
+
+SIoT是“虚谷计划”旗下“虚谷物联”项目的核心软件。虚谷号上内置了SIoT，可以将虚谷号看作是一个标准的MQTT服务器。
+
+SIoT使用文档：
+https://siot.readthedocs.io/
