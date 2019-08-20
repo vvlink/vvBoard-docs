@@ -9,5 +9,7 @@
     :numbered: 2
 
     9.1-yeelight
+    9.2-facetest
+
 
 
