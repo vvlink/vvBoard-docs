@@ -8,9 +8,9 @@
     :maxdepth: 2
     :numbered: 2
 
-    6.1
-    6.2
-    6.3
-    6.4
+    6.1-ai
+    6.2-iot
+    6.3-i-media
+    6.4-smart-home
 
 

@@ -8,9 +8,9 @@
     :maxdepth: 2
     :numbered: 2
 
-    3.1
-    3.2
-    3.3
-    3.4
-    3.5
+    3.1-wifi-bt
+    3.2-setup
+    3.3-python-upgraded
+    3.4-system-upgraded
+    3.5-linux
 

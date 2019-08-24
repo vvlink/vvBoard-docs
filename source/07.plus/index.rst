@@ -9,7 +9,7 @@
     :numbered: 2
 
     7.1-houwu
-    7.2
-    7.3
+    7.2-camera
+    7.3-sound-card
 
 

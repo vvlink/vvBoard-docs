@@ -8,6 +8,6 @@
     :maxdepth: 2
     :numbered: 2
 
-    4.1
-    4.2
+    4.1-gpio
+    4.2-xugulib
 
