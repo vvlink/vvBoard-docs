@@ -32,3 +32,23 @@
 
 4.快捷键的操作说明：
 
+ Ctrl+Alt+t:打开终端
+ 
+ Ctrl+空格键：更改输入法
+ 
+ Ctrl+c:结束终端运行
+ 
+ Alt+PrintScreenSysRq:截屏
+
+ Ctrl+w:关闭当前窗口
+ 
+ Ctrl+a:全选
+ 
+ Ctrl+s:保存
+
+ Ctrl+c:复制
+ 
+ Ctrl+x:剪切
+ 
+ Ctrl+v:粘贴
+
