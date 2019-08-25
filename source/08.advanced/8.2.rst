@@ -2,4 +2,64 @@
 U盘目录详解
 =============================
 
+---------------
+1.U盘内文件介绍：
+---------------
+Arduino：存放Arduino相关的文件
+
+Python：存放Python相关的文件
+
+vvBoard：存放vvBoard相关的文件
+
+System Volume Information: 插入Windows电脑端显示出来的
+
+autorun.inf: 配置U盘的盘符
+
+REDAME.txt: 查看版本信息
+
+-----------------
+2.Arduino内文件介绍
+-----------------
+01.example：存放Arduino IDE里的所有案例
+
+02.lib：存放Arduino的库文件
+
+03.doc：存放Arduino相关的资料
+
+04.bak：执行完Arduino的程序后放入这里
+
+arduino_config.ini：配置要执行的Arduino程序
+
+arduino_log.txt：编译运行Arduino程序打印的log
+
+----------------
+3.Python内文件介绍
+----------------
+01.example：存放Python的案例
+
+02.lib：存放Python库文件
+
+03.doc：存放Python相关的资料
+
+04.bak：不做定义，为了和Arduino结构统一
+
+python_config.ini：配置要执行的Python程序
+
+python_log.txt:执行Python程序有格式错误的报错log
+
+-----------------
+4.vvBoard内文件介绍
+-----------------
+
+Docs：存放vvBoard的说明文档
+
+system_log.txt：系统log
+
+Tools：存放工具
+
+vvBoard_config.txt：配置wifi和jupyter
+
+wifi_log.txt：连接wifi打印的log
+
+xgh.ico：U盘盘符
 
