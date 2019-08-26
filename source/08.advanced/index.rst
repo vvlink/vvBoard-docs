@@ -8,9 +8,10 @@
     :maxdepth: 2
     :numbered: 2
 
-    8.1
-    8.2
-    8.3
+    8.1-troubleshooting
+    8.2-dap-index
+    8.3-hardware-resources
+    8.4-soft-setup
 
 
 

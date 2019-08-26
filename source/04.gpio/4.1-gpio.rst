@@ -2,60 +2,19 @@
 GPIO的几种方式
 =============================
 
-一、虚谷号中软件安装方法
------------------------------
-1、APT方式
+虚谷号提供了多种方式，实现GPIO功能。
 
-（1）普通安装：sudo apt-get install softname1 softname2 …;
+方式1：
 
-（2）修复安装：sudo apt-get -f install softname1 softname2... ;(-f Atemp to correct broken dependencies)
+虚谷号通过串口和板载的Arduino UNO连接，可以用任何一款Arduino的编程工具，用标准的Arduino代码进行编写，控制Arduino UNO的所有引脚。
 
-（3）重新安装：sudo apt-get --reinstall install softname1 softname2...;
+方式2：
 
-2、Dpkg方式
+虚谷号给Arduino UNO烧写标准的Firmata协议，通过串口命令进行控制Arduino引脚，为降低初学者的开发门槛，虚谷号提供了和MicroPython语法完全兼容的“xugu.py”库，供Python编程教学时调用。
 
-（1）普通安装：sudo dpkg -i package_name.deb
+方式3：
 
-3、源码安装（.tar、tar.gz、tar.bz2、tar.Z）
+虚谷号的主芯片引出I2C接口，可以通过这一接口来实现对外部设备的控制。
 
-首先解压缩源码压缩包然后通过tar命令来完成
+第三种方式中，虚谷号主芯片的I2C接口可以和方式1、方式2结合。相对来说，方式2的开发难度最低，能满足常用的大部分需求，只需要有Python编程基础即可。
 
-a．解xx.tar.gz：tar zxf xx.tar.gz 
-
-b．解xx.tar.Z：tar zxf xx.tar.Z 
-
-c．解xx.tgz：tar zxf xx.tgz 
-
-d．解xx.bz2：bunzip2 xx.bz2 
-
-e．解xx.tar：tar xf xx.tar
-
-然后进入到解压出的目录中，建议先读一下README之类的说明文件，因为此时不同源代码包或者预编译包可能存在差异，然后建议使用ls -F --color或者ls -F命令（实际上我的只需要 l 命令即可）查看一下可执行文件，可执行文件会以*号的尾部标志。
-
-一般依次执行
-      /configure
-      
-      make
-       
-      sudo make install
-
-即可完成安装。
-
-------------------------
-二、虚谷号中软件包的卸载方法
-------------------------
-1、APT方式
-
-（1）移除式卸载：sudo apt-get remove softname1 softname2 …;（移除软件包，当包尾部有+时，意为安装）
-
-（2）清除式卸载 ：sudo apt-get --purge remove softname1 softname2...;(同时清除配置)
-   
-   清除式卸载：sudo apt-get purge sofname1 softname2...;(同上，也清除配置文件)
-
-2、Dpkg方式
-
-（1）移除式卸载：sudo dpkg -r pkg1 pkg2 ...;
-
-（2）清除式卸载：sudo dpkg -P pkg1 pkg2...;
-
-注：  sudo密码为scope
