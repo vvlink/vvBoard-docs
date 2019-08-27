@@ -35,7 +35,9 @@ b.打开led.py，手动输入下面方框内的代码（或将桌面vvBoard里�
                             
 c.在桌面空白处右击，选择Open Terminal Here，则会打开终端
 
-d.输入python led.py，按下回车键（Eenter），稍等一会
+d.输入python led.py，按下回车键（Eenter），稍等一会，出现如下图所示：
+
+.. image:: ../images/python01.jpg
 
 e.执行成功，D13LED灯会亮2秒熄灭4秒的闪烁。关闭窗口
 
