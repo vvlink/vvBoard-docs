@@ -31,9 +31,38 @@ Python运行和库维护
 通过无线方式运行
 --------------------------------
 
-1.
-2.
-3.
+主要是使用Jupyter运行，在网页端输入 虚谷号的IP地址:8888，打开Jupyter,密码scope
+
+1.使用终端形式运行
+
+1）点击右上角“新建”，再选择“终端”，如下图所示：
+      
+.. image:: ../images/03/python01.jpg
+
+2）进入要执行的python程序文件加，例如：输入cd /home/scope/vvBoard/Python/01.example/10.GPIO
+
+3)运行Python程序，例如：输入python xugu-blink.py
+
+4)运行完后不想运行或者要换一个程序运行，Ctrl+z结束（python程序不能后台运行），如下图所示：
+
+.. image:: ../images/03/python02.jpg
+
+2.使用网页形式运行
+
+1）点击右上角“新建”，再选择“Python3”，会进入下图页面：
+
+.. image:: ../images/03/python03.jpg
+
+2）在 In的框内输入python代码，例如：print('hello world !')
+
+3）点击运行，则会在框下面出现“hello world !”，如下图所示：
+
+.. image:: ../images/03/python04.jpg
+
+4）如果运行使用xugu库的程序，则运行完后或者要运行下一个程序时，需点击中断服务，如下图所示：
+
+.. image:: ../images/03/python05.jpg
+
 
 
 --------------------------------
