@@ -2,27 +2,21 @@
 Python运行和库维护
 ==================================
 
-虚谷号默认安装的是Python3.5，可以通过多种方式来运行。
+虚谷号默认安装的是Python3.5，可以通过多种方式来运行Python代码。
 
 --------------------------------
 通过U盘方式运行
 --------------------------------
 
-1）将虚谷板连接上主机
+1）通过USB线将虚谷板（OTG口）连接上电脑，约十多秒后，电脑会出现一个名为vvBoard的U盘。
 
-2）连接好之后在屏幕的右下角可以看到一个U盘图标
+2）将Python文件复制到U盘的“Python”文件夹下，命名为mian.py。
 
-3）打开此U盘后会看到目录结构
+3）短按虚谷板的RST键，U盘会暂时消失，等到U盘图标再次出现，Python代码已经成功执行了。
 
-4）进入到Python目录下新建一个test.py文件
+4）“Python”文件夹下的python_log文件，记录了python程序的输出内容还有错误信息，方便用户调试。
 
-5）打开此文件编辑一个python代码（也可在其它编辑器上写完后粘贴过来）保存
-
-6）打开python_config.ini文件，修改Python=test.py并保存。
-
-7）短按虚谷板的reset按键等待虚谷号U盘刷新
-
-8）待vvBoard刷新后进入到Python文件夹下会看到一个python_log文件，python程序的输出内容还有错误信息全都保存在此文件中，打开此文件会发现python程序打印的hello world保存在了此文件中
+5）如果希望默认执行的Python文件名不是main.py，可以修改python_config.ini文件。“Python=test.py”表示默认执行的文件名是“test.py”。
 
   注：目前系统版本运行python程序输出对应log到python_log.txt的功能暂时关闭
 
@@ -31,7 +25,7 @@ Python运行和库维护
 通过无线方式运行
 --------------------------------
 
-主要是使用Jupyter运行，在网页端输入 虚谷号的IP地址:8888，打开Jupyter,密码scope
+虚谷号内置了Jupyter，可以通过Jupyter来运行Python代码。在浏览器中输入“http://【虚谷号的IP地址】:8888”，打开Jupyter,默认密码为scope。
 
 1.使用终端形式运行
 
@@ -65,9 +59,9 @@ Python运行和库维护
 
 
 
---------------------------------
+----------------------------------
 通过PC模式运行python
---------------------------------
+----------------------------------
 1.使用编辑器运行python程序
 			
       Python(3.5)是Python的编辑器，可以在里面进行编译执行。
@@ -75,26 +69,20 @@ Python运行和库维护
 2.使用终端运行.py文件
     
     创建一个.py文件，在终端输入Python xxx.py运行，例：D13LED 灯亮2秒熄灭4秒的闪烁
-操作步骤：
+
+**操作步骤：
 
 a.在桌面创建一个文件，命名为led.py
 
-b.打开led.py，手动输入下面方框内的代码（或将桌面vvBoard里的Python\01.example\10.GPIO\xugu_blink.py文件内容复制到led.py内，并改成和下面的代码一样），保存关闭。 
+b.打开led.py，手动输入下面方框内的代码（或将桌面vvBoard里的Python\01.example\10.GPIO\xugu_blink.py文件内容复制到led.py内，并改成和下面的代码一样），保存关闭。 ：：
                          
                          import time  # 导入time模块
-                         
                          from xugu import LED  # 从xugu库中导入LED类
-                         
                          led = LED(13)  # 初始化LED类
-                         
-                         while True:   # 用循环实现持续地开灯关灯，到达闪烁的效果
-                             
-                             led.on()  # 点亮连接13号引脚的LED灯
-                             
+                         while True:    # 用循环实现持续地开灯关灯，到达闪烁的效果
+                             led.on()   # 点亮连接13号引脚的LED灯
                              time.sleep(2) # 持续2秒
-                             
                              led.off()  # 关闭LED灯
-                            
                              time.sleep(4)  # 持续4秒
                             
 c.在桌面空白处右击，选择Open Terminal Here，则会打开终端
