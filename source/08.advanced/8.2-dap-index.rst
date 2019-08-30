@@ -2,7 +2,7 @@
 U盘目录详解
 =============================
 
-U盘模式是虚谷号特有的功能，通过U盘方式，虚谷号可以完成Arduino烧写、Python文件运行，连接Wi-Fi等操作。U盘中有Arduino、Python和vvBoard三个文件夹。
+U盘模式是虚谷号特有的功能，通过U盘方式，虚谷号可以完成Arduino烧写、Python文件运行，连接Wi-Fi等操作。U盘中有Arduino、Python和vvBoard三个文件夹。Python和arduino程序同时存在时，先运行Arduino,后运行Python
 
 ------------------------------
 U盘根目录文件介绍
