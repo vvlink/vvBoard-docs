@@ -6,6 +6,10 @@
 --------------
 vvBoard支持免驱动的声卡
 
+USB免驱声卡购买地址：
+
+https://detail.tmall.com/item.htm?id=564470736512&price=29.9-39.9&sourceType=item&sourceType=item&suid=dff7829b-1694-4dc7-96ef-2d5ec4a50ef2&ut_sk=1.WDJ9QluPusEDAInvKm2kKQej_21646297_1552581859352.TaoPassword-WeiXin.1&un=acdda024fc90ba2de7c4cca5375f99dd&share_crt_v=1&sp_tk=77%20lSElLcWJEMnhRTkXvv6U=&cpp=1&shareurl=true&spm=a313p.22.2pi.1017077843589&short_name=h.3CbTjXP&app=chrome&skuId=3735248115558
+
 --------------
 二、配置默认声卡
 --------------
