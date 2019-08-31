@@ -9,12 +9,21 @@
 
 1.解压固件
 
-将下载后的固件，解压在出来。
+将下载后的固件解压。解压后如下：
 
+.. image:: ../images/03/system01.jpg
 
 2.驱动安装
 
 运行DriverAssitant_v4.6文件夹下的DriverInstall.exe程序
+
+.. image:: ../images/03/system02.jpg
+
+.. image:: ../images/03/system03.jpg
+
+.. image:: ../images/03/system04.jpg
+
+.. image:: ../images/03/system05.jpg
 
 -------------------------
 步骤详解
@@ -23,34 +32,64 @@
 
 1.打开烧写程序
 
- 打开AndroidTool\AndroidTool_Release目录下的AndroidTool.exe
+打开AndroidTool\AndroidTool_Release目录下的AndroidTool.exe
+
+.. image:: ../images/03/system06.jpg
+
+打开后如下所示：
+
+.. image:: ../images/03/system07.jpg
 
 2.进入Loader模式
 
- 1)、设备断开所有电源。
+1)、设备断开所有电源。
  
- 2)、按住虚谷板的reset按键
+2)、按住虚谷板的reset按键
 
- 3)、用 Micro USB OTG 线连接好设备和主机。
+.. image:: ../images/03/system08.jpg
 
- 4)、显示发现一个LOADER设备时，松开按键设备就进入 Loader 模式，进行烧写。
+3)、用 Micro USB OTG 线连接好设备和主机。
+
+4)、显示发现一个LOADER设备时，松开按键设备就进入 Loader 模式，进行烧写。
+
+.. image:: ../images/03/system09.jpg
+
+5）、烧写
+
+.. image:: ../images/03/system10.jpg
+
+.. image:: ../images/03/system11.jpg
+
+.. image:: ../images/03/system12.jpg
+
+.. image:: ../images/03/system13.jpg
+
+.. image:: ../images/03/system14.jpg
 
 -----------------------------------------
 固件升级失败原因及解决方法 
 -----------------------------------------
-  失败的原因及为以下几种：
   
-  A、升级过程中碰到连接线，导致供电不足
+固件升级显示升级失败，如下图所示：
 
-  B、只使用笔记本电脑给板子供电会出现供电不足的现象
-  
-  C、1+8（创客板）的板子升级2+32的固件
+.. image:: ../images/03/system15.jpg
 
-  解决方法：
+失败的原因及为以下几种：
   
-  A、供电不足：在进入loader模式后连接一根电源线
+A、升级过程中碰到连接线，导致供电不足
+
+B、只使用笔记本电脑给板子供电会出现供电不足的现象
   
-  B、烧错固件：更改为正确的固件进行烧录（注：2+32（教育板）的板子可以烧录1+8的固件
+C、1+8（创客板）的板子升级2+32的固件
+
+解决方法：
+  
+A、供电不足：在进入loader模式后连接一根电源线，如下图所示：
+
+.. image:: ../images/03/system16.jpg
+
+
+B、烧错固件：更改为正确的固件进行烧录（注：2+32（教育板）的板子可以烧录1+8的固件
 
 ----------------------------
 MaskRom模式详解
@@ -58,13 +97,22 @@ MaskRom模式详解
 
 如果loader模式失败，可以试一下MaskRom模式。在打开烧写程序后，要做如下工作。
 
- - 在虚谷板上找到对应的两点。设备断开所有电源。
+1.在虚谷板上找到对应的两点，如下图红框内所示：
+
+.. image:: ../images/03/system17.jpg
  
- - 用金属镊子接通图片的两点 ，并保持。
+2.设备断开所有电源。
 
- - 用 Micro USB OTG 线连接好设备和主机。
+3.用金属镊子接通图片的两点，并保持。
 
- - 显示发现一个MaskRom设备时，松开镊子设备就进入 MaskRom 模式，进行烧写。
+.. image:: ../images/03/system18.jpg
+
+4.用 Micro USB OTG 线连接好设备和主机。
+
+5.显示发现一个MaskRom设备时，松开镊子设备就进入 MaskRom 模式，进行烧写。
+
+.. image:: ../images/03/system19.jpg
+
   
   
 
