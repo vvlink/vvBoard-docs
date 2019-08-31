@@ -18,8 +18,7 @@ Python运行和库维护
 
 5）如果希望默认执行的Python文件名不是main.py，可以修改python_config.ini文件。“Python=test.py”表示默认执行的文件名是“test.py”。
 
-  注：目前系统版本运行python程序输出对应log到python_log.txt的功能暂时关闭
-
+  注：python_log.txt输出python格式出错的log
 
 --------------------------------
 通过无线方式运行
