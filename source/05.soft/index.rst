@@ -14,4 +14,5 @@
     5.4-Jupyter
     5.5-Python
     5.6-SIoT
+    5.7-Processing
 
