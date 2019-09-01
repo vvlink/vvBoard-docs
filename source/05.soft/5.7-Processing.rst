@@ -12,7 +12,7 @@ Processing是一款专为设计师和艺术家使用的编程语言，由美国�
 
 Processing软件的官方网站：http://www.processing.org/
 
-.. image:: ../image/05/processing-1.png
+.. image:: ../images/05/processing-1.png
 
 --------------------------
 Processing的特色
@@ -22,17 +22,17 @@ Processing的特色
 
 “用数字来设计”（Design By Numbers），是Processing独创的程序设计方法。它的思想是简单地写一行代码，就会在屏幕上生成一个图形，再增加一些代码，图形就能根据鼠标的动作发生变化。这些代码称之为草稿（Sketch）。Processing的设计者认为，草稿化（Sketching）是一种思维方式，有趣而便捷，可以让人在短时间内探索出很多想法。“草稿”一词的强调，让使用者体会在计算机屏幕上画图，就如同在图形纸上作画一样。
  	 
-.. image:: ../image/05/processing-2.png
+.. image:: ../images/05/processing-2.png
 
 草稿
 
-.. image:: ../image/05/processing-3.png
+.. image:: ../images/05/processing-3.png
 
 草稿对应的图画
 
 利用Processing可以实现梦幻般的视觉展示效果。http://www.openprocessing.org/和http://wiki.processing.org/均是Processing的资源网站，提供了大量美轮美奂的画面。当然，这些画面都是用Processing画出来的。
  
-.. image:: ../image/05/processing-4.png
+.. image:: ../images/05/processing-4.png
 
 2.代码简洁但功能强大
 
@@ -105,7 +105,7 @@ Arduino参考代码如下。::
 
 用Arduino IED将代码写入到板载的Arduino中，运行Processing可以看到效果。SimpleRead的功能是读取Arduino发送的数据，然后变换背景。从“int switchPin=4”语句可以得知，Arduino电路板的数字口4上，要接上一个数字传感器，如按钮、单向倾角和红外测障等传感器。当数字传感器的状态发生变化时，Processing的画面也会发生相应的变化。
 
-.. image:: ../image/05/processing-5.png
+.. image:: ../images/05/processing-5.png
 
 2.范例“SimpleWrite”
 
@@ -192,7 +192,7 @@ Processing的适合对象
 合理使用Processing自身提供的范例，开发Processing课程并不是很困难的一件事。Processing课程的设计思路可以参照这样的线索：
 
 
-.. image:: ../image/05/processing-7.png
+.. image:: ../images/05/processing-7.png
 
 
 由于文化和语言的差异，国内研究Processing的人并不多。且不说在中小学，就是目前已经开设Processing课程的高校也寥寥无几。但是，在创意产业和互动媒体艺术迅速发展的中国，开展与Processing相关的课程，让对艺术感兴趣的文科生也能动手用代码描绘自己的创意，无疑是非常有意义的一件事。正如《爱上Processing》一书的翻译者陈思明所说：Processing是一把激发艺术灵感的钥匙，你可以轻易地在计算机屏幕中展现心中的艺术场景，感受更多灵感的涌现，在颜色与线条的海洋中漫步。
