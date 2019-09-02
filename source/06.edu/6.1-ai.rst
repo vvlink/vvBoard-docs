@@ -9,6 +9,27 @@
 
 1.OpenCV库简介
 
+OpenCV（Open Source Computer Vision Library: http://opencv.org）是一个开源BSD库，该库包括数百个机器视觉算法。该手册基于OpenCV2.X API。是一个C++版本的API。
+
+OpenCV是一个模块化结构，即由几个共享和静态库组成。模块如下：
+
+- core -一个定义基本数据结构的模块，包括多维数组和其它模块使用的核心函数
+
+- imgproc-图像处理模块，包括线性非线性滤波，几何图像变化（尺寸变换、仿射、透视、基于表的映射），图像域卷积，直方图等
+
+- video-视频分析模块，包括运动检测，背景移除，目标跟踪。
+
+- calib3d-多视图几何算法，一维和三维相机jiaozheng2，目标位置估计，立体匹配算法，三维重构。
+
+- features2d - 特征检测和描述匹配
+
+- objdetect -类（如人脸、眼睛、人、车等）的检测
+
+- highgui-视频抓取、图像以及视频编码接口
+
+- gpu- GPU对OpenCV不同模块算法的加速
+
+- 一些帮助性模块，如FLANN和谷歌测试封装，Python等
 
 ----------------
 机器学习
