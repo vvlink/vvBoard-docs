@@ -1,7 +1,7 @@
 
 
 用ipyturtle在网页上画画
-==================================
+====================================
 
 
 --------------------------
@@ -21,6 +21,8 @@ pip install ipyturtle jupyter nbextension enable --py --sys-prefix
 ipyturtle
 
 如果pip不能安装，可以试试pip3。
+
+.. image:: ../images/09/9.3-ipyturtle.png
 
 好了，开始画图吧。
 
@@ -146,7 +148,9 @@ ipyturtle
     t.forward(100)
     t.right(120)
 
-说一下，这是什么原理？如果要画出一个直角三角形呢？
+说一下，这是什么原理？为什么这样画出来的就是一个三角形？
+
+那么，如何画出一个直角三角形呢？
 
 .. code:: ipython3
 
@@ -161,13 +165,18 @@ ipyturtle
     t.right(150)
     t.forward(abs(t.position()[1]))
 
-t.position()，表示坐标，这个数据类型是元组（tuple）。
+解释一下代码：
+t.position()，表示坐标，这个数据类型是元组（tuple）。因为我们不知道这个边有多长，就用while循环，一直走到坐标x超过原点（0）为止，然后回到原位。
 
-t.position()[0]是x坐标，t.position()[1]是y坐标。
+其中，t.position()[0]是x坐标，t.position()[1]是y坐标。
+
+问题：abs(t.position()[1])表示什么？
+
+**知识链接**：while 后面跟着的是表达式，只要表达式成立，那么就一直循环。
 
 思考：能不能用勾股定理算出边长，然后回到原点？
 
-如：math.sqrt(100\ **2+150**\ 2)。
+如：math.sqrt(100**2+150**2)。
 
 如果使用sqrt，需要导入math库。在头部要加上一句“import math”
 
@@ -187,6 +196,10 @@ t.position()[0]是x坐标，t.position()[1]是y坐标。
 
     t.reset()
     square(100)
+
+**知识链接1**：def square(size)表示一个自定义的函数，square是函数名，size是参数。函数类似一个程序代码的集合，调用起来比较方便。
+
+**知识链接2**：for i in range(4)表示循环4次，分别是0,1，2，3。即从0开始，不包括4。
 
 .. code:: ipython3
 
