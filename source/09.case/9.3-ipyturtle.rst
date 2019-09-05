@@ -32,7 +32,7 @@ ipyturtle
 
 首先是导入库，然后显示出来，看一看，是不是出现图片了？
 
-.. code:: ipython3
+::
 
     from ipyturtle import Turtle
     t = Turtle()
@@ -40,12 +40,12 @@ ipyturtle
 
 如果觉得画布太大，那就设定画布大小，小一点。试一试。
 
-.. code:: ipython3
+::
 
     # 先关闭
     t.close()
 
-.. code:: ipython3
+::
 
     # 再画一个
     t = Turtle(fixed=False, width=100, height=100)
@@ -55,14 +55,14 @@ ipyturtle
 
 默认情况下，三角形指示牌的坐标在“0，0”的位置，运行下面的代码，t的坐标在哪里？
 
-.. code:: ipython3
+::
 
     t.back(20)
     t.forward(60)
 
 有没有发现，三角形指示牌移动了？我们输出坐标吧。
 
-.. code:: ipython3
+:: 
 
     t.position()
 
@@ -80,13 +80,13 @@ ipyturtle
 
 我们试一试吧，画一条线，长度是50像素的水平线。
 
-.. code:: ipython3
+:: 
 
     from ipyturtle import Turtle
     t = Turtle(fixed=False, width=200, height=200)
     t
 
-.. code:: ipython3
+:: 
 
     t.right(90)
     t.forward(50)
@@ -98,7 +98,7 @@ ipyturtle
 画出基本形状
 --------------------------
 
-.. code:: ipython3
+:: 
 
     # 长度是100，高度是50的矩形
     from ipyturtle import Turtle
@@ -106,7 +106,7 @@ ipyturtle
     t
 
 
-.. code:: ipython3
+:: 
 
     #画出矩形
     t.forward(50)
@@ -120,7 +120,7 @@ ipyturtle
 
 看一下，是不是画出了矩形？
 
-.. code:: ipython3
+:: 
 
     #先清除原来的结果
     t
@@ -132,14 +132,14 @@ ipyturtle
 
 这个可是难题了。
 
-.. code:: ipython3
+:: 
 
     #画出三角形
     from ipyturtle import Turtle
     t = Turtle()
     t
 
-.. code:: ipython3
+:: 
 
     t.forward(100)
     t.right(120)
@@ -152,7 +152,7 @@ ipyturtle
 
 那么，如何画出一个直角三角形呢？
 
-.. code:: ipython3
+:: 
 
     #画出有一个角是60度的直角三角形。
     t.reset()
@@ -184,7 +184,7 @@ t.position()，表示坐标，这个数据类型是元组（tuple）。因为我
 写个函数吧
 --------------------------
 
-.. code:: ipython3
+:: 
 
     # 正方形
     def square(size):
@@ -192,7 +192,7 @@ t.position()，表示坐标，这个数据类型是元组（tuple）。因为我
             t.forward(size)
             t.right(90)
 
-.. code:: ipython3
+:: 
 
     t.reset()
     square(100)
@@ -201,7 +201,7 @@ t.position()，表示坐标，这个数据类型是元组（tuple）。因为我
 
 **知识链接2**：for i in range(4)表示循环4次，分别是0,1，2，3。即从0开始，不包括4。
 
-.. code:: ipython3
+:: 
 
     # 画个圆
     def circle():
@@ -210,12 +210,12 @@ t.position()，表示坐标，这个数据类型是元组（tuple）。因为我
             t.right(1)
 
 
-.. code:: ipython3
+:: 
 
     t.reset()
     circle()
 
-.. code:: ipython3
+:: 
 
     # 画个正三角形
     def triangle():
