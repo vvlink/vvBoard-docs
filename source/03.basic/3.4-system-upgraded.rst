@@ -15,7 +15,7 @@
 
 2.驱动安装
 
-运行DriverAssitant_v4.6文件夹下的DriverInstall.exe程序
+运行DriverAssitant_v4.6文件夹下的DriverInstall.exe程序。
 
 .. image:: ../images/03/system02.jpg
 
@@ -107,9 +107,9 @@ MaskRom模式详解
 
 .. image:: ../images/03/system18.jpg
 
-4.用 Micro USB OTG 线连接好设备和主机。
+4.用Micro USB OTG线连接好设备和主机。
 
-5.显示发现一个MaskRom设备时，松开镊子设备就进入 MaskRom 模式，进行烧写。
+5.显示发现一个MaskRom设备时，松开镊子设备就进入MaskRom模式，进行烧写。
 
 .. image:: ../images/03/system19.jpg
 
