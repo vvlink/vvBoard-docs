@@ -44,7 +44,7 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 
 1）设置Wi-Fi参数
 
-更改U盘vvboard文件夹的”vvBoard_config.ini”中，SSID和SSID_PSD。短按RST键重启U盘服务，然后在U盘vvboard文件夹的”vvBoard_config.ini”中找到wifi_log.txt，找到IP地址。
+更改U盘vvboard文件夹的”vvBoard_config.ini”中，SSID和SSID_PSD。短按RST键重启U盘服务，然后在U盘vvboard文件夹的“wifi_log.txt”中，找到IP地址。
 
 2）烧录Arduino代码
 
