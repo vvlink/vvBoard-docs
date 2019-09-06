@@ -8,6 +8,8 @@ U盘模式是虚谷号特有的功能，通过U盘方式，虚谷号可以完成
 U盘根目录文件介绍
 ------------------------------
  - Arduino：存放Arduino相关的文件
+ 
+ - Notepad2:存放文本编辑器，如果使用记事本打开文档没有换行，可以使用这个里面的编辑器
 
  - Python：存放Python相关的文件
 
@@ -42,7 +44,7 @@ Python内文件介绍
 
 02.lib：存放Python库文件
 
-03.doc：存放Python相关的资料
+03.doc：存放Python相关的资料，例如：Python库的说明
 
 04.bak：不做定义，为了和Arduino结构统一
 
@@ -65,4 +67,9 @@ vvBoard_config.txt：配置wifi和jupyter
 wifi_log.txt：连接wifi打印的log
 
 xgh.ico：U盘盘符
+
+siot.ini.url:使用U盘模式打开siot并且连接上网络则生成windows的网页快捷方式，双击便能打开siot网页
+
+jupyter.txt.url: 使用U盘模式打开jupyter并且连接上网络则生成windows的网页快捷方式，双击便能打开jupyter网页,如果打开为空白页，请复制网址在其他浏览器上打开，推荐使用谷歌浏览器
+
 

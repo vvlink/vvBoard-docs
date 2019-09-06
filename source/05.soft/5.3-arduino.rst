@@ -32,6 +32,25 @@ Arduino 语言常用于兼容Arduino的开源硬件的编程，是目前最流�
 如何安装ArduBlock
 ----------------------------
 
+（1）关闭所有的Arduino IDE窗口
+
+（2）/home/scope/software下面有个ArduBlockTool文件，将此文件拷贝到/home/scope/software/arduino-1.6.10/tools/下，如下图所示：
+ 
+.. image:: ../images/05/arduino02.png
+
+（3）重新打开Arduino IDE，在工具中可以看到ArduBlock如下图所示
+ 
+.. image:: ../images/05/arduino03.png
+ 
+**注：此功能添加会影响Arduino IDE和Arduino IDE里面的示例打开的速度
+
+
+ 
+
+
+
+
+
 
  
 

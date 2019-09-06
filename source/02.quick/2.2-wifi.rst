@@ -78,7 +78,7 @@ SSH功能
 jupyter功能
 ---------------------------------------------------
 
-config中增加jupyter=1，默认jupyter=0。
+config中，默认jupyter=1。
 
 【图】
 
