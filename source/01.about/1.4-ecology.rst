@@ -39,19 +39,26 @@ Arduino IO 传感器扩展板地址：http://www.dfrobot.com.cn/goods-791.html
 
 基本上能运行于树莓派软件的，都能够。因为得到一批开源软件爱好者的支持，一些能够运行在Linux系统中的软件都逐步推出虚谷号版本。
 
-- S4A。S4A是Scratch for Arduino的缩写,主要提供了对Arduino和Andriod的支持：采用Arduino作为传感器和执行器的控制平台，提供了6组模拟输入和2组数字输入接口，以及舵机输出和数字输出接口，具有强大的输入和输出的功能；提供了基于HTTP协议的远程传感器功能和安卓手机的配套程序，可以组网互动，也可以和智能手机进行互动。相对于Scratch来说，S4A编写出的作品交互功能更加强大。
+- S4A。
+	- S4A是Scratch for Arduino的缩写,主要提供了对Arduino和Andriod的支持：采用Arduino作为传感器和执行器的控制平台，提供了6组模拟输入和2组数字输入接口，以及舵机输出和数字输出接口，具有强大的输入和输出的功能；提供了基于HTTP协议的远程传感器功能和安卓手机的配套程序，可以组网互动，也可以和智能手机进行互动。相对于Scratch来说，S4A编写出的作品交互功能更加强大。
 
-- mPythonX。mPythonX是一款为掌控板开发的图形化编程的软件，同时支持Python代码编程。
+- mPythonX。
+	- mPythonX是一款为掌控板开发的图形化编程的软件，同时支持Python代码编程。
 
-- Arduino IDE。Arduino包含硬件（各种型号的Arduino主板）和软件（Arduino IDE) 。虚谷号板载了Arduino UNO版本，也内置了Arduino IDE。
+- Arduino IDE。
+	- Arduino包含硬件（各种型号的Arduino主板）和软件（Arduino IDE) 。虚谷号板载了Arduino UNO版本，也内置了Arduino IDE。
 
-- Jupyter。Jupyter的全称为Jupyter Notebook（此前被称为 IPython notebook），是一个交互式笔记本，支持运行40多种编程语言。Jupyter的本质是一个 Web 应用程序，便于创建和共享文学化程序文档，支持实时代码，数学方程，可视化和 markdown。通过Jupyter，可以通过Web页面在虚谷号上运行Python代码和Linux命令。
+- Jupyter。
+	- Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是一个交互式笔记本，支持运行40多种编程语言。Jupyter的本质是一个Web应用程序，便于创建和共享类似笔记本的文档，支持实时代码，数学方程，可视化和 markdown。通过Jupyter，可以通过Web页面在虚谷号上运行Python代码和Linux命令。
 
-- Python。Python是一种面向对象的解释型程序设计语言。虚谷号预装了Python3.5版本，已经整合了常用的库文件。
+- Python。
+	- Python是一种面向对象的解释型程序设计语言。虚谷号预装了Python3.5版本，已经整合了常用的库文件。
 
-- SIoT。SIoT是一款为中小学STEM教育定制的开源MQTT服务器程序，S指科学（Science）、简单（Simple）的意思。SIoT支持Win10、Win7、Mac和Linux等操作系统，一键启动，无需注册和设置即可使用。
+- SIoT。
+	- SIoT是一款为中小学STEM教育定制的开源MQTT服务器程序，S指科学（Science）、简单（Simple）的意思。SIoT支持Win10、Win7、Mac和Linux等操作系统，一键启动，无需注册和设置即可使用。
 
-- Processing。Processing是一款专为设计师和艺术家使用的编程语言，由美国麻省理工学院媒体实验室美学与运算小组( Aesthetics Computation Group )的Casey Reas与Ben Fry创立。Processing的出现，被视为艺术设计创作的一场革命。利用Processing，艺术家可以将抽象的数据呈现为生动的视觉形象。它不仅可以生成唯美的图形，还能编写出功能强大的互动艺术作品。
+- Processing。
+	- Processing是一款专为设计师和艺术家使用的编程语言，由美国麻省理工学院媒体实验室美学与运算小组( Aesthetics Computation Group )的Casey Reas与Ben Fry创立。Processing的出现，被视为艺术设计创作的一场革命。利用Processing，艺术家可以将抽象的数据呈现为生动的视觉形象。它不仅可以生成唯美的图形，还能编写出功能强大的互动艺术作品。
 
 
 

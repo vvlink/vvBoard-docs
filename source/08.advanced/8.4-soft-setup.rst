@@ -2,9 +2,11 @@
 虚谷号的软件安装
 ========================================
 
-一、虚谷号中软件安装方法
+软件安装方法
 -----------------------------
 1、APT方式
+
+【截图】
 
 （1）普通安装：sudo apt-get install softname1 softname2 …;
 
@@ -13,6 +15,8 @@
 （3）重新安装：sudo apt-get --reinstall install softname1 softname2...;
 
 2、Dpkg方式
+
+【截图】
 
 （1）普通安装：sudo dpkg -i package_name.deb
 
@@ -42,9 +46,11 @@ e．解xx.tar：tar xf xx.tar
 即可完成安装。
 
 ------------------------
-二、虚谷号中软件包的卸载方法
+软件包的卸载方法
 ------------------------
 1、APT方式
+
+【截图】
 
 （1）移除式卸载：sudo apt-get remove softname1 softname2 …;（移除软件包，当包尾部有+时，意为安装）
 
@@ -53,6 +59,8 @@ e．解xx.tar：tar xf xx.tar
    清除式卸载：sudo apt-get purge sofname1 softname2...;(同上，也清除配置文件)
 
 2、Dpkg方式
+
+【截图】
 
 （1）移除式卸载：sudo dpkg -r pkg1 pkg2 ...;
 
