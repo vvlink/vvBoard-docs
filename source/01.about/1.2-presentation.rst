@@ -33,6 +33,21 @@
 		- DDR: 32bit 位宽,2GB,LPDDR3
 		- eMMC: 32GB, 支持eMMC 4.41, 4.51, 5.0 and 5.1
 
+----------------------------
+外部硬件接口
+----------------------------
+
+	- mini HDMI: 1.HDMI 2.0a支持4K×2K 60Hz显示，支持HDCP 1.4/2.2；2.HDMI type C
+	- USB: 
+		-1. 1个Micro OTG接口，OTG模式支持U盘模式(device 模式)；
+		-2. 1个Micro USB作备用电源接口；
+		-3. USB2.0、USB3.0接口各一个（HOST A Type）;
+	- KEY: Linux系统复位按键
+	- WIFI/BT: WIFI IEEE 802.11 b/g/n; Bluetooth V4.0(HS) 
+	- LED: 3个LED灯用于指示虚谷号的运行状态
+
+【提供说明图】
+
 ------------------------------
 开源硬件接口
 ------------------------------
@@ -43,16 +58,7 @@
 	- IIR_R:一个红外遥控输入接口，输入电平3.3V，提供红外(遥控) 控制接口。
 	- ARDUINO接口:全兼容arduino接口;
 
-
-----------------------------
-外部硬件接口
-----------------------------
-
-	- mini HDMI: 1.HDMI 2.0a支持4K×2K 60Hz显示，支持HDCP 1.4/2.2；2.HDMI type C
-	- USB: 1. 1个Micro OTG接口，OTG模式支持U盘模式(device 模式)；2. 1个Micro USB作备用电源接口；3. USB2.0、USB3.0接口各一个（HOST A Type）;
-	- KEY: Linux系统复位按键
-	- WIFI/BT: WIFI IEEE 802.11 b/g/n; Bluetooth V4.0(HS) 
-	- LED: 3个LED灯用于指示虚谷号的运行状态
+【提供接口图】
 
 ----------------------------
 预装软件
@@ -65,6 +71,6 @@
 	- S4A（1.6）
 	- SIoT（1.2）
 
-
+【提供桌面截图】
 
 
