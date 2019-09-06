@@ -6,7 +6,7 @@ Arduino于2005年开发，起初仅为了方便设计学院的大学生设计互
 
 Arduino 语言建立在 C/C++ 基础上，保留了 C/C++的语法规范，并对 Arduino主控芯片底层进行了二次封装，使开发者无需考虑芯片的底层操作，只通过编写简单的代码就可以实现对Arduino芯片的控制。
 
-.. image:: ../images/05/arduino04.png
+.. image:: ../images/05/arduino01.png
 
 Arduino的官方网站：https://www.arduino.cc/
 
