@@ -46,7 +46,27 @@
 	- WIFI/BT: WIFI IEEE 802.11 b/g/n; Bluetooth V4.0(HS) 
 	- LED: 3个LED灯用于指示虚谷号的运行状态
 
-【提供说明图】
+.. image:: ../images/01/vvboard04.png
+
+其中标注1、2、3、4、5、6的接口解释如下：
+
+  1是USB2.0接口
+
+  2是OTG口，连接电脑的接口
+
+  3是USB3.0接口
+
+  4是HDMI输出接口
+
+  5是DC in接口，是电源输入接口
+
+  6是RESET按键，其功能如下：
+
+   未上电时按住reset按键，机器将进入Loader烧写模式
+
+   上电系统启动后，短按reset按键为刷新vvBoard功能
+
+   上电系统启动后，长按reset按键5秒后松开为重启系统功能
 
 ------------------------------
 开源硬件接口
@@ -64,13 +84,21 @@
 预装软件
 ----------------------------
 
-	- Python（3.5）
-	- Arduino（1.61）
-	- MpythonX（0.24）
-	- Processing（3.2）
-	- S4A（1.6）
-	- SIoT（1.2）
+- Python（3.5）
+- Arduino（1.61）
+- MpythonX（0.24）
+- Processing（3.2）
+- S4A（1.6）
+- SIoT（1.2）
 
-【提供桌面截图】
+
+教育版
+
+.. image:: ../images/01/vvboard05.png
+
+
+创客版
+
+.. image:: ../images/01/vvboard06.png
 
 
