@@ -110,6 +110,10 @@ Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是�
 
 修改config中，默认jupyter=1。
 
+Jupyter是学习Python程序员的好帮手，很多关于数据分析的课程，都是用Jupyter写的。更多关于Jupyter的功能应用，请参考本文档的第五部分。虚谷号团队也开发、收集了一些Jupyter的课程笔记，打开Jupyter应用即可看到。
+
+【截图】
+
 
 ---------------------------------------------------
 通过SSH开启远程桌面
