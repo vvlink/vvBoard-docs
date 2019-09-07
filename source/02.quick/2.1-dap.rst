@@ -88,5 +88,22 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 U盘资源简介
 -------------------------------------------
 
-vvBoard中的文件目录，具体详请参考本文档的第八部分。
+1、arduino_config.ini:配置运行的arduino程序（当运行的程序不是Arduino.ino或者arduino.ino形式命名则需配置）
+
+2、arduino_log.txt:arduino代码的编译、烧录的回写日志
+
+3、Aeduino/04.bak：存放刚运行完的程序，下次运行新的程序将会被替换
+
+4、python_config.ini:配置运行的python程序（当运行的程序不是main.py或者Main.py形式命名则需配置）
+
+5、python_log.txt:python程序检测发现错误的回写日志
+
+6、vvBoard_config.ini:配置WiFi连接及打开jupyter和siot服务
+
+7、wifi_log.txt:wifi连接上回写的连接日志
+
+8、REDAME.txt:虚谷号信息显示
+
+9、Notepad2:文档编辑器
+
 
