@@ -12,6 +12,7 @@
     8.2-dap-index
     8.3-hardware-resources
     8.4-soft-setup
+    8.5-docker
 
 
 
