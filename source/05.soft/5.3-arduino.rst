@@ -42,7 +42,7 @@ Arduino 语言常用于兼容Arduino的开源硬件的编程，是目前最流�
  
 .. image:: ../images/05/arduino03.png
  
-**注：此功能添加会影响Arduino IDE和Arduino IDE里面的示例打开的速度
+**注**：此功能添加会影响Arduino IDE和Arduino IDE里面的示例打开的速度。感谢DF的工程师李亮提供安装教程。
 
 
  
