@@ -90,14 +90,15 @@
 - Processing（3.2）
 - S4A（1.6）
 - SIoT（1.2）
+- ……
 
 
-教育版
+教育版桌面
 
 .. image:: ../images/01/vvboard05.png
 
 
-创客版
+创客版桌面
 
 .. image:: ../images/01/vvboard06.png
 
