@@ -88,7 +88,7 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 U盘资源简介
 -------------------------------------------
 
-1、arduino_config.ini:配置运行的arduino程序（当运行的程序不是Arduino.ino或者arduino.ino形式命名则需配置）
+> 1、arduino_config.ini:配置运行的arduino程序（当运行的程序不是Arduino.ino或者arduino.ino形式命名则需配置）
 
 2、arduino_log.txt:arduino代码的编译、烧录的回写日志
 
@@ -105,5 +105,7 @@ U盘资源简介
 8、REDAME.txt:虚谷号信息显示
 
 9、Notepad2:文档编辑器
+
+关于U盘文件的详细介绍，请浏览本文档的第八部分。
 
 
