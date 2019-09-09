@@ -35,11 +35,11 @@ PC模式
 
 1）在终端输入uname可以查看vvBoard相关资料。
 
-【截图】
+.. image:: ../images/02/pc04.jpg
 
 2）在终端输入ls /dev可以查看插入的串口设备串口
 
-【截图】
+.. image:: ../images/02/pc05.jpg
 
 3）修改显示屏的分辨率
 
@@ -53,11 +53,15 @@ PC模式
 
 4）编写并运行Python代码
 
-【截图】
+.. image:: ../images/02/pc06.jpg
+
+.. image:: ../images/02/pc07.jpg
+
+.. image:: ../images/02/pc08.jpg
 
 5）用S4A编程
 
-【截图】
+.. image:: ../images/02/pc09.jpg
 
 
 ------------------------------------------------
