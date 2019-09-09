@@ -23,7 +23,8 @@
 
 通过USB线将虚谷板（OTG口）连接上电脑，约十多秒后，电脑会出现一个名为vvBoard的U盘。用记事本打开vvBoard文件夹中的vvBoard_config.ini文件，在“SSID=”和“SSID_PSD=”输入信息。
 
-【截图】
+.. image:: ../images/02/u-driver02.jpg
+
 
 步骤2:
 
@@ -69,7 +70,9 @@ SSH功能
 
 在CMD窗口输入：ssh -p 22 scope@192.168.1.192
 
-【截图】
+.. image:: ../images/02/wifi01.jpg
+
+.. image:: ../images/02/wifi02.jpg
 
 步骤2：安装Python库
 
@@ -86,7 +89,7 @@ Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是�
 
 在浏览器输入http://【虚谷号IP】:8888，即可打开一个页面，输入密码scope。
 
-【截图】
+.. image:: ../images/02/wifi03.jpg
 
 步骤2:运行Linux命令
 
@@ -116,7 +119,7 @@ Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是�
 
 Jupyter是学习Python程序员的好帮手，很多关于数据分析的课程，都是用Jupyter写的。更多关于Jupyter的功能应用，请参考本文档的第五部分。虚谷号团队也开发、收集了一些Jupyter的课程笔记，打开Jupyter应用即可看到。
 
-【截图】
+.. image:: ../images/02/wifi04.jpg
 
 
 ---------------------------------------------------
