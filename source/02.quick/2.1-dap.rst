@@ -46,15 +46,19 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 
 更改U盘vvboard文件夹的”vvBoard_config.ini”中，SSID和SSID_PSD。短按RST键重启U盘服务，然后在U盘vvboard文件夹的“wifi_log.txt”中，找到IP地址。
 
-【截图，做记号】
+.. image:: ../images/02/u-driver02.jpg
+
+.. image:: ../images/02/u-driver03.jpg
 
 2）烧录Arduino代码
 
 复制标准arduino代码到U盘的Arduino文件夹下，命名为“arduino.ino”，按下RST键，U盘的盘符将暂时消失，约十秒钟左右，板子上有LED闪烁，表示虚谷号将代码写入板载Arduino。
 
-【截图，做记号】
+.. image:: ../images/02/u-driver04.jpg
 
 如果没有发现板子上的LED闪烁，请打开log文件检查原因。烧录成功的ino文件将移到BAK文件夹。
+
+.. image:: ../images/02/u-driver05.jpg
 
 1）运行Python文件
 
@@ -68,7 +72,7 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
  
 看一下，目录下是否出现一个“print.txt”文件？
 
-【截图，做记号】
+.. image:: ../images/02/u-driver06.jpg
 
 如果Python代码中调用了xugu库，虚谷号系统将判断板载Arduino是否已经写入firmata协议（如果没有则自动写入，要延时一定的时间，并且可以看到板子上的LED闪烁），然后运行代码。
 
