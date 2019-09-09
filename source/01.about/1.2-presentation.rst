@@ -83,20 +83,21 @@
 ----------------------------
 预装软件
 ----------------------------
+教育版软件
 
-- Python（3.5）
-- Arduino（1.61）
-- MpythonX（0.24）
-- Processing（3.2）
-- S4A（1.6）
-- SIoT（1.2）
-- ……
-
+.. image:: ../images/01/vvboard07.png
 
 教育版桌面
 
 .. image:: ../images/01/vvboard05.png
 
+
+
+
+
+创客版软件
+
+.. image:: ../images/01/vvboard08.png
 
 创客版桌面
 
