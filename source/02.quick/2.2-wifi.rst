@@ -70,8 +70,6 @@ SSH功能
 
 在CMD窗口输入：ssh -p 22 scope@192.168.1.192
 
-.. image:: ../images/02/wifi01.jpg
-
 .. image:: ../images/02/wifi02.jpg
 
 步骤2：安装Python库
