@@ -16,19 +16,16 @@ Jupyter快速入门
 
 在浏览器输入http://【虚谷号IP】:8888，即可打开一个页面，输入密码scope。
 
-【截图】
+.. image:: ../images/02/wifi03.jpg
 
 步骤2:运行Linux命令
 
-
-【截图】
-
+.. image:: ../images/02/wifi07.jpg
 
 步骤3:新建Jupyter笔记
 
+.. image:: ../images/02/wifi05.jpg
 
-
-【截图】
 
 
 ------------------------------
