@@ -37,7 +37,7 @@
 外部硬件接口
 ----------------------------
 
-	- HDMI: 1.Mini HDMI 2.0a接口*1，支持4K×2K 60Hz显示，HDCP 1.4/2.2；3D viedo formats
+	- HDMI: 1,Mini HDMI 2.0a接口*1，支持4K×2K 60Hz显示，HDCP 1.4/2.2；2,   3D viedo formats
 	- USB: 
 		-1. 1个Micro OTG接口，OTG模式支持U盘模式(device 模式)；
 		
