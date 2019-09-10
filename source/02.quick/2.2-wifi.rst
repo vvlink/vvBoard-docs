@@ -93,8 +93,9 @@ Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是�
 
 步骤2:运行Linux命令
 
+.. image:: ../images/02/wifi06.jpg
 
-【截图】
+.. image:: ../images/02/wifi07.jpg
 
 
 步骤3:运行Python代码
