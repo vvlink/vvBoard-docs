@@ -102,17 +102,17 @@ Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是�
 
 运行Python代码有多种方式。
 
- - 方式1:通过Linux命令
+方式1:通过Linux命令
 
-【截图】
+.. image:: ../images/02/wifi11.jpg
 
- - 方式2:通过笔记运行代码
+方式2:通过笔记运行代码
 
-【截图】
+.. image:: ../images/02/wifi12.jpg
 
- - 方式3:通过笔记运行外部文件
+方式3:通过笔记运行外部文件
 
-【截图】
+.. image:: ../images/02/wifi13.jpg
 
 注：如何关闭Jupyter功能？
 
