@@ -6,7 +6,8 @@
 -----------------------------
 1、APT方式
 
-【截图】
+.. image:: ../images/08/soft01.png
+
 
 （1）普通安装：sudo apt-get install softname1 softname2 …;
 
@@ -16,7 +17,7 @@
 
 2、Dpkg方式
 
-【截图】
+.. image:: ../images/08/soft02.png
 
 （1）普通安装：sudo dpkg -i package_name.deb
 
@@ -50,7 +51,7 @@ e．解xx.tar：tar xf xx.tar
 ------------------------
 1、APT方式
 
-【截图】
+.. image:: ../images/08/soft03.png
 
 （1）移除式卸载：sudo apt-get remove softname1 softname2 …;（移除软件包，当包尾部有+时，意为安装）
 
@@ -60,7 +61,7 @@ e．解xx.tar：tar xf xx.tar
 
 2、Dpkg方式
 
-【截图】
+.. image:: ../images/08/soft04.png
 
 （1）移除式卸载：sudo dpkg -r pkg1 pkg2 ...;
 
