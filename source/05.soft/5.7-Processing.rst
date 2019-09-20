@@ -32,7 +32,7 @@ Processing的特色
 
 利用Processing可以实现梦幻般的视觉展示效果。http://www.openprocessing.org/和http://wiki.processing.org/均是Processing的资源网站，提供了大量美轮美奂的画面。当然，这些画面都是用Processing画出来的。
  
-.. image:: ../images/05/processing-4.png
+.. image:: ../images/05/processing-4.jpg
 
 2.代码简洁但功能强大
 
