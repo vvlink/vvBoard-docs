@@ -58,7 +58,7 @@ IR Transmitter Module是一款Arduino兼容的38KHz红外线发射传感器，�
 
 采用红外遥控形式控制家电，是目前最常见的智能家居实现手段之一。如BroadLink博联万能遥控器，实际上就是一个能连接Wi-Fi的红外遥控器。用虚谷号加IR Transmitter Module，就能实现。
 
-.. image:: ../images/06/6.4.6.png
+.. image:: ../images/06/6.4.6.jpg
 
 3.网络控制
 
