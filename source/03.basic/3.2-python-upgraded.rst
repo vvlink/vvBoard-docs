@@ -1,4 +1,4 @@
-
+﻿
 Python运行和库维护
 ==================================
 
@@ -10,11 +10,11 @@ Python运行和库维护
 
 1）通过USB线将虚谷板（OTG口）连接上电脑，约十多秒后，电脑会出现一个名为vvBoard的U盘。
 
-2）将Python文件复制到U盘的“Python”文件夹下，命名为mian.py。
+2）将Python文件复制到U盘的“Python”文件夹下，命名为main.py。
 
 3）短按虚谷板的RST键，U盘会暂时消失，等到U盘图标再次出现，Python代码已经成功执行了。
 
-4）“Python”文件夹下的python_log文件，记录了python程序的输出内容还有错误信息，方便用户调试。
+4）“Python”文件夹下的python_log文件，记录了python程序的输出内容还有错误的信息，方便用户调试。
 
 5）如果希望默认执行的Python文件名不是main.py，可以修改python_config.ini文件。“Python=test.py”表示默认执行的文件名是“test.py”。
 
@@ -339,13 +339,6 @@ zxing-------------------------0.9.3
   Pip uninstall [package]
   
   注：卸载完成之后到usr/local/lib/Python3.5/dist-packages目录下检查package文件夹是否还在，如果还在，删除之【注意此时必须关闭python】
-
-
-
-
-
-
-
 
 
 
