@@ -4,6 +4,7 @@
   虚谷号是集成高性能处理器和通用单片机芯片，内置多种通信和扩展接口，是为中小学Python编程和人工智能教育设计的一款开源硬件。虚谷号既可以作为一台全功能的迷你教育电脑，又可以通过U盘和无线模式在普通机房使用，适合以大班的方式开展教学。
 
 文档开源地址（github）：https://github.com/vvlink/vvBoard-docs
+
 国内镜像地址（码云）：https://gitee.com/xiezuoru/vvBoard-docs
 
 本文档的阅读地址：https://vvboard.readthedocs.io/
