@@ -1,3 +1,4 @@
+﻿
 
 U盘模式
 ===========================
@@ -52,33 +53,38 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 
 2）烧录Arduino代码
 
-复制标准arduino代码到U盘的Arduino文件夹下，命名为“arduino.ino”，按下RST键，U盘的盘符将暂时消失，约十秒钟左右，板子上有LED闪烁，表示虚谷号将代码写入板载Arduino。
+复制标准arduino代码（例：Blink.ino）到U盘的Arduino文件夹下，命名为“arduino.ino”，按下RST键，U盘的盘符将暂时消失，约十秒钟左右，板子上有LED快速闪烁，表示虚谷号将代码写入板载Arduino。
 
 .. image:: ../images/02/u-driver04.jpg
 
-如果没有发现板子上的LED闪烁，请打开log文件检查原因。烧录成功的ino文件将移到BAK文件夹。
+如果没有发现板子上的LED快速闪烁，请查看arduino.ino是否移动到04.bak,没有则说明程序没有去写入,请查看你的文件命名是否正确。
 
 .. image:: ../images/02/u-driver05.jpg
 
-1）运行Python文件
+如果led灯快闪闪烁后，没有亮一秒灭一秒，说明写入失败，打开log文件检查原因。烧录成功则led灯亮一秒熄灭一秒。
 
-复制标准的Python代码（如将下面的代码复制到一个新的文本文件）到U盘的Pythono文件夹下，命名为“mian.py”，按下RST键，U盘的盘符将暂时消失，当再次出现盘符时，程序已经成功执行。
+1）运行Python文件（注：log只会打印代码格式不正确的问题，并且不能通过Python程序在U盘创建文件和写入内容到文件，此功能将在会在下一版版本进行更改）
+
+复制标准的Python代码（如将下面的代码复制到一个新的文本文件）到U盘的Pythono文件夹下，命名为“main.py”，按下RST键，U盘的盘符将暂时消失，当再次出现盘符时，程序已经成功执行。
 
 ::
-	f= open('print.txt', 'wb')
-	line="你好，虚谷号！"
-	f.write(line.encode())
-	f.close()
- 
-看一下，目录下是否出现一个“print.txt”文件？
+	import time # 导入 time 模块
 
-.. image:: ../images/02/u-driver06.jpg
+	
+	from xugu import Pin # 从 xugu 库中导入 Pin 类
+	
+	
+led = Pin(13, Pin.OUT) # 初始化 Pin 类
+# 
+	
+	led.write_digital(1) # 点亮连接 13 号引脚的 LED 灯
+
+ 
+看一下板子上的13脚灯是否点亮？
 
 如果Python代码中调用了xugu库，虚谷号系统将判断板载Arduino是否已经写入firmata协议（如果没有则自动写入，要延时一定的时间，并且可以看到板子上的LED闪烁），然后运行代码。
 
-哪怕断电重启虚谷号，Pythono文件夹下的“mian.py”都会保持开机运行，除非删除。打开log文件，可以看到Python代码的运行情况。
-
-【截图，做记号】
+哪怕断电重启虚谷号，Pythono文件夹下的“main.py”都会保持开机运行，除非删除。打开log文件，可以看到Python代码的运行情况。
 
 
 -------------------------------------------
@@ -94,11 +100,13 @@ U盘资源简介
 
 	- python_config.ini:配置运行的python程序（当运行的程序不是main.py或者Main.py形式命名则需配置）
 
-	- python_log.txt:python程序检测发现错误的回写日志
+	- python_log.txt:python程序检测发现代码格式错误的回写日志
 
 	- vvBoard_config.ini:配置WiFi连接及打开jupyter和siot服务
 
 	- wifi_log.txt:wifi连接上回写的连接日志
+
+        - Notepad2查看代码的文本编辑器，如果电脑打开代码没有换行可以使用这个工具打开
 
 
 关于U盘文件的详细介绍，请浏览本文档的第八部分。
@@ -118,6 +126,4 @@ U盘烧录的一些技巧
 2、如何实现用Python代码与板载Arduino做更复杂的互动？比如在厚物的OLED屏上显示文字。
 
 需要另外编写Arduino程序，通过串口和板载Arduino交互。很多虚谷号的爱好者在开发这方面的范例程序。其实在网上能够找到很多关于电脑（Python）和Arduino互动的例子，都可以移植到虚谷号上。
-
-
 
