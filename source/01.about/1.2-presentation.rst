@@ -37,13 +37,11 @@
 外部硬件接口
 ----------------------------
 
-	- HDMI: 1,Mini HDMI 2.0a接口*1，支持4K×2K 60Hz显示，HDCP 1.4/2.2；2,   3D viedo formats
+	- HDMI: 1,Mini HDMI 2.0a接口*1，支持4K×2K 60Hz显示，HDCP 1.4/2.2；2,3D viedo formats
 	- USB: 
-		-1. 1个Micro OTG接口，OTG模式支持U盘模式(device 模式)；
-		
-		-2. 1个Micro USB作备用电源接口；
-		
-		-3. USB2.0、USB3.0接口各一个（HOST A Type）;
+		- 1. 1个Micro OTG接口，OTG模式支持U盘模式(device 模式)；
+		- 2. 1个Micro USB作备用电源接口；
+		- 3. USB2.0、USB3.0接口各一个（HOST A Type）;
 	- KEY: Linux系统复位按键
 	- WIFI/BT: WIFI IEEE 802.11 b/g/n; Bluetooth V4.0(HS) 
 	- LED: 3个LED灯用于指示虚谷号的运行状态
@@ -52,23 +50,15 @@
 
 其中标注1、2、3、4、5、6的接口解释如下：
 
-  1是USB2.0接口
-
-  2是OTG口，连接电脑的接口
-
-  3是USB3.0接口
-
-  4是HDMI输出接口
-
-  5是DC in接口，是电源输入接口
-
-  6是RESET按键，其功能如下：
-
-   未上电时按住reset按键，机器将进入Loader烧写模式
-
-   上电系统启动后，短按reset按键为刷新vvBoard功能
-
-   上电系统启动后，长按reset按键5秒后松开为重启系统功能
+  - 1是USB2.0接口；
+  - 2是OTG口，连接电脑的接口；
+  - 3是USB3.0接口；
+  - 4是HDMI输出接口；
+  - 5是DC in接口，是电源输入接口；
+  - 6是RESET按键，其功能如下：
+		- 未上电时按住reset按键，机器将进入Loader烧写模式。
+		- 上电系统启动后，短按reset按键为刷新vvBoard功能。
+		- 上电系统启动后，长按reset按键5秒后松开为重启系统功能。
 
 ------------------------------
 开源硬件接口
@@ -77,8 +67,8 @@
 	- I2C: 一组I2C，3.3V电平信号，5V供电;
 	- ISPI(I2S):1. 一组SPI接口(兼容I2S)，3.3V电平; 2. SPI(I2S)支持主从模式;
 	- IUART2:一组UART，兼作虚谷号内核调试，系统信息打印等;
-	- IIR_R:一个红外遥控输入接口，输入电平3.3V，提供红外(遥控) 控制接口。
-	- ARDUINO接口:全兼容arduino接口;
+	- IIR_R:一个红外遥控输入接口，输入电平3.3V，提供红外(遥控) 控制接口；
+	- ARDUINO接口:全兼容arduino UNO的接口。
 
 如上图所示
 
