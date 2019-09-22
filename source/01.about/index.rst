@@ -10,7 +10,7 @@
 
     1.1-story
     1.2-presentation
-    1.3-log
-    1.4-ecology
+    1.3-ecology
+    1.4-log
     1.5-docs
 
