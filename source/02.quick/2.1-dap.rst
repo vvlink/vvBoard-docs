@@ -7,7 +7,7 @@ U盘模式
 
 U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG口和电脑USB口连接后，电脑上将出现一个虚拟的U盘。将Arduino、Python代码复制到U盘的相应目录后，按下RST键，U盘的盘符将暂时消失，当再次出现盘符时，程序已经成功执行。
 
-【照片，标注OTG口和RST口】
+.. image:: ../images/02/u-driver07.jpg
 
 -------------------------
 应用场景
@@ -50,8 +50,6 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 更改U盘vvboard文件夹的”vvBoard_config.ini”中，SSID和SSID_PSD。短按RST键重启U盘服务，然后在U盘vvboard文件夹的“wifi_log.txt”中，找到IP地址。
 
 .. image:: ../images/02/u-driver02.jpg
-
-.. image:: ../images/02/u-driver03.jpg
 
 2）烧录Arduino代码
 
