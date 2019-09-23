@@ -33,7 +33,7 @@ Arduino 语言常用于兼容Arduino的开源硬件的编程，是目前最流�
 
 虚谷号兼容Arduino UNO的扩展板，利用扩展板就能轻易接上常见的Arduino扩展模块，如各种传感器、LED灯、舵机等。
 
-【照片】
+.. image:: ../images/05/arduino04.jpg
 
 如图所示，虚谷号插上Arduino UNO的普通扩展板，接上一个光线传感器和舵机。
 
