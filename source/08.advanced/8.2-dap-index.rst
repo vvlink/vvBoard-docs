@@ -58,7 +58,7 @@ Docs：存放vvBoard的说明文档
 
 system_log.txt：系统log
 
-Tools：存放工具
+Tools：存放工具，例如：notepad文本编辑工具
 
 vvBoard_config.txt：配置wifi和jupyter
 
