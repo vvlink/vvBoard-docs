@@ -68,6 +68,7 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 复制标准的Python代码（如将下面的代码复制到一个新的文本文件）到U盘的Pythono文件夹下，命名为“main.py”，按下RST键，U盘的盘符将暂时消失，当再次出现盘符时，程序已经成功执行。
 
 代码1::
+	
 	from xugu import Pin # 从 xugu库中导入Pin类
 	led = Pin(13, Pin.OUT) # 初始化Pin类
 	led.write_digital(1) # 点亮连接13号引脚的LED灯
