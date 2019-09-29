@@ -13,7 +13,9 @@
 
 学习过程：
 
-这里我们复制标准arduino代码（例：Blink.ino）到U盘的Arduino文件夹下，命名为“arduino.ino”。（Blink.ino在Arduino\01.example\01.Basics\Blink里）这里如果不更改文件名的话，则需要打开arduino_config.ini文件修改Arduino=Blink.ino，这样也可以运行。
+复制标准的arduino代码（例：Blink.ino）到U盘的Arduino文件夹下，命名为“arduino.ino”。（Blink.ino在Arduino\01.example\01.Basics\Blink里）
+
+如果不更改文件名的话，则需要打开arduino_config.ini文件修改参数，如Arduino=Blink.ino，这样也可以运行。
 
 按下RST键，U盘的盘符将暂时消失，约十秒钟左右，板子上有LED快速闪烁，表示虚谷号将代码写入板载Arduino。之后D13 LED灯会按程序写的亮1秒熄灭1秒的闪烁。
 （如果没有发现板子上的LED快速闪烁，请查看arduino.ino是否移动到04.bak,没有则说明程序没有去写入,请查看你的文件命名是否正确。如果led灯快闪闪烁后，没有亮一秒灭一秒，说明写入失败，打开log文件检查原因。烧录成功则led灯亮一秒熄灭一秒。）
@@ -38,7 +40,7 @@
 
 在Python目录下新建一个test.py文件，打开编辑一个python代码（也可以在其他编辑器上写完粘贴过来）保存。
 
-打开python _ config.ini文件，修改Python=test.py并保存。
+打开python_config.ini文件，修改Python=test.py并保存。
 
 这里我们也可以选择把新建文件的名字改成main.py ，这样不需要打开ini文件修改，可以直接执行。
 
@@ -47,17 +49,15 @@
 ---------------------
 配置无线连接
 ---------------------
-学习目标：
-
-在u盘模式连接wifi
+学习目标：在u盘模式连接wifi
 
 学习过程：
 
-首先我们打开vvBoard下面的vvBoard_config.ini文件设置SSID和密码，SSID是wifi名称，SSID _ PSD是密码。
+首先我们打开vvBoard下面的vvBoard_config.ini文件设置SSID和密码，SSID是wifi名称，SSID_PSD是密码。
 
 比如打开我们的手机热点，将名称密码输入。
 
-保存并关闭文件，短按reset，稍等片刻，就会连接上指定的wifi了，这里我们可以打开vvBoard目录下的wifi _ log.txt文件查看。连接上的话可以看到wifi的IP地址。如果连接手机热点通过手机也可以查看到。
+保存并关闭文件，短按reset，稍等片刻，就会连接上指定的Wi-Fi了，这里我们可以打开vvBoard目录下的wifi _ log.txt文件查看。连接上的话可以看到wifi的IP地址。如果连接手机热点通过手机也可以查看到。
 
 如果在Wi-Fi配置信息中找不到IP地址，很有可能是虚谷号的DAP系统启动速度太快，而路由器的速度有点慢，导致IP地址还没来得及分配就启动进入了U盘模式。遇到这种情况，只需要再按一次RST键就能解决。
 
@@ -65,9 +65,7 @@
 ---------------------
 连接Jupyter
 ---------------------
-学习目标：
-
-通过无线模式连接jupyter
+学习目标：通过无线模式连接jupyter
 
 学习过程：
 
