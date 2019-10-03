@@ -22,11 +22,21 @@ Jupyter快速入门
 
 .. image:: ../images/02/wifi07.jpg
 
+在仿真的终端页面，Jupyter几乎支持所有的命令，如安装软件、安装Python库文件、运行Python程序等。当关闭窗口后，再次打开，还能够看到之前的命令运行状态。
+
+通过终端页面，还能够看到一共有几个命令窗口在运行。在不同电脑登陆Jupyter，可以共享这一界面。（用于教学非常合适）
+
 步骤3:新建Jupyter笔记
 
 .. image:: ../images/02/wifi05.jpg
 
+Jupyter的笔记分为两种类型，一种是代码，另一种是文本。代码带有“in”的标识，支持python、命令行、Processong（需要插件）。文本支持Makedown语法。
 
+步骤4:浏览Jupyter笔记
+
+在网上能够找到很多ipynb笔记（扩展名为ipynb），如jupyter的官方网站。（https://nbviewer.jupyter.org/）
+
+虚谷号上提供了一些学习笔记，在vvboardbook文件夹中。激活命令窗口，选择执行，查看命令执行的效果。
 
 ------------------------------
 如何用Jupyter写笔记
