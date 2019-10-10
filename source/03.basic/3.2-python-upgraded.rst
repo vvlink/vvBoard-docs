@@ -10,15 +10,15 @@ Python运行和库维护
 
 1）通过USB线将虚谷板（OTG口）连接上电脑，约十多秒后，电脑会出现一个名为vvBoard的U盘。
 
-2）将Python文件复制到U盘的“Python”文件夹下，命名为main.py。
+2）将Python文件复制到U盘的“Python”文件夹下，更名为test.py。
 
-3）短按虚谷板的RST键，U盘会暂时消失，等到U盘图标再次出现，Python代码已经成功执行了。
+3）打开python_config.ini文件，修改Python=test.py和Run_time=5并保存。
 
-4）“Python”文件夹下的python_log文件，记录了python程序的输出内容还有错误的信息，方便用户调试。
+4）短按虚谷板的RST键，U盘会暂时消失，等到U盘图标再次出现，Python代码已经成功执行了。
 
-5）如果希望默认执行的Python文件名不是main.py，可以修改python_config.ini文件。“Python=test.py”表示默认执行的文件名是“test.py”。
+5）待vvBoard刷新后进入到Python文件夹下会看到一个python_log文件，python程序的输出内容还有错误信息全都保存在此文件中。
 
-  注：python_log.txt输出python格式出错的log
+  注：Run_time=0时不会打印log，只会打印代码格式报错信息
 
 --------------------------------
 通过无线方式运行
