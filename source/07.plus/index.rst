@@ -11,5 +11,4 @@
     7.1-houwu
     7.2-camera
     7.3-sound-card
-
-
+    7.4-hdmi
