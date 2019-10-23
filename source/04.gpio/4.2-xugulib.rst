@@ -4,7 +4,7 @@ xugu库的使用
 
 xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类。
 
-只要Python代码中引用了xugu库，虚谷号会自动检测板载的Arduino UNO（ATmega328P芯片）是否烧写了标准的Firmata协议。如果没有，则烧录，确保GPIO的正常使用。
+只要Python代码中引用了xugu库，虚谷号会自动检测板载的Arduino UNO（ATmega328P芯片）是否烧写了标准的Firmata协议。如果没有，则烧录，确保GPIO的正常使用。因此第一次引用xugu库，大约需要十多秒时间来烧写Firmata协议固件。
 
 **注：xugu库的语法参考了micro:bit和掌控板，与二者基本一致。
 
