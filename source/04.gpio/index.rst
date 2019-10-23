@@ -10,4 +10,5 @@
 
     4.1-gpio
     4.2-xugulib
+    4.3-arduino
 
