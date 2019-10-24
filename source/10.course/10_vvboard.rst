@@ -26,27 +26,27 @@ SIoT已在虚谷号出厂预装。作为一个开源物联网项目，若被删�
 虚谷号部署SIoT的步骤如下：
 
 1.将USB线连至虚谷号的OTG口
- .. image:: ../images/10/TDS_002.jpg 
+.. image:: ../images/10/TDS_002.jpg 
 
 2.稍后系统会将虚谷号识别为一个U盘
- .. image:: ../images/10/TDS_003.jpg
+.. image:: ../images/10/TDS_003.jpg
  
 3.打开vvBoard的文件夹
- .. image:: ../images/10/TDS_004.jpg
+.. image:: ../images/10/TDS_004.jpg
  
 4.用记事本编辑vvBoard_config文件
-  .. image:: ../images/10/TDS_005.jpg
+.. image:: ../images/10/TDS_005.jpg
 
 将SSID和SSID_PSD改为局域网的WIFI账号密码，保存配置文件。
 
 5.重启虚谷号，双击“访问siot”
- .. image:: ../images/10/TDS_006.jpg
+.. image:: ../images/10/TDS_006.jpg
 
 正常情况下，此时浏览器应呈现SIOT的后台登录页面
- .. image:: ../images/10/TDS_007.jpg
+.. image:: ../images/10/TDS_007.jpg
 
 如果未自动生成包含虚谷号IP地址的快捷方式，可再次进入vvBoard文件夹，打开其中的wifi_log日志文件。
- .. image:: ../images/10/TDS_008.jpg
+.. image:: ../images/10/TDS_008.jpg
 
  .. image:: ../images/10/TDS_009.jpg
 如图，虚谷号的IP地址为192.168.0.1，
@@ -65,7 +65,7 @@ SIoT已在虚谷号出厂预装。作为一个开源物联网项目，若被删�
 掌控I/O扩展板×1
 Gravity模拟TDS传感器×1
 配合掌控I/O扩展板以及Gravity: 模拟TDS传感器，装置的搭建实现了模块化。将TDS传感器的信号线依据颜色对应的原则接到扩展板的P1口，插上掌控板，实验装置便组装完成了。简便的搭建过程为大班应用提供了可能。
- .. image:: ../images/10/TDS_011.jpg
+.. image:: ../images/10/TDS_011.jpg
 
 --------------------------
 实验装置程序设计
@@ -73,7 +73,7 @@ Gravity模拟TDS传感器×1
 
 掌控板的程序设计由DFROBOT的Mind+软件完成。功能上设计为按A键，开始检测和上传TDS传感器返回的数据，按B键停止检测和上传数据。检测和上传数据间隔时间1秒，契合上下移动探头并记录TDS值的节奏。如此短暂的记录间隔，让小学生人工实现几乎是不可能完成的任务。
 
- .. image:: ../images/10/TDS_012.jpg
+.. image:: ../images/10/TDS_012.jpg
 
  .. image:: ../images/10/TDS_013.jpg
 MQTT初始化参数的正确设置是数据成功上传到虚谷号SIOT服务器的关键。尤其需要注意Topic的命名规则，务必加上“/”。平台默认账号、密码均为scope，可在SIOT配置文件中自行修改。
@@ -83,13 +83,13 @@ MQTT初始化参数的正确设置是数据成功上传到虚谷号SIOT服务器
 --------------------------
 
 测试发现TDS传感器对盐分非常敏感。
- .. image:: ../images/10/TDS_014.gif
+.. image:: ../images/10/TDS_014.gif
 依照前述实验步骤投放食盐，
- .. image:: ../images/10/TDS_015.gif
+.. image:: ../images/10/TDS_015.gif
 然后缓缓下方探头，可见TDS值迅速升高，在接近底部时达到传感器量程极限。提升探头时，TDS值又逐渐下降。
- .. image:: ../images/10/TDS_016.gif
+.. image:: ../images/10/TDS_016.gif
 后台实时刷新的折线图
- .. image:: ../images/10/TDS_017.jpg
+.. image:: ../images/10/TDS_017.jpg
 以EXCEL格式导出的数据
 鉴于Mind+没有提供使用掌控板作为主控时的TDS传感器插件，本套装置记录的数据为未经标定的模拟量。即便如此，用以反馈盐分浓度的变化趋势，还是恰当的。
 
@@ -98,18 +98,18 @@ MQTT初始化参数的正确设置是数据成功上传到虚谷号SIOT服务器
 --------------------------
 
 虚谷号在课堂上可以用充电宝、外接电源等供电。
- .. image:: ../images/10/TDS_018.jpg
+.. image:: ../images/10/TDS_018.jpg
 
 如果教室有电脑，直接插上USB接口即可。为其供电外，也方便直接访问U盘模式下的网页快捷方式打开SIOT后台页面。
- .. image:: ../images/10/TDS_019.jpg
+.. image:: ../images/10/TDS_019.jpg
 
 课上借助实物展台向学生简介了我们的数字化实验装置，并一笔带过TDS的概念。关键是让学生清楚数值越高，水中的盐分越高。
- .. image:: ../images/10/TDS_020.jpg
+.. image:: ../images/10/TDS_020.jpg
 
 教材安排的高锰酸钾溶解实验照旧进行了演示。这样既有高锰酸钾溶解过程的形象化迁移，又有虚谷物联提供的可视化数据支撑，可进一步帮助学生形成认知。 
 课堂上的实验效果与测试时接近。
 
- .. image:: ../images/10/TDS_021.jpg
+.. image:: ../images/10/TDS_021.jpg
 
 大屏幕上伴随探头位置实时刷新的折线图，让学生从数据的视角看到了食盐的扩散过程，有效注意被显著激发。
 
