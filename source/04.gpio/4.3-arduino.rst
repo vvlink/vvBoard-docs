@@ -19,6 +19,8 @@ Arduino接DH11传感器，将数据通过串口发送给虚谷号。虚谷号使
 1.Arduino代码
 
 ::
+
+
     // Example testing sketch for various DHT humidity/temperature sensors
     // Written by ladyada, public domain
 
@@ -78,6 +80,8 @@ Arduino接DH11传感器，将数据通过串口发送给虚谷号。虚谷号使
 2.Python代码
 
 ::
+
+
     import serial
     import time
     import subprocess
@@ -149,6 +153,8 @@ Arduino接DH11传感器，将数据通过串口发送给虚谷号。虚谷号使
 
 
 ::
+
+
     import serial
     import time
     import subprocess
