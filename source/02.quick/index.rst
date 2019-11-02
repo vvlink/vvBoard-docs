@@ -8,6 +8,7 @@
     :maxdepth: 2
     :numbered: 2
 
+    2.0-start
     2.1-dap
     2.2-wifi
     2.3-pc
