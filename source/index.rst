@@ -20,3 +20,4 @@
     07.plus/index
     08.advanced/index
     09.case/index
+    10.course/index

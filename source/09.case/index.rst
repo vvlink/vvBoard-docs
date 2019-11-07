@@ -12,6 +12,7 @@
     9.2-facetest
     9.3-UAV.rst
     9.4-vrobot.rst
+    9.5-science.rst
 
 
 
