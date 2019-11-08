@@ -110,7 +110,7 @@ Wi-Fi和蓝牙
 
 .. image:: ../images/03/wifi-bt21.png
 
-点击Stop（出现的提示是正常的，请不要担心，继续往下操作）
+点击Stop（暂时没有PIN码是正常的，请不要担心，继续往下操作）
 
 .. image:: ../images/03/wifi-bt22.png
 
