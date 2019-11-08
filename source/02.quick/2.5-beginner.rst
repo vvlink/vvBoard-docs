@@ -22,7 +22,9 @@
 
 做完上面的接下来我们就要修改程序了，将文件从Arduino/04.bak复制到Arduino文件夹内。
 
-使用记事本打开文件，里面的digitalWrite(LED_BUILTIN, HIGH)为灯亮，digitalWrite(LED_BUILTIN, LOW)为灯灭，通过修改延迟时间（delay（））里面的值来控制灯亮灭的时间。例如改为亮3秒，熄灭5秒。
+使用记事本打开文件，里面的digitalWrite(LED_BUILTIN, HIGH)为灯亮，digitalWrite(LED_BUILTIN, LOW)为灯灭，通过修改延迟时间（delay(millisecond)）里面的值来控制灯亮灭的时间。例如改为亮3秒，熄灭5秒。
+
+- 注：Arduino中延迟时间函数参数单位是毫秒，而python中参数单位是秒。
 
 短按reset再次运行，这次灯闪就变成了亮3秒，熄灭5秒了。
 
@@ -46,6 +48,8 @@
 
 最后按下reset按键等待虚谷号刷新。这样文件就执行啦。
 
+- 注：Arduino中延迟时间函数参数单位是毫秒，而python中参数单位是秒。
+
 ---------------------
 配置无线连接
 ---------------------
@@ -55,7 +59,7 @@
 
 首先我们打开vvBoard下面的vvBoard_config.ini文件设置SSID和密码，SSID是wifi名称，SSID_PSD是密码。
 
-比如打开我们的手机热点，将名称密码输入。
+比如打开我们的手机热点（在手机上设置时选择AP频段为2.4GHz频段），将名称密码输入。
 
 保存并关闭文件，短按reset，稍等片刻，就会连接上指定的Wi-Fi了，这里我们可以打开vvBoard目录下的wifi _ log.txt文件查看。连接上的话可以看到wifi的IP地址。如果连接手机热点通过手机也可以查看到。
 
