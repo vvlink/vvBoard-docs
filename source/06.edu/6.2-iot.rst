@@ -66,7 +66,47 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 .. image:: ../images/06/6.2_install_siot.JPG
 
-使用python语言为虚谷号编程，内容如下：
+使用python语言为虚谷号编程，用法如下：
+
+::
+
+	import siot
+	import time
+	from xugu import Pin # 从 xugu 库中导入 Pin类
+
+	p = Pin("A0", Pin.ANALOG) # 初始化 A0 引脚,设置为输入模式
+
+	SERVER = "192.168.0.101"        #MQTT服务器IP
+	CLIENT_ID = ""              #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'   #“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'        #用户名默认为scope
+	IOT_PassWord ='scope'     #密码默认为scope
+
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+ 
+	def sub_cb(client, userdata, msg):
+  	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
+        #在这里可以写当虚谷号收到消息要做的事
+    
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic) #订阅消息
+	siot.loop()
+	while True:
+  	    TDS = p.read_analog() #读取 A0 引脚的模拟量
+  	    siot.publish(IOT_pubTopic, "%d"%TDS) #发送消息
+  	    time.sleep(1)
+
+代码中的重点是以下三点：
+
+1、导入siot库
+   import siot
+
+2、订阅消息
+   def sub_cb(client, userdata, msg): xxxx
+   siot.getsubscribe(IOT_pubTopic) 
+3、发送消息
+   siot.publish(IOT_pubTopic,your-massage)
 
 上传代码的方式有很多，这里介绍通过U盘模式上传给虚谷号。
 
