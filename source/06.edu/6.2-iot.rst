@@ -72,15 +72,15 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	import siot
 	import time
-	from xugu import Pin # 从 xugu 库中导入 Pin类
+	from xugu import Pin        # 从 xugu 库中导入 Pin类
 
-	p = Pin("A0", Pin.ANALOG) # 初始化 A0 引脚,设置为输入模式
+	p = Pin("A0", Pin.ANALOG)   # 初始化 A0 引脚,设置为输入模式
 
-	SERVER = "192.168.0.101"        #MQTT服务器IP
+	SERVER = "192.168.0.101"    #MQTT服务器IP
 	CLIENT_ID = ""              #在SIoT上，CLIENT_ID可以留空
-	IOT_pubTopic  = 'DIY/TEST01'   #“topic”为“项目名称/设备名称”
-	IOT_UserName ='scope'        #用户名默认为scope
-	IOT_PassWord ='scope'     #密码默认为scope
+	IOT_pubTopic  = 'DIY/TEST01'#“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'       #用户名默认为scope
+	IOT_PassWord ='scope'       #密码默认为scope
 
 	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
  
@@ -93,20 +93,20 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 	siot.getsubscribe(IOT_pubTopic) #订阅消息
 	siot.loop()
 	while True:
-  	    TDS = p.read_analog() #读取 A0 引脚的模拟量
+  	    TDS = p.read_analog()       #读取 A0 引脚的模拟量
   	    siot.publish(IOT_pubTopic, "%d"%TDS) #发送消息
   	    time.sleep(1)
 
 代码中的重点是以下三点：
 
-1、导入siot库
+ 1、导入siot库
    import siot
 
-2、订阅消息
+ 2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
    siot.getsubscribe(IOT_pubTopic) 
-3、发送消息
-   siot.publish(IOT_pubTopic,your-massage)
+ 3、发送消息
+   siot.publish(IOT_pubTopic, your-massage)
 
 上传代码的方式有很多，这里介绍通过U盘模式上传给虚谷号。
 
@@ -128,8 +128,86 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 1.手机远程控制虚谷号
 
+理论上任何MQTT客户端之间都可以通信，所以不仅仅是手机可以控制虚谷号，掌控板，电脑等都可以。
 
+下面以手机为例。现在已经有很多MQTT客户端可以直接发送消息，也可以通过APP Inventor 2 来封装功能。更多案例可以访问https://siot.readthedocs.io了解。
 
+安卓手机可以安装MQTT Client，可以在http://www.mdpda.com/app/apk7623192.html下载。
+
+打开软件，点击右上角的Settings，点击Sever。设置URL为xxx.xxx.xxx.xxx:8080，Port为1883，Username为scope，Password为scope。这样就可以连接上SIoT服务器了。
+
+下面重点介绍虚谷号上的程序。
+
+先介绍以下代码结构。
+
+::
+
+	import siot
+	import time
+	from xugu import Pin          # 从 xugu 库中导入 Pin类
+
+	p = Pin("A0", Pin.ANALOG)     # 初始化 A0 引脚,设置为输入模式
+
+	SERVER = "192.168.0.101"      #MQTT服务器IP
+	CLIENT_ID = ""                #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'  #“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'         #用户名默认为scope
+	IOT_PassWord ='scope'         #密码默认为scope
+
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+ 
+	def sub_cb(client, userdata, msg):
+  	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
+        #在这里可以写当虚谷号收到消息要做的事
+    
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic)#订阅消息
+	siot.loop()
+	while True:
+  	    TDS = p.read_analog()      #读取 A0 引脚的模拟量
+  	    siot.publish(IOT_pubTopic, "%d"%TDS) #发送消息
+  	    time.sleep(1)
+
+代码中的重点是以下三点：
+
+ 1、导入siot库
+   import siot
+
+ 2、订阅消息
+   def sub_cb(client, userdata, msg): xxxx
+   siot.getsubscribe(IOT_pubTopic) 
+ 3、发送消息
+   siot.publish(IOT_pubTopic, your-massage)
+学会之后可以写出如下代码控制13号管脚的LED灯的开关。
+::
+
+	import siot
+	import time
+	from xugu import Pin                # 从 xugu 库中导入 Pin类
+
+	p = Pin(13, Pin.OUT)                # 初始化 A0 引脚,设置为输入模式
+
+	SERVER = "192.168.0.101"            #MQTT服务器IP
+	CLIENT_ID = ""                      #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'        #“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'               #用户名默认为scope
+	IOT_PassWord ='scope'               #密码默认为scope
+
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+ 
+	def sub_cb(client, userdata, msg):
+  	    if(msg.payload==1):             #接收到1时开灯
+	    	p.weite_digital(1)
+	    else if(msg.payload==0):        #接收到0时关灯
+	    	p.weite_digital(0)
+    
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic)      #订阅消息
+	siot.loop()
+	while True:
+  	    time.sleep(1)
 
 
 
