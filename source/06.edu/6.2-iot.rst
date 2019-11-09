@@ -148,6 +148,8 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 短按RST键，U盘消失片刻再次出现，这时python代码就已经在运行了。可以登录SIoT服务器查看消息，也可以通过其他MQTT客户端订阅该消息。
 
+.. image:: ../images/06/6.2-invade-details.JPG
+
 硬件连接如下图。红外避障传感器可以在DF商城买到https://www.dfrobot.com.cn/goods-283.html
 
 .. image:: ../images/06/6.2-invadetest-dev.PNG
