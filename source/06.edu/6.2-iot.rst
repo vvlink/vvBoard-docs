@@ -135,7 +135,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 	siot.loop()
 	
 	while True:
-  	    INV = p.read_analog()           #读取 4 引脚的值
+  	    INV = p.read_digital()           #读取 4 引脚的值
   	    siot.publish(IOT_pubTopic, "%d"%INV) #发送消息
   	    time.sleep(1)
 
