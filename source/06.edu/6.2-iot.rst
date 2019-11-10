@@ -164,11 +164,15 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 理论上任何MQTT客户端之间都可以通信，所以不仅仅是手机可以控制虚谷号，掌控板，电脑等都可以。
 
-下面以手机为例。现在已经有很多MQTT客户端可以直接发送消息，也可以通过APP Inventor 2 来封装功能。更多案例可以访问https://siot.readthedocs.io 了解。
+下面以手机为例。现在已经有很多MQTT客户端可以直接发送消息，也可以通过APP Inventor 2 来封装功能。
 
-安卓手机可以安装MQTT Client，可以在http://www.mdpda.com/app/apk7623192.html 下载。
+更多案例可以访问https://siot.readthedocs.io/zh_CN/latest/demo/07_Appinventor.html 了解。
+
+这里介绍安卓手机的MQTT Client，可以在http://www.mdpda.com/app/apk7623192.html 下载。
 
 打开软件，点击右上角的Settings，点击Sever。设置URL为xxx.xxx.xxx.xxx:8080，Port为1883，Username为scope，Password为scope。这样就可以连接上SIoT服务器了。
+
+.. image:: ../images/06/
 
 下面重点介绍虚谷号上的程序。
 
@@ -248,8 +252,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 	    p.write_digital(state)           #1表示开灯，0表示关灯
 	    time.sleep(1)
 	    
-    
-
+.. image:: ../images/06/
 
 
 
