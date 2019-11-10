@@ -219,29 +219,37 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 	import siot
 	import time
 	from xugu import Pin                # 从 xugu 库中导入 Pin类
-
+	
 	p = Pin(13, Pin.OUT)                # 初始化 A0 引脚,设置为输入模式
-
-	SERVER = "192.168.0.101"            #MQTT服务器IP
+	
+	SERVER = "192.168.43.236"            #MQTT服务器IP
 	CLIENT_ID = ""                      #在SIoT上，CLIENT_ID可以留空
 	IOT_pubTopic  = 'DIY/TEST01'        #“topic”为“项目名称/设备名称”
 	IOT_UserName ='scope'               #用户名默认为scope
 	IOT_PassWord ='scope'               #密码默认为scope
-
+	
 	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
- 
-	def sub_cb(client, userdata, msg):
-  	    if(msg.payload==1):             #接收到1时开灯
-	    	p.weite_digital(1)
-	    else if(msg.payload==0):        #接收到0时关灯
-	    	p.weite_digital(0)
-    
+
+	def sub_cb(client, userdata, msg):  #接受到手机消息，1表示开灯，0表示关灯
+	    global state                    #将state指向全局变量的那个state
+	    if(int(msg.payload)==1):        #注意使用int将值转换为数值型，才可以比较
+		state=1
+	    if(int(msg.payload)==0):
+		state=0
+
 	siot.connect()
 	siot.set_callback(sub_cb)
 	siot.getsubscribe(IOT_pubTopic)      #订阅消息
 	siot.loop()
+	
+	state=0                              #声明变量
+	
 	while True:
-  	    time.sleep(1)
+	    p.write_digital(state)           #1表示开灯，0表示关灯
+	    time.sleep(1)
+	    
+    
+
 
 
 
