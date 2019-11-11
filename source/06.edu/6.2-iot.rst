@@ -154,6 +154,8 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 .. image:: ../images/06/6.2-invadetest-dev.PNG
 
+红外避障传感器黑色为信号输出（接4号管脚），棕色为正极（接5V），蓝色是负极（接GND）。当检测到有障碍物时输出0，反之输出1。
+
 
 ---------------------------
 应用案例
@@ -259,8 +261,47 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 2.科学观察助手
 
-狄勇老师给出了一个很好的案例可以访问https://siot.readthedocs.io/zh_CN/latest/case/10_vvboard.html 了解详情。
+狄勇老师给出了一个很好的案例，可以访问https://siot.readthedocs.io/zh_CN/latest/case/10_vvboard.html 了解详情。
 
+这里给出一个检测狗狗进出门的案例。
 
+我们可以考虑狗狗进出门时会发生改变的物理量。其中狗狗离门的距离一定会改变，于是我们确定了物理量为距离，与之对应的传感器也有很多，这里我们选择红外避障传感器为例。接线图如图所示，值得注意的是红外避障传感器黑色为信号输出（接4号管脚），棕色为正极（接5V），蓝色是负极（接GND）。当检测到有障碍物时输出0，反之输出1。
 
+.. image:: ../images/06/6.2-invadetest-dev.PNG
+
+和上面介绍的类似，我们使用python给虚谷号编程，代码如下。
+
+::
+
+	import siot
+	import time
+	from xugu import Pin               # 从 xugu 库中导入 Pin类
+
+	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
+
+	SERVER = "192.168.43.236"          #MQTT服务器IP
+	CLIENT_ID = ""                     #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'vvboard/invade'   #“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'              #用户名默认为scope
+	IOT_PassWord ='scope'              #密码默认为scope
+
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+ 
+	def sub_cb(client, userdata, msg):
+  	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
+                                            #在这里可以写当虚谷号收到消息要做的事
+    
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic)     #订阅消息
+	siot.loop()
+	
+	while True:
+  	    INV = p.read_digital()           #读取 4 引脚的值
+  	    siot.publish(IOT_pubTopic, "%d"%INV) #发送消息
+  	    time.sleep(1)
+
+上传代码可以通过U盘模式将代码拷贝至python文件夹下，短按RST键，程序便开始运行。可以通过SIoT服务器界面查看结果。这种方法在虚谷号开机即开始运行，直至断电。但是我们更希望可以在规定的时间运行这段代码。下面介绍使用Jupyter运行代码的方法。
+
+Jupyter是一个交互式笔记本，支持运行 40 多种编程语言。虚谷号预装了Jupyter，并且可以通过U盘模式下的快捷方式直接在浏览器打开。Jupyter默认登录密码为scope。登录后web页面会列出虚谷号的文件目录。先将之前编写的xxx.py文件上传到/Desktop目录下，然后点击 新建——Python3。在代码单元格中输入命令 %run xxx.py。xxx.py被执行后，开始加载相关模块并初始化，完成后就可以看到虚谷号上传和返回的数据了。
 
