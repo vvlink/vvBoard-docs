@@ -26,14 +26,133 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 ---------------------------------
 虚谷号作为MQTT服务器
 ---------------------------------
+这很容易，只要给虚谷号供电，接入局域网即可。具体操作如下。
 
+使用U盘模式将虚谷号连接至电脑，配置vvBoard_config.ini如下图所示，其中Siot=1表示开启SIoT，0表示关闭SIoT。下面的Wi-Fi配置根据自己的情况配置即可。配置好之后，短按RST键，U盘短暂消失，再次连接时，打开wifi_log.txt即可查看虚谷号IP地址。假设IP地址为xxx.xxx.xxx.xxx，则SIoT服务器地址为xxx.xxx.xxx.xxx:8080，可以使用其他任何MQTT客户端连接。
 
+.. image:: ../images/06/6.2_config.JPG
+
+.. image:: ../images/06/6.2_ip.JPG
+
+下面以掌控板连接为例介绍SIoT的使用。
+
+使用Mind+给掌控板编程十分便捷。选择正确的主控板和组件后，编程就像搭积木一样。这里以测量环境光强度为例，组件拼接如下图所示。
+
+.. image:: ../images/06/6.2_mpython_mindplus_code.JPG
+
+电脑连接掌控板后上传代码便可以运行了。这时的虚谷号和掌控板均只要接通电源即可工作，不再需要连接电脑。
+
+.. image:: ../images/06/6.2-mpythonx.PNG
+
+通过浏览器访问SIoT服务器（在浏览器输入IP地址+“:8080”访问），可以看到掌控板向搭载在虚谷号上的SIoT发送的消息。
+
+.. image:: ../images/06/6.2_login.JPG
+
+默认登录账号和密码均是scope。
+
+点击上方的设备列表，可以看到我项目ID为mpython，名称为light的设备，也可以根据自己的需求做相应修改。
+
+.. image:: ../images/06/6.2_devices.JPG
+
+点击查看消息，可以看到具体的消息。本页面还具有导出查询结果（Excel表格），显示/隐藏图表，自动刷新消息等功能。也可以通过发送消息与设备通信。
+
+.. image:: ../images/06/6.2_details.JPG
 
 
 ---------------------------------
 虚谷号作为MQTT客户端
 ---------------------------------
+需要先安装python库：siot。安装命令是 sudo pip install siot ，如果已经安装，就不需要再执行这一步。
 
+.. image:: ../images/06/6.2_install_siot.JPG
+
+使用python语言为虚谷号编程，用法如下：
+
+::
+
+	import siot
+	import time
+	from xugu import Pin        # 从 xugu 库中导入 Pin类
+
+	p = Pin("A0", Pin.ANALOG)   # 初始化 A0 引脚,设置为输入模式
+
+	SERVER = "192.168.0.101"    #MQTT服务器IP
+	CLIENT_ID = ""              #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'#“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'       #用户名默认为scope
+	IOT_PassWord ='scope'       #密码默认为scope
+
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+ 
+	def sub_cb(client, userdata, msg):
+  	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
+        #在这里可以写当虚谷号收到消息要做的事
+    
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic) #订阅消息
+	siot.loop()
+	while True:
+  	    TDS = p.read_analog()       #读取 A0 引脚的模拟量
+  	    siot.publish(IOT_pubTopic, "%d"%TDS) #发送消息
+  	    time.sleep(1)
+
+代码中的重点是以下三点：
+
+ 1、导入siot库
+   import siot
+
+ 2、订阅消息
+   def sub_cb(client, userdata, msg): xxxx
+   siot.getsubscribe(IOT_pubTopic) 
+ 3、发送消息
+   siot.publish(IOT_pubTopic, your-massage)
+   
+学习之后可以写出类似的代码：
+::
+
+	import siot
+	import time
+	from xugu import Pin               # 从 xugu 库中导入 Pin类
+
+	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
+
+	SERVER = "192.168.43.236"          #MQTT服务器IP
+	CLIENT_ID = ""                     #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'vvboard/invade'   #“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'              #用户名默认为scope
+	IOT_PassWord ='scope'              #密码默认为scope
+
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+ 
+	def sub_cb(client, userdata, msg):
+  	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
+                                            #在这里可以写当虚谷号收到消息要做的事
+    
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic)     #订阅消息
+	siot.loop()
+	
+	while True:
+  	    INV = p.read_digital()           #读取 4 引脚的值
+  	    siot.publish(IOT_pubTopic, "%d"%INV) #发送消息
+  	    time.sleep(1)
+
+
+上传代码的方式有很多，这里介绍通过U盘模式上传给虚谷号。
+
+将写好的代码复制到python文件夹下，修改配置文件python_config.ini如图所示。注意第一行不要忘记后缀名.py。Run_time的值最好大于0。
+
+.. image:: ../images/06/6.2-python-conf.JPG
+
+短按RST键，U盘消失片刻再次出现，这时python代码就已经在运行了。可以登录SIoT服务器查看消息，也可以通过其他MQTT客户端订阅该消息。
+
+.. image:: ../images/06/6.2-invade-details.JPG
+
+硬件连接如下图。红外避障传感器可以在DF商城买到https://www.dfrobot.com.cn/goods-283.html
+
+.. image:: ../images/06/6.2-invadetest-dev.PNG
 
 
 ---------------------------
@@ -43,13 +162,103 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 1.手机远程控制虚谷号
 
+理论上任何MQTT客户端之间都可以通信，所以不仅仅是手机可以控制虚谷号，掌控板，电脑等都可以。
 
+下面以手机为例。现在已经有很多MQTT客户端可以直接发送消息，也可以通过APP Inventor 2 来封装功能。
 
+更多案例可以访问https://siot.readthedocs.io/zh_CN/latest/demo/07_Appinventor.html 了解。
+
+这里介绍安卓手机的MQTT Client，可以在http://www.mdpda.com/app/apk7623192.html 下载。
+
+打开软件，点击右上角的Settings，点击Sever。设置URL为xxx.xxx.xxx.xxx:8080，Port为1883，Username为scope，Password为scope。这样就可以连接上SIoT服务器了。
+
+.. image:: ../images/06/6.2-client-settings.jpg
+
+下面重点介绍虚谷号上的程序。
+
+先介绍以下代码结构。
+
+::
+
+	import siot
+	import time
+	from xugu import Pin          # 从 xugu 库中导入 Pin类
+
+	p = Pin("A0", Pin.ANALOG)     # 初始化 A0 引脚,设置为输入模式
+
+	SERVER = "192.168.0.101"      #MQTT服务器IP
+	CLIENT_ID = ""                #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'  #“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'         #用户名默认为scope
+	IOT_PassWord ='scope'         #密码默认为scope
+
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+ 
+	def sub_cb(client, userdata, msg):
+  	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
+        #在这里可以写当虚谷号收到消息要做的事
+    
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic)#订阅消息
+	siot.loop()
+	while True:
+  	    TDS = p.read_analog()      #读取 A0 引脚的模拟量
+  	    siot.publish(IOT_pubTopic, "%d"%TDS) #发送消息
+  	    time.sleep(1)
+
+代码中的重点是以下三点：
+
+ 1、导入siot库
+   import siot
+
+ 2、订阅消息
+   def sub_cb(client, userdata, msg): xxxx
+   siot.getsubscribe(IOT_pubTopic) 
+ 3、发送消息
+   siot.publish(IOT_pubTopic, your-massage)
+学会之后可以写出如下代码控制13号管脚的LED灯的开关。
+::
+
+	import siot
+	import time
+	from xugu import Pin                # 从 xugu 库中导入 Pin类
+	
+	p = Pin(13, Pin.OUT)                # 初始化 A0 引脚,设置为输入模式
+	
+	SERVER = "192.168.43.236"            #MQTT服务器IP
+	CLIENT_ID = ""                      #在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'        #“topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'               #用户名默认为scope
+	IOT_PassWord ='scope'               #密码默认为scope
+	
+	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
+
+	def sub_cb(client, userdata, msg):  #接受到手机消息，1表示开灯，0表示关灯
+	    global state                    #将state指向全局变量的那个state
+	    if(int(msg.payload)==1):        #注意使用int将值转换为数值型，才可以比较
+		state=1
+	    if(int(msg.payload)==0):
+		state=0
+
+	siot.connect()
+	siot.set_callback(sub_cb)
+	siot.getsubscribe(IOT_pubTopic)      #订阅消息
+	siot.loop()
+	
+	state=0                              #声明变量
+	
+	while True:
+	    p.write_digital(state)           #1表示开灯，0表示关灯
+	    time.sleep(1)
+	    
+.. image:: ../images/06/6.2-client-send.jpg
 
 
 
 2.科学观察助手
 
+狄勇老师给出了一个很好的案例可以访问https://siot.readthedocs.io/zh_CN/latest/case/10_vvboard.html 了解详情。
 
 
 

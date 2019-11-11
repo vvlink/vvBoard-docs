@@ -49,6 +49,8 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 
 更改U盘vvboard文件夹的”vvBoard_config.ini”中，SSID和SSID_PSD。短按RST键重启U盘服务，然后在U盘vvboard文件夹的“wifi_log.txt”中，找到IP地址。
 
+- 注：目前虚谷号仅支持2.4GHz的Wi-Fi。如果Wi-Fi需要二次身份认证（如校园网等），只能通过电脑模式连接，不能用U盘模式配置。在修改完vvBoard_config文件后，如果短按RST键后没有连接成功，可以多尝试几次。如果还不行，请仔细检查vvBoard_config文件中的内容是否被正确地修改，可以尝试将虚谷号断电重启，或长按RST键5秒重启。
+
 .. image:: ../images/02/u-driver02.jpg
 
 2）烧录Arduino代码
@@ -74,6 +76,8 @@ U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG�
 .. image:: ../images/02/u-driver09.jpg
 
 打开python_config.ini文件，修改Python=test.py和Run_time=5并保存
+
+注：python_config.ini中有个Run_time参数，表示等待多少时间再出现U盘（出现U盘后，就不能输出调试信息了），参数为0时不会打印log，只会打印代码格式报错信息。
 
 .. image:: ../images/02/u-driver10.jpg
 
@@ -125,11 +129,13 @@ U盘烧录的说明
 
 2、如何实现python和Arduino的自定义互动？
 
-（1）先复制标准arduino代码，虚谷号将代码写入板载Arduino。
+（1）先复制标准Arduino代码，虚谷号将代码写入板载Arduino。
 
 （2）再复制标准python代码，虚谷号开始运行Python代码。
 
-（3）如果标准的arduino和python代码都复制了，虚谷号会先运行arduino代码，再运行Python代码。
+（3）如果标准的Arduino和python代码都复制了，虚谷号会先运行Arduino代码，再运行Python代码。
+
+- 注意：如果Arduino和Python文件有管脚定义冲突，最终python会覆盖Arduino，导致实现结果不理想。有时发现Arduino程序没有正常运行，可能是由于在python文件夹内有多余的py文件（上一次运行后没有删除），导致覆盖了Arduino程序。
 
 3、如何实现用Python代码与板载Arduino做更复杂的互动？比如在“厚物”的OLED屏上显示文字等。
 

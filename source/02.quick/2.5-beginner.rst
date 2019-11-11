@@ -22,7 +22,9 @@
 
 做完上面的接下来我们就要修改程序了，将文件从Arduino/04.bak复制到Arduino文件夹内。
 
-使用记事本打开文件，里面的digitalWrite(LED_BUILTIN, HIGH)为灯亮，digitalWrite(LED_BUILTIN, LOW)为灯灭，通过修改延迟时间（delay（））里面的值来控制灯亮灭的时间。例如改为亮3秒，熄灭5秒。
+使用记事本打开文件，里面的digitalWrite(LED_BUILTIN, HIGH)为灯亮，digitalWrite(LED_BUILTIN, LOW)为灯灭，通过修改延迟时间（delay(millisecond)）里面的值来控制灯亮灭的时间。例如改为亮3秒，熄灭5秒。
+
+- 注：Arduino中延迟时间函数参数单位是毫秒，而python中参数单位是秒。
 
 短按reset再次运行，这次灯闪就变成了亮3秒，熄灭5秒了。
 
@@ -46,6 +48,8 @@
 
 最后按下reset按键等待虚谷号刷新。这样文件就执行啦。
 
+- 注：Arduino中延迟时间函数参数单位是毫秒，而python中参数单位是秒。
+
 ---------------------
 配置无线连接
 ---------------------
@@ -55,11 +59,13 @@
 
 首先我们打开vvBoard下面的vvBoard_config.ini文件设置SSID和密码，SSID是wifi名称，SSID_PSD是密码。
 
-比如打开我们的手机热点，将名称密码输入。
+比如打开我们的手机热点（在手机上设置时选择AP频段为2.4GHz频段），将名称密码输入。
 
-保存并关闭文件，短按reset，稍等片刻，就会连接上指定的Wi-Fi了，这里我们可以打开vvBoard目录下的wifi _ log.txt文件查看。连接上的话可以看到wifi的IP地址。如果连接手机热点通过手机也可以查看到。
+保存并关闭文件，短按RST键，稍等片刻，就会连接上指定的Wi-Fi了，这里我们可以打开vvBoard目录下的wifi _ log.txt文件查看。连接上的话可以看到wifi的IP地址。如果连接手机热点通过手机也可以查看到。
 
 如果在Wi-Fi配置信息中找不到IP地址，很有可能是虚谷号的DAP系统启动速度太快，而路由器的速度有点慢，导致IP地址还没来得及分配就启动进入了U盘模式。遇到这种情况，只需要再按一次RST键就能解决。
+
+- 注：目前虚谷号仅支持2.4GHz的Wi-Fi。如果Wi-Fi需要二次身份认证（如校园网等），只能通过电脑模式连接，不能用U盘模式配置。在修改完vvBoard_config文件后，如果短按RST键后没有连接成功，可以多尝试几次。如果还不行，请仔细检查vvBoard_config文件中的内容是否被正确地修改，可以尝试将虚谷号断电重启，或长按RST键5秒重启。
 
 
 ---------------------
@@ -71,11 +77,11 @@
 
 使用此功能前需先连接WI-FI，并且虚谷号连接的WI-FI（上一个测试连接的WI-FI）要和电脑端连接的WI-FI一致（或者电脑端网线和你使用的WI-FI是同一个路由器上的）。
 
-用记事本打开vvBoard文件夹内的vvBoard_config.ini（就是设置wifi账号密码的文件），把里面改为Jupyter=1，一般情况下Jupyter默认是1。
+用记事本打开vvBoard文件夹内的vvBoard_config.ini（就是设置wifi账号密码的文件），把里面改为Jupyter=1，一般情况下Jupyter默认是1。（0是关闭）
 
-短按reset，如果已经连接上wifi，设置过jupyter，等待u盘刷新出现后我们就可以打开jupyter了。
+短按RST键，如果已经连接上Wi-Fi，设置过jupyter，等待u盘刷新出现后我们就可以打开jupyter了。
 
-在电脑端打开浏览器（这里建议是谷歌浏览器，有的浏览器存在打不开的情况），输入http://xxx.xxx.x.xxx:8888（xxx.xxx.x.xxx为你的IP地址)
+在电脑端打开浏览器（这里建议是谷歌浏览器，有的浏览器存在打不开的情况），输入http://xxx.xxx.x.xxx:8888（xxx.xxx.x.xxx为你的IP地址，在wifi _ log.txt文件中可以查看)
 
 进入网页后会提示输入密码，密码为scope，便可以链接虚谷号，浏览和操作虚谷号上文件，如果打开为空白页，则更换浏览器打开。
 
