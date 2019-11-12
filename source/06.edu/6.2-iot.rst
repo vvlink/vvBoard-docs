@@ -320,6 +320,8 @@ Jupyter的地址是虚谷号在局域网中的IP地址加上端口号8888，即x
 
 .. image:: ../images/06/6.2-jupyter-run1.JPG
 
+.. image:: ../images/06/6.2-invade-details.JPG
+
 当然也可以不在同一路径下新建ipynb文件，如果在其他路径下，需要写明run的文件的路径（直接路径或相对路径），例如 %run py-files/dog-door.py。
 
 .. image:: ../images/06/6.2-jupyter-run2.JPG
