@@ -306,5 +306,22 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 上传代码可以通过U盘模式将代码拷贝至python文件夹下，短按RST键，程序便开始运行。可以通过SIoT服务器界面查看结果。这种方法在虚谷号开机即开始运行，直至断电。但是我们更希望可以在规定的时间运行这段代码。下面介绍使用Jupyter运行代码的方法。
 
-Jupyter是一个交互式笔记本，支持运行 40 多种编程语言。虚谷号预装了Jupyter，并且可以通过U盘模式下的快捷方式直接在浏览器打开。Jupyter默认登录密码为scope。登录后web页面会列出虚谷号的文件目录。先将之前编写的xxx.py文件上传到/Desktop目录下，然后点击"新建——Python3"。在代码单元格中输入命令 %run xxx.py。xxx.py被执行后，开始加载相关模块并初始化，完成后就可以看到虚谷号上传和返回的数据了。
+Jupyter是一个交互式笔记本，支持运行 40 多种编程语言。虚谷号预装了Jupyter，并且可以通过U盘模式下的快捷方式直接在浏览器打开。
 
+Jupyter的地址是虚谷号在局域网中的IP地址加上端口号8888，即xxx.xxx.xxx.xxx:8888。默认登录密码为scope。登录后web页面会列出虚谷号的文件目录。
+
+.. image:: ../images/06/6.2-jupyter-login.JPG
+
+提前将之前编写的xxx.py文件传虚谷号（我使用的方法是用U盘拷贝文件），然后在Jupyter中进入该路径，点击"新建——Python3"。在代码单元格中输入命令 %run xxx.py。xxx.py被执行后，开始加载相关模块并初始化，完成后就可以看到虚谷号上传和返回的数据了。
+
+.. image:: ../images/06/6.2-jupyter-road.JPG
+
+.. image:: ../images/06/6.2-jupyter-new.JPG
+
+.. image:: ../images/06/6.2-jupyter-run1.JPG
+
+.. image:: ../images/06/6.2-invade-details.JPG
+
+当然也可以不在同一路径下新建ipynb文件，如果在其他路径下，需要写明run的文件的路径（直接路径或相对路径），例如 %run py-files/dog-door.py。
+
+.. image:: ../images/06/6.2-jupyter-run2.JPG
