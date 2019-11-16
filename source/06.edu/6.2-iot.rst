@@ -17,7 +17,7 @@ SIoT的最大特点是使用简单。软件运行后，不需要任何设置就�
 
 SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“虚谷计划”旗下的项目。对于中小学教学而言，选择用虚谷号结合SIoT作为物联网服务器，掌控板（“虚谷计划”旗下的另一款开源硬件）作为物联网终端，可谓珠联璧合。
 
-- 您可以访问SIoT使用手册文档：https://siot.readthedocs.io/zh_CN/latest/ 了解更多关于SIoT的使用方式。
+- 您可以访问 `SIoT使用手册文档 <https://siot.readthedocs.io/zh_CN/latest/>`_ 了解更多关于SIoT的使用方式。
 
 .. image:: ../images/06/iot01.png
 
@@ -172,7 +172,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 更多案例可以访问 `SIoT文档 <https://siot.readthedocs.io/zh_CN/latest/demo/07_Appinventor.html>`_ 了解。
 
-这里介绍安卓手机的MQTT Client，可以在 `点此 <http://www.mdpda.com/app/apk7623192.html>`_ 下载。
+这里介绍安卓手机的MQTT Client，可以 `点此 <http://www.mdpda.com/app/apk7623192.html>`_ 下载。
 
 打开软件，点击右上角的Settings，点击Sever。设置URL为xxx.xxx.xxx.xxx:8080，Port为1883，Username为scope，Password为scope。这样就可以连接上SIoT服务器了。
 
