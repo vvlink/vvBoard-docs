@@ -264,7 +264,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 2.科学观察助手
 
-狄勇老师给出了一个很好的案例，可以访问https://siot.readthedocs.io/zh_CN/latest/case/10_vvboard.html 了解详情。
+狄勇老师给出了一个很好的案例，可以访问https://vvboard.readthedocs.io/zh/latest/09.case/9.5-science.html 了解详情。
 
 这里给出一个检测狗狗进出门的案例。
 
