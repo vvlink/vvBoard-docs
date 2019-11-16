@@ -152,7 +152,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 .. image:: ../images/06/6.2-invade-details.JPG
 
-硬件连接如下图。红外避障传感器可以在DF商城买到https://www.dfrobot.com.cn/goods-283.html
+硬件连接如下图。红外避障传感器可以在 `DF商城 <https://www.dfrobot.com.cn/goods-283.html>`_ 买到。
 
 .. image:: ../images/06/6.2-invadetest-dev.PNG
 
@@ -169,9 +169,9 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 下面以手机为例。现在已经有很多MQTT客户端可以直接发送消息，也可以通过APP Inventor 2 来封装功能。
 
-更多案例可以访问https://siot.readthedocs.io/zh_CN/latest/demo/07_Appinventor.html 了解。
+更多案例可以访问 `SIoT文档 <https://siot.readthedocs.io/zh_CN/latest/demo/07_Appinventor.html>`_ 了解。
 
-这里介绍安卓手机的MQTT Client，可以在http://www.mdpda.com/app/apk7623192.html 下载。
+这里介绍安卓手机的MQTT Client，可以在 `点此 <http://www.mdpda.com/app/apk7623192.html>`_ 下载。
 
 打开软件，点击右上角的Settings，点击Sever。设置URL为xxx.xxx.xxx.xxx:8080，Port为1883，Username为scope，Password为scope。这样就可以连接上SIoT服务器了。
 
@@ -264,7 +264,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 2.科学观察助手
 
-狄勇老师给出了一个很好的案例，可以访问https://vvboard.readthedocs.io/zh/latest/09.case/9.5-science.html 了解详情。
+狄勇老师给出了一个很好的案例，可以访问 `虚谷号让食盐在水中的扩散过程“可见” <https://vvboard.readthedocs.io/zh/latest/09.case/9.5-science.html>`_ 了解详情。
 
 这里给出一个检测狗狗进出门的案例。
 
