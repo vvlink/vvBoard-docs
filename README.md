@@ -9,6 +9,10 @@
 
 本文档的阅读地址：https://vvboard.readthedocs.io/
 
+虚谷号购买地址：微信商城（http://vvboard.net.cn/plus/view.php?aid=25）、DF商城
+
+虚谷号网站：http://www.vvboard.com.cn/
+
 ## 资源库的目录说明：
 - 1.source（文档的源码）
 - 2.build（生成的文档）
