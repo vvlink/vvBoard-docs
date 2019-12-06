@@ -29,7 +29,7 @@ def web_gpio():
 
 def web_gpio_get(request):
     global ret,pin
-    pin=request.values.get("Pin")    
+    pin=request.values.get("pin")    
     if not (pin in pin_D_list or pin in pin_A_list):
         return "error:invalid Pin"
     if pin in pin_D_list:
@@ -43,9 +43,9 @@ def web_gpio_get(request):
         
 def web_gpio_post(request):
     global types,pin,value
-    pin=request.values.get("Pin")
-    value=request.values.get("Value")
-    types=request.values.get("Types")
+    pin=request.values.get("pin")
+    value=request.values.get("value")
+    types=request.values.get("types")
     if not (pin in pin_D_list or pin in pin_A_list):
         return "error:invalid Pin"
     try:
@@ -82,7 +82,7 @@ def rungpio():
             types=None
              
 def run():
-    app.run(host='0.0.0.0',port=8008,debug=False)   
+    app.run(host='0.0.0.0',port=1024,debug=False)   
 
 t=threading.Thread(target=run)
 t.start()

@@ -14,7 +14,7 @@ WebGPIO采用WebAPI的形式来获取和控制虚谷号板载Arduino芯片的引
 
 WebAPI地址：
 
-http://[虚谷号ip]:1024/webgpio
+http://[虚谷号ip]:1024/
 
 **注**：下面假设虚谷号的IP地址为：192.168.1.101
 
@@ -31,7 +31,7 @@ method方式:GET
 
 **注**：Arduino的引脚范围为：D0--D13，A0--A5，不分大小写。
 
-url范例：http://192.168.1.101:1024/webgpio?pin=D1
+url范例：http://192.168.1.101:1024/?pin=D1
 
 信息返回：
 
