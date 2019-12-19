@@ -61,7 +61,9 @@ Docker的安装
         docker-ce-cli_19.03.5_3-0_ubuntu-xenial_arm64.deb \
         docker-ce_19.03.5_3-0_ubuntu-xenial_arm64.deb
           
-二、验证是否可以使用
+-----------------------------
+Docker的验证
+-----------------------------
 打开终端，输入：sudo docker run hello-world，结果如下：
 
 .. image:: ../images/08/docker01.png
