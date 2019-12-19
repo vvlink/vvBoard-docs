@@ -15,5 +15,56 @@ Docker是一个开源的应用容器引擎，让开发者可以打包他们的�
 -----------------------------
 Docker的安装
 -----------------------------
+安装docker有两种方法，一种是使用存储库安装，一种是使用安装包安装
+1、使用存储库安装的步骤：
+1）升级更新apt包，打开终端输入：
+sudo apt-get update
+如下图所示
+
+2）安装软件包，允许apt通过HTTPS使用存储，终端输入：
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+如下图所示
+
+3）添加docker的官方GPG密钥，终端输入：
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+如下图所示：
+
+4）设置稳定的存储库，终端输入：
+sudo add-apt-repository \
+   "deb [arch=arm64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+如下图所示
+
+5）更新apt包，终端输入
+sudo apt-get update
+          如下图所示
+          
+6）安装最新版本的docker engine-community和containerd，终端输入：
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+         如下图所示
+         
+7）至此，docker已经安装上，并且默认打开
+2、使用安装包安装的步骤：
+1）使用自己的电脑下载安装包docker_package.tar.gz，下载链接：https://pan.baidu.com/s/1MdAIQxuTE_HykRMaPTXoBw
+2）将安装包移到虚谷号桌面，右击选择在此解压，解压后如下图所示
+
+3）进入文件夹，右击空白处，选择“Open Terminal Here”输入命令:
+sudo apt-get install libseccomp2
+如下图所示
+
+4）继续输入命令
+ sudo dpkg -i containerd.io_1.2.10-3_arm64.deb \
+    docker-ce-cli_19.03.5_3-0_ubuntu-xenial_arm64.deb \
+docker-ce_19.03.5_3-0_ubuntu-xenial_arm64.deb
+          如下图所示
+          
+二、验证是否可以使用
+打开终端，输入：sudo docker run hello-world，结果如下图所示：
 
 
