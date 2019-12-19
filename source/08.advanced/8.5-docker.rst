@@ -46,13 +46,13 @@ Docker的安装
     sudo apt-get install docker-ce docker-ce-cli containerd.io
          
 7）至此，docker已经安装上，并且默认打开
+    
+二、使用安装包安装的步骤：
 
-2、使用安装包安装的步骤：
+1）使用自己的电脑下载安装包docker_package.tar.gz，下载链接：        https://pan.baidu.com/s/1MdAIQxuTE_HykRMaPTXoBw
 
-1）使用自己的电脑下载安装包docker_package.tar.gz，下载链接：    https://pan.baidu.com/s/1MdAIQxuTE_HykRMaPTXoBw
-
-2）将安装包移到虚谷号桌面，右击选择在此解压，解压后如下图所示
-
+2）将安装包移到虚谷号桌面，右击选择“在此解压”。
+    
 3）进入文件夹，右击空白处，选择“Open Terminal Here”输入命令:
     sudo apt-get install libseccomp2
 
