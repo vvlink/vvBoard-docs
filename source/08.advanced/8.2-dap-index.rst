@@ -44,8 +44,6 @@ Python内文件介绍
 
 03.doc：存放Python相关的资料，例如：Python库的说明
 
-04.bak：不做定义，为了和Arduino结构统一
-
 python_config.ini：配置要执行的Python程序
 
 python_log.txt:执行Python程序有格式错误的报错log
@@ -54,11 +52,11 @@ python_log.txt:执行Python程序有格式错误的报错log
 vvBoard内文件介绍
 ------------------------------
 
-Docs：存放vvBoard的说明文档
+docs：存放vvBoard的说明文档
+
+tools：存放工具，例如：notepad文本编辑工具
 
 system_log.txt：系统log
-
-Tools：存放工具，例如：notepad文本编辑工具
 
 vvBoard_config.txt：配置wifi和jupyter
 
@@ -66,8 +64,8 @@ wifi_log.txt：连接wifi打印的log
 
 xgh.ico：U盘盘符
 
-siot.ini.url:使用U盘模式打开siot并且连接上网络则生成windows的网页快捷方式，双击便能打开siot网页
+访问siot.url:使用U盘模式打开siot并且连接上网络则生成windows的网页快捷方式，双击便能打开siot网页
 
-jupyter.txt.url: 使用U盘模式打开jupyter并且连接上网络则生成windows的网页快捷方式，双击便能打开jupyter网页,如果打开为空白页，请复制网址在其他浏览器上打开，推荐使用谷歌浏览器
+访问jupyter.url: 使用U盘模式打开jupyter并且连接上网络则生成windows的网页快捷方式，双击便能打开jupyter网页,如果打开为空白页，请复制网址在其他浏览器上打开，推荐使用谷歌浏览器
 
 
