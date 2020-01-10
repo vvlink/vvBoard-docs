@@ -19,7 +19,7 @@ Pin(pin_num, pin_model）
 
 pin_num传入引脚标号，可以直接传入虚谷板上的引脚编号，例如D3或者A5，也可以直接传入13或者19这样的数字。
 
-pin_model 为引脚模式，Pin.IN是输入模式，Pin.OUT是输出模式。
+pin_model 为引脚模式，Pin.IN是输入模式，Pin.OUT是输出模式，Pin.ANALOG是模拟输入（用于A0~A5）。
 
 2、方法
 
