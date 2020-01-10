@@ -6,7 +6,7 @@ xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类。
 
 只要Python代码中引用了xugu库，虚谷号会自动检测板载的Arduino UNO（ATmega328P芯片）是否烧写了标准的Firmata协议。如果没有，则烧录，确保GPIO的正常使用。因此第一次引用xugu库，大约需要十多秒时间来烧写Firmata协议固件。
 
-**注：xugu库的语法参考了micro:bit和掌控板，与二者基本一致。
+**注：** xugu库的语法参考了micro:bit和掌控板，与二者基本一致。
 
 ------------------------------------------
 控制I/O引脚：Pin类
@@ -63,7 +63,7 @@ Pin.write_analog(value)
 	    ser.write(str(value).encode()) # 将value的值写入到串口
 	    time.sleep(0.1) # 持续100ms
 
-**注：这段代码能够将读出的数字引脚信息，通过串口输出来。
+**注：** 这段代码能够将读出的数字引脚信息，通过串口输出来。
 
 3）模拟输出范例。
 
@@ -84,7 +84,7 @@ Pin.write_analog(value)
 	value = p.read_analog() #读取 A0 引脚的电压值
 	ser.write(str(value).encode()) # 将value的值写入串口
 
-**注：这段代码能够将读出的模拟引脚信息，通过串口输出来。
+**注：** 这段代码能够将读出的模拟引脚信息，通过串口输出来。
 
 ---------------------------------------
 舵机控制：Servo类
@@ -109,7 +109,7 @@ Servo. write_angle(value)
 
 该类用于读写I2C从设备。
 
-注：该类不能用于读写虚谷号主芯片的I2C总线。
+**注：** 该类不能用于读写虚谷号主芯片的I2C总线。
 
 1、构建
 
