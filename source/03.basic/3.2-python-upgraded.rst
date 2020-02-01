@@ -336,7 +336,7 @@ zxing-------------------------0.9.3
 
 2、库的卸载：
   
-  Pip uninstall [package]
+ pip uninstall [package]
   
 注：卸载完成之后到usr/local/lib/Python3.5/dist-packages目录下检查package文件夹是否还在，如果还在，删除之【注意此时必须关闭python】
   
