@@ -13,9 +13,9 @@ Python 语法简洁、清晰、自由、灵活，具有丰富和强大的库，�
 
  ::
 
-	from xugu import pin
+	from xugu import LED
 	import time
-	led = Pin(13, Pin.OUT) # led引脚初始化
+	led = LED(13) # led引脚初始化
 	while True:
     		led.on()
     		time.sleep(1)
