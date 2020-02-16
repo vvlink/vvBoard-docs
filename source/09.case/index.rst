@@ -13,7 +13,8 @@
     9.3-UAV.rst
     9.4-vrobot.rst
     9.5-science.rst
-    9.6-m_learning.rst
+    9.6-info_experiment.rst
+    9.7-m_learning.rst
 
 
 
