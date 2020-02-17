@@ -7,6 +7,7 @@ mPythonX是一款为掌控板开发的图形化编程的软件，同时支持Pyt
 mPythonX由盛思开发，适合中学生利用掌控板学习Python编程。
 
 mPythonX运行界面
+---------------------------------
 
 .. image:: ../images/05/mPythonX.png
 

@@ -52,7 +52,7 @@ Python和互动媒体
 
 Python是一种开源的计算机程序设计语言。随着高中新课标（2017版）的落实，高中全部采用Python语言，有条件的小学和初中都开始从原来的VB转到Python。
 
-利用Python，也可以设计出
+利用Python的数据可视化库，如Matplotlib、bokeh和plotly等，也可以设计出交互的艺术作品。Processing也支持Python语法。因为虚谷号是一个稳定运行的电脑，用来展示互动媒体特别合适。
 
 Python的官网网站：https://www.python.org/
 
