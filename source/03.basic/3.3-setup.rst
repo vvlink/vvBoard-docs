@@ -88,6 +88,8 @@ apt 命令的引入就是为了解决命令过于分散的问题，它包括了 
 
 2.如何更换apt的源？
 
+https://blog.csdn.net/qq_39906884/article/details/89707016
+
 
 
 
