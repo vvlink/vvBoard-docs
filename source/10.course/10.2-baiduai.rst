@@ -31,15 +31,90 @@ ipyturtle
 
 注册网址：https://ai.baidu.com
 
-注册用户后，还要建立应用，得到API Key 和 Secret Key。请记下两个Key，在下面的Python代码中都会用到。
+注册用户后，还要建立应用（任何一个应用，然后把可以选择的接口全部选上），得到API Key 和 Secret Key。请记下两个Key，在下面的Python代码中都会用到。
 
-“{"error_msg":"No permission to access data","error_code":6}
-
-参考：https://www.cnblogs.com/erph/p/9186204.html
-
+.. image:: ../images/10/10.2-baidu01.png
 
 --------------------------
 课程目录
 --------------------------
 
-。
+课程精选了百度AI平台中部分典型应用，提供最简洁有趣的代码。
+
+1.人脸识别
+2.颜值和表情
+3.车辆识别
+4.车牌识别
+5.文字识别
+6.智能语音
+
+.. image:: ../images/10/10.2-baidu01.png
+
+--------------------------
+百度AI的典型应用
+--------------------------
+
+百度AI的调用过程，大致可以分为三个部分：
+
+1.建立对象，设置用户参数，读取需要识别的对象信息。
+
+2.提交信息到百度AI平台，平台处理后，返回识别结果。
+
+3.根据识别结果，执行相应的代码。
+
+--------------------------
+课程示例
+--------------------------
+
+以“文字识别”为例。
+
+第一步、导入库
+
+::
+
+	# -*- coding: UTF-8 -*-
+	from aip import AipOcr  
+
+第二步、设置认证信息
+
+注：这里用的是测试账号，有访问次数的限制，请使用自己的账号信息。
+
+::
+	""" 你的 APPID AK SK """
+	APP_ID = '15469649'
+	API_KEY = '3vZgLINSnGGEafPflkTLzkGh'
+	SECRET_KEY = '8cUXtkMed2z86kqfyrV606ylnCmfcc48'
+
+第三步、初始化AipFace对象
+
+::
+
+	aipOcr = AipOcr(APP_ID, API_KEY, SECRET_KEY)
+
+第四步、读取图片
+
+::
+
+	filePath = "word.jpg"
+	def get_file_content(filePath):
+	    with open(filePath, 'rb') as fp:
+	        return fp.read()
+​
+第五步、定义参数变量
+
+::
+
+	options = {'detect_direction': 'true','language_type': 'CHN_ENG',}
+
+第六步、调用通用文字识别接口
+
+::
+
+	result = aipOcr.basicGeneral(get_file_content(filePath), options)
+	print(result)
+	words_result=result['words_result']
+	for i in range(len(words_result)):
+	    print(words_result[i]['words'])
+
+
+
