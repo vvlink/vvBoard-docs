@@ -9,6 +9,8 @@
 
     10.1-ipyturtle.rst
     10.2-baidu-ai.rst
+    10.3-vi.rst
+    10.4-ml.rst
 
 
 
