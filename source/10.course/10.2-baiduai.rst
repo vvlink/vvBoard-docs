@@ -33,6 +33,10 @@ ipyturtle
 
 注册用户后，还要建立应用，得到API Key 和 Secret Key。请记下两个Key，在下面的Python代码中都会用到。
 
+“{"error_msg":"No permission to access data","error_code":6}
+
+参考：https://www.cnblogs.com/erph/p/9186204.html
+
 
 --------------------------
 课程目录
