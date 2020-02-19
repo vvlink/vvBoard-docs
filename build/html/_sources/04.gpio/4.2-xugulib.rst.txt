@@ -1,0 +1,208 @@
+
+xugu库的使用
+===========================
+
+
+xugu库是虚谷号研发团队为虚谷号定制的Python库，其目的是为了降低初学者用代码控制硬件的模块。xugu库基于Firmata协议开发，用户无需学习Arduino代码、串口协议知识，用极其简短的代码，即可实现对虚谷号板载Arduino的控制和感知。
+
+xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类，支持绝大多数的Arduino模块。
+
+
+xugu库的引用
+-------------------------
+
+只要Python代码中引用了xugu库，虚谷号会自动检测板载的Arduino UNO（ATmega328P芯片）是否烧写了标准的Firmata协议。如果没有，则烧录，确保GPIO的正常使用。因此第一次引用xugu库，大约需要十多秒时间来烧写Firmata协议固件。
+
+**注：** xugu库的语法参考了micro:bit和掌控板，与二者基本一致。
+
+------------------------------------------
+控制I/O引脚：Pin类
+------------------------------------------
+Pin类用于控制I/O引脚，具有设置引脚模式（IN，OUT，ANALOG）的属性和读写电平状态的方法。
+
+1、构建
+
+Pin(pin_num, pin_model）
+
+pin_num传入引脚标号，可以直接传入虚谷板上的引脚编号，例如D3或者A5，也可以直接传入13或者19这样的数字。
+
+pin_model 为引脚模式，Pin.IN是输入模式，Pin.OUT是输出模式，Pin.ANALOG是模拟输入（用于A0~A5）。
+
+2、方法
+
+Pin.read_digital()	
+
+返回该IO引脚电平值，1代表高电平，0代表低电平。该方法在输入模式有效。
+
+Pin.read_analog() 
+
+返回IO引脚的模拟值，数据范围在0和1023之间。该方法在输入模式有效。
+
+Pin.write_digital(value)
+
+给引脚设置电平值。value指要设置的电平值，1代表高电平，0代表低电平。该方法在输出模式有效。
+
+Pin.write_analog(value)
+
+给引脚设置模拟值。value指要设置的模拟值，数据范围在0和255之间。该方法在输出模式有效。
+
+
+1）数字输出范例。
+
+::
+
+	from xugu import Pin # 从 xugu 库中导入 Pin 类
+	p = Pin(10, Pin.OUT) # 初始化 Pin 类,将 10 号数字引脚设置为输出模式
+	#等价的写法: p = Pin(“D10”, Pin.OUT)
+	p.write_digital(1) # 设置 10 号引脚为高电平
+
+2）数字输入范例。
+
+::
+
+	from xugu import Pin, SerialMgt # 从 xugu 库中导入 Pin、SerialMgt 类
+	import time # 导入时间模块
+	p = Pin(4, Pin.IN) # 初始化 4 号引脚,设置为数字输入模式
+	ser = SerialMgt() #初始化串口
+	while True:
+	    value=p.read_digital() # 读取 4 号引脚电平信息,赋值给 value
+	    print(value) # 将value的值打印到终端上
+	    ser.write(str(value).encode()) # 将value的值写入到串口
+	    time.sleep(0.1) # 持续100ms
+
+**注：** 这段代码能够将读出的数字引脚信息，通过串口输出来。
+
+3）模拟输出范例。
+
+::
+
+	from xugu import Pin  # 从xugu库中导入Pin类
+	p = Pin(10, Pin.OUT)  # 初始化10号引脚设置为输出模式
+	p.write_analog(128)  # 给引脚设置模拟值128
+
+
+4）模拟输入范例。
+
+::
+
+	from xugu import Pin, SerialMgt # 从 xugu 库中导入 Pin、SerialMgt 类
+	p = Pin("A0", Pin.ANALOG) # 初始化 A0 引脚,设置为输入模式
+	ser = SerialMgt() #初始化串口
+	value = p.read_analog() #读取 A0 引脚的电压值
+	ser.write(str(value).encode()) # 将value的值写入串口
+
+**注：** 这段代码能够将读出的模拟引脚信息，通过串口输出来。
+
+---------------------------------------
+舵机控制：Servo类
+---------------------------------------
+该类用于控制舵机转到指定角度。
+
+1、构建
+
+Servo(pin_num）
+
+pin_num 引脚标号，可以直接传入虚谷板上的引脚编号，例如D3或者A5，也可以直接传入13或者19这样的数字。
+
+2、方法
+
+Servo. write_angle(value)
+
+让舵机转动到指定角度，Value指角度。每种舵机的最大转动角度不一样，需要参考舵机说明书。
+
+-------------------------------------
+读写I2C设备：I2C类
+-------------------------------------
+
+该类用于读写I2C从设备。
+
+**注：** 该类不能用于读写虚谷号主芯片的I2C总线。
+
+1、构建
+
+I2C(time=0)
+
+time 指I2C总线连续读写的间隔时间，单位是毫秒（ms），默认值是0。
+
+2、方法
+
+I2C.readfrom(address, register, read_byte)
+
+读取I2C设备。address为I2C从设备的地址，register为从设备的寄存器，read_byte为一次读取的字节数量。
+
+I2C.writeto(address, args)
+
+向I2C设备中写入内容。address为I2C从设备的地址，args是要发送到设备的可变字节数，作为列表传入。
+
+-------------------------------------------
+SerialMgt类
+-------------------------------------------
+
+该类用于虚谷号和PC之间的串口通信。
+
+1、构建
+
+SerialMgt(port, baudrate)
+
+port指虚谷号连接pc的串口号，baudrate为串口波特率；
+
+注：当不设置串口号和波特率时，虚谷库默认使用/dev/ttyGS0串口，波特率为115200。
+
+2、方法
+
+SerialMgt.read(bytes)
+
+从串口中读取数据，bytes为读取的字节数，默认为100。
+
+SerialMgt.write(data)
+
+向串口中写入数据，data为写入的数据，类型为String。
+
+----------------------
+LED类
+----------------------
+该类用于LED的简易控制。
+
+1、构建
+
+LED(pin_num)
+
+Pin_num为数字引脚编号，范围0~19。
+
+注：虚谷号已经在第13号引脚内置了LED。
+
+2、方法
+high()：
+给引脚一个高电位，只有在输出模式有效，当该引脚接入LED灯的时候，灯会点亮。
+
+low()：
+给引脚一个低电位，只有在输出模式有效，当该引脚接入LED灯的时候，灯会熄灭。
+
+on()：
+等价与high()。
+
+off()：
+等价与low()。
+
+-------------------------------------
+XuguLog类
+-------------------------------------
+该类用于日志输出。程序运行过程中，会将日志信息追加到日志文件中。
+
+1、构建
+
+XuguLog(filename)
+
+初始化该类的时候，会自动生成一个名为filename的日志文件，后缀为.log，生成的文件与运行的python程序在同一个目录下。
+
+2、方法
+
+XuguLog.write(value)
+
+将日志信息写入到日志文件中，value为要写入的内容，类型为String。
+
+
+
+
+
+

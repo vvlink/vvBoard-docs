@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. 虚谷号系统升级 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. 常见Linux命令" href="3.5-linux.html" />
+    <link rel="prev" title="3. 软件安装和卸载" href="3.3-setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的基本操作</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="3.1-wifi-bt.html">1. Wi-Fi和蓝牙</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.2-python-upgraded.html">2. Python运行和库维护</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3-setup.html">3. 软件安装和卸载</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. 虚谷号系统升级</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.1. 准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.2. 步骤详解</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.3. 固件升级失败原因及解决方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maskrom">4.4. MaskRom模式详解</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3.5-linux.html">5. 常见Linux命令</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的基本操作</a> &raquo;</li>
+        
+      <li>4. 虚谷号系统升级</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/03.basic/3.4-system-upgraded.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>4. 虚谷号系统升级<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>虚谷号系统升级（烧写固件）分为Loader和MaskRom两种模式。强烈推荐用户使用Loader模式烧写固件。MaskRom模式是设备崩溃的最后一条防线，具有一定风险。因此仅在设备进入不了Loader模式的情况下，方可尝试MaskRom模式。</p>
+<p>固件下载地址：<a class="reference external" href="http://www.vvboard.com.cn/plus/view.php?aid=6">http://www.vvboard.com.cn/plus/view.php?aid=6</a></p>
+<div class="section" id="id2">
+<h2>4.1. 准备工作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>1.解压固件</p>
+<p>将下载后的固件解压。解压后如下：</p>
+<img alt="../_images/system01.jpg" src="../_images/system01.jpg" />
+<p>2.驱动安装</p>
+<p>运行DriverAssitant_v4.6文件夹下的DriverInstall.exe程序。</p>
+<img alt="../_images/system02.jpg" src="../_images/system02.jpg" />
+<img alt="../_images/system03.jpg" src="../_images/system03.jpg" />
+<img alt="../_images/system04.jpg" src="../_images/system04.jpg" />
+<img alt="../_images/system05.jpg" src="../_images/system05.jpg" />
+</div>
+<div class="section" id="id3">
+<h2>4.2. 步骤详解<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>1.打开烧写程序</p>
+<p>打开AndroidToolAndroidTool_Release目录下的AndroidTool.exe</p>
+<img alt="../_images/system06.jpg" src="../_images/system06.jpg" />
+<p>打开后如下所示：</p>
+<img alt="../_images/system07.jpg" src="../_images/system07.jpg" />
+<p>2.进入Loader模式</p>
+<p>1）断开虚谷号的所有电源。</p>
+<p>2）按住虚谷号的RST按键，通过 OTG 口将虚谷号和电脑连接。</p>
+<img alt="../_images/system08.jpg" src="../_images/system08.jpg" />
+<p>3）当电脑显示“发现一个LOADER设备”时，松开按键。这时设备就进入 Loader 模式，OTG口旁边的LED将亮起。</p>
+<img alt="../_images/system09.jpg" src="../_images/system09.jpg" />
+<p>4）选择img文件，烧写固件。</p>
+<img alt="../_images/system10.jpg" src="../_images/system10.jpg" />
+<img alt="../_images/system11.jpg" src="../_images/system11.jpg" />
+<img alt="../_images/system12.jpg" src="../_images/system12.jpg" />
+<img alt="../_images/system13.jpg" src="../_images/system13.jpg" />
+<img alt="../_images/system14.jpg" src="../_images/system14.jpg" />
+<p>6）重启虚谷号</p>
+<p>固件烧写成功后，虚谷号将重新启动，这时候要**稍等数分钟**，等待系统更新完毕。等到vvBoard盘符出现后，系统升级成功！</p>
+<dl class="simple">
+<dt><strong>注意：</strong></dt><dd><p>-固件烧写成功后，虚谷号将重新启动，还要稍等数分钟才能正常使用。
+-部分板子（概率很小）可能需要完全断电，静置数分钟才能正常使用。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>4.3. 固件升级失败原因及解决方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>固件升级失败一般分为两种情况。</p>
+<p>1.没有找到设备。</p>
+<p>按住RST键接入电脑，固件升级工具中依然提示“没有找到设备”。这种情况一般是驱动没有安装引起，请重新安装驱动。</p>
+<p>如果驱动安装后，依然提示“没有找到设备”，请打开“设备管理器”查看电脑的设备中，是否出现一个名为“Class for rockusb devices”的设备。如果设备上有感叹号，说明驱动没有正确安装，请重新安装。</p>
+<img alt="../_images/3.4-system01.png" src="../_images/3.4-system01.png" />
+<p>2.能找到设备但固件升级失败，如下图所示。</p>
+<img alt="../_images/system15.jpg" src="../_images/system15.jpg" />
+<p>失败的原因及为以下几种：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>升级过程中碰到USB连接线，导致接触不良。</p></li>
+<li><p>使用笔记本电脑（旧版本）给板子供电，导致供电不足。</p></li>
+<li><p>1+8（创客版）的板子升级2+32（教育版）的固件。</p></li>
+</ul>
+</div></blockquote>
+<p><strong>注意</strong>：如果提示设备测试失败，或者升级后不能进入U盘模式，都可以参考下面的办法！！！</p>
+<p>解决方法：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>供电不足：当虚谷号进入loader模式后，在电源口（DC IN）再连接一根电源线（最好采用2A的充电器供电），如下图所示：</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="maskrom">
+<h2>4.4. MaskRom模式详解<a class="headerlink" href="#maskrom" title="Permalink to this headline">¶</a></h2>
+<p>如果loader模式失败，动手能力强的用户可以试一下MaskRom模式。打开烧写程序后，还要做如下工作。</p>
+<p>1.在虚谷板上找到对应的两点，如下图红框内所示：</p>
+<img alt="../_images/system17.jpg" src="../_images/system17.jpg" />
+<p>2.设备断开所有电源。</p>
+<p>3.用金属镊子接通图片的两点，并保持。</p>
+<img alt="../_images/system18.jpg" src="../_images/system18.jpg" />
+<p>4.用Micro USB OTG线连接好设备和主机。</p>
+<p>5.显示发现一个MaskRom设备时，松开镊子设备就进入MaskRom模式，进行烧写。</p>
+<img alt="../_images/system19.jpg" src="../_images/system19.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3.5-linux.html" class="btn btn-neutral float-right" title="5. 常见Linux命令" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="3.3-setup.html" class="btn btn-neutral float-left" title="3. 软件安装和卸载" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

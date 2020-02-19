@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. 入门配置教程 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="虚谷号的基本操作" href="../03.basic/index.html" />
+    <link rel="prev" title="5. 混合模式" href="2.4-blend.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的入门教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2.0-start.html">1. 快速入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1-dap.html">2. U盘模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2-wifi.html">3. 无线模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3-pc.html">4. 主机模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4-blend.html">5. 混合模式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. 入门配置教程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arduino">6.1. 给板载Arduino编程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python">6.2. 运行Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.3. 配置无线连接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jupyter">6.4. 连接Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.5. 安装Python库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vnc">6.6. 安装VNC软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">6.7. 体验虚谷号桌面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">6.8. 安装其他软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux">6.9. Linux 常用命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">6.10. 新手入门文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的入门教程</a> &raquo;</li>
+        
+      <li>6. 入门配置教程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/02.quick/2.5-beginner.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6. 入门配置教程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>新拿到一块虚谷号，应该如何使用？这里提供了几个经典的学习任务。</p>
+<div class="section" id="arduino">
+<h2>6.1. 给板载Arduino编程<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：</p>
+<p>运行arduino里的编程程序，修改程序控制其规律。</p>
+<p>学习过程：</p>
+<p>复制标准的arduino代码（例：Blink.ino）到U盘的Arduino文件夹下，命名为“arduino.ino”。（Blink.ino在Arduino01.example01.BasicsBlink里）</p>
+<p>如果不更改文件名的话，则需要打开arduino_config.ini文件修改参数，如Arduino=Blink.ino，这样也可以运行。</p>
+<p>按下RST键，U盘的盘符将暂时消失，约十秒钟左右，板子上有LED快速闪烁，表示虚谷号将代码写入板载Arduino。之后D13 LED灯会按程序写的亮1秒熄灭1秒的闪烁。
+（如果没有发现板子上的LED快速闪烁，请查看arduino.ino是否移动到04.bak,没有则说明程序没有去写入,请查看你的文件命名是否正确。如果led灯快闪闪烁后，没有亮一秒灭一秒，说明写入失败，打开log文件检查原因。烧录成功则led灯亮一秒熄灭一秒。）</p>
+<p>做完上面的接下来我们就要修改程序了，将文件从Arduino/04.bak复制到Arduino文件夹内。</p>
+<p>使用记事本打开文件，里面的digitalWrite(LED_BUILTIN, HIGH)为灯亮，digitalWrite(LED_BUILTIN, LOW)为灯灭，通过修改延迟时间（delay(millisecond)）里面的值来控制灯亮灭的时间。例如改为亮3秒，熄灭5秒。</p>
+<ul class="simple">
+<li><p>注：Arduino中延迟时间函数参数单位是毫秒，而python中参数单位是秒。</p></li>
+</ul>
+<p>短按reset再次运行，这次灯闪就变成了亮3秒，熄灭5秒了。</p>
+</div>
+<div class="section" id="python">
+<h2>6.2. 运行Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：</p>
+<p>在u盘模式运行Python代码。</p>
+<p>学习过程：</p>
+<p>首先我们先将虚谷号u盘连接，显示连接后打开，在目录结构里找到Python文件夹进入。</p>
+<p>在Python目录下新建一个test.py文件，打开编辑一个python代码（也可以在其他编辑器上写完粘贴过来）保存。</p>
+<p>打开python_config.ini文件，修改Python=test.py并保存。</p>
+<p>这里我们也可以选择把新建文件的名字改成main.py ，这样不需要打开ini文件修改，可以直接执行。</p>
+<p>最后按下reset按键等待虚谷号刷新。这样文件就执行啦。</p>
+<ul class="simple">
+<li><p>注：Arduino中延迟时间函数参数单位是毫秒，而python中参数单位是秒。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>6.3. 配置无线连接<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：在u盘模式连接wifi</p>
+<p>学习过程：</p>
+<p>首先我们打开vvBoard下面的vvBoard_config.ini文件设置SSID和密码，SSID是wifi名称，SSID_PSD是密码。</p>
+<p>比如打开我们的手机热点（在手机上设置时选择AP频段为2.4GHz频段），将名称密码输入。</p>
+<p>保存并关闭文件，短按RST键，稍等片刻，就会连接上指定的Wi-Fi了，这里我们可以打开vvBoard目录下的wifi _ log.txt文件查看。连接上的话可以看到wifi的IP地址。如果连接手机热点通过手机也可以查看到。</p>
+<p>如果在Wi-Fi配置信息中找不到IP地址，很有可能是虚谷号的DAP系统启动速度太快，而路由器的速度有点慢，导致IP地址还没来得及分配就启动进入了U盘模式。遇到这种情况，只需要再按一次RST键就能解决。</p>
+<ul class="simple">
+<li><p>注：目前虚谷号仅支持2.4GHz的Wi-Fi。如果Wi-Fi需要二次身份认证（如校园网等），只能通过电脑模式连接，不能用U盘模式配置。在修改完vvBoard_config文件后，如果短按RST键后没有连接成功，可以多尝试几次。如果还不行，请仔细检查vvBoard_config文件中的内容是否被正确地修改，可以尝试将虚谷号断电重启，或长按RST键5秒重启。</p></li>
+</ul>
+</div>
+<div class="section" id="jupyter">
+<h2>6.4. 连接Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：通过无线模式连接jupyter</p>
+<p>学习过程：</p>
+<p>使用此功能前需先连接WI-FI，并且虚谷号连接的WI-FI（上一个测试连接的WI-FI）要和电脑端连接的WI-FI一致（或者电脑端网线和你使用的WI-FI是同一个路由器上的）。</p>
+<p>用记事本打开vvBoard文件夹内的vvBoard_config.ini（就是设置wifi账号密码的文件），把里面改为Jupyter=1，一般情况下Jupyter默认是1。（0是关闭）</p>
+<p>短按RST键，如果已经连接上Wi-Fi，设置过jupyter，等待u盘刷新出现后我们就可以打开jupyter了。</p>
+<p>在电脑端打开浏览器（这里建议是谷歌浏览器，有的浏览器存在打不开的情况），输入http://xxx.xxx.x.xxx:8888（xxx.xxx.x.xxx为你的IP地址，在wifi _ log.txt文件中可以查看)</p>
+<p>进入网页后会提示输入密码，密码为scope，便可以链接虚谷号，浏览和操作虚谷号上文件，如果打开为空白页，则更换浏览器打开。</p>
+</div>
+<div class="section" id="id3">
+<h2>6.5. 安装Python库<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：</p>
+<p>学习过程：</p>
+</div>
+<div class="section" id="vnc">
+<h2>6.6. 安装VNC软件<a class="headerlink" href="#vnc" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：</p>
+<p>学习过程：</p>
+</div>
+<div class="section" id="id4">
+<h2>6.7. 体验虚谷号桌面<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：</p>
+<p>主机模式连接，体验和了解虚谷号桌面，软件和操作等。</p>
+<p>学习过程：</p>
+<p>首先我们使用电脑模式连接虚谷号，上电后等待二十秒左右，显示屏上显示虚谷号桌面。</p>
+<p>桌面上有很多程序，教育版比创客版多一些，软件介绍在第一章虚谷号的介绍中有。</p>
+<p>还可以完成很多操作，比如在主机模式连接蓝牙和wifi、在终端输入uname可以查看vvBoard相关资料、终端输入ls /dev可以查看插入的串口设备串口、修改显示屏的分辨率等。具体操作在本文档中都有详细图文讲解。</p>
+</div>
+<div class="section" id="id5">
+<h2>6.8. 安装其他软件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：</p>
+<p>学习安装软件</p>
+<p>学习过程：</p>
+<p>在虚谷号安装软件有两种方法，无线模式和主机模式。一种无线模式终端输入指令安装，一种是主机模式在软件管理处安装。</p>
+<p>具体操作步骤在本文档第三章软件安装与卸载中有详细讲解。</p>
+<p>对linux操作不太熟悉，可以选择第二种操作方法，就像在windows系统上一样，搜索软件，下载软件，卸载软件都可以完成。</p>
+</div>
+<div class="section" id="linux">
+<h2>6.9. Linux 常用命令<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<p>学习目标：</p>
+<p>了解学习linux常用命令</p>
+<p>学习过程：</p>
+<p>在虚谷号的操作中多多使用，也就记下来了。</p>
+<p>Linux的快捷键操作说明：
+</p>
+<blockquote>
+<div><p>Ctrl+Alt+t:打开终端</p>
+<p>Ctrl+空格键：更改输入法</p>
+<p>Ctrl+c:结束终端运行</p>
+<p>Alt+PrintScreenSysRq:截屏</p>
+<p>Ctrl+w:关闭当前窗口</p>
+<p>Ctrl+a:全选</p>
+<p>Ctrl+s:保存</p>
+<p>Ctrl+c:复制</p>
+<p>Ctrl+x:剪切</p>
+<p>Ctrl+v:粘贴</p>
+</div></blockquote>
+<p>更多Linux命令，请访问本文档的第三章： 常见linux命令</p>
+</div>
+<div class="section" id="id6">
+<h2>6.10. 新手入门文档<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>虚谷号为测试专家提供了测评文档，这个文档其实就是一份简单而经典的入门教程。</p>
+<p>文档下载地址：<a class="reference external" href="https://github.com/vvlink/vvBoard-docs/tree/master/%E5%90%84%E7%A7%8D%E6%96%87%E6%A1%A3/%E8%99%9A%E8%B0%B7%E5%8F%B7%E6%B5%8B%E8%AF%84%E4%B8%93%E5%AE%B6-%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3">https://github.com/vvlink/vvBoard-docs/tree/master/%E5%90%84%E7%A7%8D%E6%96%87%E6%A1%A3/%E8%99%9A%E8%B0%B7%E5%8F%B7%E6%B5%8B%E8%AF%84%E4%B8%93%E5%AE%B6-%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../03.basic/index.html" class="btn btn-neutral float-right" title="虚谷号的基本操作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2.4-blend.html" class="btn btn-neutral float-left" title="5. 混合模式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

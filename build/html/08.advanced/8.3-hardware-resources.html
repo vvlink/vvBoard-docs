@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 虚谷号硬件资源详解 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. 虚谷号的软件安装" href="8.4-soft-setup.html" />
+    <link rel="prev" title="2. U盘目录详解" href="8.2-dap-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的高级操作</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="8.1-troubleshooting.html">1. 常见故障解答</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.2-dap-index.html">2. U盘目录详解</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. 虚谷号硬件资源详解</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.1. 虚谷号的引脚说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#led">3.2. 虚谷号的LED指示灯介绍</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的高级操作</a> &raquo;</li>
+        
+      <li>3. 虚谷号硬件资源详解</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/08.advanced/8.3-hardware-resources.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3. 虚谷号硬件资源详解<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>虚谷号除了引出全部的Arduino引脚外，还引出了主芯片的部分引脚。</p>
+<div class="section" id="id2">
+<h2>3.1. 虚谷号的引脚说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>CVBS_OUT, 复合视频信号输出：输出视频信号到TV，LCD等，可用于将虚谷号扩展成视频盒子等；</p></li>
+<li><p>ADC，虚谷号的ADC PIN：可以扩展更多的功能按键，也可用于ADC采样；</p></li>
+<li><p>TX/RX，虚谷号的debug串口：虚谷号使用者的开发接口，系统信息的打印接口；</p></li>
+<li><dl class="simple">
+<dt>IR_R：</dt><dd><ul class="simple">
+<li><p>1， 红外（遥控）信息的输入接口；</p></li>
+<li><p>2，虚谷号GPIO口，扩展单线通信接口或虚谷号模拟PWM输出控制；</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SPDIF：</dt><dd><ul class="simple">
+<li><p>1，数字音频接口，用于驱动数字声卡（支持Dolby音效或DTS环绕音效）；</p></li>
+<li><p>2，虚谷号GPIO口，扩展单线通信或虚谷号模拟PWM输出控制；</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>AOL/AOR：虚谷号audio codec的音频模拟信号输出（左右声道），可用于将虚谷号扩展成视频盒子的音频输出或用于将虚谷号扩展为智能音箱等。</p></li>
+</ol>
+<img alt="../_images/gpio.png" src="../_images/gpio.png" />
+</div>
+<div class="section" id="led">
+<h2>3.2. 虚谷号的LED指示灯介绍<a class="headerlink" href="#led" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="8.4-soft-setup.html" class="btn btn-neutral float-right" title="4. 虚谷号的软件安装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="8.2-dap-index.html" class="btn btn-neutral float-left" title="2. U盘目录详解" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

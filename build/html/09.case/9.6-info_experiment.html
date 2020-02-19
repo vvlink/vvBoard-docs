@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. 基于虚谷号的“传感与控制”实验 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. 会“吟诗作对”的机器人" href="9.7-poem.html" />
+    <link rel="prev" title="5. 虚谷号让食盐在水中的扩散过程“可见”" href="9.5-science.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的案例汇集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="9.1-yeelight.html">1. 虚谷号结合Yeelight做”变色龙“灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.2-facetest.html">2. 做一个颜值测试器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.3-UAV.html">3. 语音控制特洛无人机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.4-vrobot.html">4. 做一个语音交互机器人“小胖”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.5-science.html">5. 虚谷号让食盐在水中的扩散过程“可见”</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. 基于虚谷号的“传感与控制”实验</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.1. 新课标中对“传感与控制”的要求</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.2. 实验准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">6.3. 传感实验</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">6.4. 控制实验</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">6.5. 实验总结</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="9.7-poem.html">7. 会“吟诗作对”的机器人</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.8-m_learning.html">8. 用虚谷号体验机器学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的案例汇集</a> &raquo;</li>
+        
+      <li>6. 基于虚谷号的“传感与控制”实验</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/09.case/9.6-info_experiment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6. 基于虚谷号的“传感与控制”实验<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>案例编写：谢作如（温州）</p>
+<p>信息系统要发挥作用，必须与外部世界进行联系。在基于传统网络的信息系统中。这种联系需要以人为中介进行——由人来理解和转换外部世界的需求，将其输入信息系统；同时，也是由人来理解信息系统的输出结果，然后去操作实物。比如图书管理系统，用户往往只能通过系统进行查询，了解某本书的出借情况以及存储位置，而系统却不能直接将书取出并放到用户手里。</p>
+<p>随着物联网和人工智能的发展，信息系统逐渐可以通过传感技术自动获取外部信息(如温度、亮度、卡片、人脸等等)，也可以通过一定的机制实现对外部物体的直接控制。如地铁售票系统，不仅可以扫描手机上的二维码信息，完成自动扣款，还能够直接打开闸机。简而言之，新的信息系统不仅可以感知世界，还将实现控制万物。</p>
+<div class="section" id="id2">
+<h2>6.1. 新课标中对“传感与控制”的要求<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>高中信息技术新课程中的必修模块2“信息系统与社会”，包括了“信息社会特征”“信息系统组成与应用”“信息安全与信息社会责任”三部分内容，强调学生利用信息系统解决问题的过程与方法，提升信息安全和社会责任意识。其中关于“传感与控制”部分的描述如下：</p>
+<p>** 2.3 通过分析物联网应用实例，知道信息系统与外部世界的连接方式，了解常见的传感与控制机制。 **</p>
+<p>为落实这一目标，课标的“教学提示”中指出，要利用信息技术实验室创设真实的问题情境，为学生提供从信息系统的设计规划到软硬件操作的实践体验机会，提高学生对信息系统 价值的认识以及利用信息系统解决问题的能力。如在信息技术实验室中，通过“远程控制系统”实验，指导学生合作或独立完成一个信息系统的硬件搭建和软件安装。</p>
+</div>
+<div class="section" id="id3">
+<h2>6.2. 实验准备工作<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>开源硬件“虚谷号”是一个板载单片机的迷你电脑，很适合用来完成高中信息技术课程中的“传感与控制”的实验。虚谷号的工作原理如图所示。</p>
+<img alt="../_images/9.6-info01.png" src="../_images/9.6-info01.png" />
+<p>从图中可以看出，虚谷号其实由两个部分组成，对传感器和执行器的连接，都是通过板载的ATmega328 单片机（Arduino UNO同款芯片）来完成。Arduino相当于是一个“代理”，其和虚谷号的底层Linux系统之间的通讯借助标准的串口协议来连接。目前绝大多数的单片机与电脑连接都是用串口协议的，这方面的案例资源非常丰富，技术非常也很成熟。
+为了帮助Python的初学者编写传感与控制方面的代码，虚谷号提供了名为“xugu”的Python库。这个库中有Pin（引脚）、Servo（舵机）和SerialMgt（串口）等几个常用的类。借助这个库，几行代码就能完成基本的输入输出控制，即GPIO（General-purpose input/output）。</p>
+</div>
+<div class="section" id="id4">
+<h2>6.3. 传感实验<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>1.实验目标</p>
+<p>能编程读取开源硬件的指定引脚的电平状态，通过常见的数字、模拟传感器获取物理世界的各种环境信息。</p>
+<dl class="simple">
+<dt>2.实验器材</dt><dd><p>1）虚谷号 * 1；
+2）虚谷号厚物扩展板 * 1，或者Arduino UNO扩展板 * 1；
+3）按钮传感器 * 1，光线传感器 * 1 。</p>
+</dd>
+</dl>
+<p>3.装置搭建</p>
+<p>将扩展板插入虚谷号，然后把按钮传感器接到扩展板D4，光线传感器接到扩展板A0。</p>
+<p>4.实验过程</p>
+<p>给虚谷号设置Wi-Fi信息后，然后访问Jupyter服务。新建一个Python文件，输入相关代码，再运行代码查看效果。</p>
+<img alt="../_images/9.6-info02.png" src="../_images/9.6-info02.png" />
+<p>在网页上查看虚谷号的串口信息</p>
+<p>1）数字输入</p>
+<p>参考代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span> <span class="c1"># 从 xugu 库中导入 Pin类</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="c1"># 导入时间模块</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">value</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span> <span class="c1"># 读取 4 号引脚电平信息,赋值给 value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># 将value的值打印到终端上</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># 持续100ms</span>
+</pre></div>
+</div>
+<p>2.模拟输入</p>
+<p>参考代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span> <span class="c1"># 从 xugu 库中导入 Pin类</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="c1"># 导入时间模块</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s2">&quot;A0&quot;</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">value</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span> <span class="c1"># 读取 A0 号引脚电平信息,赋值给 value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># 将value的值打印到终端上</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># 持续100ms</span>
+</pre></div>
+</div>
+<p>在虚谷号的系统中，已经提供了用Jupyter写的学习笔记，在网页上即可完成传感实验的所有操作。</p>
+</div>
+<div class="section" id="id5">
+<h2>6.4. 控制实验<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>1.实验目标</p>
+<p>能编程控制开源硬件的指定引脚输出高低电平信号，能够驱动LED灯、蜂鸣器和舵机之类的执行器。</p>
+<dl class="simple">
+<dt>2.实验器材</dt><dd><ul class="simple">
+<li><p>虚谷号 * 1；</p></li>
+<li><p>虚谷号厚物扩展板 * 1，或者Arduino UNO扩展板 * 1；</p></li>
+<li><p>LED灯 * 1，有源蜂鸣器 * 1 ，180度舵机 * 1。</p></li>
+</ul>
+</dd>
+</dl>
+<p>3.装置搭建</p>
+<p>将扩展板插入虚谷号，然后把LED灯接到扩展板D6，有源蜂鸣器接到扩展板D10，舵机接到D4。</p>
+<p>4.实验过程</p>
+<p>给虚谷号设置Wi-Fi信息后，然后访问Jupyter服务。新建一个Python文件，输入相关代码，再运行代码查看效果。</p>
+<p>1）数字输出</p>
+<p>参考代码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span> <span class="c1"># 从 xugu 库中导入 Pin 类</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1"># 初始化 Pin 类</span>
+<span class="c1"># 输出高电平</span>
+<span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 输出低电平</span>
+<span class="n">led</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 低电平</span>
+</pre></div>
+</div>
+<p>2）模拟输出</p>
+<p>参考代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>  <span class="c1"># 从xugu库中导入Pin类</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="c1">#给引脚设置模拟值128</span>
+<span class="n">p</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+<span class="c1">#给引脚设置模拟值255</span>
+<span class="n">p</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>3）舵机控制</p>
+<p>参考代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Servo</span>
+<span class="n">servo</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1">#设置舵机旋转到150°</span>
+<span class="n">servo</span><span class="o">.</span> <span class="n">write_angle</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+<span class="c1">#设置舵机旋转到10°</span>
+<span class="n">servo</span><span class="o">.</span> <span class="n">write_angle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>注意：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>有源蜂鸣器的控制和LED基本一致，在代码中修改引脚号即可。</p></li>
+<li><p>Jupyter提供了网页小控件，如文本框、选择框和滑杆等，可以借助小控件来控制执行器的动作。</p></li>
+<li><p>控制实验中的参考代码，在Jupyter中要分段执行，才能看清楚效果，如图所示。</p></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/9.6-info03.png" src="../_images/9.6-info03.png" />
+</div>
+<div class="section" id="id6">
+<h2>6.5. 实验总结<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>课标中提出，信息技术实验室是学生学习信息技术，实践信息技术的重要场所。相对于普通机房而言，信息技术实验室除了必备的电脑外，还要配置一些供学生做各种信息技术实验的器材，如摄像头、开源硬件、常见的传感器和执行器等。</p>
+<p>对于信息技术实验室的建设，学校可以在原机房等基础上改造，也可以新建。相对来说，在普通机房增加类似虚谷号、掌控板之类的开源硬件，完成课标中规定的“传感与控制”的实验，无论从经费投入还是技术难度来说，门槛都是很低的。这样的做法比较符合当前的国情。</p>
+<p>需要强调的是，虚谷号的系统中已经提供了用Jupyter写的学习笔记，在网页上即可完成“传感与控制”实验的所有操作。此外，虚谷号还提供了通过U盘模式执行Python代码的功能，哪怕没有Wi-Fi，也能够完成常见的信息技术实验。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="9.7-poem.html" class="btn btn-neutral float-right" title="7. 会“吟诗作对”的机器人" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="9.5-science.html" class="btn btn-neutral float-left" title="5. 虚谷号让食盐在水中的扩散过程“可见”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. U盘目录详解 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. 虚谷号硬件资源详解" href="8.3-hardware-resources.html" />
+    <link rel="prev" title="1. 常见故障解答" href="8.1-troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的高级操作</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="8.1-troubleshooting.html">1. 常见故障解答</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. U盘目录详解</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1. U盘根目录文件介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arduino">2.2. Arduino内文件介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python">2.3. Python内文件介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vvboard">2.4. vvBoard内文件介绍</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="8.3-hardware-resources.html">3. 虚谷号硬件资源详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的高级操作</a> &raquo;</li>
+        
+      <li>2. U盘目录详解</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/08.advanced/8.2-dap-index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="u">
+<h1>2. U盘目录详解<a class="headerlink" href="#u" title="Permalink to this headline">¶</a></h1>
+<p>U盘模式是虚谷号特有的功能，通过U盘方式，虚谷号可以完成Arduino烧写、Python文件运行，连接Wi-Fi等操作。U盘中有Arduino、Python和vvBoard三个文件夹。Python和arduino程序同时存在时，先运行Arduino,后运行Python</p>
+<div class="section" id="id1">
+<h2>2.1. U盘根目录文件介绍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Arduino：存放Arduino相关的文件</p></li>
+<li><p>Python：存放Python相关的文件</p></li>
+<li><p>vvBoard：存放vvBoard相关的文件</p></li>
+<li><p>autorun.inf: 配置U盘的盘符</p></li>
+<li><p>REDAME.txt: 查看版本信息</p></li>
+</ul>
+</div></blockquote>
+<p>System Volume Information: Windows系统默认的文件夹，没有任何用途</p>
+</div>
+<div class="section" id="arduino">
+<h2>2.2. Arduino内文件介绍<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
+<p>01.example：存放Arduino IDE里的所有案例</p>
+<p>02.lib：存放Arduino的库文件</p>
+<p>03.doc：存放Arduino相关的资料</p>
+<p>04.bak：执行完Arduino的程序后放入这里</p>
+<p>arduino_config.ini：配置要执行的Arduino程序</p>
+<p>arduino_log.txt：编译运行Arduino程序打印的log</p>
+</div>
+<div class="section" id="python">
+<h2>2.3. Python内文件介绍<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>01.example：存放Python的案例</p>
+<p>02.lib：存放Python库文件</p>
+<p>03.doc：存放Python相关的资料，例如：Python库的说明</p>
+<p>python_config.ini：配置要执行的Python程序</p>
+<p>python_log.txt:执行Python程序有格式错误的报错log</p>
+</div>
+<div class="section" id="vvboard">
+<h2>2.4. vvBoard内文件介绍<a class="headerlink" href="#vvboard" title="Permalink to this headline">¶</a></h2>
+<p>docs：存放vvBoard的说明文档</p>
+<p>tools：存放工具，例如：notepad文本编辑工具</p>
+<p>system_log.txt：系统log</p>
+<p>vvBoard_config.txt：配置wifi和jupyter</p>
+<p>wifi_log.txt：连接wifi打印的log</p>
+<p>xgh.ico：U盘盘符</p>
+<p>访问siot.url:使用U盘模式打开siot并且连接上网络则生成windows的网页快捷方式，双击便能打开siot网页</p>
+<p>访问jupyter.url: 使用U盘模式打开jupyter并且连接上网络则生成windows的网页快捷方式，双击便能打开jupyter网页,如果打开为空白页，请复制网址在其他浏览器上打开，推荐使用谷歌浏览器</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="8.3-hardware-resources.html" class="btn btn-neutral float-right" title="3. 虚谷号硬件资源详解" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="8.1-troubleshooting.html" class="btn btn-neutral float-left" title="1. 常见故障解答" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

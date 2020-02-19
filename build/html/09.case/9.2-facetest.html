@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. 做一个颜值测试器 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. 语音控制特洛无人机" href="9.3-UAV.html" />
+    <link rel="prev" title="1. 虚谷号结合Yeelight做”变色龙“灯" href="9.1-yeelight.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的案例汇集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="9.1-yeelight.html">1. 虚谷号结合Yeelight做”变色龙“灯</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. 做一个颜值测试器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.1. 案例描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.2. 原理分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.3. 用摄像头获取颜值的代码实现</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="9.3-UAV.html">3. 语音控制特洛无人机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.4-vrobot.html">4. 做一个语音交互机器人“小胖”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.5-science.html">5. 虚谷号让食盐在水中的扩散过程“可见”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.6-info_experiment.html">6. 基于虚谷号的“传感与控制”实验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.7-poem.html">7. 会“吟诗作对”的机器人</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.8-m_learning.html">8. 用虚谷号体验机器学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的案例汇集</a> &raquo;</li>
+        
+      <li>2. 做一个颜值测试器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/09.case/9.2-facetest.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>2. 做一个颜值测试器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>案例提供：李琦（诸暨）</p>
+<p>虚谷号的优势是能够连接各种常见的电脑外设，如果摄像头、麦克风等。接上摄像头后，自然可以做人工智能中的视觉识别作品了。</p>
+<div class="section" id="id2">
+<h2>2.1. 案例描述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>人脸识别系统以人脸识别技术为核心，是一项新兴的生物识别技术，是当今国际科技领域攻关的高精尖技术。它广泛采用区域特征分析算法，融合了计算机图像处理技术与生物统计学原理于一体，利用计算机图像处理技术从视频中提取人像特征点，利用生物统计学的原理进行分析建立数学模型，具有广阔的发展前景。</p>
+</div>
+<div class="section" id="id3">
+<h2>2.2. 原理分析<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>人脸识别技术包含三个部分:</p>
+<dl class="simple">
+<dt>(1)人脸检测</dt><dd><p>面貌检测是指在动态的场景与复杂的背景中判断是否存在面像，并分离出这种面像。</p>
+</dd>
+<dt>(2)人脸跟踪</dt><dd><p>面貌跟踪是指对被检测到的面貌进行动态目标跟踪。具体采用基于模型的方法或基于运动与模型相结合的方法。此外，利用肤色模型跟踪也不失为一种简单而有效的手段。</p>
+</dd>
+<dt>(3)人脸比对</dt><dd><p>面貌比对是对被检测到的面貌像进行身份确认或在面像库中进行目标搜索。这实际上就是说，将采样到的面像与库存的面像依次进行比对，并找出最佳的匹配对象。所以，面像的描述决定了面像识别的具体方法与性能。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>2.3. 用摄像头获取颜值的代码实现<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>在虚谷号自带的案例中，有摄像头的视觉识别案例。</p>
+<p>#!/usr/bin/env python3
+# -<em>- coding: utf-8 -</em>-
+“””
+Created on Thu Oct 18 13:02:42 2018
+&#64;author: james
+“””</p>
+<p>import cv2</p>
+<p>import requests</p>
+<p>import json</p>
+<p>import threading</p>
+<p>import time</p>
+<p>import base64</p>
+<p>import numpy as np</p>
+<p>import xugu</p>
+<p>servo=xugu.Servo(12)</p>
+<p>access_token=”24.42017d996da0a23f3c4567b8dfd16a21.2592000.1550220300.282335-14563606”</p>
+<p>API_KEY=”ijoqlG1PdSsdxtXc7DNn68jh”</p>
+<p>SECRET_KEY=”Erpr184wiWCG7ZZglFKKG3Zm3up6xUmi”</p>
+<p>face_num=0</p>
+<p>frame=None</p>
+<p>now_time=0</p>
+<p>face_info={}</p>
+<dl>
+<dt>def cvimg_to_b64(img):</dt><dd><dl class="simple">
+<dt>try:</dt><dd><p>image = cv2.imencode(‘.jpg’, img)[1]
+base64_data = str(base64.b64encode(image))[2:-1]
+return base64_data</p>
+</dd>
+<dt>except Exception as e:</dt><dd><p>return “error”</p>
+</dd>
+</dl>
+</dd>
+<dt>def face_search(img64):</dt><dd><p>url=”<a class="reference external" href="https://aip.baidubce.com/rest/2.0/face/v3/search">https://aip.baidubce.com/rest/2.0/face/v3/search</a>”
+url=url+”?access_token=”+access_token
+data={</p>
+<blockquote>
+<div><p>“image”:img64,
+“image_type”:”BASE64”,
+“group_id_list”:”test_group”}</p>
+</div></blockquote>
+<dl class="simple">
+<dt>try:</dt><dd><p>response=requests.post(url,files=None,data=data)
+res_text=response.text
+res_json=json.loads(res_text)
+return res_json</p>
+</dd>
+<dt>except Exception:</dt><dd><p>return “error”</p>
+</dd>
+</dl>
+</dd>
+<dt>def get_ai_access_token():</dt><dd><p>url=”<a class="reference external" href="https://aip.baidubce.com/oauth/2.0/token?grant_type=">https://aip.baidubce.com/oauth/2.0/token?grant_type=</a>” +”client_credentials&amp;client_id=%s&amp;client_secret=%s” %(API_KEY,SECRET_KEY)
+try:</p>
+<blockquote>
+<div><p>response=requests.get(url)
+res_text=response.text
+res_json=json.loads(res_text)
+return str(res_json[“access_token”])</p>
+</div></blockquote>
+<dl class="simple">
+<dt>except Exception:</dt><dd><p>return “error”</p>
+</dd>
+</dl>
+</dd>
+<dt>def get_face_info(img64):</dt><dd><p>url=”<a class="reference external" href="https://aip.baidubce.com/rest/2.0/face/v3/detect">https://aip.baidubce.com/rest/2.0/face/v3/detect</a>”
+url = url + “?access_token=” + access_token
+data = {“face_field”:”age,beauty,expression,faceshape,gender,glasses,landmark,race,qualities”,</p>
+<blockquote>
+<div><p>“image_type”:”BASE64”,”image”:img64,”max_face_num”:5}</p>
+</div></blockquote>
+<dl class="simple">
+<dt>try:</dt><dd><p>response = requests.post(url,data=data)
+res_text=response.text
+res_json=json.loads(res_text)
+return res_json</p>
+</dd>
+<dt>except Exception:</dt><dd><p>return “error”</p>
+</dd>
+</dl>
+</dd>
+<dt>def post_request(frame,face_num,nt):</dt><dd><p>global face_info
+if(face_num&gt;0) and (time.time()-nt&gt;3):</p>
+<blockquote>
+<div><p>global now_time
+now_time=time.time()
+img64=cvimg_to_b64(frame)
+res=get_face_info(img64)
+try:</p>
+<blockquote>
+<div><p>status=res[‘error_msg’]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>except Exception:</dt><dd><p>status=””</p>
+</dd>
+<dt>if(status==”SUCCESS”):</dt><dd><p>face_info[‘gender’]= res[‘result’][‘face_list’][0][‘gender’][‘type’]
+face_info[‘age’]=res[‘result’][‘face_list’][0][‘age’]
+face_info[‘beauty’]=res[‘result’][‘face_list’][0][‘beauty’]
+return</p>
+</dd>
+<dt>else:</dt><dd><p>face_info={}</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>def faceDetect(img,face_cascade = cv2.CascadeClassifier(‘haarcascade_frontalface_default.xml’)):</dt><dd><p>size=img.shape[:2]
+divisor = 8
+h,w=size
+minSize=(w//divisor,h//divisor)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+faces = face_cascade.detectMultiScale(gray, 1.2, 1,cv2.CASCADE_SCALE_IMAGE,minSize)
+for (x,y,w,h) in faces:</p>
+<blockquote>
+<div><p>cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)</p>
+</div></blockquote>
+<p>return img,len(faces)</p>
+</dd>
+<dt>def put_Text(cvimg,text,location,size=2):</dt><dd><p>cvimg=cv2.putText(cvimg, text, location,cv2.FONT_HERSHEY_SIMPLEX, size, (51, 102, 255), 3)
+return cvimg</p>
+</dd>
+<dt>def check_token():</dt><dd><p>print(int(time.time()) - 1547628298)
+if int(time.time()) - 1547628298 &gt;= 2592000:</p>
+<blockquote>
+<div><p>global access_token
+token = get_ai_access_token()
+if token != “error”:</p>
+<blockquote>
+<div><p>access_token = get_ai_access_token()</p>
+</div></blockquote>
+</div></blockquote>
+</dd>
+<dt>def main():</dt><dd><p>check_token()
+cap = cv2.VideoCapture(0)
+global now_time
+now_time=time.time()
+while(True):</p>
+<blockquote>
+<div><p>global face_info
+global servo
+ret, frame = cap.read()
+if ret == True:</p>
+<blockquote>
+<div><p>frame1,face_num = faceDetect(frame)
+frame1=cv2.flip(frame1,1,dst=None)
+frame1=cv2.resize(frame1,(1280,800),interpolation=cv2.INTER_LINEAR)
+t=threading.Thread(target=post_request,args=(frame,face_num,now_time,), name=’POST_REQUEST’)
+t.start()
+print(face_info)
+if face_info=={} :</p>
+<blockquote>
+<div><p>frame1=put_Text(frame1,”Waiting…”,(50,50))</p>
+</div></blockquote>
+<dl class="simple">
+<dt>else:</dt><dd><dl class="simple">
+<dt>try:</dt><dd><p>frame1=put_Text(frame1,str(int(face_info[‘age’])),(300,50))
+frame1=put_Text(frame1,str(face_info[‘gender’]),(300,120))
+frame1=put_Text(frame1,str(int(face_info[‘beauty’])),(300,190))
+frame1=put_Text(frame1,”Age:”,(50,50))
+frame1=put_Text(frame1,”Gender:”,(50,120))
+frame1=put_Text(frame1,”Beauty:”,(50,190))
+servo.write_angle(int(face_info[‘beauty’]*3))</p>
+</dd>
+<dt>except Exception:</dt><dd><p>pass</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>cv2.imshow(‘Magic Image’,frame1)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>if cv2.waitKey(1) &amp; 0xFF == ord(‘q’):</dt><dd><p>break</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>cap.release()
+cv2.destroyAllWindows()</p>
+</dd>
+</dl>
+<p>main()</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="9.3-UAV.html" class="btn btn-neutral float-right" title="3. 语音控制特洛无人机" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="9.1-yeelight.html" class="btn btn-neutral float-left" title="1. 虚谷号结合Yeelight做”变色龙“灯" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

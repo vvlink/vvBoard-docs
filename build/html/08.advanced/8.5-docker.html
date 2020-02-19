@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. 虚谷号和Docker &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="虚谷号的案例汇集" href="../09.case/index.html" />
+    <link rel="prev" title="4. 虚谷号的软件安装" href="8.4-soft-setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的高级操作</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="8.1-troubleshooting.html">1. 常见故障解答</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.2-dap-index.html">2. U盘目录详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.3-hardware-resources.html">3. 虚谷号硬件资源详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. 虚谷号和Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">5.1. Docker简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">5.2. Docker的安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">5.3. Docker的验证</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的高级操作</a> &raquo;</li>
+        
+      <li>5. 虚谷号和Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/08.advanced/8.5-docker.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker">
+<h1>5. 虚谷号和Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<p>Docker是一个开源的应用容器引擎，在虚谷号上可以安装Docker。</p>
+<div class="section" id="id1">
+<h2>5.1. Docker简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+<p>由于运行Docker需要较大的内存和存储空间，虚谷号的创客版默认没有安装Docker。</p>
+</div>
+<div class="section" id="id2">
+<h2>5.2. Docker的安装<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>安装docker有两种方法，一种是使用存储库安装，一种是使用安装包安装</p>
+<p>一、使用存储库安装的步骤：</p>
+<p>1）升级更新apt包，打开终端输入：sudo apt-get update</p>
+<p>2）安装软件包，允许apt通过HTTPS使用存储，终端输入：sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</p>
+<p>3）添加docker的官方GPG密钥，终端输入：curl -fsSL <a class="reference external" href="https://download.docker.com/linux/ubuntu/gpg">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -</p>
+<p>4）设置稳定的存储库，终端输入：sudo add-apt-repository “deb [arch=arm64] <a class="reference external" href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a> $(lsb_release -cs) stable”</p>
+<p>5）更新apt包，终端输入:sudo apt-get update</p>
+<p>6）安装最新版本的docker engine-community和containerd，终端输入：sudo apt-get install docker-ce docker-ce-cli containerd.io</p>
+<p>7）至此，docker已经安装上，并且默认打开</p>
+<p>二、使用安装包安装的步骤：</p>
+<p>1）使用自己的电脑下载安装包docker_package.tar.gz，下载链接：<a class="reference external" href="https://pan.baidu.com/s/1MdAIQxuTE_HykRMaPTXoBw">https://pan.baidu.com/s/1MdAIQxuTE_HykRMaPTXoBw</a></p>
+<p>2）将安装包移到虚谷号桌面，右击选择“在此解压”。</p>
+<p>3）进入文件夹，右击空白处，选择“Open Terminal Here”输入命令:sudo apt-get install libseccomp2</p>
+<p>4）继续输入命令：sudo dpkg -i containerd.io_1.2.10-3_arm64.deb docker-ce-cli_19.03.5_3-0_ubuntu-xenial_arm64.deb docker-ce_19.03.5_3-0_ubuntu-xenial_arm64.deb</p>
+</div>
+<div class="section" id="id3">
+<h2>5.3. Docker的验证<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>打开终端，输入：sudo docker run hello-world，结果如下：</p>
+<img alt="../_images/docker01.png" src="../_images/docker01.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../09.case/index.html" class="btn btn-neutral float-right" title="虚谷号的案例汇集" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="8.4-soft-setup.html" class="btn btn-neutral float-left" title="4. 虚谷号的软件安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

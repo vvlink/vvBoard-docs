@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. 主机模式 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. 混合模式" href="2.4-blend.html" />
+    <link rel="prev" title="3. 无线模式" href="2.2-wifi.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的入门教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2.0-start.html">1. 快速入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1-dap.html">2. U盘模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2-wifi.html">3. 无线模式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. 主机模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.1. 应用场景</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.2. 通过电脑模式可以做什么</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.3. 电脑模式的基本操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux">4.4. Linux快捷键说明</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2.4-blend.html">5. 混合模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.5-beginner.html">6. 入门配置教程</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的入门教程</a> &raquo;</li>
+        
+      <li>4. 主机模式</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/02.quick/2.3-pc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>4. 主机模式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>虚谷号的主机模式也称电脑模式。虚谷号是一台迷你电脑，接上鼠标键盘和显示器，就是一台完整的电脑。</p>
+<div class="section" id="id2">
+<h2>4.1. 应用场景<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>接上显示器和鼠标键盘还有电源后，虚谷号即可变成一台电脑，虚谷号主板相当于电脑主机，系统使用Linux系统。用户名和密码默认为scope。</p>
+<p>连接方式如下：</p>
+<img alt="../_images/pc01.jpg" src="../_images/pc01.jpg" />
+<p><strong>准备工作</strong></p>
+<p>虚谷号使用的是Mini HDMI接口，需要准备一个Mini HDMI转标准HDMI的转接线。建议使用绿联之类的大品牌产品。</p>
+<img alt="../_images/hdmi.jpg" src="../_images/hdmi.jpg" />
+<p>购买地址：<a class="reference external" href="https://item.jd.com/674878.html">https://item.jd.com/674878.html</a></p>
+</div>
+<div class="section" id="id3">
+<h2>4.2. 通过电脑模式可以做什么<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>1）编程。通过Linux桌面运行各种软件，编写、调试代码。</p>
+<dl class="simple">
+<dt>2）管理。</dt><dd><ul class="simple">
+<li><p>安装或者卸载软件</p></li>
+<li><p>安装Python库</p></li>
+<li><p>管理进程</p></li>
+</ul>
+</dd>
+</dl>
+<p>3）学习。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>熟悉linux命令</p></li>
+<li><p>体验桌面用程序</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>4.3. 电脑模式的基本操作<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>1）在终端输入uname可以查看vvBoard相关资料。</p>
+<img alt="../_images/pc04.jpg" src="../_images/pc04.jpg" />
+<p>2）在终端输入ls /dev可以查看插入的串口设备串口</p>
+<img alt="../_images/pc05.jpg" src="../_images/pc05.jpg" />
+<p>3）修改显示屏的分辨率</p>
+<p>（1）点击桌面左下角图标，在打开的界面中单击设置图标，显示界面如下：</p>
+<img alt="../_images/pc02.jpg" src="../_images/pc02.jpg" />
+<p>（2）点击显示设置，设置对应的分辨率后点击应用完成分辨率设置</p>
+<img alt="../_images/pc03.jpg" src="../_images/pc03.jpg" />
+<p>4）编写并运行Python代码</p>
+<img alt="../_images/pc06.jpg" src="../_images/pc06.jpg" />
+<img alt="../_images/pc07.jpg" src="../_images/pc07.jpg" />
+<img alt="../_images/pc08.jpg" src="../_images/pc08.jpg" />
+<p>5）用S4A编程</p>
+<img alt="../_images/pc09.jpg" src="../_images/pc09.jpg" />
+</div>
+<div class="section" id="linux">
+<h2>4.4. Linux快捷键说明<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<p>Linux的快捷键操作说明：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Ctrl+Alt+t:打开终端</p></li>
+<li><p>Ctrl+空格键：更改输入法</p></li>
+<li><p>Ctrl+c:结束终端运行</p></li>
+<li><p>Alt+PrintScreenSysRq:截屏</p></li>
+<li><p>Ctrl+w:关闭当前窗口</p></li>
+<li><p>Ctrl+a:全选</p></li>
+<li><p>Ctrl+s:保存</p></li>
+<li><p>Ctrl+c:复制</p></li>
+<li><p>Ctrl+x:剪切</p></li>
+<li><p>Ctrl+v:粘贴</p></li>
+</ul>
+</div></blockquote>
+<p><strong>注</strong>：更多Linux命令，请访问本文档的第三部分。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2.4-blend.html" class="btn btn-neutral float-right" title="5. 混合模式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2.2-wifi.html" class="btn btn-neutral float-left" title="3. 无线模式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

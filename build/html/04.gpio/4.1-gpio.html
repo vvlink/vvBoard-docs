@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. GPIO的实现方式 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. xugu库的使用" href="4.2-xugulib.html" />
+    <link rel="prev" title="虚谷号的GPIO详解" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的GPIO详解</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. GPIO的实现方式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arduino">1.1. 方式1：Arduino串口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xugu">1.2. 方式2：借助xugu库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#i2c">1.3. 方式3：I2C接口</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="4.2-xugulib.html">2. xugu库的使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.3-arduino.html">3. 虚谷号和Arduino的自定义通讯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.4-xg_i2c.html">4. 虚谷号主芯片的I2C控制</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的GPIO详解</a> &raquo;</li>
+        
+      <li>1. GPIO的实现方式</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/04.gpio/4.1-gpio.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gpio">
+<h1>1. GPIO的实现方式<a class="headerlink" href="#gpio" title="Permalink to this headline">¶</a></h1>
+<p>GPIO（英语：General-purpose input/output），通用型之输入输出的简称，可以理解为对芯片引脚电平的编程控制和状态读取。虚谷号提供了多种方式，实现GPIO功能。</p>
+<div class="section" id="arduino">
+<h2>1.1. 方式1：Arduino串口<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
+<p>虚谷号通过串口和板载的Arduino UNO连接，可以用任何一款Arduino的编程工具，以标准的Arduino代码进行编写，控制Arduino UNO的所有引脚，或者读取所有的引脚状态。</p>
+<img alt="../_images/gpio-1.png" src="../_images/gpio-1.png" />
+</div>
+<div class="section" id="xugu">
+<h2>1.2. 方式2：借助xugu库<a class="headerlink" href="#xugu" title="Permalink to this headline">¶</a></h2>
+<p>虚谷号给Arduino UNO烧写标准的Firmata协议，通过串口命令进行控制Arduino引脚。为降低初学者的开发门槛，虚谷号提供了和MicroPython语法完全兼容的xugu库，供Python编程教学或者作品开发时调用。</p>
+<img alt="../_images/gpio-2.png" src="../_images/gpio-2.png" />
+<p><strong>注</strong>：xugu库的语法与掌控板、micro:bit完全一致，大部分代码可以一键移植。</p>
+</div>
+<div class="section" id="i2c">
+<h2>1.3. 方式3：I2C接口<a class="headerlink" href="#i2c" title="Permalink to this headline">¶</a></h2>
+<p>虚谷号的主芯片引出I2C接口，可以通过这一接口来实现对外部设备的控制。</p>
+<p>第三种方式中，虚谷号主芯片的I2C接口可以和方式1、方式2结合。相对来说，方式2的开发难度最低，能满足常用的大部分需求，只需要有Python编程基础即可。</p>
+<img alt="../_images/gpio-3.png" src="../_images/gpio-3.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="4.2-xugulib.html" class="btn btn-neutral float-right" title="2. xugu库的使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="虚谷号的GPIO详解" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

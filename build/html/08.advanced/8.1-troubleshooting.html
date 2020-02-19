@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 常见故障解答 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. U盘目录详解" href="8.2-dap-index.html" />
+    <link rel="prev" title="虚谷号的高级操作" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的高级操作</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 常见故障解答</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#u">1.1. U盘模式诊断</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wi-fi">1.2. Wi-Fi模式诊断</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.3. 主机连接诊断</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.4. 其他问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="8.2-dap-index.html">2. U盘目录详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.3-hardware-resources.html">3. 虚谷号硬件资源详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的高级操作</a> &raquo;</li>
+        
+      <li>1. 常见故障解答</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/08.advanced/8.1-troubleshooting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 常见故障解答<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>虚谷号可以长时间稳定工作，并支持绝大多数能运行在ubuntu上的软硬件。因为虚谷号需要运行在2.0A以上的供电环境中，如果供电不足，可能会出现固件刷写失败，网络连接不稳定，U盘功能不能正常使用等问题。在排除故障之前，请**务必确保2A以上的供电**，再逐一排除。</p>
+<div class="section" id="u">
+<h2>1.1. U盘模式诊断<a class="headerlink" href="#u" title="Permalink to this headline">¶</a></h2>
+<p>1.虚谷号接到电脑上没有出现U盘图标。</p>
+<p>虚谷号通过OTG口接到电脑后，一般在15秒左右启动完成。电脑将发现一个新存储设备（类似U盘）。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>确认连接电脑的是否OTG口。</p></li>
+<li><p>确认数据线是否正常，请使用原装的数据线。</p></li>
+<li><p>通电后，试着按一次RST键。</p></li>
+<li><p>在电脑中查找磁盘，是否因为系统没有分配盘符引起。</p></li>
+<li><p>关闭360之类的电脑防护软件。</p></li>
+<li><p>确认供电是否不足，可以在电源口另外再接一条线供电。</p></li>
+</ul>
+</div></blockquote>
+<p>2.按下RST程序没有执行。</p>
+<p>在U盘模式下，虚谷号的RST键有如下几个作用，并且按照如下次序执行：</p>
+<blockquote>
+<div><p>1） 停止U盘服务；
+2） 如果Arduino文件夹有对应的ino文件，则编译并烧录ino文件；
+3） 如果Python文件夹有对应的main.py文件，则将main.py文件复制到特定文件夹下运行，并返回运行信息；
+4） 连接Wi-Fi，如果已经连接Wi-Fi，则重新连接Wi-Fi，重启jupyter服务。
+5） 启动U盘服务。</p>
+</div></blockquote>
+<p>如果没有执行，请按照次序逐一排除，并且确认几点：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>确认接电脑的是OTG口；</p></li>
+<li><p>在电源口再接上使用充电宝（2A输出）或者2A以上的电源。</p></li>
+</ul>
+</div></blockquote>
+<p>3.误删了U盘中的系统文件。</p>
+<p>请将U盘中的文件全部删除或者格式化，断电再重新接上电脑，U盘中的文件将全部初始化。<strong>注意：如果U盘中有其他重要文件，要及时备份！！！</strong></p>
+</div>
+<div class="section" id="wi-fi">
+<h2>1.2. Wi-Fi模式诊断<a class="headerlink" href="#wi-fi" title="Permalink to this headline">¶</a></h2>
+<p>1.设置Wi-Fi信息后，没有连上Wi-Fi。</p>
+<p>通过U盘功能，在vvBoard_config.ini文件设置好SSID和密码后，按下RST键即可联网，如果没有联网，请检查如下几点：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>虚谷号目前只能支持2.4G频段的wifi网络，请确保提供的Wi-Fi信息是2.4G频段的。</p></li>
+<li><p>SSID和密码中没有包含特殊字符。</p></li>
+<li><p>在电源口再接上使用充电宝（2A输出）或者2A以上的电源。</p></li>
+</ul>
+</div></blockquote>
+<p>联网成功后，在vvBoard文件夹中将出现两个快捷方式。</p>
+</div>
+<div class="section" id="id2">
+<h2>1.3. 主机连接诊断<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>1.接上HDMI线，显示器不亮。</p>
+<p>需要确认以下几点：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>检查供电是否正常，请在电源口再接上使用充电宝（2A输出）或者2A以上的电源。</p></li>
+<li><p>检查HDMI线是否良好。</p></li>
+<li><p>检查虚谷号标注RUN的led灯是否有点亮，如led没有点亮请看启动诊断。</p></li>
+</ul>
+</div></blockquote>
+<p>2.发现U盘中文件全部加锁。</p>
+<p>为了确保U盘文件系统稳定，虚谷号采用了一种保护机制。在主机模式时，OTG口接上电脑或者电源，U盘中的文件会全部锁定。OTG口断开后，文件自动恢复正常。</p>
+</div>
+<div class="section" id="id3">
+<h2>1.4. 其他问题<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>1.RST键有什么作用？</p>
+<p>虚谷号的RST键，相当于iphone的HOME键，发挥重要作用，除了刷固件时需要外。</p>
+<p>2.如何区分创客版和教育版？</p>
+<p>虚谷号的序列号第6位，创客版是1，教育版是2。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="8.2-dap-index.html" class="btn btn-neutral float-right" title="2. U盘目录详解" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="虚谷号的高级操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+U盘目录详解
+=============================
+
+U盘模式是虚谷号特有的功能，通过U盘方式，虚谷号可以完成Arduino烧写、Python文件运行，连接Wi-Fi等操作。U盘中有Arduino、Python和vvBoard三个文件夹。Python和arduino程序同时存在时，先运行Arduino,后运行Python
+
+------------------------------
+U盘根目录文件介绍
+------------------------------
+ - Arduino：存放Arduino相关的文件
+
+ - Python：存放Python相关的文件
+
+ - vvBoard：存放vvBoard相关的文件
+
+ - autorun.inf: 配置U盘的盘符
+
+ - REDAME.txt: 查看版本信息
+
+System Volume Information: Windows系统默认的文件夹，没有任何用途
+
+------------------------------
+Arduino内文件介绍
+------------------------------
+
+01.example：存放Arduino IDE里的所有案例
+
+02.lib：存放Arduino的库文件
+
+03.doc：存放Arduino相关的资料
+
+04.bak：执行完Arduino的程序后放入这里
+
+arduino_config.ini：配置要执行的Arduino程序
+
+arduino_log.txt：编译运行Arduino程序打印的log
+
+------------------------------
+Python内文件介绍
+------------------------------
+01.example：存放Python的案例
+
+02.lib：存放Python库文件
+
+03.doc：存放Python相关的资料，例如：Python库的说明
+
+python_config.ini：配置要执行的Python程序
+
+python_log.txt:执行Python程序有格式错误的报错log
+
+------------------------------
+vvBoard内文件介绍
+------------------------------
+
+docs：存放vvBoard的说明文档
+
+tools：存放工具，例如：notepad文本编辑工具
+
+system_log.txt：系统log
+
+vvBoard_config.txt：配置wifi和jupyter
+
+wifi_log.txt：连接wifi打印的log
+
+xgh.ico：U盘盘符
+
+访问siot.url:使用U盘模式打开siot并且连接上网络则生成windows的网页快捷方式，双击便能打开siot网页
+
+访问jupyter.url: 使用U盘模式打开jupyter并且连接上网络则生成windows的网页快捷方式，双击便能打开jupyter网页,如果打开为空白页，请复制网址在其他浏览器上打开，推荐使用谷歌浏览器
+
+

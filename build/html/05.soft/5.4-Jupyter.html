@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Jupyter &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Python" href="5.5-Python.html" />
+    <link rel="prev" title="3. Arduino IDE" href="5.3-arduino.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的软件介绍</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="5.1-s4a.html">1. S4A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.2-mPythonX.html">2. mPythonX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.3-arduino.html">3. Arduino IDE</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">4.1. Jupyter快速入门</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.2. Jupyter的代码调试技巧</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.3. 如何用Jupyter写笔记</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.4. 虚谷号内置Jupyter教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.5. Jupyter的高级应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.6. Jupyter的扩展插件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5.5-Python.html">5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.6-SIoT.html">6. SIoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.7-Processing.html">7. Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的软件介绍</a> &raquo;</li>
+        
+      <li>4. Jupyter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/05.soft/5.4-Jupyter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jupyter">
+<h1>4. Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是一个交互式笔记本，支持运行40多种编程语言。通过Jupyter，可以通过Web页面在虚谷号上运行Python代码和Linux命令。</p>
+<p>Jupyter的本质是一个Web应用程序，便于创建和共享程序文档，支持实时代码，数学方程，可视化和markdown。很多人喜欢直接在Jupyter上写代码，并同步记录学习心得，这样的学习笔记实际上就是一个很好的教程。</p>
+<div class="section" id="id1">
+<h2>4.1. Jupyter快速入门<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>步骤1:访问Jupyter</p>
+<dl class="simple">
+<dt>虚谷号提供了多种方式访问Jupyter：</dt><dd><ul class="simple">
+<li><p>在浏览器直接输入http://【虚谷号IP】:8888。</p></li>
+<li><p>打开U盘中vvBoard文件夹，如果虚谷号连上Wi-Fi，该文件夹将出现“访问Jupyter”的快捷方式。</p></li>
+</ul>
+</dd>
+</dl>
+<p>虚谷号上的Jupyter默认密码为“scope”。</p>
+<p><strong>注</strong>：请使用谷歌浏览器（或者使用谷歌浏览器内核的浏览器）访问Jupyter。虚谷号的Wi-Fi有记忆功能，一般来说IP地址是不会变化的。当Wi-Fi信息设置好后，只要提供电源和Wi-Fi信号，就能使用Jupyter来访问虚谷号。</p>
+<img alt="../_images/wifi031.jpg" src="../_images/wifi031.jpg" />
+<p>步骤2:运行Linux命令</p>
+<img alt="../_images/wifi071.jpg" src="../_images/wifi071.jpg" />
+<p>在仿真的终端页面，Jupyter几乎支持所有的命令，如安装软件、安装Python库文件、运行Python程序等。当关闭窗口后，再次打开，还能够看到之前的命令运行状态。</p>
+<p>通过终端页面，还能够看到一共有几个命令窗口在运行。在不同电脑登陆Jupyter，可以共享这一界面。（用于教学非常合适）</p>
+<p>步骤3:浏览Jupyter笔记</p>
+<p>虚谷号上提供了一些学习笔记，默认放在vvBoardbook文件夹中。</p>
+<img alt="../_images/2-071.jpg" src="../_images/2-071.jpg" />
+<p>在网上能够找到很多jupyter学习笔记（扩展名为ipynb），如jupyter的官方网站。（<a class="reference external" href="https://nbviewer.jupyter.org/">https://nbviewer.jupyter.org/</a>）</p>
+<p>这些学习笔记中，一般既有用MarkDown语法编写的文字，也有代码。其中代码的左边有“in [ ]”的标识。</p>
+<p>用鼠标选中代码输入框（jupyter中称为“单元格”），单元格出现蓝色或者绿色边框，表示被选中。在菜单中选择“执行”命令，单元格的下方将出现单元格代码执行效果。执行完毕后，“in [ ]”中的括号将出现一个数字，表示单元格代码运行的次序。</p>
+<img alt="../_images/5.4-01.jpg" src="../_images/5.4-01.jpg" />
+<p>步骤4:新建Jupyter笔记</p>
+<img alt="../_images/wifi05.jpg" src="../_images/wifi05.jpg" />
+<p>Jupyter的笔记内容主要分为两种类型，一种是代码，另一种是文本。代码带有“in [ ]”的标识，支持Python、命令行。文本支持MarkDown语法。</p>
+</div>
+<div class="section" id="id2">
+<h2>4.2. Jupyter的代码调试技巧<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>1.如何快速运行指定的代码？</p>
+<p>Jupyter单元格中的代码，可以按照任意次序进行执行。Jupyter提供了多种执行代码的方式，在“单元格”菜单中。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>运行所有单元格</p></li>
+<li><p>运行所有</p></li>
+<li><p>运行上面的代码块</p></li>
+<li><p>运行下面的代码块</p></li>
+</ul>
+</div></blockquote>
+<p>2.如何重新启动笔记中的所有代码？</p>
+<p>在调试代码的过程中，稍微复杂些的代码，往往需要全部重启，好查看程序的整体效果。如在测试GPIO的代码时，之前的代码对后面的代码会产生影响，这就需要重启服务。具体的功能在“服务”菜单中。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>重启</p></li>
+<li><p>重启 &amp; 清空输入</p></li>
+<li><p>重启 &amp; 运行所有</p></li>
+</ul>
+</div></blockquote>
+<p>3.如何在打开笔记的时候，所有的代码处于未运行状态？</p>
+<p>Jupyter笔记会保留代码运行的状态，打开一个笔记往往会看到很多的输出信息。如何让这些信息消失，保持代码的未运行状态？那就需要在关闭笔记前，执行“重启 &amp; 清空输入”，然后保存退出。</p>
+</div>
+<div class="section" id="id3">
+<h2>4.3. 如何用Jupyter写笔记<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter的笔记中既可以插入代码，也可以用MarkDown语法排版的文字。</p>
+<p>MarkDown教程：<a class="reference external" href="https://baike.baidu.com/item/markdown/3245829?fr=aladdin">https://baike.baidu.com/item/markdown/3245829?fr=aladdin</a></p>
+<p>Jupyter支持用“CTRL+C”的形式插入图片。</p>
+</div>
+<div class="section" id="id4">
+<h2>4.4. 虚谷号内置Jupyter教程<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>为了帮助虚谷号用户快速掌握Python编程，虚谷计划团队编写了一系列教程，直接包含在最新的固件中。</p>
+<p>1.虚谷号GPIO</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>为虚谷号的GPIO功能写的课程。</p></li>
+</ul>
+</div></blockquote>
+<p>2.百度人工智能</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>调用百度AI，可以体验人脸识别、OCR、语音识别等功能。</p></li>
+</ul>
+</div></blockquote>
+<p>3.物联网应用</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>使用MQTT协议，借助虚谷号自带的SIoT软件（MQTT代理），实现物联网、智能家居等应用。</p></li>
+<li><p>借助yeelight库，在虚谷号上编程控制小米灯泡（Yeelight灯泡，价格99元）。</p></li>
+</ul>
+</div></blockquote>
+<p>4.视觉识别</p>
+<blockquote>
+<div><p>-基于OpenCV编写，实现不需要接显示器，能够看到摄像头的图片，能够识别人脸并结合AI做各种应用。</p>
+</div></blockquote>
+<p>5.教材支持</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>全国各个高中必修教材的Python案例整合。</p></li>
+<li><p>国内各个团队编写的Python教材。</p></li>
+</ul>
+</div></blockquote>
+<p>6.其他课程</p>
+<blockquote>
+<div><p>（1）在网页上画画（谢作如）</p>
+<ul class="simple">
+<li><p>在网页上，用命令来画各种图形。记着LOGO语言吗？这是一个简化版本。边输代码边画画，很直观，效果也很酷。</p></li>
+</ul>
+<img alt="../_images/5.4-kc-002.png" src="../_images/5.4-kc-002.png" />
+<p>（2）Python快速入门（张路、谢作如）</p>
+<ul class="simple">
+<li><p>课程的另一个名称是：Python入门教程——用编程的方式让计算机做算术</p></li>
+</ul>
+<img alt="../_images/5.4-kc-001.png" src="../_images/5.4-kc-001.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2>4.5. Jupyter的高级应用<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>1.如何在笔记中插入Linux系统命令？</p>
+<p>只要在命令前加入“！”的标志，如“! ls”就能列出笔记所在的文件夹的所有目录。</p>
+<p>2.如何导出Jupyter笔记？</p>
+<p>通过“文件”-“下载”。可以下载ipynb，也可以导出html格式的页面。</p>
+</div>
+<div class="section" id="id6">
+<h2>4.6. Jupyter的扩展插件<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>很多人为Jupyter开发了各种扩展插件，包括支持更多的编程语言、笔记样式等。安装扩展最好的方法是Jupyter NbExtensions Configurator，它提供了一系列标签，只需勾选相应插件就能自动载入。</p>
+<p>1.NbExtensions Configurator</p>
+<p>用conda安装：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>conda install -c conda-forge jupyter_contrib_nbextensions</p></li>
+<li><p>conda install -c conda-forge jupyter_nbextensions_configurator</p></li>
+</ul>
+</div></blockquote>
+<p>或者用pip：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions</p></li>
+<li><p>jupyter contrib nbextension install –user</p></li>
+<li><p>jupyter nbextensions_configurator enable –user</p></li>
+</ul>
+</div></blockquote>
+<p>2.Collapsible headings</p>
+<p>这个扩展在大型Notebook中非常有用，可折叠的标题能帮你收起/放下Notebook中的某些内容，使整个页面看起来更干净整洁。</p>
+<img alt="../_images/5.4-c-h.gif" src="../_images/5.4-c-h.gif" />
+<p>3.ipywidgets</p>
+<p>这个是jupyter的网页控件，可以做出文本框（textbox）、滑杆（slider）、选择框等。</p>
+<p>4.Code folding</p>
+<p>在Jupyter Notebook中，你能折叠的不只有标题，还有代码。</p>
+<img alt="../_images/5.4-c-f.gif" src="../_images/5.4-c-f.gif" />
+<p>5.Processing</p>
+<p>通过插件，Jupyter还支持Processing、C等。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="5.5-Python.html" class="btn btn-neutral float-right" title="5. Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="5.3-arduino.html" class="btn btn-neutral float-left" title="3. Arduino IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

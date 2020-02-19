@@ -1,0 +1,232 @@
+
+虚谷号和Arduino的自定义通讯
+============================================
+
+原理简介
+----------------------
+
+虚谷号和板载Arduino的通讯，是通过串口来实现的。xugu库也是基于Firmata协议开发，跑在串口协议上。
+
+应用场景
+---------------------
+
+xugu库支持的传感器主要分为两类，一是开关量（也称数字）传感器，返回高低电平；二是模拟传感器，返回0-5V之间的电压。
+
+除了这两类的传感器，还有数字型传感器，如DH11温湿度传感器，DS18B20温度传感器。这些传感器无法使用xugu库，如果项目中用到这类传感器，就需要另写代码，自定义通讯协议。
+
+
+范例：DH11传感器实验
+-----------------------------
+
+Arduino接DH11传感器，将数据通过串口发送给虚谷号。虚谷号使用Python代码，将串口信息打印出来。
+
+
+1.Arduino代码
+
+::
+
+
+    // Example testing sketch for various DHT humidity/temperature sensors
+    // Written by ladyada, public domain
+
+    #include "DHT.h"
+    #define DHTPIN 13     // what pin we're connected to
+
+    // Uncomment whatever type you're using!
+    #define DHTTYPE DHT11   // DHT 11 
+    //#define DHTTYPE DHT22   // DHT 22  (AM2302)
+    //#define DHTTYPE DHT21   // DHT 21 (AM2301)
+
+    // Connect pin 1 (on the left) of the sensor to +5V
+    // Connect pin 2 of the sensor to whatever your DHTPIN is
+    // Connect pin 4 (on the right) of the sensor to GROUND
+    // Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
+
+    DHT dht(DHTPIN, DHTTYPE);
+
+    void setup() {
+      Serial.begin(115200); 
+    }
+
+    void loop() {
+      // Reading temperature or humidity takes about 250 milliseconds!
+      // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+      //String cmd=serial_command();
+
+      String cmd="";
+      while(1){
+        if(Serial.available()){
+          cmd+=char(Serial.read());
+          delay(2);
+
+        }else{break;}  
+      }
+      cmd.replace("\n","");
+      cmd.replace("\0","");
+      if(cmd=="PING"){
+      Serial.print("OK");
+      }
+      //delay(2000);
+      float h = dht.readHumidity();
+      float t = dht.readTemperature();
+
+      //lcd.clear();
+      // check if returns are valid, if they are NaN (not a number) then something went wrong!
+      if (isnan(t) || isnan(h)) {
+        Serial.println("Failed to read from DHT");
+      } else {
+        Serial.print(h);
+        Serial.print(t);
+      }
+      delay(150);
+    }
+
+
+2.Python代码
+
+::
+
+
+    import serial
+    import time
+    import subprocess
+    import os
+
+    arduino_serial=serial.Serial('/dev/ttyS1',115200)
+    arduino_serial.close()
+    time.sleep(0.5)
+    arduino_serial.open()
+    time.sleep(0.5)
+
+    def arduino_burn():
+            """
+            :return:
+            """
+            subprocess.call("arduino_burn.sh /home/scope/Desktop/DHT11/DHT11.ino /home/scope/software/log/arduino_burn_log.txt", shell=True)
+
+    def serial_send(msg):
+        global arduino_serial
+        msg=msg.encode("utf-8")
+        arduino_serial.write(msg)
+        time.sleep(0.01)
+
+    def serial_receive(pin_num = '1'):
+        global arduino_serial
+        receiver=arduino_serial.read_all()
+        if receiver:
+            if b'\0' not in receiver:
+                receiver=receiver.decode("utf-8")
+                if '\r\n' in receiver:
+                    receiver = receiver.replace('\r\n', '')
+                return receiver
+        else:
+            return -1
+
+    def check_protocol():
+        serial_send("PING")
+        time.sleep(1)
+        receiver=serial_receive()
+        if("OK" not in str(receiver)):
+            print("not found firmata protocol, burn it.")
+            arduino_burn()
+            print("burn complete")
+
+    def getTempandHum():
+        """
+        读取温度和湿度
+        """
+        value = serial_receive()
+        if value != -1:
+            humi = value[:5]
+            Temp = value[-5:]
+            print("温度:%s 湿度:%s%%"%(Temp,humi))
+
+    check_protocol()
+    while True: #创建一个循环
+        getTempandHum()
+        time.sleep(1)
+
+
+高级技巧
+------------------
+
+在Python代码中自动检测Arduino，并调用烧写工具。
+
+参考范例：灯带控制
+---------------------------
+
+
+
+::
+
+
+    import serial
+    import time
+    import subprocess
+    import os
+
+    arduino_serial=serial.Serial('/dev/ttyS1',9600)
+    arduino_serial.close()
+    time.sleep(0.5)
+    arduino_serial.open()
+    time.sleep(0.5)
+
+    def arduino_burn():
+        """
+
+        :return:
+        """
+        path=os.getcwd()
+        subprocess.call("arduino_burn.sh /home/scope/Desktop/Neo_xugu_test/Arduino_NeoPixel/Arduino_NeoPixel.ino /home/scope/software/log/arduino_burn_log.txt", shell=True)
+
+    def serial_send(msg):
+        global arduino_serial
+        msg=msg.encode("utf-8")
+        print(msg)
+        arduino_serial.write(msg)
+
+    def serial_receive():
+        global arduino_serial
+        receiver=arduino_serial.read_all()
+        receiver=receiver.decode("utf-8")
+        return receiver
+
+    def check_protocol():
+        serial_send("PING")
+        time.sleep(1)
+        receiver=serial_receive()
+        if(receiver!="OK"):
+            print("not found firmata protocol, burn it.")
+            arduino_burn()
+            print("burn complete")
+
+    def set_pixel(index,r,g,b):
+        index=str(index)
+        r=str(r)
+        g=str(g)
+        b=str(b)
+        cmd="N"+index+"R"+r+"G"+g+"B"+b+";"
+        serial_send(cmd)
+
+    check_protocol()
+
+    while True:
+        a=0
+        while a <8:
+            for i in range(8):
+                if i==a:
+                    set_pixel(i,200,200,0)
+                else:
+                    set_pixel(i,0,0,0,)
+            time.sleep(1)
+            a+=1
+
+
+    if(__name__=="__main__"):
+        print("please import this file to python program")
+
+
+
+
+
+

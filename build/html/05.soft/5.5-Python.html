@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Python &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. SIoT" href="5.6-SIoT.html" />
+    <link rel="prev" title="4. Jupyter" href="5.4-Jupyter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的软件介绍</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="5.1-s4a.html">1. S4A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.2-mPythonX.html">2. mPythonX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.3-arduino.html">3. Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.4-Jupyter.html">4. Jupyter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pythonled">5.1. 用Python代码控制LED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">5.2. 在线调试Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xugu">5.3. 虚谷号内置的xugu库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">5.4. 虚谷号的Python库列表</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5.6-SIoT.html">6. SIoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.7-Processing.html">7. Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的软件介绍</a> &raquo;</li>
+        
+      <li>5. Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/05.soft/5.5-Python.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python">
+<h1>5. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>Python是一种面向对象的解释型程序设计语言，是纯粹的开源软件，源代码和解释器 CPython 遵循 GPL(GNUGeneral Public License)协议。</p>
+<p>Python语法简洁、清晰、自由、灵活，具有丰富和强大的库，常被昵称为“胶水语言”，能够把其他语言(尤其是 C/C++)编写的各种模块很轻松地“粘合”、联结在一起。</p>
+<div class="section" id="pythonled">
+<h2>5.1. 用Python代码控制LED<a class="headerlink" href="#pythonled" title="Permalink to this headline">¶</a></h2>
+<p>例如，在虚谷号中控制引脚的高低电平，让连接在引脚上的LED灯闪烁，代码如下：</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">LED</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">LED</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="c1"># led引脚初始化</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>5.2. 在线调试Python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>虚谷号内置了Jupyter。通过Jupyter，可以通过Web页面在虚谷号上运行Python代码和Linux命令。</p>
+<p>请访问本文档的“虚谷号的基本操作”——“Jupyter”，查看Jupyter的使用说明。</p>
+</div>
+<div class="section" id="xugu">
+<h2>5.3. 虚谷号内置的xugu库<a class="headerlink" href="#xugu" title="Permalink to this headline">¶</a></h2>
+<p>xugu库是虚谷号研发团队为虚谷号定制的Python库，其目的是为了降低初学者用代码控制硬件的模块。xugu库基于Firmata协议开发，用户无需学习Arduino代码、串口协议知识，用极其简短的代码，即可实现对虚谷号板载Arduino的控制和感知。</p>
+<p>xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类，支持绝大多数的Arduino模块。如用控制某个LED灯的亮度大代码如下。</p>
+<dl class="simple">
+<dt>from xugu import Pin  # 从xugu库中导入Pin类</dt><dd><p>p = Pin(10, Pin.OUT)  # 初始化10号引脚设置为输出模式
+p.write_analog(128)  # 给引脚设置模拟值128</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>5.4. 虚谷号的Python库列表<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>虚谷号内置了大量常见的Python库，基本上涵盖了中小学教材中涉及到的所有库，可以看成是一个Python集成环境。当然，也可以使用pip命令自行安装。</p>
+<p>请访问本文档的“虚谷号的基本操作”——“Python运行和库维护”，查看具体的库列表和版本说明。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="5.6-SIoT.html" class="btn btn-neutral float-right" title="6. SIoT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="5.4-Jupyter.html" class="btn btn-neutral float-left" title="4. Jupyter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

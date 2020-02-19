@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. xugu库的使用 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. 虚谷号和Arduino的自定义通讯" href="4.3-arduino.html" />
+    <link rel="prev" title="1. GPIO的实现方式" href="4.1-gpio.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的GPIO详解</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="4.1-gpio.html">1. GPIO的实现方式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. xugu库的使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1. xugu库的引用</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-o-pin">控制I/O引脚：Pin类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#servo">舵机控制：Servo类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#i2c-i2c">读写I2C设备：I2C类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serialmgt">SerialMgt类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#led">LED类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xugulog">XuguLog类</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="4.3-arduino.html">3. 虚谷号和Arduino的自定义通讯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.4-xg_i2c.html">4. 虚谷号主芯片的I2C控制</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的GPIO详解</a> &raquo;</li>
+        
+      <li>2. xugu库的使用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/04.gpio/4.2-xugulib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xugu">
+<h1>2. xugu库的使用<a class="headerlink" href="#xugu" title="Permalink to this headline">¶</a></h1>
+<p>xugu库是虚谷号研发团队为虚谷号定制的Python库，其目的是为了降低初学者用代码控制硬件的模块。xugu库基于Firmata协议开发，用户无需学习Arduino代码、串口协议知识，用极其简短的代码，即可实现对虚谷号板载Arduino的控制和感知。</p>
+<p>xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类，支持绝大多数的Arduino模块。</p>
+<div class="section" id="id1">
+<h2>2.1. xugu库的引用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>只要Python代码中引用了xugu库，虚谷号会自动检测板载的Arduino UNO（ATmega328P芯片）是否烧写了标准的Firmata协议。如果没有，则烧录，确保GPIO的正常使用。因此第一次引用xugu库，大约需要十多秒时间来烧写Firmata协议固件。</p>
+<p><strong>注：</strong> xugu库的语法参考了micro:bit和掌控板，与二者基本一致。</p>
+<div class="section" id="i-o-pin">
+<h3>控制I/O引脚：Pin类<a class="headerlink" href="#i-o-pin" title="Permalink to this headline">¶</a></h3>
+<p>Pin类用于控制I/O引脚，具有设置引脚模式（IN，OUT，ANALOG）的属性和读写电平状态的方法。</p>
+<p>1、构建</p>
+<p>Pin(pin_num, pin_model）</p>
+<p>pin_num传入引脚标号，可以直接传入虚谷板上的引脚编号，例如D3或者A5，也可以直接传入13或者19这样的数字。</p>
+<p>pin_model 为引脚模式，Pin.IN是输入模式，Pin.OUT是输出模式，Pin.ANALOG是模拟输入（用于A0~A5）。</p>
+<p>2、方法</p>
+<p>Pin.read_digital()</p>
+<p>返回该IO引脚电平值，1代表高电平，0代表低电平。该方法在输入模式有效。</p>
+<p>Pin.read_analog()</p>
+<p>返回IO引脚的模拟值，数据范围在0和1023之间。该方法在输入模式有效。</p>
+<p>Pin.write_digital(value)</p>
+<p>给引脚设置电平值。value指要设置的电平值，1代表高电平，0代表低电平。该方法在输出模式有效。</p>
+<p>Pin.write_analog(value)</p>
+<p>给引脚设置模拟值。value指要设置的模拟值，数据范围在0和255之间。该方法在输出模式有效。</p>
+<p>1）数字输出范例。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span> <span class="c1"># 从 xugu 库中导入 Pin 类</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c1"># 初始化 Pin 类,将 10 号数字引脚设置为输出模式</span>
+<span class="c1">#等价的写法: p = Pin(“D10”, Pin.OUT)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 设置 10 号引脚为高电平</span>
+</pre></div>
+</div>
+<p>2）数字输入范例。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">SerialMgt</span> <span class="c1"># 从 xugu 库中导入 Pin、SerialMgt 类</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="c1"># 导入时间模块</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span> <span class="c1"># 初始化 4 号引脚,设置为数字输入模式</span>
+<span class="n">ser</span> <span class="o">=</span> <span class="n">SerialMgt</span><span class="p">()</span> <span class="c1">#初始化串口</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">value</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span> <span class="c1"># 读取 4 号引脚电平信息,赋值给 value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># 将value的值打印到终端上</span>
+    <span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span> <span class="c1"># 将value的值写入到串口</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># 持续100ms</span>
+</pre></div>
+</div>
+<p><strong>注：</strong> 这段代码能够将读出的数字引脚信息，通过串口输出来。</p>
+<p>3）模拟输出范例。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>  <span class="c1"># 从xugu库中导入Pin类</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>  <span class="c1"># 初始化10号引脚设置为输出模式</span>
+<span class="n">p</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>  <span class="c1"># 给引脚设置模拟值128</span>
+</pre></div>
+</div>
+<p>4）模拟输入范例。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">SerialMgt</span> <span class="c1"># 从 xugu 库中导入 Pin、SerialMgt 类</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s2">&quot;A0&quot;</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span> <span class="c1"># 初始化 A0 引脚,设置为输入模式</span>
+<span class="n">ser</span> <span class="o">=</span> <span class="n">SerialMgt</span><span class="p">()</span> <span class="c1">#初始化串口</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span> <span class="c1">#读取 A0 引脚的电压值</span>
+<span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span> <span class="c1"># 将value的值写入串口</span>
+</pre></div>
+</div>
+<p><strong>注：</strong> 这段代码能够将读出的模拟引脚信息，通过串口输出来。</p>
+</div>
+<div class="section" id="servo">
+<h3>舵机控制：Servo类<a class="headerlink" href="#servo" title="Permalink to this headline">¶</a></h3>
+<p>该类用于控制舵机转到指定角度。</p>
+<p>1、构建</p>
+<p>Servo(pin_num）</p>
+<p>pin_num 引脚标号，可以直接传入虚谷板上的引脚编号，例如D3或者A5，也可以直接传入13或者19这样的数字。</p>
+<p>2、方法</p>
+<p>Servo. write_angle(value)</p>
+<p>让舵机转动到指定角度，Value指角度。每种舵机的最大转动角度不一样，需要参考舵机说明书。</p>
+</div>
+<div class="section" id="i2c-i2c">
+<h3>读写I2C设备：I2C类<a class="headerlink" href="#i2c-i2c" title="Permalink to this headline">¶</a></h3>
+<p>该类用于读写I2C从设备。</p>
+<p><strong>注：</strong> 该类不能用于读写虚谷号主芯片的I2C总线。</p>
+<p>1、构建</p>
+<p>I2C(time=0)</p>
+<p>time 指I2C总线连续读写的间隔时间，单位是毫秒（ms），默认值是0。</p>
+<p>2、方法</p>
+<p>I2C.readfrom(address, register, read_byte)</p>
+<p>读取I2C设备。address为I2C从设备的地址，register为从设备的寄存器，read_byte为一次读取的字节数量。</p>
+<p>I2C.writeto(address, args)</p>
+<p>向I2C设备中写入内容。address为I2C从设备的地址，args是要发送到设备的可变字节数，作为列表传入。</p>
+</div>
+<div class="section" id="serialmgt">
+<h3>SerialMgt类<a class="headerlink" href="#serialmgt" title="Permalink to this headline">¶</a></h3>
+<p>该类用于虚谷号和PC之间的串口通信。</p>
+<p>1、构建</p>
+<p>SerialMgt(port, baudrate)</p>
+<p>port指虚谷号连接pc的串口号，baudrate为串口波特率；</p>
+<p>注：当不设置串口号和波特率时，虚谷库默认使用/dev/ttyGS0串口，波特率为115200。</p>
+<p>2、方法</p>
+<p>SerialMgt.read(bytes)</p>
+<p>从串口中读取数据，bytes为读取的字节数，默认为100。</p>
+<p>SerialMgt.write(data)</p>
+<p>向串口中写入数据，data为写入的数据，类型为String。</p>
+</div>
+<div class="section" id="led">
+<h3>LED类<a class="headerlink" href="#led" title="Permalink to this headline">¶</a></h3>
+<p>该类用于LED的简易控制。</p>
+<p>1、构建</p>
+<p>LED(pin_num)</p>
+<p>Pin_num为数字引脚编号，范围0~19。</p>
+<p>注：虚谷号已经在第13号引脚内置了LED。</p>
+<p>2、方法
+high()：
+给引脚一个高电位，只有在输出模式有效，当该引脚接入LED灯的时候，灯会点亮。</p>
+<p>low()：
+给引脚一个低电位，只有在输出模式有效，当该引脚接入LED灯的时候，灯会熄灭。</p>
+<p>on()：
+等价与high()。</p>
+<p>off()：
+等价与low()。</p>
+</div>
+<div class="section" id="xugulog">
+<h3>XuguLog类<a class="headerlink" href="#xugulog" title="Permalink to this headline">¶</a></h3>
+<p>该类用于日志输出。程序运行过程中，会将日志信息追加到日志文件中。</p>
+<p>1、构建</p>
+<p>XuguLog(filename)</p>
+<p>初始化该类的时候，会自动生成一个名为filename的日志文件，后缀为.log，生成的文件与运行的python程序在同一个目录下。</p>
+<p>2、方法</p>
+<p>XuguLog.write(value)</p>
+<p>将日志信息写入到日志文件中，value为要写入的内容，类型为String。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="4.3-arduino.html" class="btn btn-neutral float-right" title="3. 虚谷号和Arduino的自定义通讯" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="4.1-gpio.html" class="btn btn-neutral float-left" title="1. GPIO的实现方式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

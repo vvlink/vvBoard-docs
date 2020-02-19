@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. 虚谷号和物联网 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. 虚谷号和互动媒体" href="6.3-i-media.html" />
+    <link rel="prev" title="1. 虚谷号和人工智能" href="6.1-ai.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的教育应用</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="6.1-ai.html">1. 虚谷号和人工智能</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. 虚谷号和物联网</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#siot">2.1. SIoT和虚谷物联项目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mqtt">2.2. 虚谷号作为MQTT服务器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.3. 虚谷号作为MQTT客户端</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.4. 应用案例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.手机远程控制虚谷号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2.科学观察助手</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="6.3-i-media.html">3. 虚谷号和互动媒体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.4-smart-home.html">4. 虚谷号和智能家居</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的教育应用</a> &raquo;</li>
+        
+      <li>2. 虚谷号和物联网</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/06.edu/6.2-iot.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>2. 虚谷号和物联网<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>虚谷号作为一个全功能的迷你电脑，在物联网应用方面即可以作为服务器，也可以作为客户端。</p>
+<p>MQTT是物联网中最常用的一种协议，越来越受到行业的关注。虚谷号默认安装了基于MQTT的开源服务器SIoT，使其在变得更加方便。</p>
+<div class="section" id="siot">
+<h2>2.1. SIoT和虚谷物联项目<a class="headerlink" href="#siot" title="Permalink to this headline">¶</a></h2>
+<p>SIoT为一个为教育定制的跨平台的MQTT服务器程序，S指科学（science）、简单（simple）的意思。SIoT支持Win10、Win7、Mac、Linux等操作系统，一键启动，无需注册即可使用。SIoT的所有物联网消息可以根据需要导出为各种格式，用于后期分析。尤其是用于科学数据采集。</p>
+<p>SIoT的最大特点是使用简单。软件运行后，不需要任何设置就可以使用。利用特定的“Topic”的名称（“项目名称/设备名称”），就能自动在数据库中添加项目和设备的名称，并将消息数据存入数据库。</p>
+<p>SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“虚谷计划”旗下的项目。对于中小学教学而言，选择用虚谷号结合SIoT作为物联网服务器，掌控板（“虚谷计划”旗下的另一款开源硬件）作为物联网终端，可谓珠联璧合。</p>
+<ul class="simple">
+<li><p>您可以访问 <a class="reference external" href="https://siot.readthedocs.io/zh_CN/latest/">SIoT使用手册文档</a> 了解更多关于SIoT的使用方式。</p></li>
+</ul>
+<img alt="../_images/iot01.png" src="../_images/iot01.png" />
+</div>
+<div class="section" id="mqtt">
+<h2>2.2. 虚谷号作为MQTT服务器<a class="headerlink" href="#mqtt" title="Permalink to this headline">¶</a></h2>
+<p>这很容易，只要给虚谷号供电，接入局域网即可。具体操作如下。</p>
+<p>使用U盘模式将虚谷号连接至电脑，配置vvBoard_config.ini如下图所示，其中Siot=1表示开启SIoT，0表示关闭SIoT。下面的Wi-Fi配置根据自己的情况配置即可。配置好之后，短按RST键，U盘短暂消失，再次连接时，打开wifi_log.txt即可查看虚谷号IP地址。假设IP地址为xxx.xxx.xxx.xxx，则SIoT服务器地址为xxx.xxx.xxx.xxx:8080，可以使用其他任何MQTT客户端连接。</p>
+<img alt="../_images/6.2_config.JPG" src="../_images/6.2_config.JPG" />
+<img alt="../_images/6.2_ip.JPG" src="../_images/6.2_ip.JPG" />
+<p>下面以掌控板连接为例介绍SIoT的使用。</p>
+<p>使用Mind+给掌控板编程十分便捷。选择正确的主控板和组件后，编程就像搭积木一样。这里以测量环境光强度为例，组件拼接如下图所示。</p>
+<img alt="../_images/6.2_mpython_mindplus_code.JPG" src="../_images/6.2_mpython_mindplus_code.JPG" />
+<p>电脑连接掌控板后上传代码便可以运行了。这时的虚谷号和掌控板均只要接通电源即可工作，不再需要连接电脑。</p>
+<img alt="../_images/6.2-mpythonx.PNG" src="../_images/6.2-mpythonx.PNG" />
+<p>通过浏览器访问SIoT服务器（在浏览器输入IP地址+“:8080”访问），可以看到掌控板向搭载在虚谷号上的SIoT发送的消息。</p>
+<img alt="../_images/6.2_login.JPG" src="../_images/6.2_login.JPG" />
+<p>默认登录账号和密码均是scope。</p>
+<p>点击上方的设备列表，可以看到我项目ID为mpython，名称为light的设备，也可以根据自己的需求做相应修改。</p>
+<img alt="../_images/6.2_devices.JPG" src="../_images/6.2_devices.JPG" />
+<p>点击查看消息，可以看到具体的消息。本页面还具有导出查询结果（Excel表格），显示/隐藏图表，自动刷新消息等功能。也可以通过发送消息与设备通信。</p>
+<img alt="../_images/6.2_details.JPG" src="../_images/6.2_details.JPG" />
+</div>
+<div class="section" id="id3">
+<h2>2.3. 虚谷号作为MQTT客户端<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>需要先安装python库：siot。安装命令是 sudo pip install siot 。默认情况下，虚谷号已经安装了siot库，不需要再执行这一步。</p>
+<img alt="../_images/6.2_install_siot.JPG" src="../_images/6.2_install_siot.JPG" />
+<p>使用python语言为虚谷号编程，用法如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">siot</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>        <span class="c1"># 从 xugu 库中导入 Pin类</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s2">&quot;A0&quot;</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>   <span class="c1"># 初始化 A0 引脚,设置为输入模式</span>
+
+<span class="n">SERVER</span> <span class="o">=</span> <span class="s2">&quot;192.168.0.101&quot;</span>    <span class="c1">#MQTT服务器IP</span>
+<span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>              <span class="c1">#在SIoT上，CLIENT_ID可以留空</span>
+<span class="n">IOT_pubTopic</span>  <span class="o">=</span> <span class="s1">&#39;DIY/TEST01&#39;</span><span class="c1">#“topic”为“项目名称/设备名称”</span>
+<span class="n">IOT_UserName</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>       <span class="c1">#用户名默认为scope</span>
+<span class="n">IOT_PassWord</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>       <span class="c1">#密码默认为scope</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">SERVER</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">IOT_UserName</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">IOT_PassWord</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sub_cb</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Topic:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">topic</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Message:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">))</span>
+<span class="c1">#在这里可以写当虚谷号收到消息要做的事</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">set_callback</span><span class="p">(</span><span class="n">sub_cb</span><span class="p">)</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">getsubscribe</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">)</span> <span class="c1">#订阅消息</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">loop</span><span class="p">()</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">TDS</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>       <span class="c1">#读取 A0 引脚的模拟量</span>
+    <span class="n">siot</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">TDS</span><span class="p">)</span> <span class="c1">#发送消息</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码中的重点是以下三点：</p>
+<blockquote>
+<div><dl class="simple">
+<dt>1、导入siot库</dt><dd><p>import siot</p>
+</dd>
+<dt>2、订阅消息</dt><dd><p>def sub_cb(client, userdata, msg): xxxx
+siot.getsubscribe(IOT_pubTopic)</p>
+</dd>
+<dt>3、发送消息</dt><dd><p>siot.publish(IOT_pubTopic, your-massage)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>学习之后可以写出类似的代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">siot</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>               <span class="c1"># 从 xugu 库中导入 Pin类</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>                 <span class="c1"># 初始化 4 引脚,设置为输入模式</span>
+
+<span class="n">SERVER</span> <span class="o">=</span> <span class="s2">&quot;192.168.43.236&quot;</span>          <span class="c1">#MQTT服务器IP</span>
+<span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>                     <span class="c1">#在SIoT上，CLIENT_ID可以留空</span>
+<span class="n">IOT_pubTopic</span>  <span class="o">=</span> <span class="s1">&#39;vvboard/invade&#39;</span>   <span class="c1">#“topic”为“项目名称/设备名称”</span>
+<span class="n">IOT_UserName</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>              <span class="c1">#用户名默认为scope</span>
+<span class="n">IOT_PassWord</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>              <span class="c1">#密码默认为scope</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">SERVER</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">IOT_UserName</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">IOT_PassWord</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sub_cb</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Topic:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">topic</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Message:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">))</span>
+                                    <span class="c1">#在这里可以写当虚谷号收到消息要做的事</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">set_callback</span><span class="p">(</span><span class="n">sub_cb</span><span class="p">)</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">getsubscribe</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">)</span>     <span class="c1">#订阅消息</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">loop</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">INV</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span>           <span class="c1">#读取 4 引脚的值</span>
+    <span class="n">siot</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">INV</span><span class="p">)</span> <span class="c1">#发送消息</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上传代码的方式有很多，这里介绍通过U盘模式上传给虚谷号。</p>
+<p>将写好的代码复制到python文件夹下，修改配置文件python_config.ini如图所示。注意第一行不要忘记后缀名.py。Run_time的值最好大于0。</p>
+<img alt="../_images/6.2-python-conf.JPG" src="../_images/6.2-python-conf.JPG" />
+<p>短按RST键，U盘消失片刻再次出现，这时python代码就已经在运行了。可以登录SIoT服务器查看消息，也可以通过其他MQTT客户端订阅该消息。</p>
+<img alt="../_images/6.2-invade-details.JPG" src="../_images/6.2-invade-details.JPG" />
+<p>硬件连接如下图。红外避障传感器可以在 <a class="reference external" href="https://www.dfrobot.com.cn/goods-283.html">DF商城</a> 买到。</p>
+<img alt="../_images/6.2-invadetest-dev.PNG" src="../_images/6.2-invadetest-dev.PNG" />
+<p>红外避障传感器黑色为信号输出（接4号管脚），棕色为正极（接5V），蓝色是负极（接GND）。当检测到有障碍物时输出0，反之输出1。</p>
+</div>
+<div class="section" id="id4">
+<h2>2.4. 应用案例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>1.手机远程控制虚谷号<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>理论上任何MQTT客户端之间都可以通信，所以不仅仅是手机可以控制虚谷号，掌控板，电脑等都可以。</p>
+<p>下面以手机为例。现在已经有很多MQTT客户端可以直接发送消息，也可以通过APP Inventor 2 来封装功能。</p>
+<p>更多案例可以访问 <a class="reference external" href="https://siot.readthedocs.io/zh_CN/latest/demo/07_Appinventor.html">SIoT文档</a> 了解。</p>
+<p>这里介绍安卓手机的MQTT Client，可以 <a class="reference external" href="http://www.mdpda.com/app/apk7623192.html">点此</a> 下载。</p>
+<p>打开软件，点击右上角的Settings，点击Sever。设置URL为xxx.xxx.xxx.xxx:8080，Port为1883，Username为scope，Password为scope。这样就可以连接上SIoT服务器了。</p>
+<img alt="../_images/6.2-client-settings.jpg" src="../_images/6.2-client-settings.jpg" />
+<p>下面重点介绍虚谷号上的程序。</p>
+<p>先介绍以下代码结构。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">siot</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>          <span class="c1"># 从 xugu 库中导入 Pin类</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s2">&quot;A0&quot;</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">ANALOG</span><span class="p">)</span>     <span class="c1"># 初始化 A0 引脚,设置为输入模式</span>
+
+<span class="n">SERVER</span> <span class="o">=</span> <span class="s2">&quot;192.168.0.101&quot;</span>      <span class="c1">#MQTT服务器IP</span>
+<span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>                <span class="c1">#在SIoT上，CLIENT_ID可以留空</span>
+<span class="n">IOT_pubTopic</span>  <span class="o">=</span> <span class="s1">&#39;DIY/TEST01&#39;</span>  <span class="c1">#“topic”为“项目名称/设备名称”</span>
+<span class="n">IOT_UserName</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>         <span class="c1">#用户名默认为scope</span>
+<span class="n">IOT_PassWord</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>         <span class="c1">#密码默认为scope</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">SERVER</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">IOT_UserName</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">IOT_PassWord</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sub_cb</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Topic:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">topic</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Message:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">))</span>
+<span class="c1">#在这里可以写当虚谷号收到消息要做的事</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">set_callback</span><span class="p">(</span><span class="n">sub_cb</span><span class="p">)</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">getsubscribe</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">)</span><span class="c1">#订阅消息</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">loop</span><span class="p">()</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">TDS</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>      <span class="c1">#读取 A0 引脚的模拟量</span>
+    <span class="n">siot</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">TDS</span><span class="p">)</span> <span class="c1">#发送消息</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码中的重点是以下三点：</p>
+<blockquote>
+<div><dl class="simple">
+<dt>1、导入siot库</dt><dd><p>import siot</p>
+</dd>
+<dt>2、订阅消息</dt><dd><p>def sub_cb(client, userdata, msg): xxxx
+siot.getsubscribe(IOT_pubTopic)</p>
+</dd>
+<dt>3、发送消息</dt><dd><p>siot.publish(IOT_pubTopic, your-massage)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>学会之后可以写出如下代码控制13号管脚的LED灯的开关。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">siot</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>                <span class="c1"># 从 xugu 库中导入 Pin类</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>                <span class="c1"># 初始化 A0 引脚,设置为输入模式</span>
+
+<span class="n">SERVER</span> <span class="o">=</span> <span class="s2">&quot;192.168.43.236&quot;</span>            <span class="c1">#MQTT服务器IP</span>
+<span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>                      <span class="c1">#在SIoT上，CLIENT_ID可以留空</span>
+<span class="n">IOT_pubTopic</span>  <span class="o">=</span> <span class="s1">&#39;DIY/TEST01&#39;</span>        <span class="c1">#“topic”为“项目名称/设备名称”</span>
+<span class="n">IOT_UserName</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>               <span class="c1">#用户名默认为scope</span>
+<span class="n">IOT_PassWord</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>               <span class="c1">#密码默认为scope</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">SERVER</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">IOT_UserName</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">IOT_PassWord</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sub_cb</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>  <span class="c1">#接受到手机消息，1表示开灯，0表示关灯</span>
+    <span class="k">global</span> <span class="n">state</span>                    <span class="c1">#将state指向全局变量的那个state</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>        <span class="c1">#注意使用int将值转换为数值型，才可以比较</span>
+        <span class="n">state</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">state</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">set_callback</span><span class="p">(</span><span class="n">sub_cb</span><span class="p">)</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">getsubscribe</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">)</span>      <span class="c1">#订阅消息</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">loop</span><span class="p">()</span>
+
+<span class="n">state</span><span class="o">=</span><span class="mi">0</span>                              <span class="c1">#声明变量</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>           <span class="c1">#1表示开灯，0表示关灯</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>这里要注意state要声明为global全局变量，否则在函数内修改变量的值将不起作用。</p></li>
+</ul>
+<img alt="../_images/6.2-client-send.jpg" src="../_images/6.2-client-send.jpg" />
+</div>
+<div class="section" id="id8">
+<h3>2.科学观察助手<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>狄勇老师给出了一个很好的案例，可以访问 <a class="reference external" href="https://vvboard.readthedocs.io/zh/latest/09.case/9.5-science.html">虚谷号让食盐在水中的扩散过程“可见”</a> 了解详情。</p>
+<p>这里给出一个检测狗狗进出门的案例。</p>
+<img alt="../_images/6.2-doghouse.jpg" src="../_images/6.2-doghouse.jpg" />
+<p>我们可以考虑狗狗进出门时会发生改变的物理量。其中狗狗离门的距离一定会改变，于是我们确定了物理量为距离，与之对应的传感器也有很多，这里我们选择红外避障传感器为例。接线图如图所示，值得注意的是红外避障传感器黑色为信号输出（接4号管脚），棕色为正极（接5V），蓝色是负极（接GND）。当检测到有障碍物时输出0，反之输出1。</p>
+<img alt="../_images/6.2-invadetest-dev.PNG" src="../_images/6.2-invadetest-dev.PNG" />
+<p>和上面介绍的类似，我们使用python给虚谷号编程，代码如下。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">siot</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>               <span class="c1"># 从 xugu 库中导入 Pin类</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>                 <span class="c1"># 初始化 4 引脚,设置为输入模式</span>
+
+<span class="n">SERVER</span> <span class="o">=</span> <span class="s2">&quot;192.168.43.236&quot;</span>          <span class="c1">#MQTT服务器IP</span>
+<span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>                     <span class="c1">#在SIoT上，CLIENT_ID可以留空</span>
+<span class="n">IOT_pubTopic</span>  <span class="o">=</span> <span class="s1">&#39;vvboard/invade&#39;</span>   <span class="c1">#“topic”为“项目名称/设备名称”</span>
+<span class="n">IOT_UserName</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>              <span class="c1">#用户名默认为scope</span>
+<span class="n">IOT_PassWord</span> <span class="o">=</span><span class="s1">&#39;scope&#39;</span>              <span class="c1">#密码默认为scope</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">SERVER</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">IOT_UserName</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">IOT_PassWord</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sub_cb</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Topic:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">topic</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Message:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">))</span>
+                                    <span class="c1">#在这里可以写当虚谷号收到消息要做的事</span>
+
+<span class="n">siot</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">set_callback</span><span class="p">(</span><span class="n">sub_cb</span><span class="p">)</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">getsubscribe</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">)</span>     <span class="c1">#订阅消息</span>
+<span class="n">siot</span><span class="o">.</span><span class="n">loop</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">INV</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">read_digital</span><span class="p">()</span>           <span class="c1">#读取 4 引脚的值</span>
+    <span class="n">siot</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">IOT_pubTopic</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">INV</span><span class="p">)</span> <span class="c1">#发送消息</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上传代码可以通过U盘模式将代码拷贝至python文件夹下，短按RST键，程序便开始运行。可以通过SIoT服务器界面查看结果。这种方法在虚谷号开机即开始运行，直至断电。但是我们更希望可以在规定的时间运行这段代码。下面介绍使用Jupyter运行代码的方法。</p>
+<p>Jupyter是一个交互式笔记本，支持运行 40 多种编程语言。虚谷号预装了Jupyter，并且可以通过U盘模式下的快捷方式直接在浏览器打开。</p>
+<p>Jupyter的地址是虚谷号在局域网中的IP地址加上端口号8888，即xxx.xxx.xxx.xxx:8888。默认登录密码为scope。登录后web页面会列出虚谷号的文件目录。</p>
+<img alt="../_images/6.2-jupyter-login.JPG" src="../_images/6.2-jupyter-login.JPG" />
+<p>提前将之前编写的xxx.py文件传虚谷号（我使用的方法是用U盘拷贝文件），然后在Jupyter中进入该路径，点击”新建——Python3”。在代码单元格中输入命令 %run xxx.py。xxx.py被执行后，开始加载相关模块并初始化，完成后就可以看到虚谷号上传和返回的数据了。</p>
+<img alt="../_images/6.2-jupyter-road.JPG" src="../_images/6.2-jupyter-road.JPG" />
+<img alt="../_images/6.2-jupyter-new.JPG" src="../_images/6.2-jupyter-new.JPG" />
+<img alt="../_images/6.2-jupyter-run1.JPG" src="../_images/6.2-jupyter-run1.JPG" />
+<img alt="../_images/6.2-invade-details.JPG" src="../_images/6.2-invade-details.JPG" />
+<p>当然也可以不在同一路径下新建ipynb文件，如果在其他路径下，需要写明run的文件的路径（直接路径或相对路径），例如 %run py-files/dog-door.py。</p>
+<img alt="../_images/6.2-jupyter-run2.JPG" src="../_images/6.2-jupyter-run2.JPG" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="6.3-i-media.html" class="btn btn-neutral float-right" title="3. 虚谷号和互动媒体" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="6.1-ai.html" class="btn btn-neutral float-left" title="1. 虚谷号和人工智能" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 音频设备 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. HDMI转接头" href="7.4-hdmi.html" />
+    <link rel="prev" title="2. 摄像头" href="7.2-camera.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的扩展硬件</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="7.1-houwu.html">1. “厚物”扩展板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.2-camera.html">2. 摄像头</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. 音频设备</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.1. 声卡推荐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">3.2. 内置麦克风的摄像头推荐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">3.3. 内置声卡的小音箱推荐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">3.4. 手动配置声卡步骤</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="7.4-hdmi.html">4. HDMI转接头</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的扩展硬件</a> &raquo;</li>
+        
+      <li>3. 音频设备</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/07.plus/7.3-sound-card.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3. 音频设备<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>虚谷号接上声卡后，可以接麦克风和音箱等音频设备，成为一台多媒体电脑。建议选择内置声卡的麦克风（很多摄像头都已经内置麦克风）和内置声卡的小音箱。</p>
+<p><a href="#id2"><span class="problematic" id="id3">**</span></a>注意：<a href="#id4"><span class="problematic" id="id5">**</span></a>如果虚谷号接了无源音箱，需要在电源口另外接上2A的电源，才能确保供电正常。否则可能导致音箱不能正常使用。</p>
+<div class="section" id="id6">
+<h2>3.1. 声卡推荐<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>vvBoard支持绝大多数的免驱动USB声卡，大部分声卡即插即用，无需配置。</p>
+<p>USB免驱声卡购买地址：</p>
+<p><a class="reference external" href="https://detail.tmall.com/item.htm?id=564470736512&amp;price=29.9-39.9&amp;sourceType=item&amp;sourceType=item&amp;suid">https://detail.tmall.com/item.htm?id=564470736512&amp;price=29.9-39.9&amp;sourceType=item&amp;sourceType=item&amp;suid</a></p>
+</div>
+<div class="section" id="id7">
+<h2>3.2. 内置麦克风的摄像头推荐<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>大部分内置声卡即插即用，无需配置，具体见摄像头部分。</p>
+</div>
+<div class="section" id="id8">
+<h2>3.3. 内置声卡的小音箱推荐<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>大部分内置声卡的小音箱即插即用，无需配置。</p>
+<p>内置声卡的小音箱购买地址：</p>
+<p>卡农（iKANOO）N12USB声卡驱动电脑音响
+<a class="reference external" href="https://item.jd.com/30031188925.html">https://item.jd.com/30031188925.html</a></p>
+</div>
+<div class="section" id="id9">
+<h2>3.4. 手动配置声卡步骤<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>1、终端运行aplay -l和arecord -l查看播放和录音的设备,如下图所示：</p>
+<img alt="../_images/shengka01.jpg" src="../_images/shengka01.jpg" />
+<p>2、根据设备的声卡号和设备号修改当前目录下的asound.conf文件后保存，文件内容如下：</p>
+<p>defaults.pcm.card 1</p>
+<p>defaults.pcm.device 0</p>
+<p>defaults.ctl.card 1</p>
+<p>3、终端输入：sudo cp asound.conf /etc ，将asound.conf文件复制到系统etc目录下；</p>
+<p>4、点击桌面左下角开始图标，进入开始菜单；点击多媒体，找到 PulseAudio音量控制程序，如下图所示：</p>
+<img alt="../_images/shengka02.jpg" src="../_images/shengka02.jpg" />
+<p>5、点击打开 PulseAudio音量控制程序，点击打开输出设备界面，找到USB Audio Device 设备单击对应名称后面的按钮，如下图所示：</p>
+<img alt="../_images/shengka03.jpg" src="../_images/shengka03.jpg" />
+<p>6、点击打开输入设备界面，找到USB Audio Device 设备单击对应名称后面的按钮，如下图所示：</p>
+<img alt="../_images/shengka04.jpg" src="../_images/shengka04.jpg" />
+<p>7、完成以上6步，默认声卡添加完毕。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="7.4-hdmi.html" class="btn btn-neutral float-right" title="4. HDMI转接头" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="7.2-camera.html" class="btn btn-neutral float-left" title="2. 摄像头" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

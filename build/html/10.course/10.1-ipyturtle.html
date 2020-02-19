@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 用ipyturtle在网页上画画 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="虚谷号的课程汇集" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的课程汇集</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 用ipyturtle在网页上画画</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.1. 课程简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.2. 准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.3. 语法介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.4. 画出基本形状</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1.5. 如何画三角形</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.6. 写个函数吧</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的课程汇集</a> &raquo;</li>
+        
+      <li>1. 用ipyturtle在网页上画画</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/10.course/10.1-ipyturtle.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ipyturtle">
+<h1>1. 用ipyturtle在网页上画画<a class="headerlink" href="#ipyturtle" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>1.1. 课程简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>课程编写：谢作如
+这是一个基于jupyter的海龟画画课程。使用了一个ipyturtle库，jupyter的插件。虚谷号已经默认安装了这些库，这是给小学高年级的孩子学习Python用的入门课程。</p>
+<p>如果你使用的是虚谷号，安装方法就可以略过。</p>
+<p><a class="reference external" href="https://github.com/gkvoelkl/ipython-turtle-widget">https://github.com/gkvoelkl/ipython-turtle-widget</a></p>
+<p>安装方法：</p>
+<p>pip install ipyturtle jupyter nbextension enable –py –sys-prefix
+ipyturtle</p>
+<p>如果pip不能安装，可以试试pip3。</p>
+<img alt="../_images/9.3-ipyturtle.png" src="../_images/9.3-ipyturtle.png" />
+<p>好了，开始画图吧。</p>
+</div>
+<div class="section" id="id2">
+<h2>1.2. 准备工作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>首先是导入库，然后显示出来，看一看，是不是出现图片了？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyturtle</span> <span class="k">import</span> <span class="n">Turtle</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+<p>如果觉得画布太大，那就设定画布大小，小一点。试一试。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 先关闭</span>
+<span class="n">t</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 再画一个</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">fixed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+<p>接下来要考一考大家：</p>
+<p>默认情况下，三角形指示牌的坐标在“0，0”的位置，运行下面的代码，t的坐标在哪里？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">back</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>有没有发现，三角形指示牌移动了？我们输出坐标吧。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>1.3. 语法介绍<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>解释一下，back表示后退，forward表示移动，括号中的数字单位是像素。因为后退了20，再前进60，实际上是40，所以坐标在“0.0,
+40.0”。那么Turtle还支持哪些操作呢？</p>
+<ul class="simple">
+<li><p>移动：forward()，back() 表示前进多少步,后退多少步，括号里面表示像素。</p></li>
+<li><p>转弯：right(10)、left(20) 右转和左转，括号里面表示角度。</p></li>
+<li><p>收起画笔：penup()</p></li>
+<li><p>重新开始：reset()</p></li>
+</ul>
+<p>我们试一试吧，画一条线，长度是50像素的水平线。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyturtle</span> <span class="k">import</span> <span class="n">Turtle</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">fixed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>** 总结一下：**
+要先显示t，然后移动坐标，就能看到图案，不然看到的是最终结果。</p>
+</div>
+<div class="section" id="id4">
+<h2>1.4. 画出基本形状<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 长度是100，高度是50的矩形</span>
+<span class="kn">from</span> <span class="nn">ipyturtle</span> <span class="k">import</span> <span class="n">Turtle</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#画出矩形</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>看一下，是不是画出了矩形？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#先清除原来的结果</span>
+<span class="n">t</span>
+<span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>1.5. 如何画三角形<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>这个可是难题了。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#画出三角形</span>
+<span class="kn">from</span> <span class="nn">ipyturtle</span> <span class="k">import</span> <span class="n">Turtle</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">()</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>说一下，这是什么原理？为什么这样画出来的就是一个三角形？</p>
+<p>那么，如何画出一个直角三角形呢？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#画出有一个角是60度的直角三角形。</span>
+<span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">t</span><span class="o">.</span><span class="n">position</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">position</span><span class="p">()[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>解释一下代码：
+t.position()，表示坐标，这个数据类型是元组（tuple）。因为我们不知道这个边有多长，就用while循环，一直走到坐标x超过原点（0）为止，然后回到原位。</p>
+<p>其中，t.position()[0]是x坐标，t.position()[1]是y坐标。</p>
+<p>问题：abs(t.position()[1])表示什么？</p>
+<p><strong>知识链接</strong>：while 后面跟着的是表达式，只要表达式成立，那么就一直循环。</p>
+<p>思考：能不能用勾股定理算出边长，然后回到原点？</p>
+<p>如：math.sqrt(100**2+150**2)。</p>
+<p>如果使用sqrt，需要导入math库。在头部要加上一句“import math”</p>
+</div>
+<div class="section" id="id6">
+<h2>1.6. 写个函数吧<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 正方形</span>
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>知识链接1</strong>：def square(size)表示一个自定义的函数，square是函数名，size是参数。函数类似一个程序代码的集合，调用起来比较方便。</p>
+<p><strong>知识链接2</strong>：for i in range(4)表示循环4次，分别是0,1，2，3。即从0开始，不包括4。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 画个圆</span>
+<span class="k">def</span> <span class="nf">circle</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">360</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">circle</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 画个正三角形</span>
+<span class="k">def</span> <span class="nf">triangle</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">triangle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>看这画圆的过程，是不是挺好玩？好了，这个海龟画画的简单教程结束了。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="虚谷号的课程汇集" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

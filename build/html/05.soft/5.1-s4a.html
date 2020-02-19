@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. S4A &mdash; 虚谷号使用手册 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. mPythonX" href="5.2-mPythonX.html" />
+    <link rel="prev" title="虚谷号的软件介绍" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的软件介绍</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. S4A</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.1. S4A介绍</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">S4A的基本功能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">S4A的作品范例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5.2-mPythonX.html">2. mPythonX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.3-arduino.html">3. Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.4-Jupyter.html">4. Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.5-Python.html">5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.6-SIoT.html">6. SIoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.7-Processing.html">7. Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的软件介绍</a> &raquo;</li>
+        
+      <li>1. S4A</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/05.soft/5.1-s4a.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="s4a">
+<h1>1. S4A<a class="headerlink" href="#s4a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>1.1. S4A介绍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>S4A是Scratch for Arduino的缩写,由西班牙的Citilab开发。它主要提供了对Arduino和Andriod的支持：采用Arduino作为传感器和执行器的控制平台，提供了6组模拟输入和2组数字输入接口，以及舵机输出和数字输出接口，具有强大的输入和输出的功能；提供了基于HTTP协议的远程传感器功能和安卓手机的配套程序，可以组网互动，也可以和智能手机进行互动。</p>
+<p>虚谷号预装了S4A，只要给板载的Arduino写入一个特定固件，不用外加硬件，即可正常使用S4A的全部功能。</p>
+<img alt="../_images/s4a01.png" src="../_images/s4a01.png" />
+<p>s4a的官方网站：<a class="reference external" href="http://s4a.cat/">http://s4a.cat/</a></p>
+<div class="section" id="id2">
+<h3>S4A的基本功能<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>使用S4A之前，要先给板载的Arduino写入一个特定的Firmware（固件）。Firmware是要写入Arduino芯片中的程序，其实就是用Arduino IED编写的程序。S4A的开发团队在官方网站上提供Firmware下载，最新的版本是1.6。在虚谷号上的vvBoard目录中，就能找到这个固件文件。具体位置为：arduino -&gt; 01.example -&gt; 22.S4A。</p>
+<p>固件下载地址：<a class="reference external" href="http://seaside.citilab.eu/">http://seaside.citilab.eu/</a></p>
+<p>用Arduino的IDE打开固件，并且下载。成功后，请先关闭Arduino的IDE软件，再打开S4A（为了避免串口被占用，其他和串口相关的软件最好都关闭）。稍等片刻，看到S4A上的Arduino监视器上数字在快速变化，表示连接成功。</p>
+<p>仔细观察S4A的监视器。你会发现一个奇特的现象：虽然没有接上传感器，但是数值还是在不断的变化。一旦接上了传感器，显示出来的数值就比较稳定了，不会毫无规律地在变化。</p>
+<p>S4A提供了6组的模拟口和2组数字口作为传感器的输入口，指令块的功能说明如图所示。模拟传感器的值在0-1023之间，数字传感器的值为“ture”（成立）或者“false”（不成立）。</p>
+<img alt="../_images/s4a02.png" src="../_images/s4a02.png" />
+</div>
+<div class="section" id="id3">
+<h3>S4A的作品范例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>1）传感器输入范例：“阳光牧场”</p>
+<p>作品描述：默认显示一张美丽的牧场风景。当光线很暗的时候，牧场的景物也变得很暗；当光线变亮的时候，景物也随之变亮。
+材料清单：光线传感器×1（Arduino板和扩展板为基本材料，所以就不包含在材料清单中了）。
+连接说明：光线传感器接到扩展板的模拟口0（A0），放在能接受到光线变化的地方。实物连接图可以参考第3章的图3-28。
+角色列表：默认角色（Arduino1），修改其造型为牧场图片，如下图所示。</p>
+<img alt="../_images/s4a03.png" src="../_images/s4a03.png" />
+<p>参考脚本：脚本写在默认角色上，如下图所示。</p>
+<img alt="../_images/s4a04.png" src="../_images/s4a04.png" />
+<p>作品点评：
+因为S4A的模拟传感器的值在0-1023之间，DFRobot的光线传感器在室内的数值一般为500左右，光线越亮数值越小，所以先除以10，再用50进行相减，使角色的亮度效果处于-50到50之间。当然，因为不同光线传感器的数值也是不同的，具体的效果需要调试后，才能找到最准确的参数。这个作品虽然简单，却很能体现互动媒体的“互动”，运行效果如下图所示。</p>
+<img alt="../_images/s4a05.png" src="../_images/s4a05.png" />
+<p>作品优化：
+如果再制作几个小动物在牧场上生活，光线亮就自由运动着，并不时发出叫声（要使用随机数哦）。当光线一暗，就隐藏起来，不发出声音。那么，这个简单的互动作品也就有趣起来了。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="5.2-mPythonX.html" class="btn btn-neutral float-right" title="2. mPythonX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="虚谷号的软件介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
