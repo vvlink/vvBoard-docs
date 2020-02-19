@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -188,7 +188,7 @@
 <p>1）升级更新apt包，打开终端输入：sudo apt-get update</p>
 <p>2）安装软件包，允许apt通过HTTPS使用存储，终端输入：sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</p>
 <p>3）添加docker的官方GPG密钥，终端输入：curl -fsSL <a class="reference external" href="https://download.docker.com/linux/ubuntu/gpg">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -</p>
-<p>4）设置稳定的存储库，终端输入：sudo add-apt-repository “deb [arch=arm64] <a class="reference external" href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a> $(lsb_release -cs) stable”</p>
+<p>4）设置稳定的存储库，终端输入：sudo add-apt-repository &quot;deb [arch=arm64] <a class="reference external" href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a> $(lsb_release -cs) stable&quot;</p>
 <p>5）更新apt包，终端输入:sudo apt-get update</p>
 <p>6）安装最新版本的docker engine-community和containerd，终端输入：sudo apt-get install docker-ce docker-ce-cli containerd.io</p>
 <p>7）至此，docker已经安装上，并且默认打开</p>

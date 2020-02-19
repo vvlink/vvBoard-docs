@@ -57,7 +57,9 @@
 1）数字输入
 
 参考代码：
-:: 
+
+::
+
 	from xugu import Pin # 从 xugu 库中导入 Pin类
 	import time # 导入时间模块
 	p = Pin(4, Pin.IN) 
@@ -69,7 +71,9 @@
 2.模拟输入
 
 参考代码：
-:: 
+
+::
+
 	from xugu import Pin # 从 xugu 库中导入 Pin类
 	import time # 导入时间模块
 	p = Pin("A0", Pin.ANALOG) 
@@ -77,6 +81,7 @@
 	    value=p.read_analog() # 读取 A0 号引脚电平信息,赋值给 value
 	    print(value) # 将value的值打印到终端上
 	    time.sleep(0.1) # 持续100ms
+
 
 在虚谷号的系统中，已经提供了用Jupyter写的学习笔记，在网页上即可完成传感实验的所有操作。
 
@@ -103,7 +108,9 @@
 1）数字输出
 
 参考代码
-:: 
+
+::
+
 	from xugu import Pin # 从 xugu 库中导入 Pin 类
 	led = Pin(6, Pin.OUT) # 初始化 Pin 类
 	# 输出高电平
@@ -114,7 +121,9 @@
 2）模拟输出
 
 参考代码：
-:: 
+
+::
+
 	from xugu import Pin  # 从xugu库中导入Pin类
 	p = Pin(6, Pin.OUT)
 	#给引脚设置模拟值128
@@ -125,7 +134,9 @@
 3）舵机控制
 
 参考代码：
-:: 
+
+::
+
 	from xugu import Servo
 	servo = Servo(4)
 	#设置舵机旋转到150°

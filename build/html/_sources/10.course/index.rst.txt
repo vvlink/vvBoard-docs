@@ -8,6 +8,7 @@
     :numbered: 2
 
     10.1-ipyturtle.rst
+    10.2-baidu-ai.rst
 
 
 

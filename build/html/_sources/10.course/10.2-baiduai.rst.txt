@@ -1,0 +1,45 @@
+
+百度AI系列课程
+====================================
+
+课程编写：谢作如
+
+百度AI开放平台提供了各种应用，如语音识别、文字识别、智能对话、语音合成、人脸识别、图像识别等。通过百度AI，可以有效降低学习AI的门槛。
+
+--------------------------
+课程简介
+--------------------------
+
+这是一个基于百度AI开放平台开发的课程。虚谷号已经安装了百度AI的Python库，可以很方便地调用。使用这一系列课程，请确保
+
+--------------------------
+准备工作
+--------------------------
+
+1.安装必要的Python库。
+
+如果你使用的是虚谷号，安装方法就可以略过。
+
+https://github.com/gkvoelkl/ipython-turtle-widget
+
+安装方法：
+
+pip install ipyturtle jupyter nbextension enable --py --sys-prefix
+ipyturtle
+
+2.注册百度用户。
+
+注册网址：https://ai.baidu.com
+
+注册用户后，还要建立应用，得到API Key 和 Secret Key。请记下两个Key，在下面的Python代码中都会用到。
+
+“{"error_msg":"No permission to access data","error_code":6}
+
+参考：https://www.cnblogs.com/erph/p/9186204.html
+
+
+--------------------------
+课程目录
+--------------------------
+
+。

@@ -23,7 +23,7 @@ SIoT的基本功能
 
 可以将虚谷号上的SIoT看成是一个公用的MQTT服务器，默认的用户名和密码都是“scope”。设定标准的TopicID为“项目名/设备名”即可，如“mpythonx/001”，表示项目名称为“mpythonx”，设备名称为“001”。
 
-**注：QoS的级别为0。
+** 注 ：QoS的级别为0。**
 
 打开网址：http://虚谷号ip:8080，将看到SIoT的管理页面。
 
@@ -64,14 +64,16 @@ SIoT的WebAPI
 
 SIoT提供了一系列的WebAPI，供用户调用。一些不支持MQTT的编程语言，如VB、S4A等，可以通过HTTP的形式和SIoT进行互动。
 
-- 发布消息
+1）发布消息
+
 Http://[虚谷号IP]:8080/publish?topic=xzr/001&msg=on&iname=scope&ipwd=scope
 
 说明：向topicid（主题）“xzr/001”发送内容为“on”的消息，其中“xzr”是项目id，“001”是设备id。
 
 返回数据：{“code”:1,”msg”:”数据已发送”}
 
-- 获取最新数据
+2）获取最新数据
+
 Http://[虚谷号IP]:8080/lastmessage?topic=xzr/001&iname=scope&ipwd=scope
 
 说明：获取topicid（主题）“xzr/001”的最新一条消息

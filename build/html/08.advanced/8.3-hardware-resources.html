@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -96,8 +96,9 @@
 <li class="toctree-l2"><a class="reference internal" href="8.1-troubleshooting.html">1. 常见故障解答</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.2-dap-index.html">2. U盘目录详解</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3. 虚谷号硬件资源详解</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.1. 虚谷号的引脚说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#led">3.2. 虚谷号的LED指示灯介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.1. 外部硬件接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.2. 开源硬件接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.3. 扩展引脚说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
@@ -175,8 +176,43 @@
   <div class="section" id="id1">
 <h1>3. 虚谷号硬件资源详解<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>虚谷号除了引出全部的Arduino引脚外，还引出了主芯片的部分引脚。</p>
+<img alt="../_images/gpio.png" src="../_images/gpio.png" />
 <div class="section" id="id2">
-<h2>3.1. 虚谷号的引脚说明<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. 外部硬件接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>图中标注1、2、3、4、5、6的接口解释如下：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>1是USB2.0接口；</p></li>
+<li><p>2是OTG口，连接电脑的接口；</p></li>
+<li><p>3是USB3.0接口；</p></li>
+<li><p>4是HDMI输出接口；</p></li>
+<li><p>5是DC in接口，是电源输入接口；</p></li>
+<li><dl class="simple">
+<dt>6是RESET按键，其功能如下：</dt><dd><ul>
+<li><p>未上电时按住reset按键，机器将进入Loader烧写模式。</p></li>
+<li><p>上电系统启动后，短按reset按键为刷新vvBoard功能。</p></li>
+<li><p>上电系统启动后，长按reset按键5秒后松开为重启系统功能（初始化U盘文件系统）。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>3.2. 开源硬件接口<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>I2C: 一组I2C，3.3V电平信号，5V供电;</p></li>
+<li><p>ISPI(I2S):1. 一组SPI接口(兼容I2S)，3.3V电平; 2. SPI(I2S)支持主从模式;</p></li>
+<li><p>IUART2:一组UART，兼作虚谷号内核调试，系统信息打印等;</p></li>
+<li><p>IIR_R:一个红外遥控输入接口，输入电平3.3V，提供红外(遥控) 控制接口；</p></li>
+<li><p>ARDUINO接口:全兼容arduino UNO的接口。</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>3.3. 扩展引脚说明<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>CVBS_OUT, 复合视频信号输出：输出视频信号到TV，LCD等，可用于将虚谷号扩展成视频盒子等；</p></li>
 <li><p>ADC，虚谷号的ADC PIN：可以扩展更多的功能按键，也可用于ADC采样；</p></li>
@@ -199,10 +235,6 @@
 </li>
 <li><p>AOL/AOR：虚谷号audio codec的音频模拟信号输出（左右声道），可用于将虚谷号扩展成视频盒子的音频输出或用于将虚谷号扩展为智能音箱等。</p></li>
 </ol>
-<img alt="../_images/gpio.png" src="../_images/gpio.png" />
-</div>
-<div class="section" id="led">
-<h2>3.2. 虚谷号的LED指示灯介绍<a class="headerlink" href="#led" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

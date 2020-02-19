@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -201,10 +201,10 @@
 <p>在虚谷号自带的案例中，有摄像头的视觉识别案例。</p>
 <p>#!/usr/bin/env python3
 # -<em>- coding: utf-8 -</em>-
-“””
+&quot;&quot;&quot;
 Created on Thu Oct 18 13:02:42 2018
 &#64;author: james
-“””</p>
+&quot;&quot;&quot;</p>
 <p>import cv2</p>
 <p>import requests</p>
 <p>import json</p>
@@ -214,30 +214,30 @@ Created on Thu Oct 18 13:02:42 2018
 <p>import numpy as np</p>
 <p>import xugu</p>
 <p>servo=xugu.Servo(12)</p>
-<p>access_token=”24.42017d996da0a23f3c4567b8dfd16a21.2592000.1550220300.282335-14563606”</p>
-<p>API_KEY=”ijoqlG1PdSsdxtXc7DNn68jh”</p>
-<p>SECRET_KEY=”Erpr184wiWCG7ZZglFKKG3Zm3up6xUmi”</p>
+<p>access_token=&quot;24.42017d996da0a23f3c4567b8dfd16a21.2592000.1550220300.282335-14563606&quot;</p>
+<p>API_KEY=&quot;ijoqlG1PdSsdxtXc7DNn68jh&quot;</p>
+<p>SECRET_KEY=&quot;Erpr184wiWCG7ZZglFKKG3Zm3up6xUmi&quot;</p>
 <p>face_num=0</p>
 <p>frame=None</p>
 <p>now_time=0</p>
 <p>face_info={}</p>
 <dl>
 <dt>def cvimg_to_b64(img):</dt><dd><dl class="simple">
-<dt>try:</dt><dd><p>image = cv2.imencode(‘.jpg’, img)[1]
+<dt>try:</dt><dd><p>image = cv2.imencode('.jpg', img)[1]
 base64_data = str(base64.b64encode(image))[2:-1]
 return base64_data</p>
 </dd>
-<dt>except Exception as e:</dt><dd><p>return “error”</p>
+<dt>except Exception as e:</dt><dd><p>return &quot;error&quot;</p>
 </dd>
 </dl>
 </dd>
-<dt>def face_search(img64):</dt><dd><p>url=”<a class="reference external" href="https://aip.baidubce.com/rest/2.0/face/v3/search">https://aip.baidubce.com/rest/2.0/face/v3/search</a>”
-url=url+”?access_token=”+access_token
+<dt>def face_search(img64):</dt><dd><p>url=&quot;<a class="reference external" href="https://aip.baidubce.com/rest/2.0/face/v3/search">https://aip.baidubce.com/rest/2.0/face/v3/search</a>&quot;
+url=url+&quot;?access_token=&quot;+access_token
 data={</p>
 <blockquote>
-<div><p>“image”:img64,
-“image_type”:”BASE64”,
-“group_id_list”:”test_group”}</p>
+<div><p>&quot;image&quot;:img64,
+&quot;image_type&quot;:&quot;BASE64&quot;,
+&quot;group_id_list&quot;:&quot;test_group&quot;}</p>
 </div></blockquote>
 <dl class="simple">
 <dt>try:</dt><dd><p>response=requests.post(url,files=None,data=data)
@@ -245,28 +245,28 @@ res_text=response.text
 res_json=json.loads(res_text)
 return res_json</p>
 </dd>
-<dt>except Exception:</dt><dd><p>return “error”</p>
+<dt>except Exception:</dt><dd><p>return &quot;error&quot;</p>
 </dd>
 </dl>
 </dd>
-<dt>def get_ai_access_token():</dt><dd><p>url=”<a class="reference external" href="https://aip.baidubce.com/oauth/2.0/token?grant_type=">https://aip.baidubce.com/oauth/2.0/token?grant_type=</a>” +”client_credentials&amp;client_id=%s&amp;client_secret=%s” %(API_KEY,SECRET_KEY)
+<dt>def get_ai_access_token():</dt><dd><p>url=&quot;<a class="reference external" href="https://aip.baidubce.com/oauth/2.0/token?grant_type=">https://aip.baidubce.com/oauth/2.0/token?grant_type=</a>&quot; +&quot;client_credentials&amp;client_id=%s&amp;client_secret=%s&quot; %(API_KEY,SECRET_KEY)
 try:</p>
 <blockquote>
 <div><p>response=requests.get(url)
 res_text=response.text
 res_json=json.loads(res_text)
-return str(res_json[“access_token”])</p>
+return str(res_json[&quot;access_token&quot;])</p>
 </div></blockquote>
 <dl class="simple">
-<dt>except Exception:</dt><dd><p>return “error”</p>
+<dt>except Exception:</dt><dd><p>return &quot;error&quot;</p>
 </dd>
 </dl>
 </dd>
-<dt>def get_face_info(img64):</dt><dd><p>url=”<a class="reference external" href="https://aip.baidubce.com/rest/2.0/face/v3/detect">https://aip.baidubce.com/rest/2.0/face/v3/detect</a>”
-url = url + “?access_token=” + access_token
-data = {“face_field”:”age,beauty,expression,faceshape,gender,glasses,landmark,race,qualities”,</p>
+<dt>def get_face_info(img64):</dt><dd><p>url=&quot;<a class="reference external" href="https://aip.baidubce.com/rest/2.0/face/v3/detect">https://aip.baidubce.com/rest/2.0/face/v3/detect</a>&quot;
+url = url + &quot;?access_token=&quot; + access_token
+data = {&quot;face_field&quot;:&quot;age,beauty,expression,faceshape,gender,glasses,landmark,race,qualities&quot;,</p>
 <blockquote>
-<div><p>“image_type”:”BASE64”,”image”:img64,”max_face_num”:5}</p>
+<div><p>&quot;image_type&quot;:&quot;BASE64&quot;,&quot;image&quot;:img64,&quot;max_face_num&quot;:5}</p>
 </div></blockquote>
 <dl class="simple">
 <dt>try:</dt><dd><p>response = requests.post(url,data=data)
@@ -274,7 +274,7 @@ res_text=response.text
 res_json=json.loads(res_text)
 return res_json</p>
 </dd>
-<dt>except Exception:</dt><dd><p>return “error”</p>
+<dt>except Exception:</dt><dd><p>return &quot;error&quot;</p>
 </dd>
 </dl>
 </dd>
@@ -287,14 +287,14 @@ img64=cvimg_to_b64(frame)
 res=get_face_info(img64)
 try:</p>
 <blockquote>
-<div><p>status=res[‘error_msg’]</p>
+<div><p>status=res['error_msg']</p>
 </div></blockquote>
 <dl class="simple">
-<dt>except Exception:</dt><dd><p>status=””</p>
+<dt>except Exception:</dt><dd><p>status=&quot;&quot;</p>
 </dd>
-<dt>if(status==”SUCCESS”):</dt><dd><p>face_info[‘gender’]= res[‘result’][‘face_list’][0][‘gender’][‘type’]
-face_info[‘age’]=res[‘result’][‘face_list’][0][‘age’]
-face_info[‘beauty’]=res[‘result’][‘face_list’][0][‘beauty’]
+<dt>if(status==&quot;SUCCESS&quot;):</dt><dd><p>face_info['gender']= res['result']['face_list'][0]['gender']['type']
+face_info['age']=res['result']['face_list'][0]['age']
+face_info['beauty']=res['result']['face_list'][0]['beauty']
 return</p>
 </dd>
 <dt>else:</dt><dd><p>face_info={}</p>
@@ -302,7 +302,7 @@ return</p>
 </dl>
 </div></blockquote>
 </dd>
-<dt>def faceDetect(img,face_cascade = cv2.CascadeClassifier(‘haarcascade_frontalface_default.xml’)):</dt><dd><p>size=img.shape[:2]
+<dt>def faceDetect(img,face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')):</dt><dd><p>size=img.shape[:2]
 divisor = 8
 h,w=size
 minSize=(w//divisor,h//divisor)
@@ -322,7 +322,7 @@ if int(time.time()) - 1547628298 &gt;= 2592000:</p>
 <blockquote>
 <div><p>global access_token
 token = get_ai_access_token()
-if token != “error”:</p>
+if token != &quot;error&quot;:</p>
 <blockquote>
 <div><p>access_token = get_ai_access_token()</p>
 </div></blockquote>
@@ -342,32 +342,32 @@ if ret == True:</p>
 <div><p>frame1,face_num = faceDetect(frame)
 frame1=cv2.flip(frame1,1,dst=None)
 frame1=cv2.resize(frame1,(1280,800),interpolation=cv2.INTER_LINEAR)
-t=threading.Thread(target=post_request,args=(frame,face_num,now_time,), name=’POST_REQUEST’)
+t=threading.Thread(target=post_request,args=(frame,face_num,now_time,), name='POST_REQUEST')
 t.start()
 print(face_info)
 if face_info=={} :</p>
 <blockquote>
-<div><p>frame1=put_Text(frame1,”Waiting…”,(50,50))</p>
+<div><p>frame1=put_Text(frame1,&quot;Waiting...&quot;,(50,50))</p>
 </div></blockquote>
 <dl class="simple">
 <dt>else:</dt><dd><dl class="simple">
-<dt>try:</dt><dd><p>frame1=put_Text(frame1,str(int(face_info[‘age’])),(300,50))
-frame1=put_Text(frame1,str(face_info[‘gender’]),(300,120))
-frame1=put_Text(frame1,str(int(face_info[‘beauty’])),(300,190))
-frame1=put_Text(frame1,”Age:”,(50,50))
-frame1=put_Text(frame1,”Gender:”,(50,120))
-frame1=put_Text(frame1,”Beauty:”,(50,190))
-servo.write_angle(int(face_info[‘beauty’]*3))</p>
+<dt>try:</dt><dd><p>frame1=put_Text(frame1,str(int(face_info['age'])),(300,50))
+frame1=put_Text(frame1,str(face_info['gender']),(300,120))
+frame1=put_Text(frame1,str(int(face_info['beauty'])),(300,190))
+frame1=put_Text(frame1,&quot;Age:&quot;,(50,50))
+frame1=put_Text(frame1,&quot;Gender:&quot;,(50,120))
+frame1=put_Text(frame1,&quot;Beauty:&quot;,(50,190))
+servo.write_angle(int(face_info['beauty']*3))</p>
 </dd>
 <dt>except Exception:</dt><dd><p>pass</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<p>cv2.imshow(‘Magic Image’,frame1)</p>
+<p>cv2.imshow('Magic Image',frame1)</p>
 </div></blockquote>
 <dl class="simple">
-<dt>if cv2.waitKey(1) &amp; 0xFF == ord(‘q’):</dt><dd><p>break</p>
+<dt>if cv2.waitKey(1) &amp; 0xFF == ord('q'):</dt><dd><p>break</p>
 </dd>
 </dl>
 </div></blockquote>

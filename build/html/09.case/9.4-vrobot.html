@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -191,7 +191,7 @@
 </div>
 <div class="section" id="id3">
 <h2>4.2. 原理分析<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>SpeechRecognition（录音）–&gt; 百度语音（Speech-to-Text语音 转文本）–&gt; 图灵机器人（语义分析及应答）–&gt; 百度语音（Text-to-Speech文本转语音）–&gt; PyAudio（音频播放）</p>
+<p>SpeechRecognition（录音）--&gt; 百度语音（Speech-to-Text语音 转文本）--&gt; 图灵机器人（语义分析及应答）--&gt; 百度语音（Text-to-Speech文本转语音）--&gt; PyAudio（音频播放）</p>
 <img alt="../_images/vrobot02.png" src="../_images/vrobot02.png" />
 <p>虚谷号运行完整的Linux系统，连好USB声卡后，打开虚谷号的音量控制</p>
 <p>在配置项里面只保留USB声卡，把其他设备都关闭。</p>
@@ -204,13 +204,13 @@
 <p>sudo apt-get install idle3</p>
 <p>IDLE是开发 python 程序的基本IDE（集成开发环境），具备基本的IDE的功能，是非商业Python开发的不错的选择。运行上面代码后安装了Python3.0的集成开发环境，相对于虚谷号预装的jupyter开发环境，IDLE运行占用资源少。</p>
 <p>3.升级pip到19.0.3</p>
-<p>pip install –upgrade pip</p>
+<p>pip install --upgrade pip</p>
 <p>pip 是 Python 包管理工具，后期的包安装用到pip，以上代码是升级到最新版。</p>
 <p>4.安装PyAudio</p>
 <p>Linux 系统下可以直接使用系统自带的包管理器安装 PyAudio （如 Ubuntu 和 Raspbian 系统的 apt-get），可以使用 pip 命令安装，不过需要提前装好编译用
 的依赖portaudio19，</p>
 <p>Sudo apt-get install portaudio19-dev</p>
-<p>pip install –upgrade pyaudio</p>
+<p>pip install --upgrade pyaudio</p>
 <p>5.语音识别代码</p>
 <p>创建应用:：百度语音是百度云 AI 开放平台提供的支持语音识别和语音合成的服务，注册以后就可以直接访问它的 REST API 了，并且有向普通用户提供免费的调用额度。</p>
 <p>注册成功以后，进入语音服务的控制台创建一个新的应用，记下自己的 AppID、API Key 和 Secret Key。</p>
