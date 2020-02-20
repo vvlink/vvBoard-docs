@@ -66,13 +66,23 @@ Wi-Fi模式诊断
 
 （1）打开“控制面板”
 
+.. image:: ../images/08/8.1-troubleshooting02.png
+
 （2）打开“系统安全”
+
+.. image:: ../images/08/8.1-troubleshooting03.png
 
 （3）打开“管理工具”
 
+.. image:: ../images/08/8.1-troubleshooting04.png
+
 （4）打开“本地安全策略”
 
+.. image:: ../images/08/8.1-troubleshooting05.png
+
 （5）找到“本地策略/安全选项/系统加密：将FIPS兼容算法用于加密、哈希和签名”，在属性中禁用“本地安全设置”
+
+.. image:: ../images/08/8.1-troubleshooting06.png
 
 
 
