@@ -10,6 +10,7 @@
 - github地址：https://github.com/scope833093/vvBoard
 - github地址（文档）：https://github.com/vvlink/vvBoard-docs
 - 码云镜像地址（文档）：https://gitee.com/xiezuoru/vvBoard-docs
+- 文档阅读地址：https://vvboard.readthedocs.io/
 - 官网链接：http://www.vvboard.com.cn/
 - 论坛链接：http://www.vvboard.com.cn/bbs/
 - 固件及文档下载链接：http://www.vvboard.com.cn/plus/view.php?aid=6
@@ -33,8 +34,9 @@
 
 - 谢作如（浙江省温州中学）
 - 元银萍（深圳希科普）
-- 张何为（深圳希科普）
+- 郑祥（温州七中）
 - 林淼焱（温州大学）
+- 铁熊（捣鼓车间）
 - ……
 
 如果您有任何建议，或者有意向加入这个文档维护团队，请联系谢作如（xiezuoru@vip.qq.com）。

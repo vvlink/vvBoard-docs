@@ -13,6 +13,7 @@
     8.3-hardware-resources
     8.4-soft-setup
     8.5-docker
+    8.6-lnmp.rst
 
 
 
