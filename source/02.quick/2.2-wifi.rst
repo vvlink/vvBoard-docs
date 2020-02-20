@@ -160,7 +160,7 @@ Xrdp是Microsoft远程桌面协议 (RDP) 的开源版本，允许您以图形方
 
 如果遇到远程连接问题，请参考以下解决方案。
 
-
+https://github.com/vvlink/vvBoard-docs/blob/master/source/08.advanced/8.1-troubleshooting.rst
 
 **注意：**
 
