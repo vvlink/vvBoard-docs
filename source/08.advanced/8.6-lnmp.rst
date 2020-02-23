@@ -29,7 +29,7 @@ LNMP的安装
 
 ::
 
-	scope@localhost:~$ sudo apt install nginx
+	root@localhost:~$ sudo apt install nginx
 
 2）Nginx 服务器目录
 
