@@ -19,11 +19,15 @@ LNMP的安装
 
 1、虚谷号切换成无线模式，通过浏览器访问jupyter。
 
+
 2、在jupyter端新建“终端”
+
 
 3、安装Nginx
 
 1）安装命令
+
+scope@localhost:~$ sudo apt install nginx
 
 2）Nginx 服务器目录
 
