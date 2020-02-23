@@ -28,6 +28,20 @@ LNMP的安装
 1）安装命令
 
 ::
+
+	设备    类型      状态    连接     
+	wlan0   wifi      已连接  scope 
+	dummy0  dummy     未托管  --       
+	lo      loopback  未托管  --       
+	wlan0     Link encap:以太网  硬件地址 18:93:7f:33:94:10  
+          inet 地址:192.168.1.192  广播:192.168.1.255  掩码:255.255.255.0
+		  inet6 地址: fe80::bc0d:9279:5c93:604c/64 Scope:Link
+		  UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
+		  接收数据包:7 错误:0 丢弃:0 过载:0 帧数:0
+		  发送数据包:7 错误:0 丢弃:0 过载:0 载波:0
+		  碰撞:0 发送队列长度:1000 
+		  接收字节:2465 (2.4 KB)  发送字节:1163 (1.1 KB)
+
   scope@localhost:~$ sudo apt install nginx
 
 2）Nginx 服务器目录
