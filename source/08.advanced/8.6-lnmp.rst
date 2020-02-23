@@ -31,7 +31,7 @@ LNMP的安装
 
     root@192:~# sudo apt install nginx
 
-命令提示
+（1）出现以下命令提示，请输入“y”，按回车：
 ::
 
     root@192:~# sudo apt install nginx
@@ -48,7 +48,20 @@ LNMP的安装
     需要下载 389 kB 的归档。
     解压缩后会消耗 1,345 kB 的额外空间。
     您希望继续执行吗？ [Y/n]
+    
+（2）若出现升级的命令提示，请使用相关命令进行升级：
 
+::
+        
+    E: 有几个软件包无法下载，要不运行 apt-get update 或者加上 --fix-missing 的选项再试试？
+
+升级命令：
+
+::
+
+    root@192:~# sudo apt-get update
+    
+    
 2）Nginx 服务器目录
 
 3）备用：卸载命令
