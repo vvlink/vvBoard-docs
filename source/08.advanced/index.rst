@@ -15,6 +15,7 @@
     8.5-docker
     8.6-lnmp.rst
     8.7-blynk.rst
+    8.8-Snowboy.rst
 
 
 
