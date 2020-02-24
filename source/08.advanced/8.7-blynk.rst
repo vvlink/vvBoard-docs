@@ -8,11 +8,11 @@ Blynk是一个物联网平台，旨在简化物联网的移动和Web应用程序
 Blynk简介
 ----------------------
 
-相对于其他MQTT的服务器来说，Blynk的优势在于连接快速，且提供了免费的移动平台上的配套应用，包括Android和Android。
+相对于其他MQTT的服务器来说，Blynk的优势在于连接快速，且提供了免费的移动平台上的配套应用，包括iOS和Android。
 
 Blynk项目分为三个部分：
 
-1.Blynk应用（APP）。
+1.Blynk应用（App）。
 
 Blynk的App是具有易于使用的拖放系统，可为IoT设置构建自定义控件。工作流程非常快速：启动新项目时，系统会提示您从广泛的列表中选择开发板，以及连接方式。然后，该应用通过电子邮件发送授权令牌，以通过Blynk服务器连接到您的设备。
 
@@ -26,13 +26,20 @@ Blynk还具有将指令分配给“虚拟”引脚的功能，这是用户配置
 
 创建了用于控制设备的应用后，您可以有两种方法与之通信。第一选择是用Blynk云服务器。这个服务器快速，响应迅速且免费使用。连接到Wi-Fi设备就像将生成的授权代码复制到Arduino草图中并提供Wi-Fi详细信息一样容易。
 
-第二个选择是自己部署Blynk服务器。 Blynk提供了一个基于Netty的开源Java服务器，可以从您的计算机甚至Raspberry Pi、虚谷号、拿铁熊猫之类的迷你电脑来运行该服务器。在功能和安全性方面，这为某些用户带来了各种好处。
+第二个选择是自己部署Blynk服务器。 Blynk提供了一个基于Netty的开源Java服务器，可以从您的计算机甚至Raspberry Pi、虚谷号(vvboard)、拿铁熊猫(LattePanda)之类的迷你电脑来运行该服务器。在功能和安全性方面，这为某些用户带来了各种好处。
 
 3.Blynk库。
 
 Blynk提供了完善的Blynk库。该库与大量开发板一起使用，以允许该应用程序与您的硬件之间进行通信。
 
 Blynk官方网址：https://blynk.io/
+
+---------------------------------------
+在手机上部署Blynk客户端
+---------------------------------------
+iOS系统用户可在应用商店下载，Android用户可以在网络上搜索安装包或通过下面链接下载安装包。
+
+- Android下载地址：https://m.baidu.com/ala/c/m.eoemarket.com/apps/show/id/830895
 
 ---------------------------------------
 在虚谷号上部署Blynk服务器
@@ -50,10 +57,10 @@ Blynk官方网址：https://blynk.io/
 
 3）为了方便，将下载的文件移动到/home/scope/下。
 
-**注：**可以在自己的电脑下载，然后通过jupyter上传。
+**注：** 可以在自己的电脑下载，然后通过jupyter上传。
 
 
-3. 虚谷内置的Siot使用8080端口和Blynk服务端口冲突，我将Siot的端口修改为8088，打开/home/scope/software/SIoT_1_2_vvBoard/下的config.json进行修改保存。
+3. 虚谷内置的SIoT使用8080端口和Blynk服务端口冲突，我将SIoT的端口修改为8088，打开/home/scope/software/SIoT_1_2_vvBoard/下的config.json进行修改保存。
 
 .. image:: ../images/08/8.7-3-siot.png
 
@@ -63,13 +70,19 @@ java -jar /home/scope/server-0.41.12-java8.jar -dataFolder /home/scope/Blynk
 
 .. image:: ../images/08/8.7-4.png
 
-5. 打开手机app Blynk，选择custom，输入虚谷号的IP地址（我的为192.168.0.107），端口号不要修改。
+5. 打开手机App Blynk，选择custom，输入虚谷号的IP地址（我的为192.168.0.107），端口号不要修改。
 
 .. image:: ../images/08/8.7-5.png
 
 6. 输入账号admin@blynk.cc，密码admin，登陆出现以下界面就OK了。
 
 .. image:: ../images/08/8.7-6.png
+
+
+----------------------
+Blynk范例
+----------------------
+待完善
 
 ----------------
 参考资料
