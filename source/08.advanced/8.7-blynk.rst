@@ -35,6 +35,13 @@ Blynk提供了完善的Blynk库。该库与大量开发板一起使用，以允�
 Blynk官方网址：https://blynk.io/
 
 ---------------------------------------
+在手机上部署Blynk客户端
+---------------------------------------
+iOS系统用户可在应用商店下载，Android用户可以在网络上搜索安装包或通过下面链接下载安装包。
+
+- Android下载地址：https://m.baidu.com/ala/c/m.eoemarket.com/apps/show/id/830895
+
+---------------------------------------
 在虚谷号上部署Blynk服务器
 ---------------------------------------
 
@@ -50,7 +57,7 @@ Blynk官方网址：https://blynk.io/
 
 3）为了方便，将下载的文件移动到/home/scope/下。
 
-**注：**可以在自己的电脑下载，然后通过jupyter上传。
+**注：** 可以在自己的电脑下载，然后通过jupyter上传。
 
 
 3. 虚谷内置的SIoT使用8080端口和Blynk服务端口冲突，我将SIoT的端口修改为8088，打开/home/scope/software/SIoT_1_2_vvBoard/下的config.json进行修改保存。
@@ -63,7 +70,7 @@ java -jar /home/scope/server-0.41.12-java8.jar -dataFolder /home/scope/Blynk
 
 .. image:: ../images/08/8.7-4.png
 
-5. 打开手机app Blynk，选择custom，输入虚谷号的IP地址（我的为192.168.0.107），端口号不要修改。
+5. 打开手机App Blynk，选择custom，输入虚谷号的IP地址（我的为192.168.0.107），端口号不要修改。
 
 .. image:: ../images/08/8.7-5.png
 
