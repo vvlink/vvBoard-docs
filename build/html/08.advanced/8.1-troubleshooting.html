@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. 常见故障解答 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>1. 常见故障解答 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="2. U盘目录详解" href="8.2-dap-index.html" />
     <link rel="prev" title="虚谷号的高级操作" href="index.html" /> 
 </head>
@@ -104,6 +105,9 @@
 <li class="toctree-l2"><a class="reference internal" href="8.3-hardware-resources.html">3. 虚谷号硬件资源详解</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.6-lnmp.html">6. 搭建LNMP和WordPress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html">7. Blynk本地服务器的部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html">8. Blynk本地服务器的部署</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
@@ -175,10 +179,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>1. 常见故障解答<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>1. 常见故障解答<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>虚谷号可以长时间稳定工作，并支持绝大多数能运行在ubuntu上的软硬件。因为虚谷号需要运行在2.0A以上的供电环境中，如果供电不足，可能会出现固件刷写失败，网络连接不稳定，U盘功能不能正常使用等问题。在排除故障之前，请**务必确保2A以上的供电**，再逐一排除。</p>
 <div class="section" id="u">
-<h2>1.1. U盘模式诊断<a class="headerlink" href="#u" title="Permalink to this headline">¶</a></h2>
+<h2>1.1. U盘模式诊断<a class="headerlink" href="#u" title="永久链接至标题">¶</a></h2>
 <p>1.虚谷号接到电脑上没有出现U盘图标。</p>
 <p>虚谷号通过OTG口接到电脑后，一般在15秒左右启动完成。电脑将发现一个新存储设备（类似U盘）。</p>
 <blockquote>
@@ -211,7 +215,7 @@
 <p>请将U盘中的文件全部删除或者格式化，断电再重新接上电脑，U盘中的文件将全部初始化。<strong>注意：如果U盘中有其他重要文件，要及时备份！！！</strong></p>
 </div>
 <div class="section" id="wi-fi">
-<h2>1.2. Wi-Fi模式诊断<a class="headerlink" href="#wi-fi" title="Permalink to this headline">¶</a></h2>
+<h2>1.2. Wi-Fi模式诊断<a class="headerlink" href="#wi-fi" title="永久链接至标题">¶</a></h2>
 <p>1.设置Wi-Fi信息后，没有连上Wi-Fi。</p>
 <p>通过U盘功能，在vvBoard_config.ini文件设置好SSID和密码后，按下RST键即可联网，如果没有联网，请检查如下几点：</p>
 <blockquote>
@@ -222,9 +226,24 @@
 </ul>
 </div></blockquote>
 <p>联网成功后，在vvBoard文件夹中将出现两个快捷方式。</p>
+<p>2.无线模式下，用远程桌面连接虚谷号失败。</p>
+<p>默认情况下，Win7系统连接虚谷号远程桌面会失败。连接失败提示内容：由于安全设置错误，客户端无法连接到远程计算机。确定您已经登录到网络中，再重新连接。（如图所示）</p>
+<img alt="../_images/8.1-troubleshooting01.png" src="../_images/8.1-troubleshooting01.png" />
+<p>解决方案：禁用“本地安全策略”之“系统加密：将FIPS兼容算法用于加密、哈希和签名”项。</p>
+<p>操作步骤：</p>
+<p>（1）打开“控制面板”</p>
+<img alt="../_images/8.1-troubleshooting02.png" src="../_images/8.1-troubleshooting02.png" />
+<p>（2）打开“系统安全”</p>
+<img alt="../_images/8.1-troubleshooting03.png" src="../_images/8.1-troubleshooting03.png" />
+<p>（3）打开“管理工具”</p>
+<img alt="../_images/8.1-troubleshooting04.png" src="../_images/8.1-troubleshooting04.png" />
+<p>（4）打开“本地安全策略”</p>
+<img alt="../_images/8.1-troubleshooting05.png" src="../_images/8.1-troubleshooting05.png" />
+<p>（5）找到“本地策略/安全选项/系统加密：将FIPS兼容算法用于加密、哈希和签名”，在属性中禁用“本地安全设置”</p>
+<img alt="../_images/8.1-troubleshooting06.png" src="../_images/8.1-troubleshooting06.png" />
 </div>
 <div class="section" id="id2">
-<h2>1.3. 主机连接诊断<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>1.3. 主机连接诊断<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>1.接上HDMI线，显示器不亮。</p>
 <p>需要确认以下几点：</p>
 <blockquote>
@@ -234,11 +253,11 @@
 <li><p>检查虚谷号标注RUN的led灯是否有点亮，如led没有点亮请看启动诊断。</p></li>
 </ul>
 </div></blockquote>
-<p>2.发现U盘中文件全部加锁。</p>
+<p>2.发现U盘中的文件全部加上了“锁”。</p>
 <p>为了确保U盘文件系统稳定，虚谷号采用了一种保护机制。在主机模式时，OTG口接上电脑或者电源，U盘中的文件会全部锁定。OTG口断开后，文件自动恢复正常。</p>
 </div>
 <div class="section" id="id3">
-<h2>1.4. 其他问题<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>1.4. 其他问题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>1.RST键有什么作用？</p>
 <p>虚谷号的RST键，相当于iphone的HOME键，发挥重要作用，除了刷固件时需要外。</p>
 <p>2.如何区分创客版和教育版？</p>

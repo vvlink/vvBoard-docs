@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. 虚谷号硬件资源详解 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>3. 虚谷号硬件资源详解 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="4. 虚谷号的软件安装" href="8.4-soft-setup.html" />
     <link rel="prev" title="2. U盘目录详解" href="8.2-dap-index.html" /> 
 </head>
@@ -103,6 +104,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.6-lnmp.html">6. 搭建LNMP和WordPress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html">7. Blynk本地服务器的部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html">8. Blynk本地服务器的部署</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
@@ -174,11 +178,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3. 虚谷号硬件资源详解<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>3. 虚谷号硬件资源详解<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>虚谷号除了引出全部的Arduino引脚外，还引出了主芯片的部分引脚。</p>
 <img alt="../_images/gpio.png" src="../_images/gpio.png" />
 <div class="section" id="id2">
-<h2>3.1. 外部硬件接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. 外部硬件接口<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>图中标注1、2、3、4、5、6的接口解释如下：</p>
 <blockquote>
 <div><ul class="simple">
@@ -200,7 +204,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="id3">
-<h2>3.2. 开源硬件接口<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. 开源硬件接口<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>I2C: 一组I2C，3.3V电平信号，5V供电;</p></li>
@@ -212,7 +216,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="id4">
-<h2>3.3. 扩展引脚说明<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. 扩展引脚说明<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li><p>CVBS_OUT, 复合视频信号输出：输出视频信号到TV，LCD等，可用于将虚谷号扩展成视频盒子等；</p></li>
 <li><p>ADC，虚谷号的ADC PIN：可以扩展更多的功能按键，也可用于ADC采样；</p></li>

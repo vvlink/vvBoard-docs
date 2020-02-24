@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. Processing &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>7. Processing &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="虚谷号的教育应用" href="../06.edu/index.html" />
     <link rel="prev" title="6. SIoT" href="5.6-SIoT.html" /> 
 </head>
@@ -99,9 +100,9 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7. Processing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">7.1. 什么是Processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">7.2. Processing的特色</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">7.3. Processing典型互动范例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">7.4. Processing的适合对象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">7.5. 如何开发Processing课程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">7.3. Processing典型互动范例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">7.4. Processing的适合对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">7.5. 如何开发Processing课程</a></li>
 </ul>
 </li>
 </ul>
@@ -178,16 +179,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="processing">
-<h1>7. Processing<a class="headerlink" href="#processing" title="Permalink to this headline">¶</a></h1>
+<h1>7. Processing<a class="headerlink" href="#processing" title="永久链接至标题">¶</a></h1>
 <p>在很多人的眼里，编程是理工男的专利，是深不可测又枯燥无味的代码输入过程。但是，算法和程序设计技术的先驱——唐纳德·克努特（1974年度的图灵奖者）却不这么认为。他说，程序设计既是一门科学，也是一门艺术，二者可以彼此很好地互相补充。Processing就是一款专为设计师和艺术家使用的编程语言。</p>
 <div class="section" id="id1">
-<h2>7.1. 什么是Processing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>7.1. 什么是Processing<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>Processing由美国麻省理工学院媒体实验室美学与运算小组( Aesthetics Computation Group )的Casey Reas与Ben Fry创立。Processing的出现，被视为艺术设计创作的一场革命。利用Processing，艺术家可以将抽象的数据呈现为生动的视觉形象。它不仅可以生成唯美的图形，还能编写出功能强大的互动艺术作品。</p>
 <p>Processing软件的官方网站：<a class="reference external" href="http://www.processing.org/">http://www.processing.org/</a></p>
 <img alt="../_images/processing-1.png" src="../_images/processing-1.png" />
 </div>
 <div class="section" id="id2">
-<h2>7.2. Processing的特色<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>7.2. Processing的特色<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>1.用数字来设计</p>
 <p>“用数字来设计”（Design By Numbers），是Processing独创的程序设计方法。它的思想是简单地写一行代码，就会在屏幕上生成一个图形，再增加一些代码，图形就能根据鼠标的动作发生变化。这些代码称之为草稿（Sketch）。Processing的设计者认为，草稿化（Sketching）是一种思维方式，有趣而便捷，可以让人在短时间内探索出很多想法。“草稿”一词的强调，让使用者体会在计算机屏幕上画图，就如同在图形纸上作画一样。</p>
 <img alt="../_images/processing-2.png" src="../_images/processing-2.png" />
@@ -202,11 +203,12 @@
 <p>Processing采用“库”的形式，实现功能方面的拓展。除了Processing自己的核心库外，还有上百个非官方的库在Processing网站上。这些库拓展了Processing在音频、视频、网络和串口等方面的功能，甚至进入了计算机视觉处理、虚拟现实和电子装配（Fabrication）等领域。利用这些库，Processing能够任意读写很多种类的信息。</p>
 <p>3.与物理世界的互动</p>
 <p>Arduino是一个风靡世界的开源电子原型平台。它和Processing是姐妹项目，拥有共同的编程环境和类似的语法。Processing的范例中提供了一些和Arduino通讯的互动作品。Processing可以读取Arduino的传感器数据，然后把这些数据呈现在屏幕上。这种通信是相互的，也可以用Processing程序作为操作界面，控制电机、扬声器、灯光和相机等设备。当然，其他支持串行通讯的设备也都可以和Processing互动。</p>
-<p><a href="#id3"><span class="problematic" id="id4">**</span></a>注：虚谷号内置了Processing程序，同时又板载了Arduino UNO。用来绘制“与物理世界的互动”画特别方便。</p>
+<p><strong>注：</strong></p>
+<p>虚谷号内置了Processing程序，同时又板载了Arduino UNO，用来绘制“与物理世界的互动”画特别方便。</p>
 <p>Processing还有更多的优点。比如，其支持安卓系统，同样的代码可以输出不同格式的文件，在不同设备和环境中使用。因为开源而拥有大量资源，也是Processing最重要的优势之一。</p>
 </div>
-<div class="section" id="id5">
-<h2>7.3. Processing典型互动范例<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>7.3. Processing典型互动范例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>既然是以交互为特色的编程语言，Processing的范例中提供了多个和硬件进行互动的作品，都是基于Arduino编写的。通过“File（文件）”-“Examples”打开，可以找到这些作品。</p>
 <p>1.范例“SimpleRead”</p>
 <p>SimpleRead是一个能够读取Arduino发送的信息，然后根据信息变换背景的小程序。范例中同时提供了Processing和Arduino的代码， Arduino代码在Processing程序的后面部分，一般会在注释中注明为“Arduino Code”。</p>
@@ -311,13 +313,13 @@
 </div>
 <p>这个程序的运行效果是，如果鼠标指针移动到正方形上，那么背景变为灰色，虚谷号的13号口LED点亮;否则背景为黑色，13号口LED关闭。</p>
 </div>
-<div class="section" id="id6">
-<h2>7.4. Processing的适合对象<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>7.4. Processing的适合对象<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>因为涉及代码编写，所以笔者不太建议在小学阶段开设Processing。其定位应该是中学以上的学生学习。但是可以利用腾讯扣叮系列的P5实验室，这是基于Processing的js版本做的图形化编程工具，和Processing基本兼容。少数已经具备Scratch程序基础的小学高年级学生，完全可以一试。因为，仅仅二维绘画方面，Processing比LOGO语言，不仅简单，而且更加形象、有趣。</p>
 <p>在Processing的教学中，曾经发生过这样的趣事：一位艺术类院校教“互动编程”的教师，总是埋怨自己的学生编程能力差，写不出稍微复杂点的程序，而羡慕另一位在理工类院校教学的老师。但在理工类院校教学的教师也很苦恼，因为他的学生没有艺术想象力，程序展现出来的画面一点也没有艺术感觉。可见Processing就是一门融技术和艺术为一体的编程语言，尤其适合在艺术和技术两个领域都有浓厚兴趣的爱好者使用。</p>
 </div>
-<div class="section" id="id7">
-<h2>7.5. 如何开发Processing课程<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>7.5. 如何开发Processing课程<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>相对于Scratch和VB来说，Processing没有图形化的编程界面和所见即所得的程序设计功能。与传统的程序设计教学不同，Processing的教学要从图形和交互开始，而不是从数据结构和文本控制台的输出开始。所以，传统的编程类课程设计思路对Processing来说，并不是很适合。</p>
 <p>开发Processing要尤其注意以下三点：</p>
 <ul class="simple">

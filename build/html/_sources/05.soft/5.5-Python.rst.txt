@@ -40,10 +40,10 @@ xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类，支持绝大�
 
 ::
 
-from xugu import Pin  # 从xugu库中导入Pin类
+	from xugu import Pin  # 从xugu库中导入Pin类
 	p = Pin(10, Pin.OUT)  # 初始化10号引脚设置为输出模式
 	p.write_analog(128)  # 给引脚设置模拟值128
-::
+
 
 
 虚谷号的Python库列表

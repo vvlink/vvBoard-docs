@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Arduino IDE &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>3. Arduino IDE &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="4. Jupyter" href="5.4-Jupyter.html" />
     <link rel="prev" title="2. mPythonX" href="5.2-mPythonX.html" /> 
 </head>
@@ -176,13 +177,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="arduino-ide">
-<h1>3. Arduino IDE<a class="headerlink" href="#arduino-ide" title="Permalink to this headline">¶</a></h1>
+<h1>3. Arduino IDE<a class="headerlink" href="#arduino-ide" title="永久链接至标题">¶</a></h1>
 <p>Arduino于2005年开发，起初仅为了方便设计学院的大学生设计互动作品，后来因为开源而快速发展为全球知名的开源硬件平台。Arduino包含硬件（各种型号的Arduino主板）和软件（Arduino IDE) 。虚谷号板载了Arduino UNO版本，也内置了Arduino IDE。</p>
 <p>Arduino 语言建立在C/C++基础上，保留了C/C++的语法规范，并对Arduino主控芯片底层进行了二次封装，使开发者无需考虑芯片的底层操作，只通过编写简单的代码就可以实现对Arduino芯片的控制。</p>
 <img alt="../_images/arduino01.png" src="../_images/arduino01.png" />
 <p>Arduino的官方网站：<a class="reference external" href="https://www.arduino.cc/">https://www.arduino.cc/</a></p>
 <div class="section" id="arduino">
-<h2>3.1. Arduino的代码范例<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. Arduino的代码范例<a class="headerlink" href="#arduino" title="永久链接至标题">¶</a></h2>
 <p>Arduino 语言常用于兼容Arduino的开源硬件的编程，是目前最流行的开源硬件编程语言之一。下面是Arduino读取模拟接口并打印的示例代码。</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>void setup() {                          //初始化函数，只在上电时运行一次
@@ -198,13 +199,13 @@ void loop() {                           //循环函数，在初始化函数之�
 </div></blockquote>
 </div>
 <div class="section" id="id1">
-<h2>3.2. 连接扩展模块<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. 连接扩展模块<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>虚谷号兼容Arduino UNO的扩展板，利用扩展板就能轻易接上常见的Arduino扩展模块，如各种传感器、LED灯、舵机等。</p>
 <img alt="../_images/arduino04.jpg" src="../_images/arduino04.jpg" />
 <p>如图所示，虚谷号插上Arduino UNO的普通扩展板，接上一个光线传感器和舵机。</p>
 </div>
 <div class="section" id="ardublock">
-<h2>3.3. 安装ArduBlock<a class="headerlink" href="#ardublock" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. 安装ArduBlock<a class="headerlink" href="#ardublock" title="永久链接至标题">¶</a></h2>
 <p>ArduBlock是Arduino IDE的可视化编程插件，是最受欢迎的Arduino编程入门工具之一。ArduBlock最初版本由上海新车间开发，后来谢作如老师团队委托著名创客何琪辰，在其基础上更新了教育版，目前由无锡一中的张禄老师维护。</p>
 <p>虚谷号教育版已经预装了ArduBlock，创客版需要自行安装。安装步骤如下：</p>
 <p>（1）关闭所有的Arduino IDE窗口。</p>

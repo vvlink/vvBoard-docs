@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>虚谷号的高级操作 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>虚谷号的高级操作 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="1. 常见故障解答" href="8.1-troubleshooting.html" />
     <link rel="prev" title="4. HDMI转接头" href="../07.plus/7.4-hdmi.html" /> 
 </head>
@@ -98,6 +99,9 @@
 <li class="toctree-l2"><a class="reference internal" href="8.3-hardware-resources.html">3. 虚谷号硬件资源详解</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.6-lnmp.html">6. 搭建LNMP和WordPress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html">7. Blynk本地服务器的部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html">8. Blynk本地服务器的部署</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
@@ -167,8 +171,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>虚谷号的高级操作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>这一部分主要介绍虚谷号的高级操作，如常见的故障解决、U盘目录详解、硬件资源详解等。</p>
+<h1>虚谷号的高级操作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这一部分主要介绍虚谷号的高级操作，如常见的故障解决、U盘目录详解、硬件资源详解等，以及一些特定软件的安装。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="8.1-troubleshooting.html">1. 常见故障解答</a><ul>
@@ -199,6 +203,26 @@
 <li class="toctree-l2"><a class="reference internal" href="8.5-docker.html#id1">5.1. Docker简介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.5-docker.html#id2">5.2. Docker的安装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8.5-docker.html#id3">5.3. Docker的验证</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="8.6-lnmp.html">6. 搭建LNMP和WordPress</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="8.6-lnmp.html#id1">6.1. LNMP和WordPress简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.6-lnmp.html#lnmp">6.2. LNMP的安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.6-lnmp.html#wordpress">6.3. WordPress的安装</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="8.7-blynk.html">7. Blynk本地服务器的部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html#id1">7.1. Blynk简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html#id2">7.2. 在手机上部署Blynk客户端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html#id3">7.3. 在虚谷号上部署Blynk服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html#id4">7.4. Blynk范例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html#id5">7.5. 参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="8.8-Snowboy.html">8. Blynk本地服务器的部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html#id1">8.1. Blynk简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html#id2">8.2. 在虚谷号上部署Blynk服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html#id7">8.3. 参考资料</a></li>
 </ul>
 </li>
 </ul>

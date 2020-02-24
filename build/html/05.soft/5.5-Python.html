@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Python &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>5. Python &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="6. SIoT" href="5.6-SIoT.html" />
     <link rel="prev" title="4. Jupyter" href="5.4-Jupyter.html" /> 
 </head>
@@ -177,11 +178,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="python">
-<h1>5. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<h1>5. Python<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
 <p>Python是一种面向对象的解释型程序设计语言，是纯粹的开源软件，源代码和解释器 CPython 遵循 GPL(GNUGeneral Public License)协议。</p>
 <p>Python语法简洁、清晰、自由、灵活，具有丰富和强大的库，常被昵称为“胶水语言”，能够把其他语言(尤其是 C/C++)编写的各种模块很轻松地“粘合”、联结在一起。</p>
 <div class="section" id="pythonled">
-<h2>5.1. 用Python代码控制LED<a class="headerlink" href="#pythonled" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. 用Python代码控制LED<a class="headerlink" href="#pythonled" title="永久链接至标题">¶</a></h2>
 <p>例如，在虚谷号中控制引脚的高低电平，让连接在引脚上的LED灯闪烁，代码如下：</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">LED</span>
@@ -197,22 +198,22 @@
 </div></blockquote>
 </div>
 <div class="section" id="id1">
-<h2>5.2. 在线调试Python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>5.2. 在线调试Python<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>虚谷号内置了Jupyter。通过Jupyter，可以通过Web页面在虚谷号上运行Python代码和Linux命令。</p>
 <p>请访问本文档的“虚谷号的基本操作”——“Jupyter”，查看Jupyter的使用说明。</p>
 </div>
 <div class="section" id="xugu">
-<h2>5.3. 虚谷号内置的xugu库<a class="headerlink" href="#xugu" title="Permalink to this headline">¶</a></h2>
+<h2>5.3. 虚谷号内置的xugu库<a class="headerlink" href="#xugu" title="永久链接至标题">¶</a></h2>
 <p>xugu库是虚谷号研发团队为虚谷号定制的Python库，其目的是为了降低初学者用代码控制硬件的模块。xugu库基于Firmata协议开发，用户无需学习Arduino代码、串口协议知识，用极其简短的代码，即可实现对虚谷号板载Arduino的控制和感知。</p>
 <p>xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类，支持绝大多数的Arduino模块。如用控制某个LED灯的亮度大代码如下。</p>
-<dl class="simple">
-<dt>from xugu import Pin  # 从xugu库中导入Pin类</dt><dd><p>p = Pin(10, Pin.OUT)  # 初始化10号引脚设置为输出模式
-p.write_analog(128)  # 给引脚设置模拟值128</p>
-</dd>
-</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xugu</span> <span class="k">import</span> <span class="n">Pin</span>  <span class="c1"># 从xugu库中导入Pin类</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>  <span class="c1"># 初始化10号引脚设置为输出模式</span>
+<span class="n">p</span><span class="o">.</span><span class="n">write_analog</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>  <span class="c1"># 给引脚设置模拟值128</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id2">
-<h2>5.4. 虚谷号的Python库列表<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>5.4. 虚谷号的Python库列表<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>虚谷号内置了大量常见的Python库，基本上涵盖了中小学教材中涉及到的所有库，可以看成是一个Python集成环境。当然，也可以使用pip命令自行安装。</p>
 <p>请访问本文档的“虚谷号的基本操作”——“Python运行和库维护”，查看具体的库列表和版本说明。</p>
 </div>

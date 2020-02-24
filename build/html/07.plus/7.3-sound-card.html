@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. 音频设备 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>3. 音频设备 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="4. HDMI转接头" href="7.4-hdmi.html" />
     <link rel="prev" title="2. 摄像头" href="7.2-camera.html" /> 
 </head>
@@ -174,35 +175,37 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3. 音频设备<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>3. 音频设备<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>虚谷号接上声卡后，可以接麦克风和音箱等音频设备，成为一台多媒体电脑。建议选择内置声卡的麦克风（很多摄像头都已经内置麦克风）和内置声卡的小音箱。</p>
 <p><a href="#id2"><span class="problematic" id="id3">**</span></a>注意：<a href="#id4"><span class="problematic" id="id5">**</span></a>如果虚谷号接了无源音箱，需要在电源口另外接上2A的电源，才能确保供电正常。否则可能导致音箱不能正常使用。</p>
 <div class="section" id="id6">
-<h2>3.1. 声卡推荐<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. 声卡推荐<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>vvBoard支持绝大多数的免驱动USB声卡，大部分声卡即插即用，无需配置。</p>
 <p>USB免驱声卡购买地址：</p>
 <p><a class="reference external" href="https://detail.tmall.com/item.htm?id=564470736512&amp;price=29.9-39.9&amp;sourceType=item&amp;sourceType=item&amp;suid">https://detail.tmall.com/item.htm?id=564470736512&amp;price=29.9-39.9&amp;sourceType=item&amp;sourceType=item&amp;suid</a></p>
 </div>
 <div class="section" id="id7">
-<h2>3.2. 内置麦克风的摄像头推荐<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. 内置麦克风的摄像头推荐<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>大部分内置声卡即插即用，无需配置，具体见摄像头部分。</p>
 </div>
 <div class="section" id="id8">
-<h2>3.3. 内置声卡的小音箱推荐<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. 内置声卡的小音箱推荐<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>大部分内置声卡的小音箱即插即用，无需配置。</p>
 <p>内置声卡的小音箱购买地址：</p>
 <p>卡农（iKANOO）N12USB声卡驱动电脑音响
 <a class="reference external" href="https://item.jd.com/30031188925.html">https://item.jd.com/30031188925.html</a></p>
 </div>
 <div class="section" id="id9">
-<h2>3.4. 手动配置声卡步骤<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. 手动配置声卡步骤<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>1、终端运行aplay -l和arecord -l查看播放和录音的设备,如下图所示：</p>
 <img alt="../_images/shengka01.jpg" src="../_images/shengka01.jpg" />
 <p>2、根据设备的声卡号和设备号修改当前目录下的asound.conf文件后保存，文件内容如下：</p>
-<p>defaults.pcm.card 1</p>
-<p>defaults.pcm.device 0</p>
-<p>defaults.ctl.card 1</p>
-<p>3、终端输入：sudo cp asound.conf /etc ，将asound.conf文件复制到系统etc目录下；</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaults</span><span class="o">.</span><span class="n">pcm</span><span class="o">.</span><span class="n">card</span> <span class="mi">1</span>
+<span class="n">defaults</span><span class="o">.</span><span class="n">pcm</span><span class="o">.</span><span class="n">device</span> <span class="mi">0</span>
+<span class="n">defaults</span><span class="o">.</span><span class="n">ctl</span><span class="o">.</span><span class="n">card</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>3、终端输入：sudo cp asound.conf /etc ，将asound.conf文件复制到系统etc目录下。</p>
 <p>4、点击桌面左下角开始图标，进入开始菜单；点击多媒体，找到 PulseAudio音量控制程序，如下图所示：</p>
 <img alt="../_images/shengka02.jpg" src="../_images/shengka02.jpg" />
 <p>5、点击打开 PulseAudio音量控制程序，点击打开输出设备界面，找到USB Audio Device 设备单击对应名称后面的按钮，如下图所示：</p>

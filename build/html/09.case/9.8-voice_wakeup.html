@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. 做一只不一样的“鹦鹉” &mdash; 虚谷号使用手册 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="9. 在虚谷号上训练“石头剪刀布”模型" href="9.9-m_learning.html" />
+    <link rel="prev" title="7. 会“吟诗作对”的机器人" href="9.7-poem.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的案例汇集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="9.1-yeelight.html">1. 虚谷号结合Yeelight做”变色龙“灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.2-facetest.html">2. 做一个颜值测试器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.3-UAV.html">3. 语音控制特洛无人机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.4-vrobot.html">4. 做一个语音交互机器人“小胖”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.5-science.html">5. 虚谷号让食盐在水中的扩散过程“可见”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.6-info_experiment.html">6. 基于虚谷号的“传感与控制”实验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.7-poem.html">7. 会“吟诗作对”的机器人</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. 做一只不一样的“鹦鹉”</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">8.1. 原理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">8.2. 原型设计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">8.3. 代码编写</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">8.4. 功能测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">8.5. 项目总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">8.6. 参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="9.9-m_learning.html">9. 在虚谷号上训练“石头剪刀布”模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.10_color_robot.html">10. 根据颜色智能分拣的机器人</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的案例汇集</a> &raquo;</li>
+        
+      <li>8. 做一只不一样的“鹦鹉”</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/09.case/9.8-voice_wakeup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>8. 做一只不一样的“鹦鹉”<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>案例提供：谢作如（温州）</p>
+<p>做一只不一样的“鹦鹉”，将你说的话，重复一遍。只不过声音会不同，而且内容也有所区别。因为机器要先翻译，然后再合成。</p>
+<p>使用步骤：先说“虚谷号”，稍微停顿后，然后再说出你的指令。稍等片刻，虚谷号将用另一种声音，重复了你的指令。但是会出现信息传播上的损耗，有时会很搞笑。</p>
+<div class="section" id="id2">
+<h2>8.1. 原理<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>1）语音唤醒</p>
+<p>Snowboy是一款高度可定制的唤醒词检测引擎，可以用于实时嵌入式系统，并且始终监听（即使离线也是可以的）。它可以运行在 （Ubuntu）Linux 和 Mac OS X 系统上，也可以部署在安卓手机和迷你电脑，如树莓派、虚谷号等。</p>
+<p>默认情况下，Snowboy并不支持虚谷号。在技术大神Adolph_Lin的帮助，修改版本的Snowboy已经可以完美运行于虚谷号上。同样，新版的虚谷号系统上，也默认安装了Snowboy。</p>
+<p>2）语音识别</p>
+<p>利用百度AI，可以将声音文件提交到百度云平台，然后返回文字信息。</p>
+<p>3）语音合成</p>
+<p>利用百度AI，可以将“文字”转换为mp3文件，通过Python代码来播放。</p>
+<p>4）语音模型</p>
+<p>登陆snowboy官网，设置自己的唤醒词，上传包含自定义唤醒词的音频，以训练生成专属的语音模型。在Hotword library（热词库）中找“虚谷号”，即可下载模型。</p>
+<img alt="../_images/9.8-model.png" src="../_images/9.8-model.png" />
+</div>
+<div class="section" id="id3">
+<h2>8.2. 原型设计<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>1）硬件准备</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>USB声卡+麦克风、小音箱。</p></li>
+<li><p>自带声卡的摄像头（一般自带麦克风）、自带声卡的小音箱。</p></li>
+</ul>
+</div></blockquote>
+<p>2）软件准备</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Snowboy</p></li>
+<li><p>百度AI库</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>8.3. 代码编写<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>1)库和参数</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">snowboydecoder</span>
+<span class="kn">import</span> <span class="nn">signal</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">aip</span> <span class="k">import</span> <span class="n">AipSpeech</span>
+
+<span class="n">interrupted</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="sd">&quot;&quot;&quot; 你的 APPID AK SK &quot;&quot;&quot;</span>
+<span class="n">APP_ID</span> <span class="o">=</span> <span class="s2">&quot;15126848&quot;</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s2">&quot;BPaS8KCk1B6Io9EqEOw1pOH3&quot;</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s2">&quot;AL3B7XOmoRZojqFivCzvxuGYDDQZ7G58&quot;</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">AipSpeech</span><span class="p">(</span><span class="n">APP_ID</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">,</span> <span class="n">SECRET_KEY</span><span class="p">)</span>
+
+<span class="c1">#唤醒词的模型文件名</span>
+<span class="n">model</span> <span class="o">=</span> <span class="s1">&#39;vvboard.pmdl&#39;</span>
+</pre></div>
+</div>
+<p>2)核心代码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 声音到文字</span>
+<span class="k">def</span> <span class="nf">audio_to_text</span><span class="p">(</span><span class="n">wav_file</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">wav_file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">file_context</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;正在识别语音...&quot;</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">asr</span><span class="p">(</span><span class="n">file_context</span><span class="p">,</span> <span class="s1">&#39;wav&#39;</span><span class="p">,</span> <span class="mi">16000</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">&#39;dev_pid&#39;</span><span class="p">:</span> <span class="mi">1536</span><span class="p">,</span>
+    <span class="p">})</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;err_msg&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;success.&quot;</span><span class="p">):</span>
+        <span class="n">res_str</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res_str</span> <span class="o">=</span> <span class="s2">&quot;错误，没有识别出任何内容！&quot;</span>
+    <span class="k">return</span> <span class="n">res_str</span>
+
+<span class="c1">#从文字到声音</span>
+<span class="k">def</span> <span class="nf">tts</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+    <span class="n">fname</span><span class="o">=</span><span class="s1">&#39;auido.mp3&#39;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">synthesis</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="s1">&#39;zh&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;vol&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,})</span>
+    <span class="c1"># 识别正确返回语音二进制 错误则返回dict 参照下面错误码</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;play &#39;</span><span class="o">+</span> <span class="n">fname</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+<span class="c1">#录音结束后调用，fname为生成的录音文件</span>
+<span class="k">def</span> <span class="nf">audioRecorderCallback</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;正在识别...&quot;</span><span class="p">)</span>
+    <span class="n">ret_s</span> <span class="o">=</span> <span class="n">audio_to_text</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+    <span class="c1">#输出识别结果</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ret_s</span><span class="p">)</span>
+    <span class="c1">#让虚谷号说话</span>
+    <span class="n">tts</span><span class="p">(</span><span class="n">ret_s</span><span class="p">)</span>
+    <span class="c1">#删除临时录音文件</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+<span class="c1">#唤醒时调用</span>
+<span class="k">def</span> <span class="nf">detectedCallback</span><span class="p">():</span>
+    <span class="c1">#播放应答声</span>
+    <span class="n">snowboydecoder</span><span class="o">.</span><span class="n">play_audio_file</span><span class="p">(</span><span class="n">snowboydecoder</span><span class="o">.</span><span class="n">DETECT_DING</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recording audio...&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">signal_handler</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">interrupted</span>
+    <span class="n">interrupted</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">interrupt_callback</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">interrupted</span>
+    <span class="k">return</span> <span class="n">interrupted</span>
+</pre></div>
+</div>
+<p>3)监听代码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">signal_handler</span><span class="p">)</span>
+
+<span class="c1">#设置模型和灵敏度，sensitivity数字越大，识别越容易，但是也容易引起误判。</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">snowboydecoder</span><span class="o">.</span><span class="n">HotwordDetector</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">sensitivity</span><span class="o">=</span><span class="mf">0.38</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Listening... Press Ctrl+C to exit&#39;</span><span class="p">)</span>
+
+<span class="c1"># main loop</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">detected_callback</span><span class="o">=</span><span class="n">detectedCallback</span><span class="p">,</span>
+               <span class="n">audio_recorder_callback</span><span class="o">=</span><span class="n">audioRecorderCallback</span><span class="p">,</span>
+               <span class="n">interrupt_check</span><span class="o">=</span><span class="n">interrupt_callback</span><span class="p">,</span>
+               <span class="n">sleep_time</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">detector</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>8.4. 功能测试<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>先喊一声“虚谷号”，然后就可以和它对话了。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Listening</span><span class="o">...</span> <span class="n">Press</span> <span class="n">Ctrl</span><span class="o">+</span><span class="n">C</span> <span class="n">to</span> <span class="n">exit</span>
+<span class="n">INFO</span><span class="p">:</span><span class="n">snowboy</span><span class="p">:</span><span class="n">Keyword</span> <span class="mi">1</span> <span class="n">detected</span> <span class="n">at</span> <span class="n">time</span><span class="p">:</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">12</span> <span class="mi">17</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">21</span>
+<span class="n">recording</span> <span class="n">audio</span><span class="o">...</span><span class="n">正在识别</span><span class="o">...</span>
+<span class="n">正在识别语音</span><span class="o">...</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">urllib3</span><span class="o">/</span><span class="n">connectionpool</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">794</span><span class="p">:</span> <span class="n">InsecureRequestWarning</span><span class="p">:</span> <span class="n">Unverified</span> <span class="n">HTTPS</span> <span class="n">request</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">made</span><span class="o">.</span> <span class="n">Adding</span> <span class="n">certificate</span> <span class="n">verification</span> <span class="ow">is</span> <span class="n">strongly</span> <span class="n">advised</span><span class="o">.</span> <span class="n">See</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">urllib3</span><span class="o">.</span><span class="n">readthedocs</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">security</span><span class="o">.</span><span class="n">html</span>
+  <span class="n">InsecureRequestWarning</span><span class="p">)</span>
+<span class="n">我叫什么名字</span>
+<span class="n">INFO</span><span class="p">:</span><span class="n">snowboy</span><span class="p">:</span><span class="n">Keyword</span> <span class="mi">1</span> <span class="n">detected</span> <span class="n">at</span> <span class="n">time</span><span class="p">:</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">12</span> <span class="mi">17</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">23</span>
+<span class="n">recording</span> <span class="n">audio</span><span class="o">...</span><span class="n">正在识别</span><span class="o">...</span>
+<span class="n">正在识别语音</span><span class="o">...</span>
+<span class="n">我是一块开元硬件</span>
+<span class="n">INFO</span><span class="p">:</span><span class="n">snowboy</span><span class="p">:</span><span class="n">Keyword</span> <span class="mi">1</span> <span class="n">detected</span> <span class="n">at</span> <span class="n">time</span><span class="p">:</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">12</span> <span class="mi">17</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">49</span>
+<span class="n">recording</span> <span class="n">audio</span><span class="o">...</span><span class="n">正在识别</span><span class="o">...</span>
+<span class="n">正在识别语音</span><span class="o">...</span>
+<span class="n">我可以学习人工智能</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>8.5. 项目总结<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>这个作品仅仅是一个简单的功能演示，但是借助这样的语音唤醒功能，可以设计出很多有趣的作品来。</p>
+<p>说明：</p>
+<ul class="simple">
+<li><p>本文档要运行在Snowboy的“examples/Python3”文件夹中。</p></li>
+<li><p>语音唤醒功能不需要联网，但是语音识别和语音合成功能，需要联网访问百度AI。</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>8.6. 参考资料<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>Snowboy官方文档地址 ：<a class="reference external" href="http://docs.kitt.ai/snowboy">http://docs.kitt.ai/snowboy</a></p>
+<p>Snowboy源码下载地址（虚谷号版本）：<a class="reference external" href="https://gitee.com/l_wolf/Snowboy">https://gitee.com/l_wolf/Snowboy</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="9.9-m_learning.html" class="btn btn-neutral float-right" title="9. 在虚谷号上训练“石头剪刀布”模型" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="9.7-poem.html" class="btn btn-neutral float-left" title="7. 会“吟诗作对”的机器人" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

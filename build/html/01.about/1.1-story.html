@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. 虚谷号的故事 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>1. 虚谷号的故事 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="2. 虚谷号的介绍" href="1.2-presentation.html" />
     <link rel="prev" title="关于虚谷号" href="index.html" /> 
 </head>
@@ -174,25 +175,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>1. 虚谷号的故事<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>1. 虚谷号的故事<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>自从“虚谷号”的消息发布以来，常常有熟悉的创客老师问有关“虚谷号”的细节。他们很好奇，我们为什么会设计一款新的开源硬件。是受到“中兴事件”的刺激而想要有一款中国芯的开源硬件，还是在各种融资的好消息刺激下，也要做款产品赚点钱？当然，他们更多是关心这一开源硬件具有怎样的特点，是否更加适用于中小学，帮助他们能够更好地开展创客教育。</p>
 <p>如果认真追溯下去，设计虚谷号的理由也许很复杂，也许真的关乎爱国，关乎情怀。参与“虚谷计划”的每一个成员，背后都有一个关乎教育关乎技术教育的故事。但要归纳一个最核心的理由却是简简单单的一句话：</p>
 <p>我们找不到想要的开源硬件。</p>
 <div class="section" id="id2">
-<h2>1.1. 我们的思考<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>1.1. 我们的思考<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>2016年，普通高中信息技术教材开始编写。新教材的必修模块和选择性必修模块都有开源硬件方面的内容。因为新教材的编程语言选择了Python。在这种背景下，应该选择哪些开源硬件进入教材成为一道难题。</p>
 <p>如果选择Arduino？Arduino的编程语言是C/C++，没有基于Python的IDE。鉴于高中生的学习能力，又不能使用Mixly或者ArduBlock之类的图形化编程环境。</p>
 <p>如果选择树莓派？先不说树莓派算不算一款开源硬件，最重要的是用树莓派没法上课！如果用树莓派来上课，机房里要准备几个屏幕？几套键盘？无论是国内还是国外，在大班教学中用树莓派几乎不可见。而高中的信息技术教学是大班上课的。</p>
 <p>那能不能选择micro:bit？不，micro:bit的性能实在太弱了。说是支持MicroPython，其实是阉割的MicroPython。只要写几句和字符处理相关的功能，板子就会死机。还不支持无线网络（Wi-Fi），扩展功能极其有限，非常鸡肋。小学生用了入门挺好，高中实在不能使用。</p>
 </div>
 <div class="section" id="id3">
-<h2>1.2. 我们的需求<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>1.2. 我们的需求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>我们想要怎样的开源硬件？那就是入门要简单，扩展要方便，就如Python语言一样，适合非专业的人使用，也能写出非常复杂的如机器学习方面的代码。Arduino再好，它毕竟不是为教育而设计。micro:bit再好，只能在入门时玩玩。树莓派再好，也只能适合那些玩Linux的高手。</p>
 <p>盘点当前的开源硬件，micro:bit、Arduino和树莓派三者之间无法形成一个循序渐进的学习体系。micro:bit和Arduino，几乎是完全不同的体系，Arduino和树莓派，也不是一个知识体系。当你试图考虑中小学的开源硬件学习路径的时候，现有的产品就存在很大的问题。</p>
 <p>决心重新自己设计一块教学用开源硬件想法，则是在2017年11月的台北makerFaire上的两岸教育创客之间的一番讨论。中国拥有全球最好的电子加工产业，在开源硬件方面已经有很多年的积累。DFRobot和Seeed Studio在开源硬件销售方面全球排名前五，他们生产的开源硬件和周边模块销往世界各地。厚积薄发，是时候开始设计中国的开源硬件了。</p>
 </div>
 <div class="section" id="id4">
-<h2>1.3. 我们的行动<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>1.3. 我们的行动<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>创意当实现！</p>
 <p>一开始，我们给这一块开源硬件板子取名为“虚谷”，其寓意是：虚怀若谷，兼容并蓄，继往开来。“虚谷”要继承Arduino、树莓派、micro:bit等开源硬件的优点，而不是另起炉灶重新造一个“轮子”，用一句话去描述开发目标：</p>
 <p>技术门槛如micro:bit一样低，支持Python和网络，支持虚拟磁盘烧录，性能和成本优于树莓派，能够兼容大部分Arduino项目。</p>

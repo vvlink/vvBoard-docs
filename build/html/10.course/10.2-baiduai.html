@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>百度AI系列课程 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>百度AI系列课程 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -158,30 +159,89 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ai">
-<h1>百度AI系列课程<a class="headerlink" href="#ai" title="Permalink to this headline">¶</a></h1>
+<h1>百度AI系列课程<a class="headerlink" href="#ai" title="永久链接至标题">¶</a></h1>
 <p>课程编写：谢作如</p>
 <p>百度AI开放平台提供了各种应用，如语音识别、文字识别、智能对话、语音合成、人脸识别、图像识别等。通过百度AI，可以有效降低学习AI的门槛。</p>
 <div class="section" id="id1">
-<h2>课程简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>课程简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>这是一个基于百度AI开放平台开发的课程。虚谷号已经安装了百度AI的Python库，可以很方便地调用。使用这一系列课程，请确保</p>
 </div>
 <div class="section" id="id2">
-<h2>准备工作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>准备工作<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>1.安装必要的Python库。</p>
 <p>如果你使用的是虚谷号，安装方法就可以略过。</p>
 <p><a class="reference external" href="https://github.com/gkvoelkl/ipython-turtle-widget">https://github.com/gkvoelkl/ipython-turtle-widget</a></p>
 <p>安装方法：</p>
-<p>pip install ipyturtle jupyter nbextension enable --py --sys-prefix
+<p>pip install ipyturtle jupyter nbextension enable –py –sys-prefix
 ipyturtle</p>
 <p>2.注册百度用户。</p>
 <p>注册网址：<a class="reference external" href="https://ai.baidu.com">https://ai.baidu.com</a></p>
-<p>注册用户后，还要建立应用，得到API Key 和 Secret Key。请记下两个Key，在下面的Python代码中都会用到。</p>
-<p>“{&quot;error_msg&quot;:&quot;No permission to access data&quot;,&quot;error_code&quot;:6}</p>
-<p>参考：<a class="reference external" href="https://www.cnblogs.com/erph/p/9186204.html">https://www.cnblogs.com/erph/p/9186204.html</a></p>
+<p>注册用户后，还要建立应用（任何一个应用，然后把可以选择的接口全部选上），得到API Key 和 Secret Key。请记下两个Key，在下面的Python代码中都会用到。</p>
+<img alt="../_images/10.2-baidu01.png" src="../_images/10.2-baidu01.png" />
+<img alt="../_images/10.2-baidu02.png" src="../_images/10.2-baidu02.png" />
 </div>
 <div class="section" id="id3">
-<h2>课程目录<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>。</p>
+<h2>课程目录<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>课程精选了百度AI平台中部分典型应用，提供最简洁有趣的代码。</p>
+<p>1.人脸识别
+2.颜值和表情
+3.车辆识别
+4.车牌识别
+5.文字识别
+6.智能语音</p>
+<p>打开虚谷号的jupyter服务，即可看到这些课程。</p>
+<img alt="../_images/10.2-baidu03.png" src="../_images/10.2-baidu03.png" />
+</div>
+<div class="section" id="id4">
+<h2>调用百度AI的一般过程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>我们可以把百度AI看成是一个无所不知的“智者”，只要你准确地提交问题，即可得到答案。百度AI的调用过程，大致可以分为三个步骤：</p>
+<p>1.建立对象，设置用户参数，读取需要识别的对象信息。</p>
+<p>这里的对象信息，可以是一张图片、一段文字，也可以是音频文件等等。</p>
+<p>2.提交信息到百度AI平台，平台处理后，返回识别结果。</p>
+<p>3.根据识别结果，执行相应的代码。</p>
+<p>百度AI返回的是JSON类型的字符串，通过程序进行分析、提取。Python中可以用一个函数将其转换为字典。</p>
+</div>
+<div class="section" id="id5">
+<h2>课程示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>以“文字识别”为例。</p>
+<p>第一步、导入库</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: UTF-8 -*-</span>
+<span class="kn">from</span> <span class="nn">aip</span> <span class="k">import</span> <span class="n">AipOcr</span>
+</pre></div>
+</div>
+<p>第二步、设置认证信息</p>
+<p>注：这里用的是测试账号，有访问次数的限制，请使用自己的账号信息。</p>
+<dl class="simple">
+<dt>::</dt><dd><p>“”” 你的 APPID AK SK “””
+APP_ID = ‘15469649’
+API_KEY = ‘3vZgLINSnGGEafPflkTLzkGh’
+SECRET_KEY = ‘8cUXtkMed2z86kqfyrV606ylnCmfcc48’</p>
+</dd>
+</dl>
+<p>第三步、初始化AipFace对象</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aipOcr</span> <span class="o">=</span> <span class="n">AipOcr</span><span class="p">(</span><span class="n">APP_ID</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">,</span> <span class="n">SECRET_KEY</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>第四步、读取图片</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filePath</span> <span class="o">=</span> <span class="s2">&quot;word.jpg&quot;</span>
+<span class="k">def</span> <span class="nf">get_file_content</span><span class="p">(</span><span class="n">filePath</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>​
+第五步、定义参数变量</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">options</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;detect_direction&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="s1">&#39;language_type&#39;</span><span class="p">:</span> <span class="s1">&#39;CHN_ENG&#39;</span><span class="p">,}</span>
+</pre></div>
+</div>
+<p>第六步、调用通用文字识别接口</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">aipOcr</span><span class="o">.</span><span class="n">basicGeneral</span><span class="p">(</span><span class="n">get_file_content</span><span class="p">(</span><span class="n">filePath</span><span class="p">),</span> <span class="n">options</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">words_result</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;words_result&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words_result</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">words_result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;words&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
 </div>
 </div>
 

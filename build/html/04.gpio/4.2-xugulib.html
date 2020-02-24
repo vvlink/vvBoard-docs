@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. xugu库的使用 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>2. xugu库的使用 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="3. 虚谷号和Arduino的自定义通讯" href="4.3-arduino.html" />
     <link rel="prev" title="1. GPIO的实现方式" href="4.1-gpio.html" /> 
 </head>
@@ -179,15 +180,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="xugu">
-<h1>2. xugu库的使用<a class="headerlink" href="#xugu" title="Permalink to this headline">¶</a></h1>
+<h1>2. xugu库的使用<a class="headerlink" href="#xugu" title="永久链接至标题">¶</a></h1>
 <p>xugu库是虚谷号研发团队为虚谷号定制的Python库，其目的是为了降低初学者用代码控制硬件的模块。xugu库基于Firmata协议开发，用户无需学习Arduino代码、串口协议知识，用极其简短的代码，即可实现对虚谷号板载Arduino的控制和感知。</p>
 <p>xugu库中有Pin、Servo、I2C、SerialMgt、LED、XuguLog等类，支持绝大多数的Arduino模块。</p>
 <div class="section" id="id1">
-<h2>2.1. xugu库的引用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>2.1. xugu库的引用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>只要Python代码中引用了xugu库，虚谷号会自动检测板载的Arduino UNO（ATmega328P芯片）是否烧写了标准的Firmata协议。如果没有，则烧录，确保GPIO的正常使用。因此第一次引用xugu库，大约需要十多秒时间来烧写Firmata协议固件。</p>
 <p><strong>注：</strong> xugu库的语法参考了micro:bit和掌控板，与二者基本一致。</p>
 <div class="section" id="i-o-pin">
-<h3>控制I/O引脚：Pin类<a class="headerlink" href="#i-o-pin" title="Permalink to this headline">¶</a></h3>
+<h3>控制I/O引脚：Pin类<a class="headerlink" href="#i-o-pin" title="永久链接至标题">¶</a></h3>
 <p>Pin类用于控制I/O引脚，具有设置引脚模式（IN，OUT，ANALOG）的属性和读写电平状态的方法。</p>
 <p>1、构建</p>
 <p>Pin(pin_num, pin_model）</p>
@@ -239,7 +240,7 @@
 <p><strong>注：</strong> 这段代码能够将读出的模拟引脚信息，通过串口输出来。</p>
 </div>
 <div class="section" id="servo">
-<h3>舵机控制：Servo类<a class="headerlink" href="#servo" title="Permalink to this headline">¶</a></h3>
+<h3>舵机控制：Servo类<a class="headerlink" href="#servo" title="永久链接至标题">¶</a></h3>
 <p>该类用于控制舵机转到指定角度。</p>
 <p>1、构建</p>
 <p>Servo(pin_num）</p>
@@ -249,7 +250,7 @@
 <p>让舵机转动到指定角度，Value指角度。每种舵机的最大转动角度不一样，需要参考舵机说明书。</p>
 </div>
 <div class="section" id="i2c-i2c">
-<h3>读写I2C设备：I2C类<a class="headerlink" href="#i2c-i2c" title="Permalink to this headline">¶</a></h3>
+<h3>读写I2C设备：I2C类<a class="headerlink" href="#i2c-i2c" title="永久链接至标题">¶</a></h3>
 <p>该类用于读写I2C从设备。</p>
 <p><strong>注：</strong> 该类不能用于读写虚谷号主芯片的I2C总线。</p>
 <p>1、构建</p>
@@ -262,7 +263,7 @@
 <p>向I2C设备中写入内容。address为I2C从设备的地址，args是要发送到设备的可变字节数，作为列表传入。</p>
 </div>
 <div class="section" id="serialmgt">
-<h3>SerialMgt类<a class="headerlink" href="#serialmgt" title="Permalink to this headline">¶</a></h3>
+<h3>SerialMgt类<a class="headerlink" href="#serialmgt" title="永久链接至标题">¶</a></h3>
 <p>该类用于虚谷号和PC之间的串口通信。</p>
 <p>1、构建</p>
 <p>SerialMgt(port, baudrate)</p>
@@ -275,7 +276,7 @@
 <p>向串口中写入数据，data为写入的数据，类型为String。</p>
 </div>
 <div class="section" id="led">
-<h3>LED类<a class="headerlink" href="#led" title="Permalink to this headline">¶</a></h3>
+<h3>LED类<a class="headerlink" href="#led" title="永久链接至标题">¶</a></h3>
 <p>该类用于LED的简易控制。</p>
 <p>1、构建</p>
 <p>LED(pin_num)</p>
@@ -292,7 +293,7 @@ high()：
 等价与low()。</p>
 </div>
 <div class="section" id="xugulog">
-<h3>XuguLog类<a class="headerlink" href="#xugulog" title="Permalink to this headline">¶</a></h3>
+<h3>XuguLog类<a class="headerlink" href="#xugulog" title="永久链接至标题">¶</a></h3>
 <p>该类用于日志输出。程序运行过程中，会将日志信息追加到日志文件中。</p>
 <p>1、构建</p>
 <p>XuguLog(filename)</p>

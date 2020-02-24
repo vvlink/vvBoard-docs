@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. 虚谷号系统升级 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>4. 虚谷号系统升级 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="5. 常见Linux命令" href="3.5-linux.html" />
     <link rel="prev" title="3. 软件安装和卸载" href="3.3-setup.html" /> 
 </head>
@@ -175,11 +176,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>4. 虚谷号系统升级<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>4. 虚谷号系统升级<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>虚谷号系统升级（烧写固件）分为Loader和MaskRom两种模式。强烈推荐用户使用Loader模式烧写固件。MaskRom模式是设备崩溃的最后一条防线，具有一定风险。因此仅在设备进入不了Loader模式的情况下，方可尝试MaskRom模式。</p>
 <p>固件下载地址：<a class="reference external" href="http://www.vvboard.com.cn/plus/view.php?aid=6">http://www.vvboard.com.cn/plus/view.php?aid=6</a></p>
 <div class="section" id="id2">
-<h2>4.1. 准备工作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. 准备工作<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>1.解压固件</p>
 <p>将下载后的固件解压。解压后如下：</p>
 <img alt="../_images/system01.jpg" src="../_images/system01.jpg" />
@@ -191,7 +192,7 @@
 <img alt="../_images/system05.jpg" src="../_images/system05.jpg" />
 </div>
 <div class="section" id="id3">
-<h2>4.2. 步骤详解<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>4.2. 步骤详解<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>1.打开烧写程序</p>
 <p>打开AndroidToolAndroidTool_Release目录下的AndroidTool.exe</p>
 <img alt="../_images/system06.jpg" src="../_images/system06.jpg" />
@@ -218,7 +219,7 @@
 </dl>
 </div>
 <div class="section" id="id4">
-<h2>4.3. 固件升级失败原因及解决方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>4.3. 固件升级失败原因及解决方法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>固件升级失败一般分为两种情况。</p>
 <p>1.没有找到设备。</p>
 <p>按住RST键接入电脑，固件升级工具中依然提示“没有找到设备”。这种情况一般是驱动没有安装引起，请重新安装驱动。</p>
@@ -238,12 +239,15 @@
 <p>解决方法：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>供电不足：当虚谷号进入loader模式后，在电源口（DC IN）再连接一根电源线（最好采用2A的充电器供电），如下图所示：</p></li>
+<li><p>供电不足：当虚谷号进入loader模式后，在电源口（DC IN）再连接一根电源线（最好采用2A的充电器供电）。</p></li>
+<li><p>烧错固件：更改为正确的固件进行烧录（注：2+32（教育板）的板子可以烧录1+8的固件。</p></li>
+<li><p>重新拔插USB口，尝试再次烧写。</p></li>
 </ul>
 </div></blockquote>
+<img alt="../_images/system16.jpg" src="../_images/system16.jpg" />
 </div>
 <div class="section" id="maskrom">
-<h2>4.4. MaskRom模式详解<a class="headerlink" href="#maskrom" title="Permalink to this headline">¶</a></h2>
+<h2>4.4. MaskRom模式详解<a class="headerlink" href="#maskrom" title="永久链接至标题">¶</a></h2>
 <p>如果loader模式失败，动手能力强的用户可以试一下MaskRom模式。打开烧写程序后，还要做如下工作。</p>
 <p>1.在虚谷板上找到对应的两点，如下图红框内所示：</p>
 <img alt="../_images/system17.jpg" src="../_images/system17.jpg" />

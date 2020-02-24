@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. 虚谷号和物联网 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>2. 虚谷号和物联网 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="3. 虚谷号和互动媒体" href="6.3-i-media.html" />
     <link rel="prev" title="1. 虚谷号和人工智能" href="6.1-ai.html" /> 
 </head>
@@ -178,11 +179,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>2. 虚谷号和物联网<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>2. 虚谷号和物联网<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>虚谷号作为一个全功能的迷你电脑，在物联网应用方面即可以作为服务器，也可以作为客户端。</p>
 <p>MQTT是物联网中最常用的一种协议，越来越受到行业的关注。虚谷号默认安装了基于MQTT的开源服务器SIoT，使其在变得更加方便。</p>
 <div class="section" id="siot">
-<h2>2.1. SIoT和虚谷物联项目<a class="headerlink" href="#siot" title="Permalink to this headline">¶</a></h2>
+<h2>2.1. SIoT和虚谷物联项目<a class="headerlink" href="#siot" title="永久链接至标题">¶</a></h2>
 <p>SIoT为一个为教育定制的跨平台的MQTT服务器程序，S指科学（science）、简单（simple）的意思。SIoT支持Win10、Win7、Mac、Linux等操作系统，一键启动，无需注册即可使用。SIoT的所有物联网消息可以根据需要导出为各种格式，用于后期分析。尤其是用于科学数据采集。</p>
 <p>SIoT的最大特点是使用简单。软件运行后，不需要任何设置就可以使用。利用特定的“Topic”的名称（“项目名称/设备名称”），就能自动在数据库中添加项目和设备的名称，并将消息数据存入数据库。</p>
 <p>SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“虚谷计划”旗下的项目。对于中小学教学而言，选择用虚谷号结合SIoT作为物联网服务器，掌控板（“虚谷计划”旗下的另一款开源硬件）作为物联网终端，可谓珠联璧合。</p>
@@ -192,7 +193,7 @@
 <img alt="../_images/iot01.png" src="../_images/iot01.png" />
 </div>
 <div class="section" id="mqtt">
-<h2>2.2. 虚谷号作为MQTT服务器<a class="headerlink" href="#mqtt" title="Permalink to this headline">¶</a></h2>
+<h2>2.2. 虚谷号作为MQTT服务器<a class="headerlink" href="#mqtt" title="永久链接至标题">¶</a></h2>
 <p>这很容易，只要给虚谷号供电，接入局域网即可。具体操作如下。</p>
 <p>使用U盘模式将虚谷号连接至电脑，配置vvBoard_config.ini如下图所示，其中Siot=1表示开启SIoT，0表示关闭SIoT。下面的Wi-Fi配置根据自己的情况配置即可。配置好之后，短按RST键，U盘短暂消失，再次连接时，打开wifi_log.txt即可查看虚谷号IP地址。假设IP地址为xxx.xxx.xxx.xxx，则SIoT服务器地址为xxx.xxx.xxx.xxx:8080，可以使用其他任何MQTT客户端连接。</p>
 <img alt="../_images/6.2_config.JPG" src="../_images/6.2_config.JPG" />
@@ -211,7 +212,7 @@
 <img alt="../_images/6.2_details.JPG" src="../_images/6.2_details.JPG" />
 </div>
 <div class="section" id="id3">
-<h2>2.3. 虚谷号作为MQTT客户端<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>2.3. 虚谷号作为MQTT客户端<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>需要先安装python库：siot。安装命令是 sudo pip install siot 。默认情况下，虚谷号已经安装了siot库，不需要再执行这一步。</p>
 <img alt="../_images/6.2_install_siot.JPG" src="../_images/6.2_install_siot.JPG" />
 <p>使用python语言为虚谷号编程，用法如下：</p>
@@ -295,9 +296,9 @@ siot.getsubscribe(IOT_pubTopic)</p>
 <p>红外避障传感器黑色为信号输出（接4号管脚），棕色为正极（接5V），蓝色是负极（接GND）。当检测到有障碍物时输出0，反之输出1。</p>
 </div>
 <div class="section" id="id4">
-<h2>2.4. 应用案例<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>2.4. 应用案例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id5">
-<h3>1.手机远程控制虚谷号<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>1.手机远程控制虚谷号<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>理论上任何MQTT客户端之间都可以通信，所以不仅仅是手机可以控制虚谷号，掌控板，电脑等都可以。</p>
 <p>下面以手机为例。现在已经有很多MQTT客户端可以直接发送消息，也可以通过APP Inventor 2 来封装功能。</p>
 <p>更多案例可以访问 <a class="reference external" href="https://siot.readthedocs.io/zh_CN/latest/demo/07_Appinventor.html">SIoT文档</a> 了解。</p>
@@ -386,7 +387,7 @@ siot.getsubscribe(IOT_pubTopic)</p>
 <img alt="../_images/6.2-client-send.jpg" src="../_images/6.2-client-send.jpg" />
 </div>
 <div class="section" id="id8">
-<h3>2.科学观察助手<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>2.科学观察助手<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>狄勇老师给出了一个很好的案例，可以访问 <a class="reference external" href="https://vvboard.readthedocs.io/zh/latest/09.case/9.5-science.html">虚谷号让食盐在水中的扩散过程“可见”</a> 了解详情。</p>
 <p>这里给出一个检测狗狗进出门的案例。</p>
 <img alt="../_images/6.2-doghouse.jpg" src="../_images/6.2-doghouse.jpg" />
@@ -426,7 +427,7 @@ siot.getsubscribe(IOT_pubTopic)</p>
 <p>Jupyter是一个交互式笔记本，支持运行 40 多种编程语言。虚谷号预装了Jupyter，并且可以通过U盘模式下的快捷方式直接在浏览器打开。</p>
 <p>Jupyter的地址是虚谷号在局域网中的IP地址加上端口号8888，即xxx.xxx.xxx.xxx:8888。默认登录密码为scope。登录后web页面会列出虚谷号的文件目录。</p>
 <img alt="../_images/6.2-jupyter-login.JPG" src="../_images/6.2-jupyter-login.JPG" />
-<p>提前将之前编写的xxx.py文件传虚谷号（我使用的方法是用U盘拷贝文件），然后在Jupyter中进入该路径，点击&quot;新建——Python3&quot;。在代码单元格中输入命令 %run xxx.py。xxx.py被执行后，开始加载相关模块并初始化，完成后就可以看到虚谷号上传和返回的数据了。</p>
+<p>提前将之前编写的xxx.py文件传虚谷号（我使用的方法是用U盘拷贝文件），然后在Jupyter中进入该路径，点击”新建——Python3”。在代码单元格中输入命令 %run xxx.py。xxx.py被执行后，开始加载相关模块并初始化，完成后就可以看到虚谷号上传和返回的数据了。</p>
 <img alt="../_images/6.2-jupyter-road.JPG" src="../_images/6.2-jupyter-road.JPG" />
 <img alt="../_images/6.2-jupyter-new.JPG" src="../_images/6.2-jupyter-new.JPG" />
 <img alt="../_images/6.2-jupyter-run1.JPG" src="../_images/6.2-jupyter-run1.JPG" />

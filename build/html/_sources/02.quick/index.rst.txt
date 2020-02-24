@@ -14,4 +14,5 @@
     2.3-pc
     2.4-blend
     2.5-beginner
+    2.6-run
 

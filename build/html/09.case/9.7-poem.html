@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. 会“吟诗作对”的机器人 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>7. 会“吟诗作对”的机器人 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,9 +34,9 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8. 用虚谷号体验机器学习" href="9.8-m_learning.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="8. 做一只不一样的“鹦鹉”" href="9.8-voice_wakeup.html" />
     <link rel="prev" title="6. 基于虚谷号的“传感与控制”实验" href="9.6-info_experiment.html" /> 
 </head>
 
@@ -108,7 +109,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#id6">7.5. 结语</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="9.8-m_learning.html">8. 用虚谷号体验机器学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.8-voice_wakeup.html">8. 做一只不一样的“鹦鹉”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.9-m_learning.html">9. 在虚谷号上训练“石头剪刀布”模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.10_color_robot.html">10. 根据颜色智能分拣的机器人</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
@@ -179,19 +182,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>7. 会“吟诗作对”的机器人<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>7. 会“吟诗作对”的机器人<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>案例提供：谢作如（温州）</p>
 <p>聊天机器人是人工智能的一个重要应用模式。苹果手机中的Siri、Win 10中的小娜和百度的小度，还有小爱音箱和天猫精灵等，都是大家很熟悉的聊天机器人。这些机器人不仅可以聊天，还能帮用户做很多事情，比如查天气预报、设置闹钟，甚至还可以在线购物。</p>
 <p>看多了功能强大、近乎全能的商业聊天机器人，难免有些审美疲劳。如果设计一款仅仅针对某个专业领域的聊天机器人，反而能吸引特定用户的眼球。想到最近中国诗词大会很红，我们就萌发一个有趣的想法——做一个可以吟诗作对的机器人。用户读上一句，机器人对出下一句，是不是很酷？或许可以激发学生学习古诗词来考考机器人的兴趣呢。</p>
 <div class="section" id="id2">
-<h2>7.1. 原理分析<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>7.1. 原理分析<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>从信息系统的角度看，聊天机器人的“听”和“说”仅仅是信息的输入和输出，核心功能在于聊天的内容，如何体现“智能”。但是对这款机器人而言，难点反而不是聊天内容的处理，而是如何识别语音和发出人声，即语音识别和语音合成。因为“吟诗作对”的定位，已经确定了这个机器人不需要回答各种稀奇古怪的问题，关注的仅仅是古典诗词方面的一问一答，问题和答案都是固定的，只要提供足够大的诗词库即可。</p>
 <p>聊天机器人的核心硬件，我们选择了虚谷号。虚谷号是一块运行Linux系统的迷你电脑，预装了Python3.5。虽然根据虚谷号的当前算力，在本地处理语音还有些“吃力”，但是借助于百度AI开放平台，或者腾讯AI开放平台，只要连上网络就能识别语音和合成语音。这个“吟诗作对”机器人的系统流程如图所示，虚谷号仅仅作为一个采集语音和播放语音的智能终端，语音处理工作全部在云端完成。这种做法和现有的聊天机器人在工作原理基本上是一致的，比如离开网络，天猫精灵也好，小爱音箱也好，都没办法和我们对话了。</p>
 <img alt="../_images/9.7-poem01.png" src="../_images/9.7-poem01.png" />
 <p>“吟诗作对”机器人的系统流程图</p>
 </div>
 <div class="section" id="id3">
-<h2>7.2. 原型设计<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>7.2. 原型设计<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>如果不考虑设计一个人形的结构，这个聊天机器人的组成一点都不复杂。核心模块清单如下：</p>
 <blockquote>
 <div><ul class="simple">
@@ -206,7 +209,7 @@
 <img alt="../_images/9.7-poem03.png" src="../_images/9.7-poem03.png" />
 </div>
 <div class="section" id="id4">
-<h2>7.3. 编程控制<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>7.3. 编程控制<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>给虚谷号编程的最好方式当然是通过Wi-Fi了，即无线模式。虚谷号内置了Jupyter，通过U盘方式正确设置Wi-Fi信息后，就会自动生成快捷方式，打开浏览器即可编程。访问“vvBoardBook”文件夹，将看到很多范例。其中就有GPIO、百度AI和语音处理方面的笔记。</p>
 <p>核心代码如下：</p>
 <img alt="../_images/9.7-poem04.png" src="../_images/9.7-poem04.png" />
@@ -238,14 +241,15 @@
 <p>注：完整的代码见“虚谷号内置课程”。</p>
 </div>
 <div class="section" id="id5">
-<h2>7.4. 功能测试<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>7.4. 功能测试<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>完成好这个简单“吟诗作对机器人”后，我们迎来了温州中学的对外公开课。上课的课题是“初识人工智能”，除了现场的近百人，网络直播人次达到了两万多。在这节公开课上，我们演示了这一机器人的基本功能，的确很好地激发了学生的学习兴趣。他们尝试修改Python代码，以实现更多的功能。只要网络足够快，对话过程非常流畅，几乎没有“延时”的感觉。</p>
 <img alt="../_images/9.7-poem05.png" src="../_images/9.7-poem05.png" />
+<p>视频链接：<a class="reference external" href="https://www.bilibili.com/video/av91289004/">https://www.bilibili.com/video/av91289004/</a></p>
 <p>在课堂上，学生们提出了一些新的想法。如设计成“飞花令”机器人，让诗词对话更加好玩；设计成迎宾机器人，向来宾介绍学校的校训和历史；设计成“识字”机器人，学生将不认识的字放在摄像头下，虚谷号告诉他们这个字的读音和意思……</p>
 <p>每一次打开Jupyter在运行代码当然有点麻烦。其实虚谷号提供了多种启动Python代码的方式。最简单的做法是：将“.py”文件复制到在U盘的Python文件夹，命名为“main.py”，然后按下RST键代码即可运行。如果虚谷号采用了电源口供电，那么不用按RST键，也会自动启动。</p>
 </div>
 <div class="section" id="id6">
-<h2>7.5. 结语<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>7.5. 结语<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>随着一些知名的AI框架不断开源，人工智能的技术门槛也在不断下降。在虚谷号上不仅可以用调用网络API的形式，利用云端服务器来处理信息，还可以安装TensorFlow、Keras之类的机器学习框架，学习机器学习、神经网络方面的知识。本案例涉及到的代码已经以“.ipynb”文件的形式，放在虚谷号的最新版固件中，采用CC协议开源，期望有更多的创客爱好者能在这段代码的基础上，设计出更多有趣的AI应用。</p>
 </div>
 </div>
@@ -258,7 +262,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="9.8-m_learning.html" class="btn btn-neutral float-right" title="8. 用虚谷号体验机器学习" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="9.8-voice_wakeup.html" class="btn btn-neutral float-right" title="8. 做一只不一样的“鹦鹉”" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="9.6-info_experiment.html" class="btn btn-neutral float-left" title="6. 基于虚谷号的“传感与控制”实验" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

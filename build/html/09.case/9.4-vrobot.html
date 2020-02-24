@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. 做一个语音交互机器人“小胖” &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>4. 做一个语音交互机器人“小胖” &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="5. 虚谷号让食盐在水中的扩散过程“可见”" href="9.5-science.html" />
     <link rel="prev" title="3. 语音控制特洛无人机" href="9.3-UAV.html" /> 
 </head>
@@ -105,7 +106,9 @@
 <li class="toctree-l2"><a class="reference internal" href="9.5-science.html">5. 虚谷号让食盐在水中的扩散过程“可见”</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9.6-info_experiment.html">6. 基于虚谷号的“传感与控制”实验</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9.7-poem.html">7. 会“吟诗作对”的机器人</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9.8-m_learning.html">8. 用虚谷号体验机器学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.8-voice_wakeup.html">8. 做一只不一样的“鹦鹉”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.9-m_learning.html">9. 在虚谷号上训练“石头剪刀布”模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.10_color_robot.html">10. 根据颜色智能分拣的机器人</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
@@ -176,12 +179,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>4. 做一个语音交互机器人“小胖”<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>4. 做一个语音交互机器人“小胖”<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>案例编写：于方军（淄博）</p>
 <p>“小胖”是进化者公司为孩子设计的机器人，它具备强大的语音交互功能，能根据主人要求自行走动，回答各种难题。聊天机器人作为人工智能应用层面的入门课例，容易激发学生的兴趣，帮助学生能够快速的感知人工智能的应用情景。虚谷号是一个面向人工智能教学和Python编程学习的中国原创开源硬件平台，为人工智能和Python编程教学提供完整课程资源包。本课例通过虚谷号搭建硬件平台，通过图灵机器人（www.tuling123.com ）和百度AI两个软件平台，引导学生学会连接这些平台做一个属于自己的个性化语音聊天机器人。</p>
 <img alt="../_images/vrobot01.png" src="../_images/vrobot01.png" />
 <div class="section" id="id2">
-<h2>4.1. 案例描述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. 案例描述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>本课程的设计步骤采用循序渐进的方式，便于学生由简到繁，逐步深化提高,使学生较好的理解语音聊天机器人的实现原理，进而了解人工智能的语音识别应用，从而启发学生发挥创意开发属于自己的人工智能作品。</p>
 <p>课程设计了编辑两种聊天机器人：一是借助图灵平台，通过调用request和json库，实现简单的文本聊天机器人程序，使学生对聊天机器人程序的问答过程有个初步概念；二是借助百度语音平台，使用虚谷号架设聊天机器人实物框架，实现当机器人说话时，伴随回复的语音，实现机器人嘴巴一张一合，使学生通过构建一个实物语音聊天机器人，经历一件人工智能作品创作的体验。</p>
 <p>教学过程主要体现了函数层面的模块化教学，通过将功能封装成库，再调用库的方法，带学生一起，打开“人工智能”的“黑盒子”，理解语音聊天机器人的“听”、“思”、“说”的过程：</p>
@@ -190,8 +193,8 @@
 <p>说——它是怎么说话的？主要通过探究“文本转语音”和“播放语音”两个活动理解智能语音聊天机器人程序“说话”的过程。使学生理解智能语音机器人的“说”和我们人类的“说”的本质区别。</p>
 </div>
 <div class="section" id="id3">
-<h2>4.2. 原理分析<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>SpeechRecognition（录音）--&gt; 百度语音（Speech-to-Text语音 转文本）--&gt; 图灵机器人（语义分析及应答）--&gt; 百度语音（Text-to-Speech文本转语音）--&gt; PyAudio（音频播放）</p>
+<h2>4.2. 原理分析<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>SpeechRecognition（录音）–&gt; 百度语音（Speech-to-Text语音 转文本）–&gt; 图灵机器人（语义分析及应答）–&gt; 百度语音（Text-to-Speech文本转语音）–&gt; PyAudio（音频播放）</p>
 <img alt="../_images/vrobot02.png" src="../_images/vrobot02.png" />
 <p>虚谷号运行完整的Linux系统，连好USB声卡后，打开虚谷号的音量控制</p>
 <p>在配置项里面只保留USB声卡，把其他设备都关闭。</p>
@@ -204,13 +207,13 @@
 <p>sudo apt-get install idle3</p>
 <p>IDLE是开发 python 程序的基本IDE（集成开发环境），具备基本的IDE的功能，是非商业Python开发的不错的选择。运行上面代码后安装了Python3.0的集成开发环境，相对于虚谷号预装的jupyter开发环境，IDLE运行占用资源少。</p>
 <p>3.升级pip到19.0.3</p>
-<p>pip install --upgrade pip</p>
+<p>pip install –upgrade pip</p>
 <p>pip 是 Python 包管理工具，后期的包安装用到pip，以上代码是升级到最新版。</p>
 <p>4.安装PyAudio</p>
 <p>Linux 系统下可以直接使用系统自带的包管理器安装 PyAudio （如 Ubuntu 和 Raspbian 系统的 apt-get），可以使用 pip 命令安装，不过需要提前装好编译用
 的依赖portaudio19，</p>
 <p>Sudo apt-get install portaudio19-dev</p>
-<p>pip install --upgrade pyaudio</p>
+<p>pip install –upgrade pyaudio</p>
 <p>5.语音识别代码</p>
 <p>创建应用:：百度语音是百度云 AI 开放平台提供的支持语音识别和语音合成的服务，注册以后就可以直接访问它的 REST API 了，并且有向普通用户提供免费的调用额度。</p>
 <p>注册成功以后，进入语音服务的控制台创建一个新的应用，记下自己的 AppID、API Key 和 Secret Key。</p>

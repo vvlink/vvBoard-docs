@@ -17,6 +17,7 @@
     9.7-poem.rst
     9.8-voice_wakeup.rst
     9.9-m_learning.rst
+    9.10_color_robot.rst
 
 
 

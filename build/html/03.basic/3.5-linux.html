@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. 常见Linux命令 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>5. 常见Linux命令 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="虚谷号的GPIO详解" href="../04.gpio/index.html" />
     <link rel="prev" title="4. 虚谷号系统升级" href="3.4-system-upgraded.html" /> 
 </head>
@@ -183,10 +184,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="linux">
-<h1>5. 常见Linux命令<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h1>
+<h1>5. 常见Linux命令<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <p>虚谷号的系统是Linux，在无线模式和主机模式下使用虚谷号，需要掌握一些常见的命令。</p>
 <div class="section" id="ls">
-<h2>5.1. ls：显示当前目录下的文件<a class="headerlink" href="#ls" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. ls：显示当前目录下的文件<a class="headerlink" href="#ls" title="永久链接至标题">¶</a></h2>
 <p>ls 是最常见的目录操作命令，主要作用是显示目录下的内容。这个命令的基本信息如下：</p>
 <p>命令名称：ls。</p>
 <p>英文原意：list。</p>
@@ -199,14 +200,14 @@
 <p>[<a class="reference external" href="mailto:root&#37;&#52;&#48;localhost">root<span>&#64;</span>localhost</a> ~]#ls [选项][文件名或目录名]</p>
 <p>选项：</p>
 <p>-a：显示所有文件；</p>
-<p>--color=when：支持颜色输出，when 的值默认是 always（总显示颜色），也可以是 never（从不显示颜色）和 auto（自动）；</p>
+<p>–color=when：支持颜色输出，when 的值默认是 always（总显示颜色），也可以是 never（从不显示颜色）和 auto（自动）；</p>
 <p>-d：显示目录信息，而不是目录下的文件；</p>
 <p>-h：人性化显示，按照我们习惯的单位显示文件大小；</p>
 <p>-i：显示文件的 i 节点号；</p>
 <p>-l：长格式显示；</p>
 <p>学习命令，主要学习的是命令选项，但是每个命令的选项非常多，比如 ls 命令就支持五六十个选项，我们不可能讲解每个选项，也没必要讲解每个选项，本章只能讲解最为常用的选项，即可满足我们曰常操作使用。</p>
 <div class="section" id="cd">
-<h3>cd：切换目录<a class="headerlink" href="#cd" title="Permalink to this headline">¶</a></h3>
+<h3>cd：切换目录<a class="headerlink" href="#cd" title="永久链接至标题">¶</a></h3>
 <p>cd 是切换所在目录的命令，这个命令的基本信息如下。</p>
 <p>命令名称：cd。</p>
 <p>英文原意：change directory。</p>
@@ -221,7 +222,7 @@
 <p>-L（大写）是指如果切换的目录是软链接目录，则直接进入软链接目录。</p>
 </div>
 <div class="section" id="mkdir">
-<h3>mkdir：创建目录<a class="headerlink" href="#mkdir" title="Permalink to this headline">¶</a></h3>
+<h3>mkdir：创建目录<a class="headerlink" href="#mkdir" title="永久链接至标题">¶</a></h3>
 <p>mkdir 是创建目录（文件夹）的命令，其基本信息如下：</p>
 <p>命令名称：mkdir。</p>
 <p>英文原意：make directories。</p>
@@ -235,7 +236,7 @@
 <p>mkdir 也是一个非常简单的命令，其主要作用就是新建一个空目录。</p>
 </div>
 <div class="section" id="rmdir">
-<h3>rmdir：删除空目录<a class="headerlink" href="#rmdir" title="Permalink to this headline">¶</a></h3>
+<h3>rmdir：删除空目录<a class="headerlink" href="#rmdir" title="永久链接至标题">¶</a></h3>
 <p>既然有建立目录的命令，就一定会有刪除目录的命令 rmdir，其基本信息如下：</p>
 <p>命令名称：rmdir。</p>
 <p>英文原意：remove empty directories。</p>
@@ -248,7 +249,7 @@
 <p>-p： 递归刪除目录</p>
 </div>
 <div class="section" id="touch">
-<h3>touch：修改文件的时间戳<a class="headerlink" href="#touch" title="Permalink to this headline">¶</a></h3>
+<h3>touch：修改文件的时间戳<a class="headerlink" href="#touch" title="永久链接至标题">¶</a></h3>
 <p>touch 的意思是触摸，若文件不存在，系统会建立一个新的文件；如果文件已经存在，则会修改文件的时间戳（访问时间、数据修改时间、状态修改时间都会改变）。</p>
 <p>千万不要把 touch 命令当成新建文件的命令，牢牢记住这是触摸的意思。这个命令的基本信息如下：</p>
 <p>命令名称：touch。</p>
@@ -260,7 +261,7 @@
 <p>[<a class="reference external" href="mailto:root&#37;&#52;&#48;localhost">root<span>&#64;</span>localhost</a> -]# touch [选项]文件名或目录名</p>
 <p>选项：</p>
 <p>-a：只修改文件的访问时间（Access Time)</p>
-<p>-c：假如目的档案不存在，不会建立新的档案。与 --no-create 的效果一样。</p>
+<p>-c：假如目的档案不存在，不会建立新的档案。与 –no-create 的效果一样。</p>
 <p>-d：把文件的时间改为指定的时间</p>
 <p>-m：只修改文件的数据修改时间（Modify Time）</p>
 <p>Linux 中的每个文件都有三个时间，分别是访问时间（Access Time）、数据修改时间（Modify Time）和状态修改时间（Change Time）。这三个时间可以通过 stat 命令来进行査看。</p>
@@ -268,7 +269,7 @@
 <p>注意，在Linux中，文件没有创建时间。</p>
 </div>
 <div class="section" id="rm">
-<h3>rm：删除文件或目录<a class="headerlink" href="#rm" title="Permalink to this headline">¶</a></h3>
+<h3>rm：删除文件或目录<a class="headerlink" href="#rm" title="永久链接至标题">¶</a></h3>
 <p>rm 是强大的删除命令，不仅可以删除文件，也可以删除目录。这个命令的基本信息如下。</p>
 <p>命令名称：rm</p>
 <p>英文原意：remove files or directories。</p>
@@ -283,7 +284,7 @@
 <p>-r：递归删除，可以删除目录（recursive）</p>
 </div>
 <div class="section" id="cp">
-<h3>cp：复制文件和目录<a class="headerlink" href="#cp" title="Permalink to this headline">¶</a></h3>
+<h3>cp：复制文件和目录<a class="headerlink" href="#cp" title="永久链接至标题">¶</a></h3>
 <p>cp 是用于复制的命令，其基本信息如下：</p>
 <p>命令名称：cp；</p>
 <p>英文原意：copy files and directories；</p>
@@ -302,7 +303,7 @@
 <p>-r：递归复制，用于复制目录；</p>
 </div>
 <div class="section" id="mv">
-<h3>mv：移动文件或改名<a class="headerlink" href="#mv" title="Permalink to this headline">¶</a></h3>
+<h3>mv：移动文件或改名<a class="headerlink" href="#mv" title="永久链接至标题">¶</a></h3>
 <p>mv 是用来剪切的命令，其基本信息如下。</p>
 <p>命令名称：mv。</p>
 <p>英文原意：move(rename)files。</p>
@@ -318,8 +319,8 @@
 <p>-v：显示详细信息；</p>
 </div>
 <div class="section" id="tar">
-<h3>tar：打包与解打包命令<a class="headerlink" href="#tar" title="Permalink to this headline">¶</a></h3>
-<p>&quot;.tar&quot;格式的打包和解打包都使用 tar 命令，区别只是选项不同。我们先看看 tar 命令的基本信息。</p>
+<h3>tar：打包与解打包命令<a class="headerlink" href="#tar" title="永久链接至标题">¶</a></h3>
+<p>“.tar”格式的打包和解打包都使用 tar 命令，区别只是选项不同。我们先看看 tar 命令的基本信息。</p>
 <p>命令名称：tar。</p>
 <p>英文原意：tar。</p>
 <p>所在路径：/bin/tar。</p>
@@ -333,7 +334,7 @@
 <p>-v：显示打包文件过程；</p>
 </div>
 <div class="section" id="shutdown">
-<h3>shutdown：关机和重启<a class="headerlink" href="#shutdown" title="Permalink to this headline">¶</a></h3>
+<h3>shutdown：关机和重启<a class="headerlink" href="#shutdown" title="永久链接至标题">¶</a></h3>
 <p>在早期的 Linux 系统中，应该尽量使用 shutdown 命令来进行关机和重启。因为在那时的 Linux 中，只有 shutdown 命令在关机或重启之前会正确地中止进程及服务，所以我们一直认为 shutdown 才是最安全的关机与重启命令。</p>
 <p>而在现在的系统中，一些其他的命令（如 reboot）也会正确地中止进程及服务，但我们仍建议使用 shutdown 命令来进行关机和重启。</p>
 <p>shutdown 命令的基本信息如下。</p>

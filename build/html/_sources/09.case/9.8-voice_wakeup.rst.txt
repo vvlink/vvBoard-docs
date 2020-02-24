@@ -1,0 +1,189 @@
+做一只不一样的“鹦鹉”
+========================================================
+
+案例提供：谢作如（温州）
+
+做一只不一样的“鹦鹉”，将你说的话，重复一遍。只不过声音会不同，而且内容也有所区别。因为机器要先翻译，然后再合成。
+
+使用步骤：先说“虚谷号”，稍微停顿后，然后再说出你的指令。稍等片刻，虚谷号将用另一种声音，重复了你的指令。但是会出现信息传播上的损耗，有时会很搞笑。
+
+-------------
+原理
+-------------
+
+
+1）语音唤醒
+
+Snowboy是一款高度可定制的唤醒词检测引擎，可以用于实时嵌入式系统，并且始终监听（即使离线也是可以的）。它可以运行在 （Ubuntu）Linux 和 Mac OS X 系统上，也可以部署在安卓手机和迷你电脑，如树莓派、虚谷号等。
+
+默认情况下，Snowboy并不支持虚谷号。在技术大神Adolph_Lin的帮助，修改版本的Snowboy已经可以完美运行于虚谷号上。同样，新版的虚谷号系统上，也默认安装了Snowboy。
+
+2）语音识别
+
+利用百度AI，可以将声音文件提交到百度云平台，然后返回文字信息。
+
+3）语音合成
+
+利用百度AI，可以将“文字”转换为mp3文件，通过Python代码来播放。
+
+4）语音模型
+
+登陆snowboy官网，设置自己的唤醒词，上传包含自定义唤醒词的音频，以训练生成专属的语音模型。在Hotword library（热词库）中找“虚谷号”，即可下载模型。
+
+.. image:: ../images/09/9.8-model.png
+
+---------------
+原型设计
+---------------
+
+1）硬件准备
+
+	- USB声卡+麦克风、小音箱。
+	- 自带声卡的摄像头（一般自带麦克风）、自带声卡的小音箱。
+
+2）软件准备
+
+	- Snowboy
+	- 百度AI库
+
+---------------
+代码编写
+---------------
+
+1)库和参数
+
+::
+
+    import snowboydecoder
+    import signal
+    import os
+    from aip import AipSpeech
+
+    interrupted = False
+
+    """ 你的 APPID AK SK """
+    APP_ID = "15126848"
+    API_KEY = "BPaS8KCk1B6Io9EqEOw1pOH3"
+    SECRET_KEY = "AL3B7XOmoRZojqFivCzvxuGYDDQZ7G58"
+
+    client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
+
+    #唤醒词的模型文件名
+    model = 'vvboard.pmdl'
+
+2)核心代码
+
+:: 
+
+    # 声音到文字
+    def audio_to_text(wav_file):
+        with open(wav_file, 'rb') as fp:
+            file_context = fp.read()
+        print("正在识别语音...")
+        res = client.asr(file_context, 'wav', 16000, {
+            'dev_pid': 1536,
+        })
+        if (res["err_msg"]=="success."):
+            res_str = res.get("result")[0]
+        else:
+            res_str = "错误，没有识别出任何内容！"
+        return res_str
+
+    #从文字到声音
+    def tts(txt):
+        fname='auido.mp3'
+        result = client.synthesis(txt, 'zh', 1, {'vol': 5,})
+        # 识别正确返回语音二进制 错误则返回dict 参照下面错误码
+        if not isinstance(result, dict):
+            with open(fname, 'wb') as f:
+                f.write(result)
+            os.system('play '+ fname)
+        os.remove(fname)
+
+    #录音结束后调用，fname为生成的录音文件
+    def audioRecorderCallback(fname):
+        print("正在识别...")
+        ret_s = audio_to_text(fname)
+        #输出识别结果
+        print(ret_s)
+        #让虚谷号说话
+        tts(ret_s)
+        #删除临时录音文件
+        os.remove(fname)
+
+    #唤醒时调用
+    def detectedCallback():
+        #播放应答声
+        snowboydecoder.play_audio_file(snowboydecoder.DETECT_DING)
+        print('recording audio...', end='', flush=True)
+
+    def signal_handler(signal, frame):
+        global interrupted
+        interrupted = True
+
+    def interrupt_callback():
+        global interrupted
+        return interrupted
+
+3)监听代码
+
+::
+
+    signal.signal(signal.SIGINT, signal_handler)
+
+    #设置模型和灵敏度，sensitivity数字越大，识别越容易，但是也容易引起误判。
+    detector = snowboydecoder.HotwordDetector(model, sensitivity=0.38)
+    print('Listening... Press Ctrl+C to exit')
+
+    # main loop
+    detector.start(detected_callback=detectedCallback,
+                   audio_recorder_callback=audioRecorderCallback,
+                   interrupt_check=interrupt_callback,
+                   sleep_time=0.01)
+
+    detector.terminate()
+
+
+---------------
+功能测试
+---------------
+
+先喊一声“虚谷号”，然后就可以和它对话了。
+
+::
+
+    Listening... Press Ctrl+C to exit
+    INFO:snowboy:Keyword 1 detected at time: 2020-02-12 17:07:21
+    recording audio...正在识别...
+    正在识别语音...
+    /usr/lib/python3/dist-packages/urllib3/connectionpool.py:794: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+      InsecureRequestWarning)
+    我叫什么名字
+    INFO:snowboy:Keyword 1 detected at time: 2020-02-12 17:08:23
+    recording audio...正在识别...
+    正在识别语音...
+    我是一块开元硬件
+    INFO:snowboy:Keyword 1 detected at time: 2020-02-12 17:08:49
+    recording audio...正在识别...
+    正在识别语音...
+    我可以学习人工智能
+
+---------------
+项目总结
+---------------
+
+这个作品仅仅是一个简单的功能演示，但是借助这样的语音唤醒功能，可以设计出很多有趣的作品来。
+
+说明：
+
+- 本文档要运行在Snowboy的“examples/Python3”文件夹中。
+
+- 语音唤醒功能不需要联网，但是语音识别和语音合成功能，需要联网访问百度AI。
+
+---------------
+参考资料
+---------------
+
+Snowboy官方文档地址 ：http://docs.kitt.ai/snowboy
+
+Snowboy源码下载地址（虚谷号版本）：https://gitee.com/l_wolf/Snowboy

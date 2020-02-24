@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. 在虚谷号上训练“石头剪刀布”模型 &mdash; 虚谷号使用手册 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="10. 根据颜色智能分拣的机器人" href="9.10_color_robot.html" />
+    <link rel="prev" title="8. 做一只不一样的“鹦鹉”" href="9.8-voice_wakeup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的案例汇集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="9.1-yeelight.html">1. 虚谷号结合Yeelight做”变色龙“灯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.2-facetest.html">2. 做一个颜值测试器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.3-UAV.html">3. 语音控制特洛无人机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.4-vrobot.html">4. 做一个语音交互机器人“小胖”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.5-science.html">5. 虚谷号让食盐在水中的扩散过程“可见”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.6-info_experiment.html">6. 基于虚谷号的“传感与控制”实验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.7-poem.html">7. 会“吟诗作对”的机器人</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.8-voice_wakeup.html">8. 做一只不一样的“鹦鹉”</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9. 在虚谷号上训练“石头剪刀布”模型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">9.1. 原理介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">9.2. 准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">9.3. 训练过程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">9.4. 项目总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">9.5. 参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="9.10_color_robot.html">10. 根据颜色智能分拣的机器人</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的案例汇集</a> &raquo;</li>
+        
+      <li>9. 在虚谷号上训练“石头剪刀布”模型</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/09.case/9.9-m_learning.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>9. 在虚谷号上训练“石头剪刀布”模型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>案例提供：谢作如（温州）</p>
+<p>本案例利用卷积神经网络（CNN）来识别“石头剪刀布”手势。数据集（手势图片）来自网络，分为石头、剪刀、布三种手势，用于训练数据集中每一种手势有841张，测试的有125张。每一张图片已经处理为128*128像素，三个通道。案例接近生活，尤其适合用在虚谷号上。利用USB摄像头，虚谷号就可以识别用户的手势。</p>
+<div class="section" id="id2">
+<h2>9.1. 原理介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>人工神经网络(Artificial Neural Network， ANN) ，通常简称为神经网络，是一种在生物神经网络的启示下建立的数据处理模型。神经网络由大量的人工神经元相互连接进行计算，根据外界的信息改变自身的结构，主要通过调整神经元之间的权值米对输入的数据进行建模，最终具备解决实际问题的能力。我们可以这么认为，神经网络是一个什么都不知道小朋友（黑盒子），我们不停教育他，告诉他这是什么，那是什么，慢慢地他就积累了知识（形成了模型），能够分辨了。</p>
+<img alt="../_images/9.9-ml01.png" src="../_images/9.9-ml01.png" />
+<p>卷积神经网络是一种带有卷积结构的多层神经网络。由于图像的空间联系往往是局部的，因此每个神经元不需要对全部的图像进行感知，只需要感知局部特征，并在更高层将这些不同感知的局部神经元连接起来综合处理即可。并且在卷积神经网络中，不同神经元之间的参数(卷积核)可以共享。因此，使用卷积神经网络可以有效的减少神经网络模型的训练参数，并且具有一定程度对图像位移、缩放、非线性变形的稳定性。</p>
+<img alt="../_images/9.9-ml02.png" src="../_images/9.9-ml02.png" />
+<p>卷积神经网络的结构一般是将输入的图像进行多次卷积、池化，在多次卷积、池化的的过程中图像的图像的尺寸会越来越小、特征会越来越明显，最后输入全连接层完成预测或者分类任务。</p>
+<p>虚谷号的算力虽然比不上普通的家用电脑，但是用来训练不多的图像数据，还是比较快的。</p>
+</div>
+<div class="section" id="id3">
+<h2>9.2. 准备工作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>1）环境搭建。</p>
+<p>案例选择了keras框架，需要先安装keras和tensorflow。Keras是一个由Python编写的开源人工神经网络库，可以作为Tensorflow、Microsoft-CNTK和Theano的高阶应用程序接口，进行深度学习模型的设计、调试、评估、应用和可视化。</p>
+<p>虚谷号教育版已经预装必要的库，可以直接使用。下面是安装命令：</p>
+<p>pip install keras</p>
+<p>pip install -i <a class="reference external" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> tensorflow</p>
+<p><strong>注</strong>：tensorflow的安装选择清华源，速度将快很多。</p>
+<p>2）数据准备和清洗</p>
+<p>数据集来源：<a class="reference external" href="http://www.laurencemoroney.com/rock-paper-scissors-dataset/">http://www.laurencemoroney.com/rock-paper-scissors-dataset/</a></p>
+<p>下载解压后，发现是按照文件夹分类存储的“石头剪刀布”的图片，分为三个文件夹，分别用于训练（rps）、验证（rps-test-set）和交叉验证（rps-validation）。rps和rps-test-set文件夹中都已经分成了三类，’rock’为石头，’scissors’是剪刀，’paper’是布。为了让数据集更小一点，我用Python写了一个脚本，批量将每一张图片处理为128 * 128像素。</p>
+<p>已经处理好的数据集可以通过Github下载，在“课程汇集/虚谷号内置课程目录/5.机器学习”中，文件名为“hand.tar”，约40M。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Github：<a class="reference external" href="https://github.com/vvlink/vvBoard-docs">https://github.com/vvlink/vvBoard-docs</a></p></li>
+<li><p>码云镜像：<a class="reference external" href="https://gitee.com/xiezuoru/vvBoard-docs">https://gitee.com/xiezuoru/vvBoard-docs</a></p></li>
+</ul>
+</div></blockquote>
+<p>如果用虚谷号进行训练，请上传hand.tar到data文件夹下，然后用tar命令解压。参考命令：</p>
+<dl class="simple">
+<dt>::</dt><dd><p>cd ~/Jupyter/vvBoardBook/5.机器学习/data
+tar -xf hand.tar</p>
+</dd>
+</dl>
+<p>这次使用的数据集没有提供标签数据，需要自己写程序来整理。我先写一个遍历文件夹的函数。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#遍历文件夹中图片的函数</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">image_types</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpeg&quot;</span><span class="p">,</span> <span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="s2">&quot;.bmp&quot;</span><span class="p">,</span> <span class="s2">&quot;.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;.tiff&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">list_images</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># 返回有效的图片路径数据集</span>
+    <span class="k">return</span> <span class="n">list_files</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="n">validExts</span><span class="o">=</span><span class="n">image_types</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="n">contains</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">list_files</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="n">validExts</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># 遍历图片数据目录，生成每张图片的路径</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">rootDir</span><span class="p">,</span> <span class="n">dirNames</span><span class="p">,</span> <span class="n">filenames</span><span class="p">)</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">basePath</span><span class="p">):</span>
+        <span class="c1"># 循环遍历当前目录中的文件名</span>
+        <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+            <span class="c1"># if the contains string is not none and the filename does not contain</span>
+            <span class="c1"># the supplied string, then ignore the file</span>
+            <span class="c1"># 无意中发现mac处理的文件夹会生成“._”开头的文件，于是过滤</span>
+            <span class="k">if</span> <span class="n">contains</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">filename</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">contains</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">filename</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;._&#39;</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="c1"># 通过确定.的位置，从而确定当前文件的文件扩展名</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="n">filename</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="c1"># 检查文件是否为图像，是否应进行处理</span>
+            <span class="k">if</span> <span class="n">validExts</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">ext</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">validExts</span><span class="p">):</span>
+                <span class="c1"># 构造图像路径</span>
+                <span class="n">imagePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rootDir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">imagePath</span>
+
+<span class="c1">#定义标签对应的数字，石头为0，剪刀为1，布为2</span>
+<span class="n">label_num</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span><span class="s2">&quot;scissors&quot;</span><span class="p">,</span><span class="s2">&quot;paper&quot;</span><span class="p">]</span>
+<span class="c1">#得到训练文件夹中的图片文件列表</span>
+<span class="n">rps_Paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">list_images</span><span class="p">(</span><span class="s1">&#39;./data/hand/rps/&#39;</span><span class="p">)))</span>
+<span class="c1">#得到验证文件夹中的图片文件列表</span>
+<span class="n">test_Paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">list_images</span><span class="p">(</span><span class="s1">&#39;./data/hand/rps-test-set/&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>得到图片文件的列表后，批量用keras.preprocessing的load_img读入，然后同步根据文件夹名称在label_num中得到标签值。具体的介绍可以参考前面的几个案例。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">keras.preprocessing</span> <span class="k">import</span> <span class="n">image</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># 生成训练集数据</span>
+<span class="n">rps_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rps_labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">imagePath</span> <span class="ow">in</span> <span class="n">rps_Paths</span><span class="p">:</span>
+    <span class="n">r_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">imagePath</span><span class="p">,</span><span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>
+    <span class="n">r_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">r_img</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+    <span class="n">rps_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_img</span><span class="p">)</span>
+    <span class="c1"># 读取标签，并且用0，1，2来编码</span>
+    <span class="c1">#(在“./dataset/rps-test-set/paper/testpaper01-00.png”中取出“paper”)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">imagePath</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="c1"># 将“paper”之类的单词转换为0，1，2</span>
+    <span class="n">rps_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label_num</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">rps_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rps_data</span><span class="p">)</span>
+<span class="n">rps_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rps_labels</span><span class="p">)</span>
+<span class="c1"># 生成验证集数据</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">imagePath</span> <span class="ow">in</span> <span class="n">test_Paths</span><span class="p">:</span>
+    <span class="n">r_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">imagePath</span><span class="p">,</span><span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>
+    <span class="n">r_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">r_img</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+    <span class="n">test_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_img</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">imagePath</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">test_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label_num</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+<span class="n">test_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>这样，我们就准备好了数据。</p>
+</div>
+<div class="section" id="id4">
+<h2>9.3. 训练过程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>1）搭建模型</p>
+<p>通过以下代码建立卷积神经网络模型并进行编译。注意几个关键点：</p>
+<p>第一层要设置输入图片的尺寸和颜色通道，“32,32,3”。前面为了训练速度快一点，读入的图片为32*32；
+最后一层，神经元的数量为3，因为只有3个类别。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
+<span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
+<span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="n">model</span><span class="o">=</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>  <span class="c1">#第一层要设置输入图片的尺寸和颜色通道</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">())</span> <span class="c1">#在全连接之前，需要将二维图片数据转换成一维数组</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>  <span class="c1">#为了防止过拟合，Dropout层会随机的丢弃一部分神经网络连接</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>  <span class="c1">#使用softmax处理多分类问题，一共3个类别</span>
+<span class="c1">#在训练过程中打印出准确率（acc）指标</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>2)训练模型</p>
+<p>在虚谷号上batch_size要设置小一点，比如200。实测batch_size设置大于600，jupyter服务将挂起。如果是电脑上，可以设置为1000或者更大一点，但不要超过总样本数（2520）的一半，训练的速度快一点。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">rps_data</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">rps_labels</span><span class="p">,</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span><span class="n">test_labels</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>batch_size设置为200的情况下，前三轮loss一直处于10左右，第四轮开始，loss快速下降。10个轮次后，就loss就到了0.01以下。每一轮次需要95秒，还是能够接受的。</p>
+<img alt="../_images/9.9-ml03.png" src="../_images/9.9-ml03.png" />
+<p>3)测试模型</p>
+<p>下面是利用虚谷号的摄像头拍摄图片的代码，没有摄像头请跳过，直接上传一张名为test.jpg的带手势的图片。“5-model-hand.h5”就是我训练出来的模型。</p>
+<p>注意：摄像头要朝下拍摄手势，样子要和训练用的图片一致。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">keras.preprocessing</span> <span class="k">import</span> <span class="n">image</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">load_model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;./model/5-model-hand.h5&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="c1">#基本函数1：获取摄像头内容保存为图片</span>
+<span class="k">def</span> <span class="nf">getcampic</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>        <span class="c1"># 打开摄像头</span>
+    <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>       <span class="c1"># 读摄像头</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">True</span>
+<span class="c1">##调用getcampic函数</span>
+<span class="n">getcampic</span><span class="p">(</span><span class="s2">&quot;test.jpg&quot;</span><span class="p">)</span>
+<span class="n">label_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span><span class="s2">&quot;scissors&quot;</span><span class="p">,</span><span class="s2">&quot;paper&quot;</span><span class="p">]</span>
+<span class="n">i_data</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">r_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="s2">&quot;./test.jpg&quot;</span><span class="p">,</span><span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>
+<span class="n">r_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">r_img</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+<span class="n">i_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_img</span><span class="p">)</span>
+<span class="n">i_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i_data</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">i_data</span><span class="p">)</span>
+<span class="c1">#直接输出名称</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">label_name</span><span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>执行上面程序后，虚谷号启动摄像头拍摄一张图片，这个目录下将增加一个名为test.jpg的图片。需要注意的是，背景最好也是白色的，和用于训练的图片一致。</p>
+<p>这张“石头”的图片，被成功识别出来了。</p>
+<img alt="../_images/9.9-ml04.png" src="../_images/9.9-ml04.png" />
+</div>
+<div class="section" id="id5">
+<h2>9.4. 项目总结<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>通过这个案例，我们发现虚谷号之类的迷你电脑，也能够用来做神经网络方面的案例。限于算力有限，我们不能做数据太多结构太复杂的模型训练，但是已经训练好的模型，让虚谷号导入应用还是非常容易的。</p>
+<p>训练好的模型，以及具体的训练过程，都已经提供了“.pynb”文档，整合在虚谷号教育版的固件中。</p>
+</div>
+<div class="section" id="id6">
+<h2>9.5. 参考资料<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>1.从神经网络到卷积神经网络（CNN）</p>
+<p><a class="reference external" href="https://www.jianshu.com/p/1ea2949c0056">https://www.jianshu.com/p/1ea2949c0056</a></p>
+<p>2.CNN（卷积神经网络）是什么？</p>
+<p><a class="reference external" href="https://www.zhihu.com/question/52668301">https://www.zhihu.com/question/52668301</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="9.10_color_robot.html" class="btn btn-neutral float-right" title="10. 根据颜色智能分拣的机器人" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="9.8-voice_wakeup.html" class="btn btn-neutral float-left" title="8. 做一只不一样的“鹦鹉”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. 基于虚谷号的“传感与控制”实验 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>6. 基于虚谷号的“传感与控制”实验 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="7. 会“吟诗作对”的机器人" href="9.7-poem.html" />
     <link rel="prev" title="5. 虚谷号让食盐在水中的扩散过程“可见”" href="9.5-science.html" /> 
 </head>
@@ -108,7 +109,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="9.7-poem.html">7. 会“吟诗作对”的机器人</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9.8-m_learning.html">8. 用虚谷号体验机器学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.8-voice_wakeup.html">8. 做一只不一样的“鹦鹉”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.9-m_learning.html">9. 在虚谷号上训练“石头剪刀布”模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9.10_color_robot.html">10. 根据颜色智能分拣的机器人</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
@@ -179,25 +182,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>6. 基于虚谷号的“传感与控制”实验<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>6. 基于虚谷号的“传感与控制”实验<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>案例编写：谢作如（温州）</p>
 <p>信息系统要发挥作用，必须与外部世界进行联系。在基于传统网络的信息系统中。这种联系需要以人为中介进行——由人来理解和转换外部世界的需求，将其输入信息系统；同时，也是由人来理解信息系统的输出结果，然后去操作实物。比如图书管理系统，用户往往只能通过系统进行查询，了解某本书的出借情况以及存储位置，而系统却不能直接将书取出并放到用户手里。</p>
 <p>随着物联网和人工智能的发展，信息系统逐渐可以通过传感技术自动获取外部信息(如温度、亮度、卡片、人脸等等)，也可以通过一定的机制实现对外部物体的直接控制。如地铁售票系统，不仅可以扫描手机上的二维码信息，完成自动扣款，还能够直接打开闸机。简而言之，新的信息系统不仅可以感知世界，还将实现控制万物。</p>
 <div class="section" id="id2">
-<h2>6.1. 新课标中对“传感与控制”的要求<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>6.1. 新课标中对“传感与控制”的要求<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>高中信息技术新课程中的必修模块2“信息系统与社会”，包括了“信息社会特征”“信息系统组成与应用”“信息安全与信息社会责任”三部分内容，强调学生利用信息系统解决问题的过程与方法，提升信息安全和社会责任意识。其中关于“传感与控制”部分的描述如下：</p>
 <p>** 2.3 通过分析物联网应用实例，知道信息系统与外部世界的连接方式，了解常见的传感与控制机制。 **</p>
 <p>为落实这一目标，课标的“教学提示”中指出，要利用信息技术实验室创设真实的问题情境，为学生提供从信息系统的设计规划到软硬件操作的实践体验机会，提高学生对信息系统 价值的认识以及利用信息系统解决问题的能力。如在信息技术实验室中，通过“远程控制系统”实验，指导学生合作或独立完成一个信息系统的硬件搭建和软件安装。</p>
 </div>
 <div class="section" id="id3">
-<h2>6.2. 实验准备工作<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>6.2. 实验准备工作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>开源硬件“虚谷号”是一个板载单片机的迷你电脑，很适合用来完成高中信息技术课程中的“传感与控制”的实验。虚谷号的工作原理如图所示。</p>
 <img alt="../_images/9.6-info01.png" src="../_images/9.6-info01.png" />
 <p>从图中可以看出，虚谷号其实由两个部分组成，对传感器和执行器的连接，都是通过板载的ATmega328 单片机（Arduino UNO同款芯片）来完成。Arduino相当于是一个“代理”，其和虚谷号的底层Linux系统之间的通讯借助标准的串口协议来连接。目前绝大多数的单片机与电脑连接都是用串口协议的，这方面的案例资源非常丰富，技术非常也很成熟。
 为了帮助Python的初学者编写传感与控制方面的代码，虚谷号提供了名为“xugu”的Python库。这个库中有Pin（引脚）、Servo（舵机）和SerialMgt（串口）等几个常用的类。借助这个库，几行代码就能完成基本的输入输出控制，即GPIO（General-purpose input/output）。</p>
 </div>
 <div class="section" id="id4">
-<h2>6.3. 传感实验<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>6.3. 传感实验<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>1.实验目标</p>
 <p>能编程读取开源硬件的指定引脚的电平状态，通过常见的数字、模拟传感器获取物理世界的各种环境信息。</p>
 <dl class="simple">
@@ -237,7 +240,7 @@
 <p>在虚谷号的系统中，已经提供了用Jupyter写的学习笔记，在网页上即可完成传感实验的所有操作。</p>
 </div>
 <div class="section" id="id5">
-<h2>6.4. 控制实验<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>6.4. 控制实验<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>1.实验目标</p>
 <p>能编程控制开源硬件的指定引脚输出高低电平信号，能够驱动LED灯、蜂鸣器和舵机之类的执行器。</p>
 <dl class="simple">
@@ -293,7 +296,7 @@
 <img alt="../_images/9.6-info03.png" src="../_images/9.6-info03.png" />
 </div>
 <div class="section" id="id6">
-<h2>6.5. 实验总结<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>6.5. 实验总结<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>课标中提出，信息技术实验室是学生学习信息技术，实践信息技术的重要场所。相对于普通机房而言，信息技术实验室除了必备的电脑外，还要配置一些供学生做各种信息技术实验的器材，如摄像头、开源硬件、常见的传感器和执行器等。</p>
 <p>对于信息技术实验室的建设，学校可以在原机房等基础上改造，也可以新建。相对来说，在普通机房增加类似虚谷号、掌控板之类的开源硬件，完成课标中规定的“传感与控制”的实验，无论从经费投入还是技术难度来说，门槛都是很低的。这样的做法比较符合当前的国情。</p>
 <p>需要强调的是，虚谷号的系统中已经提供了用Jupyter写的学习笔记，在网页上即可完成“传感与控制”实验的所有操作。此外，虚谷号还提供了通过U盘模式执行Python代码的功能，哪怕没有Wi-Fi，也能够完成常见的信息技术实验。</p>

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. GPIO的实现方式 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>1. GPIO的实现方式 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="2. xugu库的使用" href="4.2-xugulib.html" />
     <link rel="prev" title="虚谷号的GPIO详解" href="index.html" /> 
 </head>
@@ -173,21 +174,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gpio">
-<h1>1. GPIO的实现方式<a class="headerlink" href="#gpio" title="Permalink to this headline">¶</a></h1>
+<h1>1. GPIO的实现方式<a class="headerlink" href="#gpio" title="永久链接至标题">¶</a></h1>
 <p>GPIO（英语：General-purpose input/output），通用型之输入输出的简称，可以理解为对芯片引脚电平的编程控制和状态读取。虚谷号提供了多种方式，实现GPIO功能。</p>
 <div class="section" id="arduino">
-<h2>1.1. 方式1：Arduino串口<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
+<h2>1.1. 方式1：Arduino串口<a class="headerlink" href="#arduino" title="永久链接至标题">¶</a></h2>
 <p>虚谷号通过串口和板载的Arduino UNO连接，可以用任何一款Arduino的编程工具，以标准的Arduino代码进行编写，控制Arduino UNO的所有引脚，或者读取所有的引脚状态。</p>
 <img alt="../_images/gpio-1.png" src="../_images/gpio-1.png" />
 </div>
 <div class="section" id="xugu">
-<h2>1.2. 方式2：借助xugu库<a class="headerlink" href="#xugu" title="Permalink to this headline">¶</a></h2>
+<h2>1.2. 方式2：借助xugu库<a class="headerlink" href="#xugu" title="永久链接至标题">¶</a></h2>
 <p>虚谷号给Arduino UNO烧写标准的Firmata协议，通过串口命令进行控制Arduino引脚。为降低初学者的开发门槛，虚谷号提供了和MicroPython语法完全兼容的xugu库，供Python编程教学或者作品开发时调用。</p>
 <img alt="../_images/gpio-2.png" src="../_images/gpio-2.png" />
 <p><strong>注</strong>：xugu库的语法与掌控板、micro:bit完全一致，大部分代码可以一键移植。</p>
 </div>
 <div class="section" id="i2c">
-<h2>1.3. 方式3：I2C接口<a class="headerlink" href="#i2c" title="Permalink to this headline">¶</a></h2>
+<h2>1.3. 方式3：I2C接口<a class="headerlink" href="#i2c" title="永久链接至标题">¶</a></h2>
 <p>虚谷号的主芯片引出I2C接口，可以通过这一接口来实现对外部设备的控制。</p>
 <p>第三种方式中，虚谷号主芯片的I2C接口可以和方式1、方式2结合。相对来说，方式2的开发难度最低，能满足常用的大部分需求，只需要有Python编程基础即可。</p>
 <img alt="../_images/gpio-3.png" src="../_images/gpio-3.png" />

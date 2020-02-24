@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. 无线模式 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>3. 无线模式 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="4. 主机模式" href="2.3-pc.html" />
     <link rel="prev" title="2. U盘模式" href="2.1-dap.html" /> 
 </head>
@@ -100,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2.3-pc.html">4. 主机模式</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.4-blend.html">5. 混合模式</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.5-beginner.html">6. 入门配置教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.6-run.html">7. 创客项目的开发和部署</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
@@ -177,52 +179,58 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3. 无线模式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>3. 无线模式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>通过U盘模式可以给虚谷号设置Wi-Fi、编程等，如果要安装Python库或者安装其他应用软件，就要借助“无线模式”了。</p>
 <p>虚谷号内置了SSH和jupyter服务，在连接Wi-Fi的情况下，可以不用接鼠标键盘，即可实现对虚谷号的完全控制，如运行Python程序，给Arduino刷写代码，安装和卸载Python库文件、系统软件等。</p>
 <p>在无线模式下，还可以给虚谷号安装远程桌面服务。用windows自带的远程桌面访问，非常方便。</p>
 <div class="section" id="id2">
-<h2>3.1. 应用场景<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. 应用场景<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在不需要接鼠标键盘的前提下，通过修改vvBoard_config.ini文件设置SSID和密码，即可用无线模式来管理虚谷号，如：</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>通过Web页面给虚谷号编写代码；</p></li>
 <li><p>通过终端命令安装或者卸载软件；</p></li>
 <li><p>通过终端命令安装Python库；</p></li>
 <li><p>在线调试Python代码、管理进程；</p></li>
 <li><p>熟悉linux命令；</p></li>
 </ul>
+</div></blockquote>
 </div>
 <div class="section" id="wi-fi">
-<h2>3.2. 如何连接Wi-Fi<a class="headerlink" href="#wi-fi" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. 如何连接Wi-Fi<a class="headerlink" href="#wi-fi" title="永久链接至标题">¶</a></h2>
 <p>步骤1:</p>
 <p>通过USB线将虚谷板（OTG口）连接上电脑，约十多秒后，电脑会出现一个名为vvBoard的U盘。用记事本打开vvBoard文件夹中的vvBoard_config.ini文件，在“SSID=”和“SSID_PSD=”输入信息。</p>
 <img alt="../_images/u-driver02.jpg" src="../_images/u-driver02.jpg" />
 <p>步骤2:</p>
 <p>短按虚谷板的RST键，U盘会暂时消失，等到U盘图标再次出现，一般就已经连上了Wi-Fi。</p>
-<ul class="simple">
-<li><p>注：目前虚谷号仅支持2.4GHz的Wi-Fi。如果Wi-Fi需要二次身份认证（如校园网等），只能通过电脑模式连接，不能用U盘模式配置。在修改完vvBoard_config文件后，如果短按RST键后没有连接成功，可以多尝试几次。如果还不行，请仔细检查vvBoard_config文件中的内容是否被正确地修改，可以尝试将虚谷号断电重启，或长按RST键5秒重启。</p></li>
+<p>注意：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>目前虚谷号仅支持2.4GHz的Wi-Fi。如果Wi-Fi需要二次身份认证（如校园网等），只能通过电脑模式连接，不能用U盘模式配置。在修改完vvBoard_config文件后，如果短按RST键后没有连接成功，可以多尝试几次。如果还不行，请仔细检查vvBoard_config文件中的内容是否被正确地修改，可以尝试将虚谷号断电重启，或长按RST键5秒重启，初始化U盘文件。</p></li>
+<li><p>有些公用的Wi-Fi并没有设置密码。请在“SSID_PSD=”处输入两个英文状态下的引号，即“SSID_PSD=’’”。</p></li>
 </ul>
+</div></blockquote>
 <p>步骤3:</p>
 <p>打开vvBoard文件夹中的wifi_log.txt文件，找到IP地址。如下面的信息表示IP地址是“192.168.1.192”。</p>
-<p>：：</p>
-<p>设备    类型      状态    连接
-wlan0   wifi      已连接  scope
-dummy0  dummy     未托管  --
-lo      loopback  未托管  --
-wlan0     Link encap:以太网  硬件地址 18:93:7f:33:94:10</p>
-<blockquote>
-<div><p>inet 地址:192.168.1.192  广播:192.168.1.255  掩码:255.255.255.0
-inet6 地址: fe80::bc0d:9279:5c93:604c/64 Scope:Link
-UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
-接收数据包:7 错误:0 丢弃:0 过载:0 帧数:0
-发送数据包:7 错误:0 丢弃:0 过载:0 载波:0
-碰撞:0 发送队列长度:1000
-接收字节:2465 (2.4 KB)  发送字节:1163 (1.1 KB)</p>
-</div></blockquote>
-<p><strong>注意：</strong> 如果在Wi-Fi配置信息中找不到IP地址，很有可能是虚谷号的DAP系统启动速度太快，而路由器的速度有点慢，导致IP地址还没来得及分配就启动进入了U盘模式。遇到这种情况，只需要再按一次RST键就能解决。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">设备</span>    <span class="n">类型</span>      <span class="n">状态</span>    <span class="n">连接</span>
+<span class="n">wlan0</span>   <span class="n">wifi</span>      <span class="n">已连接</span>  <span class="n">scope</span>
+<span class="n">dummy0</span>  <span class="n">dummy</span>     <span class="n">未托管</span>  <span class="o">--</span>
+<span class="n">lo</span>      <span class="n">loopback</span>  <span class="n">未托管</span>  <span class="o">--</span>
+<span class="n">wlan0</span>     <span class="n">Link</span> <span class="n">encap</span><span class="p">:</span><span class="n">以太网</span>  <span class="n">硬件地址</span> <span class="mi">18</span><span class="p">:</span><span class="mi">93</span><span class="p">:</span><span class="mi">7</span><span class="n">f</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">94</span><span class="p">:</span><span class="mi">10</span>
+  <span class="n">inet</span> <span class="n">地址</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.192</span>  <span class="n">广播</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.255</span>  <span class="n">掩码</span><span class="p">:</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+          <span class="n">inet6</span> <span class="n">地址</span><span class="p">:</span> <span class="n">fe80</span><span class="p">::</span><span class="n">bc0d</span><span class="p">:</span><span class="mi">9279</span><span class="p">:</span><span class="mi">5</span><span class="n">c93</span><span class="p">:</span><span class="mi">604</span><span class="n">c</span><span class="o">/</span><span class="mi">64</span> <span class="n">Scope</span><span class="p">:</span><span class="n">Link</span>
+          <span class="n">UP</span> <span class="n">BROADCAST</span> <span class="n">RUNNING</span> <span class="n">MULTICAST</span>  <span class="n">MTU</span><span class="p">:</span><span class="mi">1500</span>  <span class="n">跃点数</span><span class="p">:</span><span class="mi">1</span>
+          <span class="n">接收数据包</span><span class="p">:</span><span class="mi">7</span> <span class="n">错误</span><span class="p">:</span><span class="mi">0</span> <span class="n">丢弃</span><span class="p">:</span><span class="mi">0</span> <span class="n">过载</span><span class="p">:</span><span class="mi">0</span> <span class="n">帧数</span><span class="p">:</span><span class="mi">0</span>
+          <span class="n">发送数据包</span><span class="p">:</span><span class="mi">7</span> <span class="n">错误</span><span class="p">:</span><span class="mi">0</span> <span class="n">丢弃</span><span class="p">:</span><span class="mi">0</span> <span class="n">过载</span><span class="p">:</span><span class="mi">0</span> <span class="n">载波</span><span class="p">:</span><span class="mi">0</span>
+          <span class="n">碰撞</span><span class="p">:</span><span class="mi">0</span> <span class="n">发送队列长度</span><span class="p">:</span><span class="mi">1000</span>
+          <span class="n">接收字节</span><span class="p">:</span><span class="mi">2465</span> <span class="p">(</span><span class="mf">2.4</span> <span class="n">KB</span><span class="p">)</span>  <span class="n">发送字节</span><span class="p">:</span><span class="mi">1163</span> <span class="p">(</span><span class="mf">1.1</span> <span class="n">KB</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>注意：</strong></p>
+<p>如果在Wi-Fi配置信息中找不到IP地址，很有可能是虚谷号的DAP系统启动速度太快，而虚谷号要连接的路由器速度有点慢，导致IP地址还没来得及成功分配就启动进入了U盘模式。遇到这种情况，请再按一次RST键，让U盘文件系统重新读取一次IP信息。</p>
 </div>
 <div class="section" id="jupyter">
-<h2>3.3. Jupyter服务<a class="headerlink" href="#jupyter" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. Jupyter服务<a class="headerlink" href="#jupyter" title="永久链接至标题">¶</a></h2>
 <p>Jupyter的全称为Jupyter Notebook（此前被称为IPython notebook），是一个交互式笔记本，支持运行40多种编程语言。Jupyter的本质是一个Web应用程序，便于创建和共享类似笔记本的文档，支持实时代码，数学方程，可视化和 markdown。通过Jupyter，可以通过Web页面在虚谷号上运行Python代码和Linux命令。</p>
 <p>步骤1:访问Jupyter</p>
 <p>在浏览器输入http://【虚谷号IP】:8888，即可打开一个页面，输入密码scope。</p>
@@ -245,7 +253,7 @@ UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
 <img alt="../_images/wifi04.jpg" src="../_images/wifi04.jpg" />
 </div>
 <div class="section" id="ssh">
-<h2>3.4. SSH服务<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. SSH服务<a class="headerlink" href="#ssh" title="永久链接至标题">¶</a></h2>
 <p>虚谷号默认启动了SSH功能。通过SSH功能，用户可以安装、卸载软件，如管理jupyter或者VNC。也可以安装Python库，只要熟悉Linux命令，可以对虚谷号做任何工作。</p>
 <p>以安装Python库为例，虚谷号的ip地址为192.168.1.192。</p>
 <p>步骤1：连接ssh</p>
@@ -256,7 +264,7 @@ UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
 <img alt="../_images/wifi10.jpg" src="../_images/wifi10.jpg" />
 </div>
 <div class="section" id="id3">
-<h2>3.5. 通过SSH开启远程桌面服务<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>3.5. 通过SSH开启远程桌面服务<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>通过SSH，可以开启虚谷号的远程桌面（Xrdp）服务，需要安装xrdp和tightvncserver，新版固件已经整合这一软件环境。</p>
 <p>Xrdp是Microsoft远程桌面协议 (RDP) 的开源版本，允许您以图形方式控制远程系统。使用RDP，您可以登录到远程计算机并创建一个真实的桌面会话，就像您已登录到本地计算机一样。</p>
 <p>连接SSH后，输入如下命令：</p>
@@ -270,7 +278,11 @@ UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
 <p>用win自带的mstsc.exe远程桌面软件即可连接，用户名和密码都是scope。这时看到的桌面和直接使用显示屏连接虚谷号看到的是一样的。</p>
 <img alt="../_images/wifi21.jpg" src="../_images/wifi21.jpg" />
 <img alt="../_images/wifi22.jpg" src="../_images/wifi22.jpg" />
-<p><a href="#id4"><span class="problematic" id="id5">**</span></a>注意：<a href="#id6"><span class="problematic" id="id7">**</span></a>如果无线模式需要修改vvBoard盘里面的东西，需要断开OTG口的连接，使用电源口供电。因为OTG口供电，系统将处于U盘模式，vvBoard盘将锁定。</p>
+<p><strong>远程连接问题</strong></p>
+<p>如果遇到远程连接问题，请参考以下解决方案。</p>
+<p><a class="reference external" href="https://github.com/vvlink/vvBoard-docs/blob/master/source/08.advanced/8.1-troubleshooting.rst">https://github.com/vvlink/vvBoard-docs/blob/master/source/08.advanced/8.1-troubleshooting.rst</a></p>
+<p><strong>注意：</strong></p>
+<p>如果无线模式需要修改vvBoard盘里面的东西，需要断开OTG口的连接，使用电源口供电。因为OTG口供电，系统将处于U盘模式，vvBoard盘将锁定。</p>
 </div>
 </div>
 

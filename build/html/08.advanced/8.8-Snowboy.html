@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. Blynk本地服务器的部署 &mdash; 虚谷号使用手册 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="虚谷号的案例汇集" href="../09.case/index.html" />
+    <link rel="prev" title="7. Blynk本地服务器的部署" href="8.7-blynk.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的高级操作</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="8.1-troubleshooting.html">1. 常见故障解答</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.2-dap-index.html">2. U盘目录详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.3-hardware-resources.html">3. 虚谷号硬件资源详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.6-lnmp.html">6. 搭建LNMP和WordPress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html">7. Blynk本地服务器的部署</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. Blynk本地服务器的部署</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">8.1. Blynk简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">8.2. 在虚谷号上部署Blynk服务器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">8.3. 参考资料</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的高级操作</a> &raquo;</li>
+        
+      <li>8. Blynk本地服务器的部署</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/08.advanced/8.8-Snowboy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="blynk">
+<h1>8. Blynk本地服务器的部署<a class="headerlink" href="#blynk" title="永久链接至标题">¶</a></h1>
+<p>Blynk是一个物联网平台，旨在简化物联网的移动和Web应用程序的构建。虚谷号上虽然已经整合了SIoT，但是Blynk也可以同时部署。</p>
+<div class="section" id="id1">
+<h2>8.1. Blynk简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>相对于其他MQTT的服务器来说，Blynk的优势在于连接快速，且提供了免费的移动平台上的配套应用，包括Android和Android。</p>
+<p>Blynk项目分为三个部分：</p>
+<p>1.Blynk应用（APP）。</p>
+<p>Blynk的App是具有易于使用的拖放系统，可为IoT设置构建自定义控件。工作流程非常快速：启动新项目时，系统会提示您从广泛的列表中选择开发板，以及连接方式。然后，该应用通过电子邮件发送授权令牌，以通过Blynk服务器连接到您的设备。</p>
+<img alt="../_images/8.7-blynk.jpg" src="../_images/8.7-blynk.jpg" />
+<p>应用中的提供了很多小部件。每个小部件都有一个编辑菜单，可让您更改名称和颜色。然后，您选择要影响的引脚（无论是板上的引脚还是Blynk的虚拟引脚之一）以及要发送的值范围。对于图形或文本框之类的输出显示，您还可以选择更新频率，从而节省宝贵的带宽。</p>
+<p>Blynk还具有将指令分配给“虚拟”引脚的功能，这是用户配置的应用程序与硬件之间的连接。因此，应用程序中的单个按钮可用于触发设备上的许多不同事件。</p>
+<p>2.Blynk云服务器。</p>
+<p>创建了用于控制设备的应用后，您可以有两种方法与之通信。第一选择是用Blynk云服务器。这个服务器快速，响应迅速且免费使用。连接到Wi-Fi设备就像将生成的授权代码复制到Arduino草图中并提供Wi-Fi详细信息一样容易。</p>
+<p>第二个选择是自己部署Blynk服务器。 Blynk提供了一个基于Netty的开源Java服务器，可以从您的计算机甚至Raspberry Pi、虚谷号、拿铁熊猫之类的迷你电脑来运行该服务器。在功能和安全性方面，这为某些用户带来了各种好处。</p>
+<p>3.Blynk库。</p>
+<p>Blynk提供了完善的Blynk库。该库与大量开发板一起使用，以允许该应用程序与您的硬件之间进行通信。</p>
+<p>Blynk官方网址：<a class="reference external" href="https://blynk.io/">https://blynk.io/</a></p>
+</div>
+<div class="section" id="id2">
+<h2>8.2. 在虚谷号上部署Blynk服务器<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>虚谷号部署Blynk本地服务器，其实也比较简单，可以通过jupyter的终端、ssh或者远程桌面来执行下面的命令。</p>
+<ol class="arabic simple">
+<li><p>查看虚谷号java版本。打开桌面LX终端，输入java -version，显示8.0版本。</p></li>
+<li><p>下载Blynk服务器jar文件</p></li>
+</ol>
+<p>1)在lx终端内输入 wget “<a class="reference external" href="https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar">https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar</a>”，但是速度奇慢，传输容易断不续传，不建议。</p>
+<p>2）直接浏览器下载https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar</p>
+<p>3）为了方便，将下载的文件移动到/home/scope/下。</p>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a>注：<a href="#id5"><span class="problematic" id="id6">**</span></a>可以在自己的电脑下载，然后通过jupyter上传。</p>
+<ol class="arabic simple" start="3">
+<li><p>虚谷内置的Siot使用8080端口和Blynk服务端口冲突，我将Siot的端口修改为8088，打开/home/scope/software/SIoT_1_2_vvBoard/下的config.json进行修改保存。</p></li>
+</ol>
+<img alt="../_images/8.7-3-siot.png" src="../_images/8.7-3-siot.png" />
+<p>4. 打开LX终端,输入以下命令，在默认的“硬件端口8080”和默认的“应用程序端口9443”（SSL端口）上运行服务器
+java -jar /home/scope/server-0.41.12-java8.jar -dataFolder /home/scope/Blynk
+看到Blynk Server successfully started,那就恭喜你成功了，第一次安装还会提示用户名和密码，忘记截图了，这里写下用户名为admin&#64;blynk.cc，密码为admin。</p>
+<img alt="../_images/8.7-4.png" src="../_images/8.7-4.png" />
+<ol class="arabic simple" start="5">
+<li><p>打开手机app Blynk，选择custom，输入虚谷号的IP地址（我的为192.168.0.107），端口号不要修改。</p></li>
+</ol>
+<img alt="../_images/8.7-5.png" src="../_images/8.7-5.png" />
+<ol class="arabic simple" start="6">
+<li><p>输入账号admin&#64;blynk.cc，密码admin，登陆出现以下界面就OK了。</p></li>
+</ol>
+<img alt="../_images/8.7-6.png" src="../_images/8.7-6.png" />
+</div>
+<div class="section" id="id7">
+<h2>8.3. 参考资料<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>参考网址：<a class="reference external" href="https://mc.dfrobot.com.cn/thread-302809-1-1.html">https://mc.dfrobot.com.cn/thread-302809-1-1.html</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../09.case/index.html" class="btn btn-neutral float-right" title="虚谷号的案例汇集" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="8.7-blynk.html" class="btn btn-neutral float-left" title="7. Blynk本地服务器的部署" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

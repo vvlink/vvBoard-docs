@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. 虚谷号和Arduino的自定义通讯 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>3. 虚谷号和Arduino的自定义通讯 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="4. 虚谷号主芯片的I2C控制" href="4.4-xg_i2c.html" />
     <link rel="prev" title="2. xugu库的使用" href="4.2-xugulib.html" /> 
 </head>
@@ -175,18 +176,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="arduino">
-<h1>3. 虚谷号和Arduino的自定义通讯<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h1>
+<h1>3. 虚谷号和Arduino的自定义通讯<a class="headerlink" href="#arduino" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>3.1. 原理简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. 原理简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>虚谷号和板载Arduino的通讯，是通过串口来实现的。xugu库也是基于Firmata协议开发，跑在串口协议上。</p>
 </div>
 <div class="section" id="id2">
-<h2>3.2. 应用场景<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. 应用场景<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>xugu库支持的传感器主要分为两类，一是开关量（也称数字）传感器，返回高低电平；二是模拟传感器，返回0-5V之间的电压。</p>
 <p>除了这两类的传感器，还有数字型传感器，如DH11温湿度传感器，DS18B20温度传感器。这些传感器无法使用xugu库，如果项目中用到这类传感器，就需要另写代码，自定义通讯协议。</p>
 </div>
 <div class="section" id="dh11">
-<h2>3.3. 范例：DH11传感器实验<a class="headerlink" href="#dh11" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. 范例：DH11传感器实验<a class="headerlink" href="#dh11" title="永久链接至标题">¶</a></h2>
 <p>Arduino接DH11传感器，将数据通过串口发送给虚谷号。虚谷号使用Python代码，将串口信息打印出来。</p>
 <p>1.Arduino代码</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Example testing sketch for various DHT humidity/temperature sensors
@@ -308,11 +309,11 @@ void loop() {
 </div>
 </div>
 <div class="section" id="id3">
-<h2>3.4. 高级技巧<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. 高级技巧<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>在Python代码中自动检测Arduino，并调用烧写工具。</p>
 </div>
 <div class="section" id="id4">
-<h2>3.5. 参考范例：灯带控制<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>3.5. 参考范例：灯带控制<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">serial</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. U盘模式 &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>2. U盘模式 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="3. 无线模式" href="2.2-wifi.html" />
     <link rel="prev" title="1. 快速入门" href="2.0-start.html" /> 
 </head>
@@ -100,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2.3-pc.html">4. 主机模式</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.4-blend.html">5. 混合模式</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.5-beginner.html">6. 入门配置教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.6-run.html">7. 创客项目的开发和部署</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
@@ -177,12 +179,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="u">
-<h1>2. U盘模式<a class="headerlink" href="#u" title="Permalink to this headline">¶</a></h1>
+<h1>2. U盘模式<a class="headerlink" href="#u" title="永久链接至标题">¶</a></h1>
 <p>虚谷号可以通过U盘模式进行编程和设置。不需要接上显示器和鼠标键盘，即可对虚谷号编程，这是虚谷号在教学应用方面的最大特色。</p>
 <p>U盘模式也称DAP虚拟磁盘烧录模式，是指虚谷号通过USB线将OTG口（两个USB口中间的那个micro usb口）和电脑USB口连接后，电脑上将出现一个虚拟的U盘。将Arduino、Python代码复制到U盘的相应目录后，按下RST键，U盘的盘符将暂时消失，当再次出现盘符时，程序已经成功执行。</p>
 <img alt="../_images/u-driver07.jpg" src="../_images/u-driver07.jpg" />
 <div class="section" id="id1">
-<h2>2.1. 应用场景<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>2.1. 应用场景<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>虚谷号是为大班教学设计的。在机房里，如果虚谷号要接上鼠标键盘显示器才能使用，这样的实施条件是非常高的。首先机房中要准备原数量一倍以上的显示器，这几乎是不可能的。哪怕两人为一组，这些显示器也没有地方摆放。加一个视频分配器吗？看起来也不可行，因为机房的管理工作将非常混乱。其次，机房中还要准备大量的鼠标键盘，这也是做不到的。正是这样的因素，导致树莓派为代表的Pi系列开源硬件难以在中小学推广。</p>
 <img alt="../_images/u-driver01.jpg" src="../_images/u-driver01.jpg" />
 <p>由此可见，不需要接上显示器和鼠标键盘，即可使用虚谷号，这是很重要的教学功能。借助这一功能，虚谷号成为和Arduino、micro:bit和掌控板一样的，即插即用、使用方便的开源硬件了。</p>
@@ -192,7 +194,7 @@
 <p>快速移植应用。当用户在电脑上调试好Python或者Ardunio代码后，用U盘模式可以快速将代码移植（部署）到虚谷号上。毕竟在迷你电脑上编程是一件很痛苦的事情。</p>
 </div>
 <div class="section" id="id2">
-<h2>2.2. 功能介绍<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>2.2. 功能介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>设置虚谷号的系统参数。</p>
 <blockquote>
@@ -213,7 +215,7 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>2.3. 操作流程<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>2.3. 操作流程<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>1）设置Wi-Fi参数</p>
 <p>更改U盘vvboard文件夹的”vvBoard_config.ini”中，SSID和SSID_PSD。短按RST键重启U盘服务，然后在U盘vvboard文件夹的“wifi_log.txt”中，找到IP地址。</p>
 <ul class="simple">
@@ -242,7 +244,7 @@
 <p>虚谷号内置的Python版本是3.5，已经内置了常见的Python库，具体请参考“软件介绍”的Python部分。</p>
 </div>
 <div class="section" id="id4">
-<h2>2.4. U盘资源简介<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>2.4. U盘资源简介<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>介绍几个重要的文件：</p>
 <blockquote>
 <div><ul class="simple">
@@ -259,7 +261,7 @@
 <p>关于U盘文件的详细介绍，请浏览本文档的第八部分。</p>
 </div>
 <div class="section" id="id5">
-<h2>2.5. U盘烧录的说明<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>2.5. U盘烧录的说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>1、Python是如何实现与Arduino互动的？</p>
 <p>虚谷号开发了一个xugu库，用来与Arduino互动。如果Python代码中调用了xugu库，虚谷号系统将判断板载Arduino是否已经写入firmata协议（如果没有则自动写入，要延时一定的时间，并且可以看到板子上的LED闪烁），然后运行代码。</p>
 <p>关于这一方面的内容，请参考GPIO部分。</p>

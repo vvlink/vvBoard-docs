@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. 搭建LNMP和WordPress &mdash; 虚谷号使用手册 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="7. Blynk本地服务器的部署" href="8.7-blynk.html" />
+    <link rel="prev" title="5. 虚谷号和Docker" href="8.5-docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.gpio/index.html">虚谷号的GPIO详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的高级操作</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="8.1-troubleshooting.html">1. 常见故障解答</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.2-dap-index.html">2. U盘目录详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.3-hardware-resources.html">3. 虚谷号硬件资源详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.4-soft-setup.html">4. 虚谷号的软件安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.5-docker.html">5. 虚谷号和Docker</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. 搭建LNMP和WordPress</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">6.1. LNMP和WordPress简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lnmp">6.2. LNMP的安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wordpress">6.3. WordPress的安装</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html">7. Blynk本地服务器的部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html">8. Blynk本地服务器的部署</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的高级操作</a> &raquo;</li>
+        
+      <li>6. 搭建LNMP和WordPress</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/08.advanced/8.6-lnmp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lnmpwordpress">
+<h1>6. 搭建LNMP和WordPress<a class="headerlink" href="#lnmpwordpress" title="永久链接至标题">¶</a></h1>
+<p>在虚谷号上可以搭建一个Web服务器，运行类似WordPress的Web服务。</p>
+<div class="section" id="id1">
+<h2>6.1. LNMP和WordPress简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>LNMP是指一组通常一起使用来运行动态网站或者服务器的自由软件名称首字母缩写。L指Linux，N指Nginx，M一般指MySQL，也可以指MariaDB，P一般指PHP。</p>
+<p>WordPress是使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务器上架设属于自己的网站。也可以把 WordPress当作一个内容管理系统（CMS）来使用。WordPress是一款个人博客系统，并逐步演化成一款内容管理系统软件，它是使用PHP语言和MySQL数据库开发的,用户可以在支持 PHP 和 MySQL数据库的服务器上使用自己的博客。</p>
+</div>
+<div class="section" id="lnmp">
+<h2>6.2. LNMP的安装<a class="headerlink" href="#lnmp" title="永久链接至标题">¶</a></h2>
+<p>1、虚谷号切换成无线模式，通过浏览器访问jupyter。</p>
+<p>2、在jupyter端新建“终端”</p>
+<p>3、安装Nginx</p>
+<p>1）安装命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt install nginx</span>
+</pre></div>
+</div>
+<p>（1）出现以下命令提示，请输入“y”，按回车：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@192:~# sudo apt install nginx
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树
+正在读取状态信息... 完成
+将会同时安装下列软件：
+  nginx-common nginx-core
+建议安装：
+  fcgiwrap nginx-doc
+下列【新】软件包将被安装：
+  nginx nginx-common nginx-core
+升级了 0 个软件包，新安装了 3 个软件包，要卸载 0 个软件包，有 370 个软件包未被升级。
+需要下载 389 kB 的归档。
+解压缩后会消耗 1,345 kB 的额外空间。
+您希望继续执行吗？ [Y/n]
+</pre></div>
+</div>
+<p>（2）若出现以下升级的命令提示，请使用相关命令进行升级：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>E: 有几个软件包无法下载，要不运行 apt-get update 或者加上 --fix-missing 的选项再试试？
+</pre></div>
+</div>
+<p>升级命令：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt-get update</span>
+</pre></div>
+</div>
+<p>2）Nginx 服务器目录</p>
+<p>3）验证Nginx服务器</p>
+<p>4）备用：卸载命令</p>
+<p>4、安装MariaDB</p>
+<p>5、安装 PHP</p>
+<p>6、测试</p>
+</div>
+<div class="section" id="wordpress">
+<h2>6.3. WordPress的安装<a class="headerlink" href="#wordpress" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="8.7-blynk.html" class="btn btn-neutral float-right" title="7. Blynk本地服务器的部署" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="8.5-docker.html" class="btn btn-neutral float-left" title="5. 虚谷号和Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

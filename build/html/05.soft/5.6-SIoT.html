@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="python" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="python" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. SIoT &mdash; 虚谷号使用手册 1.0 documentation</title>
+  <title>6. SIoT &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -33,8 +34,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="7. Processing" href="5.7-Processing.html" />
     <link rel="prev" title="5. Python" href="5.5-Python.html" /> 
 </head>
@@ -98,7 +99,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">6. SIoT</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">6.1. 什么是SIoT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">6.2. SIoT的基本功能</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">6.3. SIoT的高级设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.3. SIoT的高级设置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#siotwebapi">6.4. SIoT的WebAPI</a></li>
 </ul>
 </li>
@@ -177,25 +178,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="siot">
-<h1>6. SIoT<a class="headerlink" href="#siot" title="Permalink to this headline">¶</a></h1>
+<h1>6. SIoT<a class="headerlink" href="#siot" title="永久链接至标题">¶</a></h1>
 <p>物联网（Internet of Things，简称IoT）是借助互联网、传统电信网等信息承载体，让所有能行使独立功能的普通物体实现互联互通的网络。常用的物联网应用层协议包括MQTT、HTTP、XMPP、CoAP等，其中MQTT协议是轻量、简单、开放和易于实现的，使用范围最为广泛。SIoT是一款标准的MQTT服务器（代理Broker）。</p>
 <div class="section" id="id1">
-<h2>6.1. 什么是SIoT<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>6.1. 什么是SIoT<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>SIoT是一款为中小学STEM教育定制的开源MQTT服务器程序，S指科学（Science）、简单（Simple）的意思。SIoT支持Win10、Win7、Mac和Linux等操作系统，一键启动，无需注册和设置即可使用。</p>
 <p>SIoT是“虚谷计划”旗下“虚谷物联”项目的核心软件。虚谷号上内置了SIoT，可以将虚谷号看作是一个标准的MQTT服务器。</p>
 <p>SIoT使用文档地址：<a class="reference external" href="https://siot.readthedocs.io/">https://siot.readthedocs.io/</a></p>
 </div>
 <div class="section" id="id2">
-<h2>6.2. SIoT的基本功能<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>6.2. SIoT的基本功能<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>默认情况下，虚谷号在连接Wi-Fi后就自动启动SIoT服务。请确保物联网终端（如掌控板）和虚谷号所处的局域网可以相互访问，最简单的方式是连接同一个无线路由器。</p>
 <p>虽然已经安装了SIoT，但是并没有python的siot库，当执行的python代码中有import siot这个语句时，要确保执行过pip install siot，安装过siot库。（一台虚谷号只要执行一次即可）</p>
 <p>可以将虚谷号上的SIoT看成是一个公用的MQTT服务器，默认的用户名和密码都是“scope”。设定标准的TopicID为“项目名/设备名”即可，如“mpythonx/001”，表示项目名称为“mpythonx”，设备名称为“001”。</p>
-<p><a href="#id3"><span class="problematic" id="id4">**</span></a>注：QoS的级别为0。</p>
+<p>** 注 ：QoS的级别为0。**</p>
 <p>打开网址：<a class="reference external" href="http:/">http:/</a>/虚谷号ip:8080，将看到SIoT的管理页面。</p>
 <p>输入用户名“scope”和密码“scope”，就可以看到项目列表中的设备了。注意：如果还没有给这个TopicID发送过消息，这个项目和设备不会建立。</p>
 </div>
-<div class="section" id="id5">
-<h2>6.3. SIoT的高级设置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>6.3. SIoT的高级设置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>为了方便中小学的老师们在课堂上教学和应用物联网技术，SIoT采取了一种最简单的方式，即采用了统一的用户名和密码，加自定义Topic的方式使用物联网平台。设置简单并不等于不安全，哪怕在多人使用的情况下，SIoT也有一定的机制确保数据的安全。</p>
 <ol class="arabic simple">
 <li><p>密码设置</p></li>
@@ -222,17 +223,13 @@
 <p>OnlyLocalURD值默认是false，表示对项目和设备的管理不需要限制在“本地访问”。在多人使用的情况下，如果担心数据被恶意篡改或者设备被删除，可以将这个值设置为true。当OnlyLocalURD值为true，将不能看到任何项目和设备，只能通过网页给Topic发送消息。除非使用主机模式，通过127.0.0.1的地址登录Web管理页面，才能管理所有的项目。</p>
 </div>
 <div class="section" id="siotwebapi">
-<h2>6.4. SIoT的WebAPI<a class="headerlink" href="#siotwebapi" title="Permalink to this headline">¶</a></h2>
+<h2>6.4. SIoT的WebAPI<a class="headerlink" href="#siotwebapi" title="永久链接至标题">¶</a></h2>
 <p>SIoT提供了一系列的WebAPI，供用户调用。一些不支持MQTT的编程语言，如VB、S4A等，可以通过HTTP的形式和SIoT进行互动。</p>
-<ul class="simple">
-<li><p>发布消息</p></li>
-</ul>
+<p>1）发布消息</p>
 <p><a class="reference external" href="Http:/">Http:/</a>/[虚谷号IP]:8080/publish?topic=xzr/001&amp;msg=on&amp;iname=scope&amp;ipwd=scope</p>
 <p>说明：向topicid（主题）“xzr/001”发送内容为“on”的消息，其中“xzr”是项目id，“001”是设备id。</p>
 <p>返回数据：{“code”:1,”msg”:”数据已发送”}</p>
-<ul class="simple">
-<li><p>获取最新数据</p></li>
-</ul>
+<p>2）获取最新数据</p>
 <p><a class="reference external" href="Http:/">Http:/</a>/[虚谷号IP]:8080/lastmessage?topic=xzr/001&amp;iname=scope&amp;ipwd=scope</p>
 <p>说明：获取topicid（主题）“xzr/001”的最新一条消息</p>
 <p>返回数据：{“code”:1,”data”:[{“ID”:27,”Topic”:”xzr/001”,”Content”:”11”,”Created”:”2019-06-06 11:55:39”}],”msg”:”成功”}</p>
