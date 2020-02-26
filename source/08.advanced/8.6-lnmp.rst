@@ -70,10 +70,23 @@ LNMP的安装
 
 3）验证Nginx服务器
 
-4）备用：卸载命令
+打开浏览器，输入虚谷号IP地址，就会出现经典的Nginx页面。
+
+
+
+
+4）Nginx操作命令补充：卸载命令
+
+::
+
+    root@192:~# sudo apt --purge remove nginx
+    root@192:~# sudo apt --purge remove nginx-common
+    root@192:~# sudo apt --purge remove nginx-core
 
 
 4、安装MariaDB
+
+
 
 5、安装 PHP
 
