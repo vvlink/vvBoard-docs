@@ -1,48 +1,123 @@
 
-
-“OpenCV和视觉识别”系列课程
-====================================
+“OpenCV和计算机视觉”系列课程
+======================================
 
 课程编写：谢作如
 
 
 
+计算机视觉是一门研究如何使机器“看”的科学，更进一步的说，就是是指用摄影机和电脑代替人眼对目标进行识别、跟踪和测量等机器视觉，并进一步做图形处理，使电脑处理成为更适合人眼观察或传送给仪器检测的图像。作为一个科学学科，计算机视觉研究相关的理论和技术，试图建立能够从图像或者多维数据中获取‘信息’的人工智能系统。因为感知可以看作是从感官信号中提取信息，所以计算机视觉也可以看作是研究如何使人工系统从图像或多维数据中“感知”的科学。
+
+虚谷号采用最通用的USB摄像头作为视觉采集设备，借助OpneCV，可以让学生快速进入计算机视觉的学习领域。OpencV是用来实现计算机视觉相关技术的开放源码工作库，是计算机视觉、图像处理、模式识别、计算机图形学、信号处理、视频监控、科学可视化等相关从业人员的好工具。
+
 --------------------------
 课程简介
 --------------------------
 
+OpenCV（Open Source Computer Vision Library）是一个开源BSD库，该库包括数百个机器视觉算法。它轻量级而且高效——由一系列 C 函数和少量 C++ 类构成，同时提供了Python、Ruby、MATLAB等语言的接口，实现了图像处理和计算机视觉方面的很多通用算法。
 
+计算机视觉是一门综合性的学科，它已经吸引了来自各个学科的研究者参加到对它的研究之中。其中包括计算机科学和工程、信号处理、物理学、应用数学和统计学，神经生理学和认知科学等。本课程精选了OpenCV的典型应用，提供最简洁有趣的代码，让学生从一个个案例入手，由浅入深，逐步领略计算机视觉的魅力。
 
 --------------------------
 准备工作
 --------------------------
 
-1.安装必要的Python库。
+1.安装必要的Python库。虚谷号已经内置。
 
-
+2.准备USB摄像头一个。
 
 --------------------------
 课程目录
 --------------------------
 
-课程精选了典型应用，提供最简洁有趣的代码。
+1.图片处理
 
+综合案例：图片转字符（字符拍立得）
 
+2.颜色识别
 
+综合案例：自动分拣机器人
+
+2.人脸检测
+
+综合案例：自动检测人脸并拍照
 
 --------------------------
 涉及内容
 --------------------------
 
+1）PIL（Python Imaging Library）。Python平台事实上的图像处理标准库了。PIL功能非常强大,但API却非常简单易用。 
 
+2）OpenCV。一般来说，现在OpenCV2是主流应用。OpenCV中的函数接口大体可以分为如下部分：
+
+	- core：核心模块，主要包含了OpenCV中最基本的结构（矩阵，点线和形状等），以及相关的基础运算/操作。
+
+	- imgproc：图像处理模块，包含和图像相关的基础功能（滤波，梯度，改变大小等），以及一些衍生的高级功能（图像分割，直方图，形态分析和边缘/直线提取等）。
+
+	- highgui：提供了用户界面和文件读取的基本函数，比如图像显示窗口的生成和控制，图像/视频文件的IO等。
+
+3）xuguGPIO。虚谷号的GPIO库，用简洁的代码来控制板载的Arduino。
+
+4）百度AI。百度AI开放平台为Python语言提供的SDK（Software Development Kit 的缩写,中文意思就是“软件开发工具包“）。
 
 --------------------------
 课程示例
 --------------------------
 
-以“卷积神经网络”为例。
+以“摄像头人脸检测”为例。
+
+1）准备工作：导入库
+
+::
+
+    import cv2
+    from IPython import display
+    from matplotlib import pyplot as plt
+    import matplotlib
+    %matplotlib inline	
+
+
+2）基本函数：框出人脸
+
+::
+
+    #直接调用系统里面的haarcascade_frontalface_default.xml
+    def faceDetect(img, face_cascade=cv2.CascadeClassifier('/usr/local/share/OpenCV/haarcascades/haarcascade_frontalface_default.xml')):
+        size = img.shape[:2]
+        divisor = 8
+        h, w = size
+        minSize = (w // divisor, h // divisor)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        faces = face_cascade.detectMultiScale(gray, 1.2, 1, cv2.CASCADE_SCALE_IMAGE, minSize)
+        for (x, y, w, h) in faces:
+            cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        return img, len(faces)
 
 
 
+3）程序主体：摄像头拍摄照片，标注好人脸后显示在网页上。
+
+::
+
+    cap = cv2.VideoCapture(0)
+    ret, frame = cap.read()
+    if ret:
+        frame1, face_num = faceDetect(frame)
+        print("发现人脸数量：" + str(face_num))
+        img=frame1[:,:,::-1]
+        plt.imshow(img)
+        plt.axis('off') #不显示坐标
+        plt.show()
+    else:
+        print("没有接摄像头或者摄像头被占用！")
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+--------------------------
+其他说明
+--------------------------
+
+本课程已经整合在虚谷号内置课程中。
 
 

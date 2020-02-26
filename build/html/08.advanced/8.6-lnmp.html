@@ -191,20 +191,20 @@
 <p>2、在jupyter端新建“终端”</p>
 <p>3、安装Nginx</p>
 <p>1）安装命令</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt install nginx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt install nginx</span>
 </pre></div>
 </div>
 <p>（1）出现以下命令提示，请输入“y”，按回车：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@192:~# sudo apt install nginx
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@localhost:~# sudo apt install nginx
 正在读取软件包列表... 完成
 正在分析软件包的依赖关系树
 正在读取状态信息... 完成
 将会同时安装下列软件：
-  nginx-common nginx-core
+ nginx-common nginx-core
 建议安装：
-  fcgiwrap nginx-doc
+ fcgiwrap nginx-doc
 下列【新】软件包将被安装：
-  nginx nginx-common nginx-core
+ nginx nginx-common nginx-core
 升级了 0 个软件包，新安装了 3 个软件包，要卸载 0 个软件包，有 370 个软件包未被升级。
 需要下载 389 kB 的归档。
 解压缩后会消耗 1,345 kB 的额外空间。
@@ -216,13 +216,29 @@
 </pre></div>
 </div>
 <p>升级命令：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt-get update</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt-get update</span>
 </pre></div>
 </div>
 <p>2）Nginx 服务器目录</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># cd /var/www/html/</span>
+<span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="c1"># ls</span>
+<span class="n">index</span><span class="o">.</span><span class="n">nginx</span><span class="o">-</span><span class="n">debian</span><span class="o">.</span><span class="n">html</span>
+<span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="c1">#</span>
+</pre></div>
+</div>
 <p>3）验证Nginx服务器</p>
-<p>4）备用：卸载命令</p>
+<p>打开浏览器，输入虚谷号IP地址，就会出现经典的Nginx页面。</p>
+<p>4）Nginx操作命令补充：卸载命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx</span>
+<span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx-common</span>
+<span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx-core</span>
+</pre></div>
+</div>
 <p>4、安装MariaDB</p>
+<p>1）命令介绍</p>
+<p>2）查看版本</p>
+<p>3）安全配置</p>
+<p>4）设置MySQL</p>
 <p>5、安装 PHP</p>
 <p>6、测试</p>
 </div>

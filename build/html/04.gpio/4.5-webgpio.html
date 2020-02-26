@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. 远程调用GPIO &mdash; 虚谷号使用手册 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="虚谷号的软件介绍" href="../05.soft/index.html" />
+    <link rel="prev" title="4. 虚谷号主芯片的I2C控制" href="4.4-xg_i2c.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 虚谷号使用手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.about/index.html">关于虚谷号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.quick/index.html">虚谷号的入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.basic/index.html">虚谷号的基本操作</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的GPIO详解</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="4.1-gpio.html">1. GPIO的实现方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.2-xugulib.html">2. xugu库的使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.3-arduino.html">3. 虚谷号和Arduino的自定义通讯</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.4-xg_i2c.html">4. 虚谷号主芯片的I2C控制</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. 远程调用GPIO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#webgpio">5.1. WebGPIO简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">5.2. WebGPIO的部署</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">5.3. WebGPIO使用说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">5.4. WebGPIO的编程范例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../05.soft/index.html">虚谷号的软件介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.edu/index.html">虚谷号的教育应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.plus/index.html">虚谷号的扩展硬件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.advanced/index.html">虚谷号的高级操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.course/index.html">虚谷号的课程汇集</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">虚谷号使用手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">虚谷号的GPIO详解</a> &raquo;</li>
+        
+      <li>5. 远程调用GPIO</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/04.gpio/4.5-webgpio.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gpio">
+<h1>5. 远程调用GPIO<a class="headerlink" href="#gpio" title="永久链接至标题">¶</a></h1>
+<p>在一些应用中，常常会用到要以远程的形式调用虚谷号的GPIO服务，如智能家居的应用。</p>
+<p>在虚谷号实现GPIO的方式很多，最简单的方式用让虚谷号运行WebGPIO服务，这是用Python程序写的应用。</p>
+<div class="section" id="webgpio">
+<h2>5.1. WebGPIO简介<a class="headerlink" href="#webgpio" title="永久链接至标题">¶</a></h2>
+<p>WebGPIO是基于Flask、xugu库开发的虚谷号专用框架，是为了方便用户让虚谷号与手机互动（App inventor）而开发。想法由谢作如提出，李琦完成初稿，yyp和谢作如在其基础上完善，夏正仁、林淼焱、郑祥等参与了测试。</p>
+<p>WebGPIO采用WebAPI的形式，获取和控制虚谷号板载Arduino芯片的引脚电平状态，用method的方式来判断是获取信息还是控制信号，参数非常简洁。</p>
+<p>WebGPIO的默认端口为1024，当前版本为1.1。</p>
+<p>软件下载地址：<a class="reference external" href="https://github.com/vvlink/vvBoard-app/tree/master/webgpio">https://github.com/vvlink/vvBoard-app/tree/master/webgpio</a></p>
+</div>
+<div class="section" id="id1">
+<h2>5.2. WebGPIO的部署<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>1）普通启动：运行webgpio.py文件即可；</p>
+<p>2）开机启动：只要将webgpio.py文件，复制到vvBoard目录的Python目录下，重命名为main.py，开机即可启动。</p>
+</div>
+<div class="section" id="id2">
+<h2>5.3. WebGPIO使用说明<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>WebAPI地址：</p>
+<p><a class="reference external" href="http:/">http:/</a>/[虚谷号ip]:1024/</p>
+<p><strong>注</strong>：下面假设虚谷号的IP地址为：192.168.1.101</p>
+<p>1）获取引脚状态</p>
+<p>功能：读取引脚值</p>
+<p>method方式:GET</p>
+<p>参数示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="n">pin</span><span class="p">:</span><span class="s2">&quot;D1&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>注</strong>：Arduino的引脚范围为：D2–D13，A0–A5，不分大小写。</p>
+<p>url范例：<a class="reference external" href="http://192.168.1.101:1024/?pin=D2">http://192.168.1.101:1024/?pin=D2</a></p>
+<p>信息返回：当pin为D2–D13时，读取数字引脚的数字值，0为低电平，1为高电平。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="s2">&quot;D2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error_code&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span><span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>当pin为A0–A5时，读取模拟引脚的模拟值，0-255之间。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="s2">&quot;A0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error_code&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span><span class="mi">255</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>当pin不为D0–D13，A0–A5时，返回错误代码。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="s2">&quot;A7&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error_code&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span><span class="s2">&quot;error,invalid Pin&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>2)控制引脚电平</p>
+<p>功能：设置引脚电平状态。</p>
+<p>method方式: POST</p>
+<p>参数示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="n">pin</span><span class="p">:</span><span class="s2">&quot;D2&quot;</span>
+        <span class="n">value</span><span class="p">:</span><span class="mi">255</span>
+        <span class="nb">type</span><span class="p">:</span><span class="s2">&quot;digital&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>注</strong>：</p>
+<p>(1）Arduino的引脚范围为：D2–D13，A0–A5，不分大小写。</p>
+<p>(2）type分为digital、analog和servo三种：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>当type为digital时，设置引脚的电平值为value的值，0表示LOW，非0表示HIGH；</p></li>
+<li><p>当type为analog时，设置引脚的PWM值为value的值，即0-255之间；</p></li>
+<li><p>当type为servo时，设置引脚上舵机的转动角度为value的值，即0-180之间。</p></li>
+</ul>
+</div></blockquote>
+<p>(3）Digital、Analog、Servo等词语不分大小写，也可以用“1、2、3”等数字来代替。</p>
+<p>返回参数：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="s2">&quot;D2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error_code&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span><span class="s2">&quot;success,set [pin] to [value] with [types] mode&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>当pin不在D0–D13，A0–A5之间时：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="s2">&quot;D2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error_code&quot;</span><span class="p">:</span><span class="mi">1</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span><span class="s2">&quot;error,invalid Pin&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>当value不能转换整数时：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="s2">&quot;D2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error_code&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span><span class="s2">&quot;error,Value is wrong&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>当type不正确时：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="s2">&quot;D2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;error_code&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span><span class="s2">&quot;error,Type is wrong&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>5.4. WebGPIO的编程范例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>1）Python代码</p>
+<p>（1）调用POST方法，对虚谷号的引脚进行控制。</p>
+<dl class="simple">
+<dt>在该案例中可以修改的参数有:</dt><dd><ul class="simple">
+<li><p>url:设置成虚谷号的IP地址</p></li>
+<li><p>pin:对应的引脚 A0-A5，D0-D13</p></li>
+<li><p>value:对应的数值</p></li>
+<li><p>type:控制的类型可以是1，2，3，分别代表“digital”、“analog”、“servo”</p></li>
+</ul>
+</dd>
+</dl>
+<p>当设置D13号引脚的电平为1，该引脚对应的LED就会亮起。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">vvboardip</span><span class="o">=</span><span class="s1">&#39;192.168.3.42&#39;</span>
+<span class="n">pin</span><span class="o">=</span><span class="s1">&#39;D13&#39;</span>
+<span class="n">value</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">t</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="n">pin</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="n">value</span><span class="p">,</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="n">t</span><span class="p">}</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://&#39;</span><span class="o">+</span> <span class="n">vvboardip</span> <span class="o">+</span><span class="s1">&#39;:1024/&#39;</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">r</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;成功发送控制命令:&#39;</span><span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;msg&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;返回的信息为：&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>官方文档中提供了源码。</p>
+<p>（2）调用GET方法，读取A0号引脚的电平。</p>
+<dl class="simple">
+<dt>在该案例中可以修改的参数有:</dt><dd><ul class="simple">
+<li><p>url:设置成虚谷号的IP地址</p></li>
+<li><p>pin:对应的引脚 A0-A5，D0-D13</p></li>
+</ul>
+</dd>
+</dl>
+<p>注意：该方法需要外接传感器，否则数字口默认返回为低电平，模拟口返回随机数。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">vvboardip</span><span class="o">=</span><span class="s1">&#39;192.168.3.42&#39;</span>
+<span class="n">pin</span><span class="o">=</span><span class="s1">&#39;D13&#39;</span>
+<span class="n">value</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">t</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pin&quot;</span><span class="p">:</span><span class="n">pin</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="n">value</span><span class="p">,</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="n">t</span><span class="p">}</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://&#39;</span><span class="o">+</span> <span class="n">vvboardip</span> <span class="o">+</span><span class="s1">&#39;:1024/&#39;</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">r</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;成功发送控制命令：&#39;</span><span class="o">+</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;msg&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;返回的信息为：&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>2）App invenor代码</p>
+<p>官方文档中提供了源码。</p>
+<p>源代码下载：<a class="reference external" href="https://github.com/vvlink/vvBoard-app/tree/master/webgpio">https://github.com/vvlink/vvBoard-app/tree/master/webgpio</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../05.soft/index.html" class="btn btn-neutral float-right" title="虚谷号的软件介绍" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="4.4-xg_i2c.html" class="btn btn-neutral float-left" title="4. 虚谷号主芯片的I2C控制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, vvboard
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

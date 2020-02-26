@@ -96,10 +96,10 @@
 <li class="toctree-l2"><a class="reference internal" href="7.1-houwu.html">1. “厚物”扩展板</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7.2-camera.html">2. 摄像头</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3. 音频设备</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">3.1. 声卡推荐</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">3.2. 内置麦克风的摄像头推荐</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">3.3. 内置声卡的小音箱推荐</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">3.4. 手动配置声卡步骤</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.1. 声卡推荐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.2. 内置麦克风的摄像头推荐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.3. 内置声卡的小音箱推荐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.4. 手动配置声卡步骤</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="7.4-hdmi.html">4. HDMI转接头</a></li>
@@ -177,26 +177,26 @@
   <div class="section" id="id1">
 <h1>3. 音频设备<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>虚谷号接上声卡后，可以接麦克风和音箱等音频设备，成为一台多媒体电脑。建议选择内置声卡的麦克风（很多摄像头都已经内置麦克风）和内置声卡的小音箱。</p>
-<p><a href="#id2"><span class="problematic" id="id3">**</span></a>注意：<a href="#id4"><span class="problematic" id="id5">**</span></a>如果虚谷号接了无源音箱，需要在电源口另外接上2A的电源，才能确保供电正常。否则可能导致音箱不能正常使用。</p>
-<div class="section" id="id6">
-<h2>3.1. 声卡推荐<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>注意：如果虚谷号接了无源音箱，需要在电源口另外接上2A的电源，才能确保供电正常。否则可能导致音箱不能正常使用。</p>
+<div class="section" id="id2">
+<h2>3.1. 声卡推荐<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>vvBoard支持绝大多数的免驱动USB声卡，大部分声卡即插即用，无需配置。</p>
 <p>USB免驱声卡购买地址：</p>
 <p><a class="reference external" href="https://detail.tmall.com/item.htm?id=564470736512&amp;price=29.9-39.9&amp;sourceType=item&amp;sourceType=item&amp;suid">https://detail.tmall.com/item.htm?id=564470736512&amp;price=29.9-39.9&amp;sourceType=item&amp;sourceType=item&amp;suid</a></p>
 </div>
-<div class="section" id="id7">
-<h2>3.2. 内置麦克风的摄像头推荐<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>3.2. 内置麦克风的摄像头推荐<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>大部分内置声卡即插即用，无需配置，具体见摄像头部分。</p>
 </div>
-<div class="section" id="id8">
-<h2>3.3. 内置声卡的小音箱推荐<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>3.3. 内置声卡的小音箱推荐<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>大部分内置声卡的小音箱即插即用，无需配置。</p>
 <p>内置声卡的小音箱购买地址：</p>
 <p>卡农（iKANOO）N12USB声卡驱动电脑音响
 <a class="reference external" href="https://item.jd.com/30031188925.html">https://item.jd.com/30031188925.html</a></p>
 </div>
-<div class="section" id="id9">
-<h2>3.4. 手动配置声卡步骤<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h2>3.4. 手动配置声卡步骤<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>1、终端运行aplay -l和arecord -l查看播放和录音的设备,如下图所示：</p>
 <img alt="../_images/shengka01.jpg" src="../_images/shengka01.jpg" />
 <p>2、根据设备的声卡号和设备号修改当前目录下的asound.conf文件后保存，文件内容如下：</p>

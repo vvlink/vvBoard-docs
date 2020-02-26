@@ -50,8 +50,7 @@ Blynk官方网址：https://blynk.io/
 
 3）为了方便，将下载的文件移动到/home/scope/下。
 
-**注：**可以在自己的电脑下载，然后通过jupyter上传。
-
+	注：可以在自己的电脑下载，然后通过jupyter上传。
 
 3. 虚谷内置的Siot使用8080端口和Blynk服务端口冲突，我将Siot的端口修改为8088，打开/home/scope/software/SIoT_1_2_vvBoard/下的config.json进行修改保存。
 

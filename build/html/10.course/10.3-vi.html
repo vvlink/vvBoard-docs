@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. “OpenCV和视觉识别”系列课程 &mdash; 虚谷号使用手册 1.0 文档</title>
+  <title>3. “OpenCV和计算机视觉”系列课程 &mdash; 虚谷号使用手册 1.0 文档</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="3. “机器学习和神经网络”系列课程" href="10.4-ml.html" />
-    <link rel="prev" title="1. 用ipyturtle在网页上画画" href="10.1-ipyturtle.html" /> 
+    <link rel="next" title="4. “神经网络和机器学习”系列课程" href="10.4-ml.html" />
+    <link rel="prev" title="2. 百度AI系列课程" href="10.2-baiduai.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,15 +97,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">虚谷号的课程汇集</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="10.1-ipyturtle.html">1. 用ipyturtle在网页上画画</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2. “OpenCV和视觉识别”系列课程</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">2.1. 课程简介</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.2. 准备工作</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.3. 课程目录</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">2.4. 涉及内容</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">2.5. 课程示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.2-baiduai.html">2. 百度AI系列课程</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. “OpenCV和计算机视觉”系列课程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.1. 课程简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.2. 准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.3. 课程目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.4. 涉及内容</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.5. 课程示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.6. 其他说明</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="10.4-ml.html">3. “机器学习和神经网络”系列课程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10.4-ml.html">4. “神经网络和机器学习”系列课程</a></li>
 </ul>
 </li>
 </ul>
@@ -155,7 +157,7 @@
         
           <li><a href="index.html">虚谷号的课程汇集</a> &raquo;</li>
         
-      <li>2. “OpenCV和视觉识别”系列课程</li>
+      <li>3. “OpenCV和计算机视觉”系列课程</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,25 +177,88 @@
            <div itemprop="articleBody">
             
   <div class="section" id="opencv">
-<h1>2. “OpenCV和视觉识别”系列课程<a class="headerlink" href="#opencv" title="永久链接至标题">¶</a></h1>
+<h1>3. “OpenCV和计算机视觉”系列课程<a class="headerlink" href="#opencv" title="永久链接至标题">¶</a></h1>
 <p>课程编写：谢作如</p>
+<p>计算机视觉是一门研究如何使机器“看”的科学，更进一步的说，就是是指用摄影机和电脑代替人眼对目标进行识别、跟踪和测量等机器视觉，并进一步做图形处理，使电脑处理成为更适合人眼观察或传送给仪器检测的图像。作为一个科学学科，计算机视觉研究相关的理论和技术，试图建立能够从图像或者多维数据中获取‘信息’的人工智能系统。因为感知可以看作是从感官信号中提取信息，所以计算机视觉也可以看作是研究如何使人工系统从图像或多维数据中“感知”的科学。</p>
+<p>虚谷号采用最通用的USB摄像头作为视觉采集设备，借助OpneCV，可以让学生快速进入计算机视觉的学习领域。OpencV是用来实现计算机视觉相关技术的开放源码工作库，是计算机视觉、图像处理、模式识别、计算机图形学、信号处理、视频监控、科学可视化等相关从业人员的好工具。</p>
 <div class="section" id="id1">
-<h2>2.1. 课程简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>3.1. 课程简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>OpenCV（Open Source Computer Vision Library）是一个开源BSD库，该库包括数百个机器视觉算法。它轻量级而且高效——由一系列 C 函数和少量 C++ 类构成，同时提供了Python、Ruby、MATLAB等语言的接口，实现了图像处理和计算机视觉方面的很多通用算法。</p>
+<p>计算机视觉是一门综合性的学科，它已经吸引了来自各个学科的研究者参加到对它的研究之中。其中包括计算机科学和工程、信号处理、物理学、应用数学和统计学，神经生理学和认知科学等。本课程精选了OpenCV的典型应用，提供最简洁有趣的代码，让学生从一个个案例入手，由浅入深，逐步领略计算机视觉的魅力。</p>
 </div>
 <div class="section" id="id2">
-<h2>2.2. 准备工作<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>1.安装必要的Python库。</p>
+<h2>3.2. 准备工作<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>1.安装必要的Python库。虚谷号已经内置。</p>
+<p>2.准备USB摄像头一个。</p>
 </div>
 <div class="section" id="id3">
-<h2>2.3. 课程目录<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>课程精选了典型应用，提供最简洁有趣的代码。</p>
+<h2>3.3. 课程目录<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>1.图片处理</p>
+<p>综合案例：图片转字符（字符拍立得）</p>
+<p>2.颜色识别</p>
+<p>综合案例：自动分拣机器人</p>
+<p>2.人脸检测</p>
+<p>综合案例：自动检测人脸并拍照</p>
 </div>
 <div class="section" id="id4">
-<h2>2.4. 涉及内容<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>3.4. 涉及内容<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>1）PIL（Python Imaging Library）。Python平台事实上的图像处理标准库了。PIL功能非常强大,但API却非常简单易用。</p>
+<p>2）OpenCV。一般来说，现在OpenCV2是主流应用。OpenCV中的函数接口大体可以分为如下部分：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>core：核心模块，主要包含了OpenCV中最基本的结构（矩阵，点线和形状等），以及相关的基础运算/操作。</p></li>
+<li><p>imgproc：图像处理模块，包含和图像相关的基础功能（滤波，梯度，改变大小等），以及一些衍生的高级功能（图像分割，直方图，形态分析和边缘/直线提取等）。</p></li>
+<li><p>highgui：提供了用户界面和文件读取的基本函数，比如图像显示窗口的生成和控制，图像/视频文件的IO等。</p></li>
+</ul>
+</div></blockquote>
+<p>3）xuguGPIO。虚谷号的GPIO库，用简洁的代码来控制板载的Arduino。</p>
+<p>4）百度AI。百度AI开放平台为Python语言提供的SDK（Software Development Kit 的缩写,中文意思就是“软件开发工具包“）。</p>
 </div>
 <div class="section" id="id5">
-<h2>2.5. 课程示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>以“卷积神经网络”为例。</p>
+<h2>3.5. 课程示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>以“摄像头人脸检测”为例。</p>
+<p>1）准备工作：导入库</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="k">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<p>2）基本函数：框出人脸</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#直接调用系统里面的haarcascade_frontalface_default.xml</span>
+<span class="k">def</span> <span class="nf">faceDetect</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">face_cascade</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">CascadeClassifier</span><span class="p">(</span><span class="s1">&#39;/usr/local/share/OpenCV/haarcascades/haarcascade_frontalface_default.xml&#39;</span><span class="p">)):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">divisor</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">size</span>
+    <span class="n">minSize</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span> <span class="o">//</span> <span class="n">divisor</span><span class="p">,</span> <span class="n">h</span> <span class="o">//</span> <span class="n">divisor</span><span class="p">)</span>
+    <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+    <span class="n">faces</span> <span class="o">=</span> <span class="n">face_cascade</span><span class="o">.</span><span class="n">detectMultiScale</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CASCADE_SCALE_IMAGE</span><span class="p">,</span> <span class="n">minSize</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">faces</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>3）程序主体：摄像头拍摄照片，标注好人脸后显示在网页上。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+    <span class="n">frame1</span><span class="p">,</span> <span class="n">face_num</span> <span class="o">=</span> <span class="n">faceDetect</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;发现人脸数量：&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">face_num</span><span class="p">))</span>
+    <span class="n">img</span><span class="o">=</span><span class="n">frame1</span><span class="p">[:,:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span> <span class="c1">#不显示坐标</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;没有接摄像头或者摄像头被占用！&quot;</span><span class="p">)</span>
+<span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>3.6. 其他说明<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>本课程已经整合在虚谷号内置课程中。</p>
 </div>
 </div>
 
@@ -205,10 +270,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10.4-ml.html" class="btn btn-neutral float-right" title="3. “机器学习和神经网络”系列课程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="10.4-ml.html" class="btn btn-neutral float-right" title="4. “神经网络和机器学习”系列课程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="10.1-ipyturtle.html" class="btn btn-neutral float-left" title="1. 用ipyturtle在网页上画画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="10.2-baiduai.html" class="btn btn-neutral float-left" title="2. 百度AI系列课程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
