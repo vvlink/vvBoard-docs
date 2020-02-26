@@ -66,10 +66,10 @@ LNMP的安装
 
 ::
 
-    root@192:~# cd /var/www/html/
-    root@192:/var/www/html$ ls
+    root@localhost:~# cd /var/www/html/
+    root@localhost:/var/www/html# ls
     index.nginx-debian.html
-    root@192:/var/www/html$
+    root@localhost:/var/www/html#
 
 3）验证Nginx服务器
 
