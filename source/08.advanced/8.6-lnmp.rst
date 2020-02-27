@@ -173,7 +173,9 @@ LNMP的安装
 
 4）设置MySQL
 
-（1）登录MySQL方法一：
+（1）登录MySQL
+
+    方法一：
 
 ::
 
@@ -188,7 +190,7 @@ LNMP的安装
 
     MariaDB [(none)]> 
 
-（2）登录MySQL方法二：
+    方法二：
 
 ::
     
@@ -205,7 +207,7 @@ LNMP的安装
     MariaDB [(none)]>
 
 
-（3）设置MySQL
+（2）设置MySQL
 
 ::
 
