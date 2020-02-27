@@ -271,6 +271,31 @@ LNMP的安装
 
 5、安装 PHP
 
+1）安装命令：
+
+::
+
+    root@localhost:~# sudo apt install php-fpm php-mysql      #安装php-fpm、php-mysql,即能直接装好php,注意到版本是 7.0
+    
+2)查询版本
+
+::
+
+    root@localhost:~# php --version         #php版本查询命令
+    PHP 7.0.33-0ubuntu0.16.04.12 (cli) ( NTS )
+    Copyright (c) 1997-2017 The PHP Group
+    Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
+        with Zend OPcache v7.0.33-0ubuntu0.16.04.12, Copyright (c) 1999-2017, by Zend Technologies
+
+3）配置php文件
+
+::
+
+    
+
+4）配置Nginx文件
+
+
 6、测试
 
 -----------------------------
