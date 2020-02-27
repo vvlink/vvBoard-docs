@@ -289,9 +289,28 @@ LNMP的安装
 
 3）配置php文件
 
+（1）安装nano库
+
 ::
 
+    root@localhost:~# sudo apt install nano
     
+ (2)配置php文件
+ 
+::
+
+    root@localhost:~# sudo nano /etc/php/7.0/fpm/php.ini
+    
+    '''
+    搜索 cgi.fix_pathinfo，可改可不改
+    原内容为：
+    ;cgi.fix_pathinfo=1
+    改为：
+    cgi.fix_pathinfo=0
+    原来为1，允许网站其他用户上传图片；改为0，禁止。
+    注意要把开头的";"去掉
+    '''
+    cgi.fix_pathinfo=0
 
 4）配置Nginx文件
 
