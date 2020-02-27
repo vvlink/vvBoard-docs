@@ -310,10 +310,21 @@ LNMP的安装
     原来为1，允许网站其他用户上传图片；改为0，禁止。
     注意要把开头的";"去掉
     '''
-    cgi.fix_pathinfo=0
+    cgi.fix_pathinfo=0  #修改后按指令提示保存、退出
 
 4）配置Nginx文件
 
+::
+
+    root@localhost:~# sudo vim /etc/nginx/sites-available/default       #此处用到 vim 编辑器，便于后面截图显示，有高亮效果
+ 
+ 
+vim保存及退出命令  
+::
+
+    先按ESC键，从编辑模式退出，回到命令模式。
+
+    再用英文半角直接输入:wq，回车即成功保存且退出了配置文件。
 
 6、测试
 
