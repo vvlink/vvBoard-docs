@@ -210,9 +210,64 @@ LNMP的安装
 
 （2）设置MySQL
 
+查看 mysql 数据库:
 ::
 
+    MariaDB [(none)]> select user,authentication_string,plugin from mysql.user;#查看 mysql 数据库下的 user、authentication_string、plugin
+    +------+-----------------------+-------------+
+    | user | authentication_string | plugin      |
+    +------+-----------------------+-------------+
+    | root |                       | unix_socket |
+    +------+-----------------------+-------------+
+    1 row in set (0.00 sec)
 
+    MariaDB [(none)]>
+    
+设置mysql数据库
+::
+
+    MariaDB [(none)]> select user,authentication_string,plugin from mysql.user; #在mysql用户表中查询：user,authentication_string,plugin
+    +------+-----------------------+-----------------------+
+    | user | authentication_string | plugin                |
+    +------+-----------------------+-----------------------+
+    | root |                       | mysql_native_password |
+    +------+-----------------------+-----------------------+
+    1 row in set (0.00 sec)
+
+    MariaDB [(none)]> show databases;   #列出现有的数据库
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | performance_schema |
+    +--------------------+
+    3 rows in set (0.00 sec)
+
+    MariaDB [(none)]> use mysql;     #使用数据库mysql
+    Reading table information for completion of table and column names
+    You can turn off this feature to get a quicker startup with -A
+
+    Database changed
+    
+    MariaDB [mysql]> update user set plugin="mysql_native_password" where user="root";# 设置root用户的plugin 为 mysql_native_password，便于后续使用 root 来远程登录 WordPress 数据库
+    Query OK, 0 rows affected (0.00 sec)
+    Rows matched: 1  Changed: 0  Warnings: 0
+
+    MariaDB [mysql]> flush privileges;  #刷新权限
+    Query OK, 0 rows affected (0.00 sec)
+
+    MariaDB [mysql]> select user,plugin from mysql.user;    #在mysql数据的user表中查询：user,plugin
+    +------+-----------------------+
+    | user | plugin                |
+    +------+-----------------------+
+    | root | mysql_native_password |
+    +------+-----------------------+
+    1 row in set (0.00 sec)
+
+    MariaDB [mysql]> exit   #退出
+    Bye
+    root@localhost:~#
 
 5、安装 PHP
 
