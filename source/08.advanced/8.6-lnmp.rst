@@ -328,6 +328,28 @@ vim保存及退出命令
 
 6、测试
 
+1）对Nginx配置文件进行语法检查
+
+::
+
+    root@localhost:~# sudo nginx -t
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
+    root@localhost:~#
+    
+2)重新加载命令
+
+::
+    
+    root@localhost:~# sudo systemctl reload nginx
+    
+3）修改权限
+
+::
+
+    root@localhost:~# sudo chmod 755 -R /var/www/
+    root@localhost:~# sudo chown -R scope /var/www/*
+ 
 -----------------------------
 WordPress的安装
 -----------------------------
