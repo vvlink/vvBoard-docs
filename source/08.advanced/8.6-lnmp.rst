@@ -89,10 +89,20 @@ LNMP的安装
 
 4、安装MariaDB
 
-1）命令介绍
+1）安装MariaDB命令
+
+::
+
+    root@localhost:~# sudo apt-get install mariadb-server
 
 
 2）查看版本
+
+::
+
+    root@localhost:~# mysqld --version
+    mysqld  Ver 10.0.38-MariaDB-0ubuntu0.16.04.1 for debian-linux-gnu on aarch64 (Ubuntu 16.04)
+    200227 11:14:57 [Note] mysqld (mysqld 10.0.38-MariaDB-0ubuntu0.16.04.1) starting as process 3132 ...
 
 3）安全配置
 
