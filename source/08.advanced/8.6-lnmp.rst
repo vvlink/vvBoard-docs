@@ -295,7 +295,7 @@ LNMP的安装
 
     root@localhost:~# sudo apt install nano
     
- (2)配置php文件
+(2)配置php文件
  
 ::
 
