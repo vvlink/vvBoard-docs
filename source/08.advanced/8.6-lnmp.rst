@@ -176,6 +176,7 @@ LNMP的安装
 （1）登录MySQL方法一：
 
 ::
+
     root@localhost:~# sudo mysql -u root #用用户“root”登录MySQL
     Welcome to the MariaDB monitor.  Commands end with ; or \g.
     Your MariaDB connection id is 49
