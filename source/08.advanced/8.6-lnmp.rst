@@ -175,7 +175,7 @@ LNMP的安装
 
 （1）登录MySQL
 
-    方法一：
+方法一：
 
 ::
 
@@ -192,7 +192,7 @@ LNMP的安装
 
    
  
-    方法二：
+方法二：
 ::
     
     root@localhost:~# sudo mysql -u root -p         #用用户“root”和密码登录，“-u”后跟用户名，“-p”后跟用户密码
