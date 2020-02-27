@@ -190,8 +190,9 @@ LNMP的安装
 
     MariaDB [(none)]> 
 
+   
+ 
     方法二：
-
 ::
     
     root@localhost:~# sudo mysql -u root -p         #用用户“root”和密码登录，“-u”后跟用户名，“-p”后跟用户密码
