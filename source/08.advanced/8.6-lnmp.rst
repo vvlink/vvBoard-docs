@@ -173,6 +173,41 @@ LNMP的安装
 
 4）设置MySQL
 
+（1）登录MySQL方法一：
+
+::
+    root@localhost:~# sudo mysql -u root #用用户“root”登录MySQL
+    Welcome to the MariaDB monitor.  Commands end with ; or \g.
+    Your MariaDB connection id is 49
+    Server version: 10.0.38-MariaDB-0ubuntu0.16.04.1 Ubuntu 16.04
+
+    Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+    MariaDB [(none)]> 
+
+（2）登录MySQL方法二：
+
+::
+    
+    root@localhost:~# sudo mysql -u root -p         #用用户“root”和密码登录，“-u”后跟用户名，“-p”后跟用户密码
+    Enter password:             #输入root用户的密码，按回车确认
+    Welcome to the MariaDB monitor.  Commands end with ; or \g.
+    Your MariaDB connection id is 50
+    Server version: 10.0.38-MariaDB-0ubuntu0.16.04.1 Ubuntu 16.04
+
+    Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+    MariaDB [(none)]>
+
+
+（3）设置MySQL
+
+::
+
 
 
 5、安装 PHP
