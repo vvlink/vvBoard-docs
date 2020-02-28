@@ -86,9 +86,9 @@ LNMP的安装
 
 ::
 
-    root@192:~# sudo apt --purge remove nginx
-    root@192:~# sudo apt --purge remove nginx-common
-    root@192:~# sudo apt --purge remove nginx-core
+    root@localhost:~# sudo apt --purge remove nginx
+    root@localhost:~# sudo apt --purge remove nginx-common
+    root@localhost:~# sudo apt --purge remove nginx-core
 
 
 4、安装MariaDB
