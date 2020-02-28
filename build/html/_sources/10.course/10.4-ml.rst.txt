@@ -137,6 +137,7 @@ CIFAR-10数据集由10个类的60000个 32 * 32 彩色图像（3个通道）组�
 ```````````````
 
 ::
+
 	model.fit(x=train_image,y=train_label,batch_size=100,epochs=20,validation_data=(test_image,test_label))
 
 

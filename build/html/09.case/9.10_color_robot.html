@@ -107,10 +107,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">10. 根据颜色智能分拣的机器人</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">10.1. 原理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">10.2. 原型设计</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">10.3. 实践制作</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">10.4. 功能测试</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">10.5. 项目总结</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">10.6. 参考资料</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">10.3. 实践制作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">结构搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">编写程序</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">10.4. 功能测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">10.5. 项目总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">10.6. 参考资料</a></li>
 </ul>
 </li>
 </ul>
@@ -203,15 +207,16 @@
 </div>
 <div class="section" id="id4">
 <h2>10.3. 实践制作<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>1) 结构搭建
-步骤1：根据设计的原型，利用机器人结构件、螺丝、纸板、舵机搭建分拣平台，如图所示。</p>
+<div class="section" id="id5">
+<h3>结构搭建<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>步骤1：根据设计的原型，利用机器人结构件、螺丝、纸板、舵机搭建分拣平台，如图所示。</p>
 <img alt="../_images/9.10-robot04.png" src="../_images/9.10-robot04.png" />
 <p>步骤2：将摄像头置于分拣平台的正上方，并调整好焦距。</p>
 <p>步骤3：将摄像头（USB接口）、舵机连接到虚谷号上，最终效果如图所示。</p>
 <img alt="../_images/9.10-robot05.png" src="../_images/9.10-robot05.png" />
-<ol class="arabic simple" start="2">
-<li><p>编写程序</p></li>
-</ol>
+</div>
+<div class="section" id="id6">
+<h3>编写程序<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>通过U盘方式正确设置WIFI账号和密码后，将虚谷号和笔记本电脑同时连上WIFI热点，打开浏览器访问虚谷号内置的Jupyter，即可完成对虚谷号进行编程。</p>
 <p>导入基本库，并做好应用摄像头的准备工作。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
@@ -282,18 +287,19 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>10.4. 功能测试<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="id7">
+<h2>10.4. 功能测试<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>依次将不同颜色的红绿纸条放在待分拣平台上，红绿纸条分别被分拣到右边和左边的小盒子中，如图所示。虚谷号可以正确判断纸条的颜色，并且驱动舵机转向不同的方向。</p>
 <img alt="../_images/9.10-robot06.png" src="../_images/9.10-robot06.png" />
 <p>本案例涉及到的所有代码，已经整合在虚谷号的固件中。</p>
 </div>
-<div class="section" id="id6">
-<h2>10.5. 项目总结<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h2>10.5. 项目总结<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>智能分拣机器人的完成，可以让红绿颜色纸条的分拣变得轻松而简单。当然，生活中除了纸条以外，还有很多东西需要被分拣，例如：创客空间里的螺丝和螺帽，不同垃圾的分类。这些都可以通过虚谷号、摄像头结合一些简单的分拣结构就能完成，一起尝试思考一下：如何用虚谷号和摄像头做一个智能垃圾分类装置吧？</p>
 </div>
-<div class="section" id="id7">
-<h2>10.6. 参考资料<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id9">
+<h2>10.6. 参考资料<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://blog.csdn.net/qq_42444944/article/details/89323039">https://blog.csdn.net/qq_42444944/article/details/89323039</a></p>
 </div>
 </div>

@@ -14,21 +14,21 @@ WebGPIO是基于Flask、xugu库开发的虚谷号专用框架，是为了方便�
 
 WebGPIO采用WebAPI的形式，获取和控制虚谷号板载Arduino芯片的引脚电平状态，用method的方式来判断是获取信息还是控制信号，参数非常简洁。
 
-WebGPIO的默认端口为1024，当前版本为1.1。
+WebGPIO的默认端口为1024，当前版本为1.2。
 
 软件下载地址：https://github.com/vvlink/vvBoard-app/tree/master/webgpio
 
---------------------
+----------------------
 WebGPIO的部署
---------------------
+----------------------
 
 1）普通启动：运行webgpio.py文件即可；
 
 2）开机启动：只要将webgpio.py文件，复制到vvBoard目录的Python目录下，重命名为main.py，开机即可启动。
 
----------------------
+-----------------------
 WebGPIO使用说明
----------------------
+-----------------------
 
 WebAPI地址：
 
@@ -36,7 +36,9 @@ http://[虚谷号ip]:1024/
 
 **注**：下面假设虚谷号的IP地址为：192.168.1.101
 
-1）获取引脚状态
+``````````````````````````````
+获取引脚状态
+``````````````````````````````
 
 功能：读取引脚值
 
@@ -84,7 +86,10 @@ url范例：http://192.168.1.101:1024/?pin=D2
 		"msg":"error,invalid Pin"
 	}
 
-2)控制引脚电平
+
+``````````````````````````````
+控制引脚电平
+``````````````````````````````
 
 功能：设置引脚电平状态。
 
@@ -152,11 +157,27 @@ method方式: POST
 		"msg":"error,Type is wrong"
 	}
 
-----------------------
-WebGPIO的编程范例
-----------------------
 
-1）Python代码
+
+```````````````````
+获取帮助
+```````````````````
+
+访问“/help/”目录，将呈现Web页面的控制端。
+
+http://[虚谷号ip]:1024/help/
+
+.. image:: ../images/04/4.5-webgpio-1.png
+
+------------------------
+WebGPIO的编程范例
+------------------------
+
+只要能访问Web服务，都可以通过WebGPIO形式控制虚谷号。这样就涵盖了几乎所有的编程软件，以及Word、PowerPoint之类的办公软件。同样，只要能联网的智能硬件，如掌控板、树莓派，都可以作为虚谷号的控制终端。
+
+``````````````````````````````
+Python代码
+``````````````````````````````
 
 （1）调用POST方法，对虚谷号的引脚进行控制。
 
@@ -197,20 +218,69 @@ WebGPIO的编程范例
 
 	import requests
 	vvboardip='192.168.3.42'
-	pin='D13'
-	value=1
-	t=1
-	payload = {"pin":pin,'value':value,'type':t}
-	re = requests.post(url='http://'+ vvboardip +':1024/',params=payload) 
+	pin='A0'
+	payload = {"pin":pin}
+	re = requests.get(url='http://'+ vvboardip +':1024/',params=payload) 
 	if (re.status_code==200):
-	    r=re.json()
-	    print('成功发送控制命令：'+ r["msg"]) 
-	    print('返回的信息为：') 
-	    print(re.text) 
+		r=re.json()
+		print('成功获取引脚'+ r["pin"] + '的状态:'+ r["msg"]) 
+		print('返回的原始信息为：')
+		print(re.text)
 
 
-2）App invenor代码
+``````````````````````````````
+App invenor代码
+``````````````````````````````
 
 官方文档中提供了源码。
 
 源代码下载：https://github.com/vvlink/vvBoard-app/tree/master/webgpio
+
+
+``````````````````````````````
+掌控板代码范例
+``````````````````````````````
+
+可以用掌控板作为终端（任何可以上网的），通过WebGPIO来和虚谷号互动。下面的代码采用mpython编写。
+
+::
+
+    from mpython import *
+    import time
+    import urequests
+    import json
+    import network
+
+    def on_button_a_down(_):
+        global v
+        time.sleep_ms(10)
+        if button_a.value() == 1: return
+        _response = urequests.post('http://192.168.3.42:1024', headers={"Content-Type":"application/json"}, data=json.dumps({"pin":'D13', "value":str(v), "type":'1'}))
+        v = 1 - v
+        oled.fill_rect(0, 16, 128, 16, 0)
+        oled.DispChar(_response.json().get('msg'), 0, 16, 1)
+        oled.show()
+
+    def on_button_b_down(_):
+        time.sleep_ms(10)
+        if button_b.value() == 1: return
+        _response = urequests.get('http://192.168.3.42:1024', headers={"Content-Type":"application/json"}, data=json.dumps({"pin":'A0'}))
+        oled.fill_rect(0, 48, 128, 16, 0)
+        oled.DispChar(('A0的值为：' + str(_response.json().get('msg'))), 0, 48, 1)
+        oled.show()
+
+    v = 1
+    my_wifi = wifi()
+    my_wifi.connectWiFi('jf', '12345678')
+    button_a.irq(trigger=Pin.IRQ_FALLING, handler=on_button_a_down)
+    button_b.irq(trigger=Pin.IRQ_FALLING, handler=on_button_b_down)
+    oled.DispChar('按A键控制虚谷号13口', 0, 0, 1)
+    oled.show()
+
+图形化代码如图所示。
+
+.. image:: ../images/04/4.5-webgpio-2.png
+
+具体效果如图所示。按下“A”键，可以切换13号LED的开关状态；按下“B”键，读取“A0”口的数值。
+
+.. image:: ../images/04/4.5-webgpio-3.jpg

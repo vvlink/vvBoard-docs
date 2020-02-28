@@ -19,9 +19,13 @@ LNMP的安装
 
 1、虚谷号切换成无线模式，通过浏览器访问jupyter。
 
+.. image:: ../images/08/8.6-lnmp01.png
 
 2、在jupyter端新建“终端”
 
+.. image:: ../images/08/8.6-lnmp02.png
+
+.. image:: ../images/08/8.6-lnmp03.png
 
 3、安装Nginx
 
@@ -75,16 +79,16 @@ LNMP的安装
 
 打开浏览器，输入虚谷号IP地址，就会出现经典的Nginx页面。
 
-
+.. image:: ../images/08/8.6-lnmp04.png
 
 
 4）Nginx操作命令补充：卸载命令
 
 ::
 
-    root@192:~# sudo apt --purge remove nginx
-    root@192:~# sudo apt --purge remove nginx-common
-    root@192:~# sudo apt --purge remove nginx-core
+    root@localhost:~# sudo apt --purge remove nginx
+    root@localhost:~# sudo apt --purge remove nginx-common
+    root@localhost:~# sudo apt --purge remove nginx-core
 
 
 4、安装MariaDB
@@ -311,6 +315,10 @@ LNMP的安装
     注意要把开头的";"去掉
     '''
     cgi.fix_pathinfo=0  #修改后按指令提示保存、退出
+    
+.. image:: ../images/08/8.6-lnmp05.png
+
+.. image:: ../images/08/8.6-lnmp06.png
 
 4）配置Nginx文件
 
@@ -318,13 +326,42 @@ LNMP的安装
 
     root@localhost:~# sudo vim /etc/nginx/sites-available/default       #此处用到 vim 编辑器，便于后面截图显示，有高亮效果
  
+原文件内容：
+
+.. image:: ../images/08/8.6-lnmp07.png
+
+修改后内容：
+
+.. image:: ../images/08/8.6-lnmp08.png
+
+更改内容说明：
+
+::
+
+    '''
+    找到
+    # Add index.php to the list of you are using PHP
+    index index.html index.htm index.nginx-debian.html;
+    在列表中添加 index.php
+    '''
+    # Add index.php to the list of you are using PHP
+    index index.php index.html index.htm index.nginx-debian.html;
+    '''
+    修改 PHP scripts to FastCGI server 这部分的内容
+    '''
+    location ~ \.php$ {
+    include fastcgi_params;
+    fastcgi_pass unix:/run/php/php.3-fpm.sock;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
  
 vim保存及退出命令  
 ::
 
     先按ESC键，从编辑模式退出，回到命令模式。
 
-    再用英文半角直接输入:wq，回车即成功保存且退出了配置文件。
+    再用英文半角直接输入":wq"，回车即成功保存且退出了配置文件。
+    
 
 6、测试
 
@@ -353,3 +390,15 @@ vim保存及退出命令
 -----------------------------
 WordPress的安装
 -----------------------------
+
+1、下载并解压
+
+2、在MySQL中创建数据库
+
+3、安装WordPress
+
+4、WordPress配置
+
+1）配置上传权限问题
+
+2）配置上传图片大小

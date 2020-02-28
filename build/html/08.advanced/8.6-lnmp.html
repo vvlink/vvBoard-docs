@@ -188,7 +188,10 @@
 <div class="section" id="lnmp">
 <h2>6.2. LNMP的安装<a class="headerlink" href="#lnmp" title="永久链接至标题">¶</a></h2>
 <p>1、虚谷号切换成无线模式，通过浏览器访问jupyter。</p>
+<img alt="../_images/8.6-lnmp01.png" src="../_images/8.6-lnmp01.png" />
 <p>2、在jupyter端新建“终端”</p>
+<img alt="../_images/8.6-lnmp02.png" src="../_images/8.6-lnmp02.png" />
+<img alt="../_images/8.6-lnmp03.png" src="../_images/8.6-lnmp03.png" />
 <p>3、安装Nginx</p>
 <p>1）安装命令</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt install nginx</span>
@@ -228,10 +231,11 @@
 </div>
 <p>3）验证Nginx服务器</p>
 <p>打开浏览器，输入虚谷号IP地址，就会出现经典的Nginx页面。</p>
+<img alt="../_images/8.6-lnmp04.png" src="../_images/8.6-lnmp04.png" />
 <p>4）Nginx操作命令补充：卸载命令</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx</span>
-<span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx-common</span>
-<span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx-core</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx</span>
+<span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx-common</span>
+<span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt --purge remove nginx-core</span>
 </pre></div>
 </div>
 <p>4、安装MariaDB</p>
@@ -430,14 +434,39 @@ root@localhost:~#
 <span class="n">cgi</span><span class="o">.</span><span class="n">fix_pathinfo</span><span class="o">=</span><span class="mi">0</span>  <span class="c1">#修改后按指令提示保存、退出</span>
 </pre></div>
 </div>
+<img alt="../_images/8.6-lnmp05.png" src="../_images/8.6-lnmp05.png" />
+<img alt="../_images/8.6-lnmp06.png" src="../_images/8.6-lnmp06.png" />
 <p>4）配置Nginx文件</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo vim /etc/nginx/sites-available/default       #此处用到 vim 编辑器，便于后面截图显示，有高亮效果</span>
+</pre></div>
+</div>
+<p>原文件内容：</p>
+<img alt="../_images/8.6-lnmp07.png" src="../_images/8.6-lnmp07.png" />
+<p>修改后内容：</p>
+<img alt="../_images/8.6-lnmp08.png" src="../_images/8.6-lnmp08.png" />
+<p>更改内容说明：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;&#39;&#39;
+找到
+# Add index.php to the list of you are using PHP
+index index.html index.htm index.nginx-debian.html;
+在列表中添加 index.php
+&#39;&#39;&#39;
+# Add index.php to the list of you are using PHP
+index index.php index.html index.htm index.nginx-debian.html;
+&#39;&#39;&#39;
+修改 PHP scripts to FastCGI server 这部分的内容
+&#39;&#39;&#39;
+location ~ \.php$ {
+include fastcgi_params;
+fastcgi_pass unix:/run/php/php.3-fpm.sock;
+fastcgi_index index.php;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 </pre></div>
 </div>
 <p>vim保存及退出命令</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>先按ESC键，从编辑模式退出，回到命令模式。
 
-再用英文半角直接输入:wq，回车即成功保存且退出了配置文件。
+再用英文半角直接输入&quot;:wq&quot;，回车即成功保存且退出了配置文件。
 </pre></div>
 </div>
 <p>6、测试</p>
@@ -460,6 +489,12 @@ root@localhost:~#
 </div>
 <div class="section" id="wordpress">
 <h2>6.3. WordPress的安装<a class="headerlink" href="#wordpress" title="永久链接至标题">¶</a></h2>
+<p>1、下载并解压</p>
+<p>2、在MySQL中创建数据库</p>
+<p>3、安装WordPress</p>
+<p>4、WordPress配置</p>
+<p>1）配置上传权限问题</p>
+<p>2）配置上传图片大小</p>
 </div>
 </div>
 

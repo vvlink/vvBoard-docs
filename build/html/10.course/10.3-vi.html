@@ -103,8 +103,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">3.2. 准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">3.3. 课程目录</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">3.4. 涉及内容</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">3.5. 课程示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">3.6. 其他说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.5. 课程示例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">准备工作：导入库</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">基本函数：框出人脸</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">程序主体</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">3.6. 其他说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="10.4-ml.html">4. “神经网络和机器学习”系列课程</a></li>
@@ -217,7 +222,8 @@
 <div class="section" id="id5">
 <h2>3.5. 课程示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>以“摄像头人脸检测”为例。</p>
-<p>1）准备工作：导入库</p>
+<div class="section" id="id6">
+<h3>准备工作：导入库<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="k">import</span> <span class="n">display</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -225,7 +231,9 @@
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
 </div>
-<p>2）基本函数：框出人脸</p>
+</div>
+<div class="section" id="id7">
+<h3>基本函数：框出人脸<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#直接调用系统里面的haarcascade_frontalface_default.xml</span>
 <span class="k">def</span> <span class="nf">faceDetect</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">face_cascade</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">CascadeClassifier</span><span class="p">(</span><span class="s1">&#39;/usr/local/share/OpenCV/haarcascades/haarcascade_frontalface_default.xml&#39;</span><span class="p">)):</span>
     <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
@@ -239,7 +247,10 @@
     <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">faces</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>3）程序主体：摄像头拍摄照片，标注好人脸后显示在网页上。</p>
+</div>
+<div class="section" id="id8">
+<h3>程序主体<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>摄像头拍摄照片，标注好人脸后显示在网页上。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
@@ -256,8 +267,9 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2>3.6. 其他说明<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="id9">
+<h2>3.6. 其他说明<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>本课程已经整合在虚谷号内置课程中。</p>
 </div>
 </div>
