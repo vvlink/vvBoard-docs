@@ -283,4 +283,4 @@ App invenor代码
 
 具体效果如图所示。按下“A”键，可以切换13号LED的开关状态；按下“B”键，读取“A0”口的数值。
 
-.. image:: ../images/04/4.5-webgpio-3.png
+.. image:: ../images/04/4.5-webgpio-3.jpg
