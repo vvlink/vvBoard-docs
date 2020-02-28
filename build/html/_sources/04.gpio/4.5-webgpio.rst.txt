@@ -165,6 +165,7 @@ WebGPIO的编程范例
     - pin:对应的引脚 A0-A5，D0-D13 
     - value:对应的数值
     - type:控制的类型可以是1，2，3，分别代表“digital”、“analog”、“servo”
+
 当设置D13号引脚的电平为1，该引脚对应的LED就会亮起。
 
 ::

@@ -186,17 +186,21 @@
 <h2>7.1. Blynk简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>相对于其他MQTT的服务器来说，Blynk的优势在于连接快速，且提供了免费的移动平台上的配套应用，包括iOS和Android。</p>
 <p>Blynk项目分为三个部分：</p>
-<p>1.Blynk应用（App）。</p>
+<p>1.Blynk应用（App）</p>
 <p>Blynk的App是具有易于使用的拖放系统，可为IoT设置构建自定义控件。工作流程非常快速：启动新项目时，系统会提示您从广泛的列表中选择开发板，以及连接方式。然后，该应用通过电子邮件发送授权令牌，以通过Blynk服务器连接到您的设备。</p>
 <img alt="../_images/8.7-blynk.jpg" src="../_images/8.7-blynk.jpg" />
 <p>应用中的提供了很多小部件。每个小部件都有一个编辑菜单，可让您更改名称和颜色。然后，您选择要影响的引脚（无论是板上的引脚还是Blynk的虚拟引脚之一）以及要发送的值范围。对于图形或文本框之类的输出显示，您还可以选择更新频率，从而节省宝贵的带宽。</p>
 <p>Blynk还具有将指令分配给“虚拟”引脚的功能，这是用户配置的应用程序与硬件之间的连接。因此，应用程序中的单个按钮可用于触发设备上的许多不同事件。</p>
-<p>2.Blynk云服务器。</p>
-<p>创建了用于控制设备的应用后，您可以有两种方法与之通信。第一选择是用Blynk云服务器。这个服务器快速，响应迅速且免费使用。连接到Wi-Fi设备就像将生成的授权代码复制到Arduino草图中并提供Wi-Fi详细信息一样容易。</p>
+<p>2.Blynk服务器</p>
+<p>创建了用于控制设备的应用后，您可以有两种方法与之通信。</p>
+<p>第一选择是用Blynk云服务器。这个服务器快速，响应迅速且免费使用。连接到Wi-Fi设备就像将生成的授权代码复制到Arduino草图中并提供Wi-Fi详细信息一样容易。</p>
 <p>第二个选择是自己部署Blynk服务器。 Blynk提供了一个基于Netty的开源Java服务器，可以从您的计算机甚至Raspberry Pi、虚谷号(vvboard)、拿铁熊猫(LattePanda)之类的迷你电脑来运行该服务器。在功能和安全性方面，这为某些用户带来了各种好处。</p>
-<p>3.Blynk库。</p>
+<p>这里我们当然选择第二种方式。</p>
+<p>3.Blynk库</p>
 <p>Blynk提供了完善的Blynk库。该库与大量开发板一起使用，以允许该应用程序与您的硬件之间进行通信。</p>
-<p>Blynk官方网址：<a class="reference external" href="https://blynk.io/">https://blynk.io/</a></p>
+<ul class="simple">
+<li><p>Blynk官方网址：<a class="reference external" href="https://blynk.io/">https://blynk.io/</a></p></li>
+</ul>
 </div>
 <div class="section" id="id2">
 <h2>7.2. 在手机上部署Blynk客户端<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -204,6 +208,7 @@
 <ul class="simple">
 <li><p>Android下载地址：<a class="reference external" href="https://m.baidu.com/ala/c/m.eoemarket.com/apps/show/id/830895">https://m.baidu.com/ala/c/m.eoemarket.com/apps/show/id/830895</a></p></li>
 </ul>
+<p>安装完成后无需注册。（针对自己部署Blynk服务器）</p>
 </div>
 <div class="section" id="id3">
 <h2>7.3. 在虚谷号上部署Blynk服务器<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
@@ -212,8 +217,9 @@
 <li><p>查看虚谷号java版本。打开桌面LX终端，输入java -version，显示8.0版本。</p></li>
 <li><p>下载Blynk服务器jar文件</p></li>
 </ol>
-<p>1)在lx终端内输入 wget “<a class="reference external" href="https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar">https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar</a>”，但是速度奇慢，传输容易断不续传，不建议。</p>
+<p>1)在lx终端内输入 wget “<a class="reference external" href="https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar">https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar</a>”，但是速度慢，传输容易断不续传，不建议。</p>
 <p>2）直接浏览器下载https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar</p>
+<p><strong>注：</strong> 教育网下载速度较快</p>
 <p>3）为了方便，将下载的文件移动到/home/scope/下。</p>
 <p><strong>注：</strong> 可以在自己的电脑下载，然后通过jupyter上传。</p>
 <ol class="arabic simple" start="3">
@@ -225,7 +231,7 @@ java -jar /home/scope/server-0.41.12-java8.jar -dataFolder /home/scope/Blynk
 看到Blynk Server successfully started,那就恭喜你成功了，第一次安装还会提示用户名和密码，忘记截图了，这里写下用户名为admin&#64;blynk.cc，密码为admin。</p>
 <img alt="../_images/8.7-4.png" src="../_images/8.7-4.png" />
 <ol class="arabic simple" start="5">
-<li><p>打开手机App Blynk，选择custom，输入虚谷号的IP地址（我的为192.168.0.107），端口号不要修改。</p></li>
+<li><p>打开手机App Blynk，选择custom，输入虚谷号的IP地址（我的为192.168.0.107），端口号不需要修改（9443）。</p></li>
 </ol>
 <img alt="../_images/8.7-5.png" src="../_images/8.7-5.png" />
 <ol class="arabic simple" start="6">

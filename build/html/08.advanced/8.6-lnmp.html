@@ -235,12 +235,228 @@
 </pre></div>
 </div>
 <p>4、安装MariaDB</p>
-<p>1）命令介绍</p>
+<p>1）安装MariaDB命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt-get install mariadb-server</span>
+</pre></div>
+</div>
 <p>2）查看版本</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># mysqld --version</span>
+<span class="n">mysqld</span>  <span class="n">Ver</span> <span class="mf">10.0</span><span class="o">.</span><span class="mi">38</span><span class="o">-</span><span class="n">MariaDB</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="o">.</span><span class="mf">16.04</span><span class="o">.</span><span class="mi">1</span> <span class="k">for</span> <span class="n">debian</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span> <span class="n">on</span> <span class="n">aarch64</span> <span class="p">(</span><span class="n">Ubuntu</span> <span class="mf">16.04</span><span class="p">)</span>
+<span class="mi">200227</span> <span class="mi">11</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">57</span> <span class="p">[</span><span class="n">Note</span><span class="p">]</span> <span class="n">mysqld</span> <span class="p">(</span><span class="n">mysqld</span> <span class="mf">10.0</span><span class="o">.</span><span class="mi">38</span><span class="o">-</span><span class="n">MariaDB</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="o">.</span><span class="mf">16.04</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span> <span class="n">starting</span> <span class="k">as</span> <span class="n">process</span> <span class="mi">3132</span> <span class="o">...</span>
+</pre></div>
+</div>
 <p>3）安全配置</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@localhost:~# sudo mysql_secure_installation
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we&#39;ll need the current
+password for the root user.  If you&#39;ve just installed MariaDB, and
+you haven&#39;t set the root password yet, the password will be blank,
+so you should just press enter here.
+
+Enter current password for root (enter for none): #回车
+OK, successfully used password, moving on...
+
+Setting the root password ensures that nobody can log into the MariaDB
+root user without the proper authorisation.
+
+Set root password? [Y/n] y #输入y，进入密码设置
+New password:   #设置root用户密码，按回车确定
+Re-enter new password:  #重复输入设置的root用户密码，按回车确定
+Password updated successfully!
+Reloading privilege tables..
+ ... Success!
+
+
+By default, a MariaDB installation has an anonymous user, allowing anyone
+to log into MariaDB without having to have a user account created for
+them.  This is intended only for testing, and to make the installation
+go a bit smoother.  You should remove them before moving into a
+production environment.
+
+Remove anonymous users? [Y/n] y    #是否删除匿名用户
+ ... Success!
+
+Normally, root should only be allowed to connect from &#39;localhost&#39;.  This
+ensures that someone cannot guess at the root password from the network.
+
+Disallow root login remotely? [Y/n] n   #是否禁止root用户远程登录
+ ... skipping.
+
+By default, MariaDB comes with a database named &#39;test&#39; that anyone can
+access.  This is also intended only for testing, and should be removed
+before moving into a production environment.
+
+Remove test database and access to it? [Y/n] y  #是否删除test数据库
+ - Dropping test database...
+ ... Success!
+ - Removing privileges on test database...
+ ... Success!
+
+Reloading the privilege tables will ensure that all changes made so far
+will take effect immediately.
+
+Reload privilege tables now? [Y/n] y    #是否重新加载权限表
+ ... Success!
+
+Cleaning up...
+
+All done!  If you&#39;ve completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks for using MariaDB!
+root@localhost:~#
+</pre></div>
+</div>
 <p>4）设置MySQL</p>
+<p>（1）登录MySQL</p>
+<p>方法一：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo mysql -u root #用用户“root”登录MySQL</span>
+<span class="n">Welcome</span> <span class="n">to</span> <span class="n">the</span> <span class="n">MariaDB</span> <span class="n">monitor</span><span class="o">.</span>  <span class="n">Commands</span> <span class="n">end</span> <span class="k">with</span> <span class="p">;</span> <span class="ow">or</span> \<span class="n">g</span><span class="o">.</span>
+<span class="n">Your</span> <span class="n">MariaDB</span> <span class="n">connection</span> <span class="nb">id</span> <span class="ow">is</span> <span class="mi">49</span>
+<span class="n">Server</span> <span class="n">version</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mi">38</span><span class="o">-</span><span class="n">MariaDB</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="o">.</span><span class="mf">16.04</span><span class="o">.</span><span class="mi">1</span> <span class="n">Ubuntu</span> <span class="mf">16.04</span>
+
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="n">Oracle</span><span class="p">,</span> <span class="n">MariaDB</span> <span class="n">Corporation</span> <span class="n">Ab</span> <span class="ow">and</span> <span class="n">others</span><span class="o">.</span>
+
+<span class="n">Type</span> <span class="s1">&#39;help;&#39;</span> <span class="ow">or</span> <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> <span class="n">help</span><span class="o">.</span> <span class="n">Type</span> <span class="s1">&#39;\c&#39;</span> <span class="n">to</span> <span class="n">clear</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">input</span> <span class="n">statement</span><span class="o">.</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>方法二：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo mysql -u root -p         #用用户“root”和密码登录，“-u”后跟用户名，“-p”后跟用户密码</span>
+<span class="n">Enter</span> <span class="n">password</span><span class="p">:</span>             <span class="c1">#输入root用户的密码，按回车确认</span>
+<span class="n">Welcome</span> <span class="n">to</span> <span class="n">the</span> <span class="n">MariaDB</span> <span class="n">monitor</span><span class="o">.</span>  <span class="n">Commands</span> <span class="n">end</span> <span class="k">with</span> <span class="p">;</span> <span class="ow">or</span> \<span class="n">g</span><span class="o">.</span>
+<span class="n">Your</span> <span class="n">MariaDB</span> <span class="n">connection</span> <span class="nb">id</span> <span class="ow">is</span> <span class="mi">50</span>
+<span class="n">Server</span> <span class="n">version</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mi">38</span><span class="o">-</span><span class="n">MariaDB</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="o">.</span><span class="mf">16.04</span><span class="o">.</span><span class="mi">1</span> <span class="n">Ubuntu</span> <span class="mf">16.04</span>
+
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="n">Oracle</span><span class="p">,</span> <span class="n">MariaDB</span> <span class="n">Corporation</span> <span class="n">Ab</span> <span class="ow">and</span> <span class="n">others</span><span class="o">.</span>
+
+<span class="n">Type</span> <span class="s1">&#39;help;&#39;</span> <span class="ow">or</span> <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> <span class="n">help</span><span class="o">.</span> <span class="n">Type</span> <span class="s1">&#39;\c&#39;</span> <span class="n">to</span> <span class="n">clear</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">input</span> <span class="n">statement</span><span class="o">.</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>（2）设置MySQL</p>
+<p>查看 mysql 数据库:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="n">select</span> <span class="n">user</span><span class="p">,</span><span class="n">authentication_string</span><span class="p">,</span><span class="n">plugin</span> <span class="kn">from</span> <span class="nn">mysql.user</span><span class="p">;</span><span class="c1">#查看 mysql 数据库下的 user、authentication_string、plugin</span>
+<span class="o">+------+-----------------------+-------------+</span>
+<span class="o">|</span> <span class="n">user</span> <span class="o">|</span> <span class="n">authentication_string</span> <span class="o">|</span> <span class="n">plugin</span>      <span class="o">|</span>
+<span class="o">+------+-----------------------+-------------+</span>
+<span class="o">|</span> <span class="n">root</span> <span class="o">|</span>                       <span class="o">|</span> <span class="n">unix_socket</span> <span class="o">|</span>
+<span class="o">+------+-----------------------+-------------+</span>
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>设置mysql数据库</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="n">select</span> <span class="n">user</span><span class="p">,</span><span class="n">authentication_string</span><span class="p">,</span><span class="n">plugin</span> <span class="kn">from</span> <span class="nn">mysql.user</span><span class="p">;</span> <span class="c1">#在mysql用户表中查询：user,authentication_string,plugin</span>
+<span class="o">+------+-----------------------+-----------------------+</span>
+<span class="o">|</span> <span class="n">user</span> <span class="o">|</span> <span class="n">authentication_string</span> <span class="o">|</span> <span class="n">plugin</span>                <span class="o">|</span>
+<span class="o">+------+-----------------------+-----------------------+</span>
+<span class="o">|</span> <span class="n">root</span> <span class="o">|</span>                       <span class="o">|</span> <span class="n">mysql_native_password</span> <span class="o">|</span>
+<span class="o">+------+-----------------------+-----------------------+</span>
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="n">show</span> <span class="n">databases</span><span class="p">;</span>   <span class="c1">#列出现有的数据库</span>
+<span class="o">+--------------------+</span>
+<span class="o">|</span> <span class="n">Database</span>           <span class="o">|</span>
+<span class="o">+--------------------+</span>
+<span class="o">|</span> <span class="n">information_schema</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">mysql</span>              <span class="o">|</span>
+<span class="o">|</span> <span class="n">performance_schema</span> <span class="o">|</span>
+<span class="o">+--------------------+</span>
+<span class="mi">3</span> <span class="n">rows</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="n">use</span> <span class="n">mysql</span><span class="p">;</span>     <span class="c1">#使用数据库mysql</span>
+<span class="n">Reading</span> <span class="n">table</span> <span class="n">information</span> <span class="k">for</span> <span class="n">completion</span> <span class="n">of</span> <span class="n">table</span> <span class="ow">and</span> <span class="n">column</span> <span class="n">names</span>
+<span class="n">You</span> <span class="n">can</span> <span class="n">turn</span> <span class="n">off</span> <span class="n">this</span> <span class="n">feature</span> <span class="n">to</span> <span class="n">get</span> <span class="n">a</span> <span class="n">quicker</span> <span class="n">startup</span> <span class="k">with</span> <span class="o">-</span><span class="n">A</span>
+
+<span class="n">Database</span> <span class="n">changed</span>
+
+<span class="n">MariaDB</span> <span class="p">[</span><span class="n">mysql</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">update</span> <span class="n">user</span> <span class="nb">set</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;mysql_native_password&quot;</span> <span class="n">where</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;root&quot;</span><span class="p">;</span><span class="c1"># 设置root用户的plugin 为 mysql_native_password，便于后续使用 root 来远程登录 WordPress 数据库</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+<span class="n">Rows</span> <span class="n">matched</span><span class="p">:</span> <span class="mi">1</span>  <span class="n">Changed</span><span class="p">:</span> <span class="mi">0</span>  <span class="n">Warnings</span><span class="p">:</span> <span class="mi">0</span>
+
+<span class="n">MariaDB</span> <span class="p">[</span><span class="n">mysql</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">flush</span> <span class="n">privileges</span><span class="p">;</span>  <span class="c1">#刷新权限</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+
+<span class="n">MariaDB</span> <span class="p">[</span><span class="n">mysql</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">select</span> <span class="n">user</span><span class="p">,</span><span class="n">plugin</span> <span class="kn">from</span> <span class="nn">mysql.user</span><span class="p">;</span>    <span class="c1">#在mysql数据的user表中查询：user,plugin</span>
+<span class="o">+------+-----------------------+</span>
+<span class="o">|</span> <span class="n">user</span> <span class="o">|</span> <span class="n">plugin</span>                <span class="o">|</span>
+<span class="o">+------+-----------------------+</span>
+<span class="o">|</span> <span class="n">root</span> <span class="o">|</span> <span class="n">mysql_native_password</span> <span class="o">|</span>
+<span class="o">+------+-----------------------+</span>
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+
+<span class="n">MariaDB</span> <span class="p">[</span><span class="n">mysql</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">exit</span>   <span class="c1">#退出</span>
+<span class="n">Bye</span>
+<span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+</pre></div>
+</div>
 <p>5、安装 PHP</p>
+<p>1）安装命令：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt install php-fpm php-mysql      #安装php-fpm、php-mysql,即能直接装好php,注意到版本是 7.0</span>
+</pre></div>
+</div>
+<p>2)查询版本</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># php --version         #php版本查询命令</span>
+<span class="n">PHP</span> <span class="mf">7.0</span><span class="o">.</span><span class="mi">33</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="o">.</span><span class="mf">16.04</span><span class="o">.</span><span class="mi">12</span> <span class="p">(</span><span class="n">cli</span><span class="p">)</span> <span class="p">(</span> <span class="n">NTS</span> <span class="p">)</span>
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">1997</span><span class="o">-</span><span class="mi">2017</span> <span class="n">The</span> <span class="n">PHP</span> <span class="n">Group</span>
+<span class="n">Zend</span> <span class="n">Engine</span> <span class="n">v3</span><span class="o">.</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">1998</span><span class="o">-</span><span class="mi">2017</span> <span class="n">Zend</span> <span class="n">Technologies</span>
+    <span class="k">with</span> <span class="n">Zend</span> <span class="n">OPcache</span> <span class="n">v7</span><span class="o">.</span><span class="mf">0.33</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="o">.</span><span class="mf">16.04</span><span class="o">.</span><span class="mi">12</span><span class="p">,</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">1999</span><span class="o">-</span><span class="mi">2017</span><span class="p">,</span> <span class="n">by</span> <span class="n">Zend</span> <span class="n">Technologies</span>
+</pre></div>
+</div>
+<p>3）配置php文件</p>
+<p>（1）安装nano库</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt install nano</span>
+</pre></div>
+</div>
+<p>(2)配置php文件</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo nano /etc/php/7.0/fpm/php.ini</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">搜索 cgi.fix_pathinfo，可改可不改</span>
+<span class="sd">原内容为：</span>
+<span class="sd">;cgi.fix_pathinfo=1</span>
+<span class="sd">改为：</span>
+<span class="sd">cgi.fix_pathinfo=0</span>
+<span class="sd">原来为1，允许网站其他用户上传图片；改为0，禁止。</span>
+<span class="sd">注意要把开头的&quot;;&quot;去掉</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">cgi</span><span class="o">.</span><span class="n">fix_pathinfo</span><span class="o">=</span><span class="mi">0</span>  <span class="c1">#修改后按指令提示保存、退出</span>
+</pre></div>
+</div>
+<p>4）配置Nginx文件</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo vim /etc/nginx/sites-available/default       #此处用到 vim 编辑器，便于后面截图显示，有高亮效果</span>
+</pre></div>
+</div>
+<p>vim保存及退出命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>先按ESC键，从编辑模式退出，回到命令模式。
+
+再用英文半角直接输入:wq，回车即成功保存且退出了配置文件。
+</pre></div>
+</div>
 <p>6、测试</p>
+<p>1）对Nginx配置文件进行语法检查</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo nginx -t</span>
+<span class="n">nginx</span><span class="p">:</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span> <span class="n">syntax</span> <span class="ow">is</span> <span class="n">ok</span>
+<span class="n">nginx</span><span class="p">:</span> <span class="n">configuration</span> <span class="n">file</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span> <span class="n">test</span> <span class="ow">is</span> <span class="n">successful</span>
+<span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+</pre></div>
+</div>
+<p>2)重新加载命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo systemctl reload nginx</span>
+</pre></div>
+</div>
+<p>3）修改权限</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo chmod 755 -R /var/www/</span>
+<span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo chown -R scope /var/www/*</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="wordpress">
 <h2>6.3. WordPress的安装<a class="headerlink" href="#wordpress" title="永久链接至标题">¶</a></h2>

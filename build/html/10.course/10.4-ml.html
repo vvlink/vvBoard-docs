@@ -103,8 +103,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3">4.2. 准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">4.3. 课程目录</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">4.4. 主要内容</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">4.5. 课程示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">4.6. 其他资源</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.5. 课程示例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">环境搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">数据准备</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">建立模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">训练模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">保存模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">载入模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">应用模型</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">4.6. 其他资源</a></li>
 </ul>
 </li>
 </ul>
@@ -213,13 +222,16 @@
 <p>本案例利用卷积神经网络技术来做图像聚类。CIFAR-10是机器学习领域中一个用于图像识别的常见基础数据集。数据集共有10个类别，分别为airplane（0）、automodile（1）、bird（2）、cat（3）、deer（4）、dog（5）、frog（6）、horse（7）、ship（8）和truck（9）。</p>
 <p>案例选择了keras框架，需要先安装keras和tensorflow。虚谷号教育版已经预装必要的库，可以直接使用。因为这个数据集很大，在虚谷号上训练比较慢，建议在电脑上训练。</p>
 <p>本案例已经提供了训练好的模型，放在model文件夹中，文件名称为：4-model-vv.h5。如果想直接测试模型，请跳到“应用模型”环节，拍摄或者上传图片开始识别。</p>
-<p>1）环境搭建
-下面是安装命令：</p>
+<div class="section" id="id7">
+<h3>环境搭建<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>下面是安装命令：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">keras</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">simple</span> <span class="n">tensorflow</span>
 </pre></div>
 </div>
-<p>2)数据准备</p>
+</div>
+<div class="section" id="id8">
+<h3>数据准备<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>CIFAR-10数据集由10个类的60000个 32 * 32 彩色图像（3个通道）组成，每个类有6000个图像，有50000个训练图像和10000个测试图像。</p>
 <img alt="../_images/10.4-ml03.png" src="../_images/10.4-ml03.png" />
 <p>开始导入数据集吧。第一次使用这个数据集，计算机要先通过网络下载，文件较大（约160M），需要等待一定的时间。建议还是另外下载，放在“~/.keras/datasets/”中。</p>
@@ -231,7 +243,9 @@
 </div>
 <p>课程中提供了各种对数据的观察方式。</p>
 <img alt="../_images/10.4-ml04.png" src="../_images/10.4-ml04.png" />
-<p>3)建立模型</p>
+</div>
+<div class="section" id="id9">
+<h3>建立模型<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>卷积神经网络的结构一般是将输入的图像进行多次卷积、池化，在多次卷积、池化的的过程中，图像的图像的尺寸会越来越小、特征会越来越明显，最后输入全连接层，完成预测或者分类任务。因此，最后的全连接层的神经元数量要和类别的数量相等。</p>
 <p>在keras中可以通过Conv2D和MaxPool方便的添加卷积层和最大层对图像进行卷积和池化，通过以下代码建立卷积神经网络模型并进行编译。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
@@ -252,17 +266,23 @@
 </div>
 <p>给神经网络模型画图。</p>
 <img alt="../_images/10.4-ml05.png" src="../_images/10.4-ml05.png" />
-<p>4）训练模型</p>
+</div>
+<div class="section" id="id10">
+<h3>训练模型<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <dl class="simple">
 <dt>::</dt><dd><p>model.fit(x=train_image,y=train_label,batch_size=100,epochs=20,validation_data=(test_image,test_label))</p>
 </dd>
 </dl>
-<p>5）保存模型</p>
+</div>
+<div class="section" id="id11">
+<h3>保存模型<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>训练出来的模型，可以保存。下次使用的时候载入，还可以继续训练。一般保存为h5格式，需要先安装h5py。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;./model/4-model-vv.h5&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>6)载入模型</p>
+</div>
+<div class="section" id="id12">
+<h3>载入模型<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <p>用load_model载入训练好的模型文件，就可以直接用来识别图片了。如果是新版本Keras保存的模型文件，需要加上参数compile=False。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">load_model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;./model/4-model-vv.h5&#39;</span><span class="p">,</span><span class="nb">compile</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -270,7 +290,9 @@
 <span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">test_image</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>7)应用模型</p>
+</div>
+<div class="section" id="id13">
+<h3>应用模型<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>接下来，要应用这个训练好的模型来识别具体的图片。比如找一些青蛙的图片，保存为png格式，放在“img”文件夹中。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#定义动物的名称</span>
 <span class="n">things_class</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;airplane&quot;</span><span class="p">,</span><span class="s2">&quot;automodile&quot;</span><span class="p">,</span><span class="s2">&quot;bird&quot;</span><span class="p">,</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;deer&quot;</span><span class="p">,</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span><span class="s2">&quot;frog&quot;</span><span class="p">,</span><span class="s2">&quot;horse&quot;</span><span class="p">,</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span><span class="s2">&quot;truck&quot;</span><span class="p">]</span>
@@ -292,8 +314,9 @@
 </div>
 <img alt="../_images/10.4-ml06.png" src="../_images/10.4-ml06.png" />
 </div>
-<div class="section" id="id7">
-<h2>4.6. 其他资源<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="id14">
+<h2>4.6. 其他资源<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
 </div>
 </div>
 
