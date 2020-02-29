@@ -397,8 +397,7 @@ WordPress的安装
 ::
 
     root@192:~# cd /var/www/html/       # 进入到 /var/www/html/ 文件夹下
-    root@192:/var/www/html# wget https://raw.githubusercontent.com/vvlink/vvBoard-app/master/latest.zip        
-            #提示 wordpress官网下载有限制，官网地址：https://wordpress.org/latest.zip
+    root@192:/var/www/html# wget https://raw.githubusercontent.com/vvlink/vvBoard-app/master/latest.zip       #提示 wordpress官网下载有限制，官网地址：https://wordpress.org/latest.zip
     --2020-02-29 10:06:08--  https://raw.githubusercontent.com/vvlink/vvBoard-app/master/latest.zip
     正在解析主机 raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.108.133
     正在连接 raw.githubusercontent.com (raw.githubusercontent.com)|151.101.108.133|:443... 已连接。
