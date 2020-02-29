@@ -10,14 +10,15 @@
 
     9.1-yeelight
     9.2-facetest
-    9.3-UAV.rst
-    9.4-vrobot.rst
-    9.5-science.rst
-    9.6-info_experiment.rst
-    9.7-poem.rst
-    9.8-voice_wakeup.rst
-    9.9-m_learning.rst
-    9.10_color_robot.rst
+    9.3-UAV
+    9.4-vrobot
+    9.5-science
+    9.6-info_experiment
+    9.7-poem
+    9.8-voice_wakeup
+    9.9-m_learning
+    9.10_color_robot
+    9.11_auto
 
 
 
