@@ -450,6 +450,24 @@ WordPress的安装
 
 3、安装WordPress
 
+1）浏览器地址栏中，输入虚谷号IP地址
+
+2）输入创建的数据库名称 wordpress、用户名 root、密码为设置的 root 密码，其他两项不改
+
+3）根据提示在 /var/www/html 文件夹下创建 wp-config.php 文件，并考入页面的代码
+
+4）拷入代码并添加： define( 'FS_METHOD', 'direct');
+
+5）点击 Run the installation
+
+6）创建标题，注册用户名和密码
+
+7）安装完成
+
+8）使用注册的用户名和密码进行登录
+
+
+
 4、WordPress配置
 
 1）配置上传权限问题
