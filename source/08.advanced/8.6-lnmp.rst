@@ -293,6 +293,8 @@ LNMP的安装
 
 3）配置php文件
 
+关于PHP文件的配置，推荐远程桌面在虚谷号的命令提示中操作，谷歌浏览器和火狐浏览器的快捷命令“Ctrl+W”是关闭标签，与nano及vim命令操作有重复，需注意。
+
 （1）安装nano库
 
 ::
@@ -354,6 +356,7 @@ LNMP的安装
     fastcgi_pass unix:/run/php/php.3-fpm.sock;
     fastcgi_index index.php;
     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    
  
 vim保存及退出命令  
 ::
@@ -393,12 +396,128 @@ WordPress的安装
 
 1、下载并解压
 
+::
+
+    root@192:~# cd /var/www/html/       # 进入到 /var/www/html/ 文件夹下
+    root@192:/var/www/html# wget https://raw.githubusercontent.com/vvlink/vvBoard-app/master/latest.zip       #提示 wordpress官网下载有限制，官网地址：https://wordpress.org/latest.zip
+    --2020-02-29 10:06:08--  https://raw.githubusercontent.com/vvlink/vvBoard-app/master/latest.zip
+    正在解析主机 raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.108.133
+    正在连接 raw.githubusercontent.com (raw.githubusercontent.com)|151.101.108.133|:443... 已连接。
+    已发出 HTTP 请求，正在等待回应... 200 OK
+    长度： 13360988 (13M) [application/zip]
+    正在保存至: “latest.zip”
+
+    latest.zip        100%[============>]  12.74M  23.8KB/s    in 10m 44s
+
+    2020-02-29 10:16:54 (20.3 KB/s) - 已保存 “latest.zip” [13360988/13360988])
+
+    root@192:/var/www/html# sudo unzip -q latest.zip        # 解压
+    root@192:/var/www/html# sudo cp -r wordpress/* /var/www/html/       # 把解压后得到的 wordpress 文件夹内的所有文件，复制到 /var/www/html/ 文件夹下
+    root@192:/var/www/html# sudo rm -rf wordpress   # 删除 wrodpress 文件夹
+    root@192:/var/www/html# sudo rm -rf latest.zip  # 删除下载包
+    root@192:/var/www/html# 
+
+
 2、在MySQL中创建数据库
 
+::
+
+    root@192:/var/www/html# mysql -u root -p  #用root用户和密码登录数据库
+    Enter password:
+    Welcome to the MariaDB monitor.  Commands end with ; or \g.
+    Your MariaDB connection id is 7
+    Server version: 10.0.38-MariaDB-0ubuntu0.16.04.1 Ubuntu 16.04
+
+    Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+    MariaDB [(none)]> create database wordpress; #新建数据库文件“wordpress”
+    Query OK, 1 row affected (0.01 sec)
+
+    MariaDB [(none)]> show databases;   #刷新数据库
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | performance_schema |
+    | wordpress          |
+    +--------------------+
+    4 rows in set (0.03 sec)
+
+    MariaDB [(none)]> exit #退出
+    Bye
+    root@192:/var/www/html#
+
 3、安装WordPress
+
+1）浏览器地址栏中，输入虚谷号IP地址
+
+.. image:: ../images/08/8.6-lnmp09.png
+
+2）输入创建的数据库名称 wordpress、用户名 root、密码为设置的 root 密码，其他两项不改
+
+.. image:: ../images/08/8.6-lnmp10.png
+
+3）根据提示在 /var/www/html 文件夹下创建 wp-config.php 文件，并考入页面的代码
+
+.. image:: ../images/08/8.6-lnmp11.png
+
+.. image:: ../images/08/8.6-lnmp13.png
+
+.. image:: ../images/08/8.6-lnmp12.png
+
+4）拷入代码并添加： define( 'FS_METHOD', 'direct');
+
+.. image:: ../images/08/8.6-lnmp12.png
+
+5）点击 Run the installation
+
+.. image:: ../images/08/8.6-lnmp13.png
+
+6）创建标题，注册用户名和密码
+
+.. image:: ../images/08/8.6-lnmp14.png
+
+7）安装完成
+
+.. image:: ../images/08/8.6-lnmp15.png
+
+8）使用注册的用户名和密码进行登录
+
+.. image:: ../images/08/8.6-lnmp16.png
+
+.. image:: ../images/08/8.6-lnmp17.png
+
 
 4、WordPress配置
 
 1）配置上传权限问题
 
+::
+
+    root@192:~# sudo chown -R www-data:www-data /var/www/html/
+
 2）配置上传图片大小
+
+修改PHP配置文件：
+::
+
+    root@192:~# sudo nano /etc/php/7.0/fpm/php.ini
+    
+    '''
+    修改下面两项内容的参数
+    post_max_size = 8M
+    upload_max_filesize = 2M
+    '''
+    
+.. image:: ../images/08/8.6-lnmp18.png
+
+.. image:: ../images/08/8.6-lnmp19.png
+
+重启PHP：
+ 
+ ::
+ 
+    root@192:~# sudo systemctl restart php7.0-fpm.service
