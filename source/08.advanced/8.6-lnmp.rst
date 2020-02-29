@@ -493,4 +493,29 @@ WordPress的安装
 
 1）配置上传权限问题
 
+::
+
+    root@192:~# sudo chown -R www-data:www-data /var/www/html/
+
 2）配置上传图片大小
+
+修改PHP配置文件
+::
+
+    root@192:~# sudo nano /etc/php/7.0/fpm/php.ini
+    
+    '''
+    修改下面两项内容的参数
+    post_max_size = 8M
+    upload_max_filesize = 2M
+    '''
+    
+.. image:: ../images/08/8.6-lnmp18.png
+
+.. image:: ../images/08/8.6-lnmp19.png
+
+重启PHP
+ 
+ ::
+ 
+    root@192:~# sudo systemctl restart php7.0-fpm.service
