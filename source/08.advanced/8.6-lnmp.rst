@@ -293,6 +293,8 @@ LNMP的安装
 
 3）配置php文件
 
+关于PHP文件的配置，推荐远程桌面在虚谷号的命令提示中操作，谷歌浏览器和火狐浏览器的快捷命令“Ctrl+W”是关闭标签，与nano及vim命令操作有重复，需注意。
+
 （1）安装nano库
 
 ::
@@ -499,7 +501,7 @@ WordPress的安装
 
 2）配置上传图片大小
 
-修改PHP配置文件
+修改PHP配置文件：
 ::
 
     root@192:~# sudo nano /etc/php/7.0/fpm/php.ini
@@ -514,7 +516,7 @@ WordPress的安装
 
 .. image:: ../images/08/8.6-lnmp19.png
 
-重启PHP
+重启PHP：
  
  ::
  
