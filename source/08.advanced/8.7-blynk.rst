@@ -54,10 +54,9 @@ iOS系统用户可在应用商店下载，Android用户可以在网络上搜索�
 虚谷号部署Blynk本地服务器，其实也比较简单，可以通过jupyter的终端、ssh或者远程桌面来执行下面的命令。
 
 初次使用远程桌面连接，需要执行以下两行命令：
-
-sudo apt install xrdp
-
-sudo apt installtightvncserver
+::
+    sudo apt install xrdp
+    sudo apt installtightvncserver
 
 1. 查看虚谷号java版本。打开桌面LX终端，输入java -version，显示8.0版本。
 
@@ -136,34 +135,34 @@ Blynk案例
 接下来，运行以下python代码。
 
 其中的'YourAuthToken'需要替换为你的设备码（引号不可缺），可以从App点击设置图标，点击Copy all复制。
+::
+    from xugu import Pin 
 
-from xugu import Pin 
+    # Initialize Blynk
+    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
+    YourHost='192.168.1.100'
+    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
 
-# Initialize Blynk
-YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
-YourHost='192.168.1.100'
-blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
+    # Register Virtual Pins
+    @blynk.VIRTUAL_WRITE(1)
+    def my_write_handler(value):
+        print('Current V1 value: {}'.format(value))
+        if value[0]=='1':
+            print('on')
+            led.write_digital(1)
+        else :
+            print('off')
+            led.write_digital(0)
 
-# Register Virtual Pins
-@blynk.VIRTUAL_WRITE(1)
-def my_write_handler(value):
-    print('Current V1 value: {}'.format(value))
-    if value[0]=='1':
-        print('on')
-        led.write_digital(1)
-    else :
-        print('off')
-        led.write_digital(0)
+    @blynk.VIRTUAL_READ(2)
+    def my_read_handler():
+        # this widget will show some time in seconds..
+        blynk.virtual_write(2, int(time.time()))
 
-@blynk.VIRTUAL_READ(2)
-def my_read_handler():
-    # this widget will show some time in seconds..
-    blynk.virtual_write(2, int(time.time()))
+    led = Pin(13, Pin.OUT)
 
-led = Pin(13, Pin.OUT)
-    
-while True:
-    blynk.run()
+    while True:
+        blynk.run()
     
 试一试，点击手机右上方运行图标后，是不是可以成功用按钮控制LED灯了呢？
 
@@ -183,42 +182,42 @@ while True:
 .. image:: ../images/08/8.7-sig.png
 
 运行以下代码：
+::
+    import BlynkLib
+    import time
+    from xugu import Pin 
 
-import BlynkLib
-import time
-from xugu import Pin 
+    # Initialize Blynk
+    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
+    YourHost='192.168.1.100'
+    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
 
-# Initialize Blynk
-YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
-YourHost='192.168.1.100'
-blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
-
-# Register Virtual Pins
-@blynk.VIRTUAL_WRITE(1)
-def my_write_handler(value):
-    print('Current V1 value: {}'.format(value))
+    # Register Virtual Pins
+    @blynk.VIRTUAL_WRITE(1)
+    def my_write_handler(value):
+        print('Current V1 value: {}'.format(value))
 
 
-def BottomLabelInit(PIN):
-    blynk.set_property(PIN,'onLabel','在岗')
-    blynk.set_property(PIN,'offLabel','离开')
+    def BottomLabelInit(PIN):
+        blynk.set_property(PIN,'onLabel','在岗')
+        blynk.set_property(PIN,'offLabel','离开')
 
-    
-led = Pin(13, Pin.OUT)
-seat = Pin(4, Pin.IN)
-BottomLabelInit(1)
-flag = 0
 
-while 1:
-    blynk.run()
-    if flag != seat.read_digital():
-        flag = seat.read_digital()
-        blynk.virtual_write(1,1-flag)
-        if flag == 1:
-            print('离开')
-        else:
-            print('在岗')
-    time.sleep(1)
+    led = Pin(13, Pin.OUT)
+    seat = Pin(4, Pin.IN)
+    BottomLabelInit(1)
+    flag = 0
+
+    while 1:
+        blynk.run()
+        if flag != seat.read_digital():
+            flag = seat.read_digital()
+            blynk.virtual_write(1,1-flag)
+            if flag == 1:
+                print('离开')
+            else:
+                print('在岗')
+        time.sleep(1)
 
 如果你想要添加其他老师在岗信息，要怎么做呢？动手试一试吧！
 
