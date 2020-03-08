@@ -66,11 +66,11 @@ iOS系统用户可在应用商店下载，Android用户可以在网络上搜索�
 
 2）直接浏览器下载https://github.com/blynkkk/blynk-server/releases/download/v0.41.12/server-0.41.12-java8.jar
 
-**注：** 教育网下载速度较快
+**注：** 教育网下载速度较快，下载失败可以尝试更换网络连接，如用手机热点等。
 
 3）为了方便，将下载的文件移动到/home/scope/下。
 
-**注：** 可以在自己的电脑下载，然后通过jupyter上传。
+**注：** 可以在自己的电脑下载，然后通过jupyter上传，或者用U盘拷贝。
 
 
 3. 虚谷内置的SIoT使用8080端口和Blynk服务端口冲突，你可以选择关闭SIoT或者修改SIoT端口。
@@ -82,6 +82,8 @@ iOS系统用户可在应用商店下载，Android用户可以在网络上搜索�
 方法二：修改SIoT端口（推荐）
 
 远程桌面连接，打开/home/scope/software/SIoT_1_2_vvBoard/config.json修改"WebServerAdrr":"0.0.0.0:8088"。这样SIoT的服务端口可以改为8088。重启虚谷号生效。
+
+这种方法也有缺点，以后访问SIoT需要在浏览器出入IP:8088，以前通过快捷方式访问的方法失效了，而且在调用API时也要留心。
 
 .. image:: ../images/08/8.7-3-siot.png
 
@@ -99,11 +101,11 @@ java -jar /home/scope/server-0.41.12-java8.jar -dataFolder /home/scope/Blynk
 
 java -jar/home/scope/server-0.41.12-java8.jar -dataFolder /home/scope/Blynk start &
 
-其实关键就在于在命令行后面加了start & ，意思是保持后天运行。如果今后有其他命令需要开机自启动，也可以添加到这里。
+其实关键就在于在命令行后面加了start & ，意思是保持后台运行。如果今后有其他命令需要开机自启动，也可以添加到这里，这个文件是开机时执行的脚本文件。
 
 .. image:: ../images/08/8.7-rc.jpg
 
-具体操作如下：远程桌面连接下打开文件，默认是用vim打开的，按i进入编辑模式，用方向键移动到exit 0 的上一行，输入上面的文字，按ESC退出编辑模式，输入“:wq”保存退出。
+具体操作如下：远程桌面连接下打开文件，默认是用vim打开的，按i进入编辑模式，用方向键移动到exit 0 的上一行，输入上面的文字，按ESC退出编辑模式，输入“:wq”保存退出。如果遇到问题，可以上网搜索vim，可以找到很多帮助文档。
 
 重启生效。
 
@@ -120,7 +122,7 @@ java -jar/home/scope/server-0.41.12-java8.jar -dataFolder /home/scope/Blynk star
 ----------------------
 Blynk案例
 ----------------------
-案例一：控制LED灯
+**案例一：控制LED灯**
 
 首先，我们要新建一个项目。具体操作是：在手机App上登录后，点击New Project，输入项目名称后点击Create，就完成了。
 
@@ -130,9 +132,9 @@ Blynk案例
 
 .. image:: ../images/08/8.7-Bottom.png
 
-初次使用，我们需要安装Blynk库文件。使用pip3 install BlynkLib。
+初次使用，我们需要安装Blynk库文件。使用pip3 install blynk-library-python。
 
-接下来，运行以下python代码。
+接下来，运行以下python代码。你可以使用自带的Python运行，或者Python IDE运行，也可以使用Jupyter运行。
 
 其中的'YourAuthToken'需要替换为你的设备码（引号不可缺），可以从App点击设置图标，点击Copy all复制。
 ::
@@ -171,9 +173,11 @@ Blynk案例
 .. image:: ../images/08/8.7-system.png
 
 
-案例二：在岗检测仪
+**案例二：在岗检测仪**
 
-手机端和上一个案例一样，不需要改变，虚谷号需要连接硬件，一个红外数字避障传感器，如图所示。
+手机端和上一个案例一样，不需要改变。和上一个案例一样，首先，我们要新建一个项目。具体操作是：在手机App上登录后，点击New Project，输入项目名称后点击Create，就完成了。我们在App上点击右上角的“+”，点击Bottom，添加一个按钮。设置中将PIN设置为V1。MODE可以选择PUSH(按住有效)或者SWITCH（按后有效，推荐）。
+
+虚谷号需要连接硬件，一个红外数字避障传感器，如图所示。
 
 .. image:: ../images/08/8.7-pin.png
 
@@ -181,7 +185,7 @@ Blynk案例
 
 .. image:: ../images/08/8.7-sig.png
 
-运行以下代码：
+接下来，在虚谷号上编程，初次使用，我们需要安装Blynk库文件。使用pip3 install blynk-library-python。你可以使用自带的Python运行，或者Python IDE运行，也可以使用Jupyter运行。运行以下代码：
 ::
     import BlynkLib
     import time
@@ -223,7 +227,7 @@ Blynk案例
 
 .. image:: ../images/08/8.7-ext.png
 
-提示：手机端修改为如图所示，那么程序应该怎么改呢？尝试写在下面的程序框中吧！
+**提示：** 手机端修改为如图所示，那么程序应该怎么改呢？尝试写在下面的程序框中吧！
 
 ----------------
 对比SIoT和Blynk
