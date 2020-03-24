@@ -74,7 +74,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	import siot
 	import time
-	from xugu import Pin        # 从 xugu 库中导入 Pin类
+	from xugu import Pin        # 从 xugu 库中导入 Pin类，类似于树莓派的from RPI import GPIO
 
 	p = Pin("A0", Pin.ANALOG)   # 初始化 A0 引脚,设置为输入模式
 
@@ -102,11 +102,13 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 代码中的重点是以下三点：
 
  1、导入siot库
-   import siot
+   import siot  
+   类似于树莓派的from RPI import GPIO
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
    siot.getsubscribe(IOT_pubTopic) 
+   
  3、发送消息
    siot.publish(IOT_pubTopic, your-massage)
    
@@ -115,7 +117,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	import siot
 	import time
-	from xugu import Pin               # 从 xugu 库中导入 Pin类
+	from xugu import Pin               # 从 xugu 库中导入 Pin类, 类似于树莓派的from RPI import GPIO
 
 	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
 
@@ -186,7 +188,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	import siot
 	import time
-	from xugu import Pin          # 从 xugu 库中导入 Pin类
+	from xugu import Pin          # 从 xugu 库中导入 Pin类, 类似于树莓派的from RPI import GPIO
 
 	p = Pin("A0", Pin.ANALOG)     # 初始化 A0 引脚,设置为输入模式
 
@@ -215,10 +217,12 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
  1、导入siot库
    import siot
+   类似于树莓派的from RPI import GPIO
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
    siot.getsubscribe(IOT_pubTopic) 
+   
  3、发送消息
    siot.publish(IOT_pubTopic, your-massage)
 
@@ -227,7 +231,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	import siot
 	import time
-	from xugu import Pin                # 从 xugu 库中导入 Pin类
+	from xugu import Pin                # 从 xugu 库中导入 Pin类, 类似于树莓派的from RPI import GPIO
 	
 	p = Pin(13, Pin.OUT)                # 初始化 A0 引脚,设置为输入模式
 	
@@ -281,7 +285,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	import siot
 	import time
-	from xugu import Pin               # 从 xugu 库中导入 Pin类
+	from xugu import Pin               # 从 xugu 库中导入 Pin类, 类似于树莓派的from RPI import GPIO
 
 	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
 
