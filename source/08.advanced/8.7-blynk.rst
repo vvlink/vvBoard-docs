@@ -239,26 +239,26 @@ Blynk案例
 
 这里给出看到的一些较好的案例，难度比上面的案例高出不少。
 
-用树莓派搭建的校园气象信息检测系统 https://www.jianshu.com/p/3b7c1bb0f7b8（涉及Metabese）
+用树莓派搭建的校园气象信息检测系统 https://www.jianshu.com/p/3b7c1bb0f7b8 （涉及Metabese）
 
-怎样在智能手机上使用BlynkApp远程控制Arduino http://www.elecfans.com/d/1003098.html（USB模式连接，无需Wi-Fi）
+怎样在智能手机上使用BlynkApp远程控制Arduino http://www.elecfans.com/d/1003098.html （USB模式连接，无需Wi-Fi）
 
-【零知ESP8266】 Blynk手机APP教程：监控室内温湿度 http://www.51hei.com/bbs/forum.php?mod=viewthread&tid=162936 （扫码分享你的创意）
+【零知ESP8266】 Blynk手机APP教程：监控室内温湿度 http://www.51hei.com/bbs/forum.php?mod=viewthread&tid=162936  （扫码分享你的创意）
 
-【Blynk扩展库】Mind+中也能愉快地使用Blynk物联网平台了！https://mc.dfrobot.com.cn/thread-303476-1-1.html#lastpost（Mind+Blynk终端）
+【Blynk扩展库】Mind+中也能愉快地使用Blynk物联网平台了！https://mc.dfrobot.com.cn/thread-303476-1-1.html#lastpost （Mind+Blynk终端）
 
 ----------------
 winform连入blynk服务
 ----------------
 既然在App上可以控制和查看开发板，那么在PC端也应该可以。在blynk的官网可以找到关于blynk server的http的接口，这些接口可以使我们在没有App的情况下对开发板进行控制和读取数据。
 
-1、获取引脚值。向http://blynk-cloud.com/auth_token/get/pin发送get请求。其中blynk-clound.com可以替换为自己的服务器，请求的端口与硬件使用的端口一致，默认为8080端口。auth_token为自己project的token码。pin为要读取的引脚值。
+1、获取引脚值。向 http://blynk-cloud.com/auth_token/get/pin 发送get请求。其中 blynk-clound.com 可以替换为自己的服务器，请求的端口与硬件使用的端口一致，默认为8080端口。auth_token为自己project的token码。get意为获取。pin为要读取的引脚值。
 
-2、设置引脚值。向http://blynk-cloud.com/auth_token/update/pin?value=vlaue发送get请求。其中pin为引脚，value为修改的值。
+2、设置引脚值。向 http://blynk-cloud.com/auth_token/update/pin?value=vlaue 发送get请求。其中pin为引脚，value为修改的值。
 
-3、开发板是否在线。向http://blynk-cloud.com/auth_token/isHardwareConnected发送get请求，返回值true为在线，false为离线。
+3、开发板是否在线。向 http://blynk-cloud.com/auth_token/isHardwareConnected 发送get请求，返回值true为在线，false为离线。
 
-更多接口和实验例子请到https://blynkapi.docs.apiary.io/#reference查看。
+更多接口和实验例子请到 https://blynkapi.docs.apiary.io/#reference 查看。
 
 感谢CSDN博主「love范德萨」的帮助，原文链接见参考资料。
 
