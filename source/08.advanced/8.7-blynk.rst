@@ -2,7 +2,7 @@
 Blynk本地服务器的部署
 ========================================
 
-Blynk是一个物联网平台，旨在简化物联网的移动和Web应用程序的构建。虚谷号上虽然已经整合了SIoT，但是Blynk也可以同时部署。
+Blynk是一个物联网平台，旨在简化物联网的移动和Web应用程序的构建。虚谷号上已经整合了SIoT，但是Blynk也可以同时部署。
 
 ----------------------
 Blynk简介
@@ -279,11 +279,19 @@ Blynk只能通过手机端控制，但是功能丰富，界面实用性强，现
 涉及知识点
 ----------------
 ***未完待续***
+
     1、物联网；
+    
     2、服务器；
+    
     3、串口通信；
+    
     4、红外测距；
+    
     5、树莓派与虚谷号的对比；
+    
+    6.docker https://www.zkii.net/system/infrastructure/1189.html
+    
     ...
 
 ----------------
@@ -292,20 +300,20 @@ Blynk只能通过手机端控制，但是功能丰富，界面实用性强，现
 
 参考网址：
 
-在虚谷号上安装Blynk服务器https://mc.dfrobot.com.cn/thread-302809-1-1.html
+1、在虚谷号上安装Blynk服务器https://mc.dfrobot.com.cn/thread-302809-1-1.html
 
-后台运行Blynk的方法https://mc.dfrobot.com.cn/thread-303548-1-1.html
+2、后台运行Blynk的方法https://mc.dfrobot.com.cn/thread-303548-1-1.html
 
-官方库文件文档https://github.com/vshymanskyy/blynk-library-python
+3、官方库文件文档https://github.com/vshymanskyy/blynk-library-python
 
-Arduino与Blynk案例https://www.jianshu.com/p/df1f33ad5274
+4、Arduino与Blynk案例https://www.jianshu.com/p/df1f33ad5274
 
-基于树莓派系统与Blynk远程控制水泵https://blog.csdn.net/gouxf_0219/article/details/80061053
+5、基于树莓派系统与Blynk远程控制水泵https://blog.csdn.net/gouxf_0219/article/details/80061053
 
-当掌控遇上Blynk（2）——远程控制七彩灯https://mc.dfrobot.com.cn/thread-273949-1-1.html
+6、当掌控遇上Blynk（2）——远程控制七彩灯https://mc.dfrobot.com.cn/thread-273949-1-1.html
 
-搭建blynk本地服务器https://www.zhihu.com/question/290599206/answer/530065590
+7、搭建blynk本地服务器https://www.zhihu.com/question/290599206/answer/530065590
 
-set_property帮助https://community.blynk.cc/t/setproperty-blynklib-py/32854
+8、set_property帮助https://community.blynk.cc/t/setproperty-blynklib-py/32854
 
-winform连入blynk服务https://blog.csdn.net/u013622530/article/details/96508451
+9、winform连入blynk服务https://blog.csdn.net/u013622530/article/details/96508451
