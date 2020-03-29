@@ -187,7 +187,7 @@ Blynk案例
 
 .. image:: ../images/08/8.7-sig.png
 
-接下来，在虚谷号上编程，初次使用，我们需要安装Blynk库文件。使用pip3 install blynk-library-python。你可以使用自带的Python运行，或者Python IDE运行，也可以使用Jupyter运行。运行以下代码：
+接下来，在虚谷号上编程，初次使用，我们需要安装Blynk库文件。使用pip3 install blynk-library-python。你可以使用自带的Python运行，或者Python IDE运行，也可以使用Jupyter运行。运行以下代码：（运行顺序，先打开手机App，再运行代码，期间手机App不要关闭，因为这里要向App传输数据，而上一个案例则不用，部分手机不支持后台运行，可能会导致程序中断）
 ::
     import BlynkLib
     import time
@@ -229,11 +229,45 @@ Blynk案例
 
 .. image:: ../images/08/8.7-ext.png
 
-**提示：** 手机端修改为如图所示，那么程序应该怎么改呢？尝试写在下面的程序框中吧！
+**提示：** 手机端修改为如图所示，那么程序应该怎么改呢？如果没有红外数字避障传感器，又应该怎么替代呢？这些问题就留给你们思考啦！
 
 详细案例介绍可以查看github资料，/vvBoard-docs/课程汇集/虚谷号内置课程目录/2.物联网应用/Blynk学习案例：在岗检测仪（.ipynb/.pdf）。
 
 老师们有意见和建议可以发送邮件到easonqys@foxmail.com，也可以在论坛共同交流。
+
+**其他案例** 网络上还有很多相关案例，只要是Blynk的案例，用虚谷号做Blynk服务器也都能实现，包括一些用树莓派做案例的，也是类似的。
+
+这里给出看到的一些较好的案例，难度比上面的案例高出不少。
+
+用树莓派搭建的校园气象信息检测系统 https://www.jianshu.com/p/3b7c1bb0f7b8（涉及Metabese）
+
+怎样在智能手机上使用BlynkApp远程控制Arduino http://www.elecfans.com/d/1003098.html（USB模式连接，无需Wi-Fi）
+
+【零知ESP8266】 Blynk手机APP教程：监控室内温湿度 http://www.51hei.com/bbs/forum.php?mod=viewthread&tid=162936 （扫码分享你的创意）
+
+【Blynk扩展库】Mind+中也能愉快地使用Blynk物联网平台了！https://mc.dfrobot.com.cn/thread-303476-1-1.html#lastpost（Mind+Blynk终端）
+
+----------------
+winform连入blynk服务
+----------------
+既然在App上可以控制和查看开发板，那么在PC端也应该可以。在blynk的官网可以找到关于blynk server的http的接口，这些接口可以使我们在没有App的情况下对开发板进行控制和读取数据。
+
+1、获取引脚值。向http://blynk-cloud.com/auth_token/get/pin发送get请求。其中blynk-clound.com可以替换为自己的服务器，请求的端口与硬件使用的端口一致，默认为8080端口。auth_token为自己project的token码。pin为要读取的引脚值。
+
+2、设置引脚值。向http://blynk-cloud.com/auth_token/update/pin?value=vlaue发送get请求。其中pin为引脚，value为修改的值。
+
+3、开发板是否在线。向http://blynk-cloud.com/auth_token/isHardwareConnected发送get请求，返回值true为在线，false为离线。
+
+更多接口和实验例子请到https://blynkapi.docs.apiary.io/#reference查看。
+
+感谢CSDN博主「love范德萨」的帮助，原文链接见参考资料。
+
+----------------
+Blynk能量值的修改
+----------------
+由于默认能量值是10000，而实际上对于本地服务器来说，可以无限续命。操作如下：
+
+通过远程桌面连接进入/home/scope/Blynk可以看到一个名为admin@blynk.cc.Blynk.user的文件，打开它。其内容就是显示在手机App里的那些内容，在最后一行，可以看到"energy:"，修改后面的数字，重启虚谷号，就可以实现能量值的修改了。
 
 ----------------
 对比SIoT和Blynk
@@ -275,3 +309,4 @@ Arduino与Blynk案例https://www.jianshu.com/p/df1f33ad5274
 
 set_property帮助https://community.blynk.cc/t/setproperty-blynklib-py/32854
 
+winform连入blynk服务https://blog.csdn.net/u013622530/article/details/96508451
