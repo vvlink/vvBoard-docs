@@ -142,31 +142,31 @@ Blynk案例
 ::
     from xugu import Pin 
 
-    # Initialize Blynk
-    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
-    YourHost='192.168.1.100'
-    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
+    # 初始化Blynk
+    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa' # 替换为你的Token
+    YourHost='192.168.1.100' # 替换为你的虚谷号IP，或服务器IP
+    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080) # 实例化Blynk
 
-    # Register Virtual Pins
-    @blynk.VIRTUAL_WRITE(1)
+    # 声明虚拟引脚 Virtual Pins
+    @blynk.VIRTUAL_WRITE(1)  # 声明V1读入
     def my_write_handler(value):
-        print('Current V1 value: {}'.format(value))
-        if value[0]=='1':
+        print('Current V1 value: {}'.format(value)) # 输出读入值
+        if value[0]=='1':  # 值为1则开灯
             print('on')
             led.write_digital(1)
         else :
-            print('off')
+            print('off')   # 值为0则关灯
             led.write_digital(0)
 
-    @blynk.VIRTUAL_READ(2)
+    @blynk.VIRTUAL_READ(2) # 声明V2输出，仅示范，这里没有用到
     def my_read_handler():
         # this widget will show some time in seconds..
-        blynk.virtual_write(2, int(time.time()))
+        blynk.virtual_write(2, int(time.time())) # 输出当前时间
 
-    led = Pin(13, Pin.OUT)
+    led = Pin(13, Pin.OUT) # 从xugu导入的Pin，初始化管脚13为数字输入
 
     while True:
-        blynk.run()
+        blynk.run()  # 始终保持Blynk运行
     
 试一试，点击手机右上方运行图标后，是不是可以成功用按钮控制LED灯了呢？
 
@@ -193,37 +193,36 @@ Blynk案例
     import time
     from xugu import Pin 
 
-    # Initialize Blynk
-    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
-    YourHost='192.168.1.100'
-    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
+    # 初始化 Blynk
+    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'# 替换为你的Token
+    YourHost='192.168.1.100'# 替换为你的虚谷号IP，或服务器IP
+    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)# 实例化Blynk
 
-    # Register Virtual Pins
-    @blynk.VIRTUAL_WRITE(1)
+    # 声明虚拟引脚 Pins
+    @blynk.VIRTUAL_WRITE(1) # 声明V1读入
     def my_write_handler(value):
-        print('Current V1 value: {}'.format(value))
+        print('Current V1 value: {}'.format(value))# 输出读入值
 
 
-    def BottomLabelInit(PIN):
-        blynk.set_property(PIN,'onLabel','在岗')
-        blynk.set_property(PIN,'offLabel','离开')
+    def BottomLabelInit(PIN): # 修改按钮上的标签名，更符合实际应用场景
+        blynk.set_property(PIN,'onLabel','在岗') # 修改on为“在岗”
+        blynk.set_property(PIN,'offLabel','离开') # 修改off为“离开”
 
 
-    led = Pin(13, Pin.OUT)
-    seat = Pin(4, Pin.IN)
-    BottomLabelInit(1)
-    flag = 0
+    seat = Pin(4, Pin.IN) # 从xugu导入的Pin，初始化管脚4为数字输出（红外数字避障传感器信号线）
+    BottomLabelInit(1) # 修改V1对应的按钮
+    flag = 0 # 状态变量初始化为“离开”
 
     while 1:
-        blynk.run()
-        if flag != seat.read_digital():
-            flag = seat.read_digital()
-            blynk.virtual_write(1,1-flag)
+        blynk.run() # 始终保持Blynk运行
+        if flag != seat.read_digital():  # 当状态改变时
+            flag = seat.read_digital()   # 修改状态变量的值
+            blynk.virtual_write(1,1-flag)# 修改V1的值（即修改按钮V1的状态），思考这里为什么用1-flag呢？
             if flag == 1:
                 print('离开')
             else:
                 print('在岗')
-        time.sleep(1)
+        time.sleep(1) # 设置检测间隔时间
 
 如果你想要添加其他老师在岗信息，要怎么做呢？动手试一试吧！
 
