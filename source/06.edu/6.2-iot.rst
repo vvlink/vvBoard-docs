@@ -78,7 +78,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin("A0", Pin.ANALOG)   # 初始化 A0 引脚,设置为输入模式
 
-	SERVER = "192.168.0.101"    # MQTT服务器IP
+	SERVER = "192.168.0.101"    # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
 	CLIENT_ID = ""              # 在SIoT上，CLIENT_ID可以留空
 	IOT_pubTopic  = 'DIY/TEST01'# “topic”为“项目名称/设备名称”
 	IOT_UserName ='scope'       # 用户名默认为scope
@@ -107,7 +107,12 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
+   siot.set_callback(sub_cb)
    siot.getsubscribe(IOT_pubTopic) 
+   如果需要订阅多个消息，可以多次写siot.getsubscribe，加上对应的IOT_pubTopic就好。
+   如果只订阅一条消息，那么这里可以简写为：
+   def sub_cb(client, userdata, msg): xxxx
+   siot.subscribe(IOT_pubTopic, sub_cb) 
    
  3、发送消息
    siot.publish(IOT_pubTopic, your-massage)
@@ -121,7 +126,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
 
-	SERVER = "192.168.43.236"          # MQTT服务器IP
+	SERVER = "192.168.43.236"          # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
 	CLIENT_ID = ""                     # 在SIoT上，CLIENT_ID可以留空
 	IOT_pubTopic  = 'vvboard/invade'   # “topic”为“项目名称/设备名称”
 	IOT_UserName ='scope'              # 用户名默认为scope
@@ -192,7 +197,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin("A0", Pin.ANALOG)     # 初始化 A0 引脚,设置为输入模式
 
-	SERVER = "192.168.0.101"      # MQTT服务器IP
+	SERVER = "192.168.0.101"      # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
 	CLIENT_ID = ""                # 在SIoT上，CLIENT_ID可以留空
 	IOT_pubTopic  = 'DIY/TEST01'  # “topic”为“项目名称/设备名称”
 	IOT_UserName ='scope'         # 用户名默认为scope
@@ -221,7 +226,12 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
+   siot.set_callback(sub_cb)
    siot.getsubscribe(IOT_pubTopic) 
+   如果需要订阅多个消息，可以多次写siot.getsubscribe，加上对应的IOT_pubTopic就好。
+   如果只订阅一条消息，那么这里可以简写为：
+   def sub_cb(client, userdata, msg): xxxx
+   siot.subscribe(IOT_pubTopic, sub_cb) 
    
  3、发送消息
    siot.publish(IOT_pubTopic, your-massage)
@@ -235,7 +245,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 	
 	p = Pin(13, Pin.OUT)                # 初始化 A0 引脚,设置为输入模式
 	
-	SERVER = "192.168.43.236"           # MQTT服务器IP
+	SERVER = "192.168.43.236"           # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
 	CLIENT_ID = ""                      # 在SIoT上，CLIENT_ID可以留空
 	IOT_pubTopic  = 'DIY/TEST01'        # “topic”为“项目名称/设备名称”
 	IOT_UserName ='scope'               # 用户名默认为scope
@@ -289,7 +299,7 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
 
-	SERVER = "192.168.43.236"          # MQTT服务器IP
+	SERVER = "192.168.43.236"          # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
 	CLIENT_ID = ""                     # 在SIoT上，CLIENT_ID可以留空
 	IOT_pubTopic  = 'vvboard/invade'   # “topic”为“项目名称/设备名称”
 	IOT_UserName ='scope'              # 用户名默认为scope
