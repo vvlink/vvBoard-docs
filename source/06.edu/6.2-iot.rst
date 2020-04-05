@@ -103,15 +103,22 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
  1、导入siot库
    import siot  
+   
    类似于树莓派的from RPI import GPIO
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
+   
    siot.set_callback(sub_cb)
+   
    siot.getsubscribe(IOT_pubTopic) 
+   
    如果需要订阅多个消息，可以多次写siot.getsubscribe，加上对应的IOT_pubTopic就好。
+   
    如果只订阅一条消息，那么这里可以简写为：
+   
    def sub_cb(client, userdata, msg): xxxx
+   
    siot.subscribe(IOT_pubTopic, sub_cb) 
    
  3、发送消息
@@ -222,15 +229,22 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
  1、导入siot库
    import siot
+   
    类似于树莓派的from RPI import GPIO
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
+   
    siot.set_callback(sub_cb)
+   
    siot.getsubscribe(IOT_pubTopic) 
+   
    如果需要订阅多个消息，可以多次写siot.getsubscribe，加上对应的IOT_pubTopic就好。
+   
    如果只订阅一条消息，那么这里可以简写为：
+   
    def sub_cb(client, userdata, msg): xxxx
+   
    siot.subscribe(IOT_pubTopic, sub_cb) 
    
  3、发送消息
