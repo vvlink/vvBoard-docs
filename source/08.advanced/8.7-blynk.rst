@@ -2,7 +2,7 @@
 Blynk本地服务器的部署
 ========================================
 
-Blynk是一个物联网平台，旨在简化物联网的移动和Web应用程序的构建。虚谷号上虽然已经整合了SIoT，但是Blynk也可以同时部署。
+Blynk是一个物联网平台，旨在简化物联网的移动和Web应用程序的构建。虚谷号上已经整合了SIoT，但是Blynk也可以同时部署。
 
 ----------------------
 Blynk简介
@@ -142,31 +142,31 @@ Blynk案例
 ::
     from xugu import Pin 
 
-    # Initialize Blynk
-    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
-    YourHost='192.168.1.100'
-    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
+    # 初始化Blynk
+    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'                # 替换为你的Token
+    YourHost='192.168.1.100'                                        # 替换为你的虚谷号IP，或服务器IP
+    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080) # 实例化Blynk
 
-    # Register Virtual Pins
-    @blynk.VIRTUAL_WRITE(1)
+    # 声明虚拟引脚 Virtual Pins
+    @blynk.VIRTUAL_WRITE(1)  # 声明V1读入
     def my_write_handler(value):
-        print('Current V1 value: {}'.format(value))
-        if value[0]=='1':
+        print('Current V1 value: {}'.format(value)) # 输出读入值
+        if value[0]=='1':                           # 值为1则开灯
             print('on')
             led.write_digital(1)
         else :
-            print('off')
+            print('off')                            # 值为0则关灯
             led.write_digital(0)
 
-    @blynk.VIRTUAL_READ(2)
+    @blynk.VIRTUAL_READ(2) # 声明V2输出，仅示范，这里没有用到
     def my_read_handler():
         # this widget will show some time in seconds..
-        blynk.virtual_write(2, int(time.time()))
+        blynk.virtual_write(2, int(time.time()))    # 输出当前时间
 
-    led = Pin(13, Pin.OUT)
+    led = Pin(13, Pin.OUT) # 从xugu导入的Pin，初始化管脚13为数字输入
 
     while True:
-        blynk.run()
+        blynk.run()  # 始终保持Blynk运行
     
 试一试，点击手机右上方运行图标后，是不是可以成功用按钮控制LED灯了呢？
 
@@ -187,53 +187,86 @@ Blynk案例
 
 .. image:: ../images/08/8.7-sig.png
 
-接下来，在虚谷号上编程，初次使用，我们需要安装Blynk库文件。使用pip3 install blynk-library-python。你可以使用自带的Python运行，或者Python IDE运行，也可以使用Jupyter运行。运行以下代码：
+接下来，在虚谷号上编程，初次使用，我们需要安装Blynk库文件。使用pip3 install blynk-library-python。你可以使用自带的Python运行，或者Python IDE运行，也可以使用Jupyter运行。运行以下代码：（运行顺序，先打开手机App，再运行代码，期间手机App不要关闭，因为这里要向App传输数据，而上一个案例则不用，部分手机不支持后台运行，可能会导致程序中断）
 ::
     import BlynkLib
     import time
     from xugu import Pin 
 
-    # Initialize Blynk
-    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'
-    YourHost='192.168.1.100'
-    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080)
+    # 初始化 Blynk
+    YourAuthToken='R1hVw53mObJaHUn2ym9u4LKEINUqfNSa'                # 替换为你的Token
+    YourHost='192.168.1.100'                                        # 替换为你的虚谷号IP，或服务器IP
+    blynk = BlynkLib.Blynk(YourAuthToken,server=YourHost,port=8080) # 实例化Blynk
 
-    # Register Virtual Pins
-    @blynk.VIRTUAL_WRITE(1)
+    # 声明虚拟引脚 Pins
+    @blynk.VIRTUAL_WRITE(1) # 声明V1读入
     def my_write_handler(value):
-        print('Current V1 value: {}'.format(value))
+        print('Current V1 value: {}'.format(value)) # 输出读入值
 
 
-    def BottomLabelInit(PIN):
-        blynk.set_property(PIN,'onLabel','在岗')
-        blynk.set_property(PIN,'offLabel','离开')
+    def BottomLabelInit(PIN): # 修改按钮上的标签名，更符合实际应用场景
+        blynk.set_property(PIN,'onLabel','在岗')  # 修改on为“在岗”
+        blynk.set_property(PIN,'offLabel','离开') # 修改off为“离开”
 
 
-    led = Pin(13, Pin.OUT)
-    seat = Pin(4, Pin.IN)
-    BottomLabelInit(1)
-    flag = 0
+    seat = Pin(4, Pin.IN) # 从xugu导入的Pin，初始化管脚4为数字输出（红外数字避障传感器信号线）
+    BottomLabelInit(1)    # 修改V1对应的按钮
+    flag = 0              # 状态变量初始化为“离开”
 
     while 1:
-        blynk.run()
-        if flag != seat.read_digital():
-            flag = seat.read_digital()
-            blynk.virtual_write(1,1-flag)
+        blynk.run() # 始终保持Blynk运行
+        if flag != seat.read_digital():   # 当状态改变时
+            flag = seat.read_digital()    # 修改状态变量的值
+            blynk.virtual_write(1,1-flag) # 修改V1的值（即修改按钮V1的状态），思考这里为什么用1-flag呢？
             if flag == 1:
                 print('离开')
             else:
                 print('在岗')
-        time.sleep(1)
+        time.sleep(1)                     # 设置检测间隔时间
 
 如果你想要添加其他老师在岗信息，要怎么做呢？动手试一试吧！
 
 .. image:: ../images/08/8.7-ext.png
 
-**提示：** 手机端修改为如图所示，那么程序应该怎么改呢？尝试写在下面的程序框中吧！
+**提示：** 手机端修改为如图所示，那么程序应该怎么改呢？如果没有红外数字避障传感器，又应该怎么替代呢？这些问题就留给你们思考啦！
 
 详细案例介绍可以查看github资料，/vvBoard-docs/课程汇集/虚谷号内置课程目录/2.物联网应用/Blynk学习案例：在岗检测仪（.ipynb/.pdf）。
 
 老师们有意见和建议可以发送邮件到easonqys@foxmail.com，也可以在论坛共同交流。
+
+**其他案例** 网络上还有很多相关案例，只要是Blynk的案例，用虚谷号做Blynk服务器也都能实现，包括一些用树莓派做案例的，也是类似的。
+
+这里给出看到的一些较好的案例，难度比上面的案例高出不少。
+
+用树莓派搭建的校园气象信息检测系统 https://www.jianshu.com/p/3b7c1bb0f7b8 （涉及Metabese）
+
+怎样在智能手机上使用BlynkApp远程控制Arduino http://www.elecfans.com/d/1003098.html （USB模式连接，无需Wi-Fi）
+
+【零知ESP8266】 Blynk手机APP教程：监控室内温湿度 http://www.51hei.com/bbs/forum.php?mod=viewthread&tid=162936  （扫码分享你的创意）
+
+【Blynk扩展库】Mind+中也能愉快地使用Blynk物联网平台了！https://mc.dfrobot.com.cn/thread-303476-1-1.html#lastpost （Mind+Blynk终端）
+
+----------------
+winform连入blynk服务
+----------------
+既然在App上可以控制和查看开发板，那么在PC端也应该可以。在blynk的官网可以找到关于blynk server的http的接口，这些接口可以使我们在没有App的情况下对开发板进行控制和读取数据。
+
+1、获取引脚值。向 http://blynk-cloud.com/auth_token/get/pin 发送get请求。其中 blynk-clound.com 可以替换为自己的服务器，请求的端口与硬件使用的端口一致，默认为8080端口。auth_token为自己project的token码。get意为获取。pin为要读取的引脚值。
+
+2、设置引脚值。向 http://blynk-cloud.com/auth_token/update/pin?value=vlaue 发送get请求。其中pin为引脚，value为修改的值。
+
+3、开发板是否在线。向 http://blynk-cloud.com/auth_token/isHardwareConnected 发送get请求，返回值true为在线，false为离线。
+
+更多接口和实验例子请到 https://blynkapi.docs.apiary.io/#reference 查看。
+
+感谢CSDN博主「love范德萨」的帮助，原文链接见参考资料。
+
+----------------
+Blynk能量值的修改
+----------------
+由于默认能量值是10000，而实际上对于本地服务器来说，可以无限续命。操作如下：
+
+通过远程桌面连接进入/home/scope/Blynk可以看到一个名为admin@blynk.cc.Blynk.user的文件，打开它。其内容就是显示在手机App里的那些内容，在最后一行，可以看到"energy:"，修改后面的数字，重启虚谷号，就可以实现能量值的修改了。
 
 ----------------
 对比SIoT和Blynk
@@ -246,11 +279,19 @@ Blynk只能通过手机端控制，但是功能丰富，界面实用性强，现
 涉及知识点
 ----------------
 ***未完待续***
+
     1、物联网；
+    
     2、服务器；
+    
     3、串口通信；
+    
     4、红外测距；
+    
     5、树莓派与虚谷号的对比；
+    
+    6.docker https://www.zkii.net/system/infrastructure/1189.html
+    
     ...
 
 ----------------
@@ -259,19 +300,20 @@ Blynk只能通过手机端控制，但是功能丰富，界面实用性强，现
 
 参考网址：
 
-在虚谷号上安装Blynk服务器https://mc.dfrobot.com.cn/thread-302809-1-1.html
+1、在虚谷号上安装Blynk服务器https://mc.dfrobot.com.cn/thread-302809-1-1.html
 
-后台运行Blynk的方法https://mc.dfrobot.com.cn/thread-303548-1-1.html
+2、后台运行Blynk的方法https://mc.dfrobot.com.cn/thread-303548-1-1.html
 
-官方库文件文档https://github.com/vshymanskyy/blynk-library-python
+3、官方库文件文档https://github.com/vshymanskyy/blynk-library-python
 
-Arduino与Blynk案例https://www.jianshu.com/p/df1f33ad5274
+4、Arduino与Blynk案例https://www.jianshu.com/p/df1f33ad5274
 
-基于树莓派系统与Blynk远程控制水泵https://blog.csdn.net/gouxf_0219/article/details/80061053
+5、基于树莓派系统与Blynk远程控制水泵https://blog.csdn.net/gouxf_0219/article/details/80061053
 
-当掌控遇上Blynk（2）——远程控制七彩灯https://mc.dfrobot.com.cn/thread-273949-1-1.html
+6、当掌控遇上Blynk（2）——远程控制七彩灯https://mc.dfrobot.com.cn/thread-273949-1-1.html
 
-搭建blynk本地服务器https://www.zhihu.com/question/290599206/answer/530065590
+7、搭建blynk本地服务器https://www.zhihu.com/question/290599206/answer/530065590
 
-set_property帮助https://community.blynk.cc/t/setproperty-blynklib-py/32854
+8、set_property帮助https://community.blynk.cc/t/setproperty-blynklib-py/32854
 
+9、winform连入blynk服务https://blog.csdn.net/u013622530/article/details/96508451

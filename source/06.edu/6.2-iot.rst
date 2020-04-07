@@ -78,36 +78,48 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin("A0", Pin.ANALOG)   # 初始化 A0 引脚,设置为输入模式
 
-	SERVER = "192.168.0.101"    #MQTT服务器IP
-	CLIENT_ID = ""              #在SIoT上，CLIENT_ID可以留空
-	IOT_pubTopic  = 'DIY/TEST01'#“topic”为“项目名称/设备名称”
-	IOT_UserName ='scope'       #用户名默认为scope
-	IOT_PassWord ='scope'       #密码默认为scope
+	SERVER = "192.168.0.101"    # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
+	CLIENT_ID = ""              # 在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'# “topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'       # 用户名默认为scope
+	IOT_PassWord ='scope'       # 密码默认为scope
 
 	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
  
 	def sub_cb(client, userdata, msg):
   	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
-        #在这里可以写当虚谷号收到消息要做的事
+            # 在这里可以写当虚谷号收到消息要做的事
     
 	siot.connect()
 	siot.set_callback(sub_cb)
-	siot.getsubscribe(IOT_pubTopic) #订阅消息
+	siot.getsubscribe(IOT_pubTopic) # 订阅消息
 	siot.loop()
 	while True:
-  	    TDS = p.read_analog()       #读取 A0 引脚的模拟量
-  	    siot.publish(IOT_pubTopic, "%d"%TDS) #发送消息
+  	    TDS = p.read_analog()       # 读取 A0 引脚的模拟量
+  	    siot.publish(IOT_pubTopic, "%d"%TDS) # 发送消息
   	    time.sleep(1)
 
 代码中的重点是以下三点：
 
  1、导入siot库
    import siot  
+   
    类似于树莓派的from RPI import GPIO
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
+   
+   siot.set_callback(sub_cb)
+   
    siot.getsubscribe(IOT_pubTopic) 
+   
+   如果需要订阅多个消息，可以多次写siot.getsubscribe，加上对应的IOT_pubTopic就好。
+   
+   如果只订阅一条消息，那么这里可以简写为：
+   
+   def sub_cb(client, userdata, msg): xxxx
+   
+   siot.subscribe(IOT_pubTopic, sub_cb) 
    
  3、发送消息
    siot.publish(IOT_pubTopic, your-massage)
@@ -121,26 +133,26 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
 
-	SERVER = "192.168.43.236"          #MQTT服务器IP
-	CLIENT_ID = ""                     #在SIoT上，CLIENT_ID可以留空
-	IOT_pubTopic  = 'vvboard/invade'   #“topic”为“项目名称/设备名称”
-	IOT_UserName ='scope'              #用户名默认为scope
-	IOT_PassWord ='scope'              #密码默认为scope
+	SERVER = "192.168.43.236"          # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
+	CLIENT_ID = ""                     # 在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'vvboard/invade'   # “topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'              # 用户名默认为scope
+	IOT_PassWord ='scope'              # 密码默认为scope
 
 	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
  
 	def sub_cb(client, userdata, msg):
   	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
-                                            #在这里可以写当虚谷号收到消息要做的事
+                                            # 在这里可以写当虚谷号收到消息要做的事
     
 	siot.connect()
 	siot.set_callback(sub_cb)
-	siot.getsubscribe(IOT_pubTopic)     #订阅消息
+	siot.getsubscribe(IOT_pubTopic)     # 订阅消息
 	siot.loop()
 	
 	while True:
-  	    INV = p.read_digital()           #读取 4 引脚的值
-  	    siot.publish(IOT_pubTopic, "%d"%INV) #发送消息
+  	    INV = p.read_digital()           # 读取 4 引脚的值
+  	    siot.publish(IOT_pubTopic, "%d"%INV) # 发送消息
   	    time.sleep(1)
 
 
@@ -192,36 +204,48 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin("A0", Pin.ANALOG)     # 初始化 A0 引脚,设置为输入模式
 
-	SERVER = "192.168.0.101"      #MQTT服务器IP
-	CLIENT_ID = ""                #在SIoT上，CLIENT_ID可以留空
-	IOT_pubTopic  = 'DIY/TEST01'  #“topic”为“项目名称/设备名称”
-	IOT_UserName ='scope'         #用户名默认为scope
-	IOT_PassWord ='scope'         #密码默认为scope
+	SERVER = "192.168.0.101"      # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
+	CLIENT_ID = ""                # 在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'  # “topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'         # 用户名默认为scope
+	IOT_PassWord ='scope'         # 密码默认为scope
 
 	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
  
 	def sub_cb(client, userdata, msg):
   	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
-        #在这里可以写当虚谷号收到消息要做的事
+            # 在这里可以写当虚谷号收到消息要做的事
     
 	siot.connect()
 	siot.set_callback(sub_cb)
-	siot.getsubscribe(IOT_pubTopic)#订阅消息
+	siot.getsubscribe(IOT_pubTopic)# 订阅消息
 	siot.loop()
 	while True:
-  	    TDS = p.read_analog()      #读取 A0 引脚的模拟量
-  	    siot.publish(IOT_pubTopic, "%d"%TDS) #发送消息
+  	    TDS = p.read_analog()      # 读取 A0 引脚的模拟量
+  	    siot.publish(IOT_pubTopic, "%d"%TDS) # 发送消息
   	    time.sleep(1)
 
 代码中的重点是以下三点：
 
  1、导入siot库
    import siot
+   
    类似于树莓派的from RPI import GPIO
 
  2、订阅消息
    def sub_cb(client, userdata, msg): xxxx
+   
+   siot.set_callback(sub_cb)
+   
    siot.getsubscribe(IOT_pubTopic) 
+   
+   如果需要订阅多个消息，可以多次写siot.getsubscribe，加上对应的IOT_pubTopic就好。
+   
+   如果只订阅一条消息，那么这里可以简写为：
+   
+   def sub_cb(client, userdata, msg): xxxx
+   
+   siot.subscribe(IOT_pubTopic, sub_cb) 
    
  3、发送消息
    siot.publish(IOT_pubTopic, your-massage)
@@ -235,30 +259,30 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 	
 	p = Pin(13, Pin.OUT)                # 初始化 A0 引脚,设置为输入模式
 	
-	SERVER = "192.168.43.236"            #MQTT服务器IP
-	CLIENT_ID = ""                      #在SIoT上，CLIENT_ID可以留空
-	IOT_pubTopic  = 'DIY/TEST01'        #“topic”为“项目名称/设备名称”
-	IOT_UserName ='scope'               #用户名默认为scope
-	IOT_PassWord ='scope'               #密码默认为scope
+	SERVER = "192.168.43.236"           # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
+	CLIENT_ID = ""                      # 在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'DIY/TEST01'        # “topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'               # 用户名默认为scope
+	IOT_PassWord ='scope'               # 密码默认为scope
 	
 	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
 
-	def sub_cb(client, userdata, msg):  #接受到手机消息，1表示开灯，0表示关灯
-	    global state                    #将state指向全局变量的那个state
-	    if(int(msg.payload)==1):        #注意使用int将值转换为数值型，才可以比较
+	def sub_cb(client, userdata, msg):  # 接受到手机消息，1表示开灯，0表示关灯
+	    global state                    # 将state指向全局变量的那个state
+	    if(int(msg.payload)==1):        # 注意使用int将值转换为数值型，才可以比较
 		state=1
 	    if(int(msg.payload)==0):
 		state=0
 
 	siot.connect()
 	siot.set_callback(sub_cb)
-	siot.getsubscribe(IOT_pubTopic)      #订阅消息
+	siot.getsubscribe(IOT_pubTopic)      # 订阅消息
 	siot.loop()
 	
-	state=0                              #声明变量
+	state=0                              # 声明变量
 	
 	while True:
-	    p.write_digital(state)           #1表示开灯，0表示关灯
+	    p.write_digital(state)           # 1表示开灯，0表示关灯
 	    time.sleep(1)
 	   
 - 这里要注意state要声明为global全局变量，否则在函数内修改变量的值将不起作用。
@@ -289,25 +313,25 @@ SIoT为“虚谷物联”项目的核心软件，和虚谷号一样，都是“�
 
 	p = Pin(4, Pin.IN)                 # 初始化 4 引脚,设置为输入模式
 
-	SERVER = "192.168.43.236"          #MQTT服务器IP
-	CLIENT_ID = ""                     #在SIoT上，CLIENT_ID可以留空
-	IOT_pubTopic  = 'vvboard/invade'   #“topic”为“项目名称/设备名称”
-	IOT_UserName ='scope'              #用户名默认为scope
-	IOT_PassWord ='scope'              #密码默认为scope
+	SERVER = "192.168.43.236"          # MQTT服务器IP，若SIoT与python运行在同一台机器上，IP可以写为127.0.0.1
+	CLIENT_ID = ""                     # 在SIoT上，CLIENT_ID可以留空
+	IOT_pubTopic  = 'vvboard/invade'   # “topic”为“项目名称/设备名称”
+	IOT_UserName ='scope'              # 用户名默认为scope
+	IOT_PassWord ='scope'              # 密码默认为scope
 
 	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
  
 	def sub_cb(client, userdata, msg):
   	    print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
-                                            #在这里可以写当虚谷号收到消息要做的事
+                                            # 在这里可以写当虚谷号收到消息要做的事
     
 	siot.connect()
 	siot.set_callback(sub_cb)
-	siot.getsubscribe(IOT_pubTopic)     #订阅消息
+	siot.getsubscribe(IOT_pubTopic)     # 订阅消息
 	siot.loop()
 	
 	while True:
-  	    INV = p.read_digital()           #读取 4 引脚的值
+  	    INV = p.read_digital()           # 读取 4 引脚的值
   	    siot.publish(IOT_pubTopic, "%d"%INV) #发送消息
   	    time.sleep(1)
 
