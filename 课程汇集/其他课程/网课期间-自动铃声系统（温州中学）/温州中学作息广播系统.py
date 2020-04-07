@@ -132,11 +132,11 @@ def job_gotobed():
     os.system('play ' + ling)
 # 上课
 def class_1():
-    ling = '温州中学起床上课.mp3'
+    ling = '温州中学上课铃声.mp3'
     os.system('play ' + ling)
 # 上课
 def class_0():
-    ling = '温州中学起床下课.mp3'
+    ling = '温州中学下课铃声.mp3'
     os.system('play ' + ling)
 # 吃饭提醒
 def tips(s):
