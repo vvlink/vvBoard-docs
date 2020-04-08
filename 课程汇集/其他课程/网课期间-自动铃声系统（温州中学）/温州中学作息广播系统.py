@@ -122,23 +122,11 @@ def tts(txt):
 # In[ ]:
 
 
-# 起床
-def job_getup():
-    ling = '温州中学起床铃声1.mp3'
+# 铃声播放
+def play_wave(s):
+    ling = 'wave/'+ s +'.mp3'
     os.system('play ' + ling)
-# 熄灯
-def job_gotobed():
-    ling = '温州中学熄灯铃声.mp3'
-    os.system('play ' + ling)
-# 上课
-def class_1():
-    ling = '温州中学上课铃声.mp3'
-    os.system('play ' + ling)
-# 上课
-def class_0():
-    ling = '温州中学下课铃声.mp3'
-    os.system('play ' + ling)
-# 吃饭提醒
+
 def tips(s):
     txt = "虚谷号提醒你" + s
     tts(txt)
@@ -158,34 +146,35 @@ def weather():
     tts(txt)
 
 # 起床
-schedule.every().day.at("07:00").do(job_getup)
+schedule.every().day.at("07:00").do(play_wave,s="起床")
 schedule.every().day.at("07:10").do(weather)
-schedule.every().day.at("07:30").do(class_1)
-schedule.every().day.at("08:00").do(class_1)
-schedule.every().day.at("09:00").do(class_0)
+schedule.every().day.at("07:30").do(play_wave,s="早读")
+schedule.every().day.at("08:00").do(play_wave,s="上课")
+schedule.every().day.at("09:00").do(play_wave,s="下课")
 #趣味英语
 schedule.every().day.at("09:10").do(learning)
-schedule.every().day.at("09:20").do(class_1)
-schedule.every().day.at("10:20").do(class_0)
-schedule.every().day.at("10:40").do(class_1)
-schedule.every().day.at("11:40").do(class_0)
+schedule.every().day.at("09:20").do(play_wave,s="上课")
+schedule.every().day.at("10:20").do(play_wave,s="下课")
+schedule.every().day.at("10:40").do(play_wave,s="上课")
+schedule.every().day.at("11:40").do(play_wave,s="下课")
 # 午饭
 schedule.every().day.at("12:00").do(tips,s="亲爱的主人，要吃午饭了！")
-schedule.every().day.at("13:30").do(class_1)
-schedule.every().day.at("14:30").do(class_0)
-schedule.every().day.at("14:50").do(class_1)
-schedule.every().day.at("15:50").do(class_0)
-schedule.every().day.at("16:10").do(class_1)
-schedule.every().day.at("17:10").do(class_0)
+schedule.every().day.at("13:30").do(play_wave,s="上课")
+schedule.every().day.at("14:30").do(play_wave,s="下课")
+schedule.every().day.at("14:50").do(play_wave,s="上课")
+schedule.every().day.at("15:50").do(play_wave,s="下课")
+schedule.every().day.at("16:10").do(play_wave,s="上课")
+schedule.every().day.at("17:10").do(play_wave,s="下课")
 # 晚饭
 schedule.every().day.at("18:00").do(tips,s="亲爱的主人，要吃晚饭了！")
+schedule.every().day.at("18:10").do(play_wave,s="晚饭")
 # 晚自修
-schedule.every().day.at("18:30").do(class_1)
-schedule.every().day.at("19:30").do(class_0)
-schedule.every().day.at("19:50").do(class_1)
-schedule.every().day.at("21:30").do(class_0)
+schedule.every().day.at("18:30").do(play_wave,s="晚读开始")
+schedule.every().day.at("19:30").do(play_wave,s="晚读结束")
+schedule.every().day.at("19:50").do(play_wave,s="上课")
+schedule.every().day.at("21:30").do(play_wave,s="下课")
 # 睡觉
-schedule.every().day.at("22:30").do(job_gotobed)
+schedule.every().day.at("22:30").do(play_wave,s="就寝")
 
 while True:
     schedule.run_pending()
