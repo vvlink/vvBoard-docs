@@ -106,7 +106,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="8.7-blynk.html">7. Blynk本地服务器的部署</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html">8. Blynk本地服务器的部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.8-Snowboy.html">8. 唤醒词检测引擎Snowboy</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../09.case/index.html">虚谷号的案例汇集</a></li>
@@ -183,7 +183,7 @@
 <div class="section" id="id1">
 <h2>6.1. LNMP和WordPress简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>LNMP是指一组通常一起使用来运行动态网站或者服务器的自由软件名称首字母缩写。L指Linux，N指Nginx，M一般指MySQL，也可以指MariaDB，P一般指PHP。</p>
-<p>WordPress是使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务器上架设属于自己的网站。也可以把 WordPress当作一个内容管理系统（CMS）来使用。WordPress是一款个人博客系统，并逐步演化成一款内容管理系统软件，它是使用PHP语言和MySQL数据库开发的,用户可以在支持 PHP 和 MySQL数据库的服务器上使用自己的博客。</p>
+<p>WordPress是使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务器上架设属于自己的网站。也可以把 WordPress当作一个内容管理系统（CMS）来使用。WordPress是一款个人博客系统，并逐步演化成一款内容管理系统软件，它是使用PHP语言和MySQL数据库开发的，用户可以在支持 PHP 和 MySQL数据库的服务器上使用自己的博客。</p>
 </div>
 <div class="section" id="lnmp">
 <h2>6.2. LNMP的安装<a class="headerlink" href="#lnmp" title="永久链接至标题">¶</a></h2>
@@ -415,6 +415,7 @@ root@localhost:~#
 </pre></div>
 </div>
 <p>3）配置php文件</p>
+<p>关于PHP文件的配置，推荐远程桌面在虚谷号的命令提示中操作，谷歌浏览器和火狐浏览器的快捷命令“Ctrl+W”是关闭标签，与nano及vim命令操作有重复，需注意。</p>
 <p>（1）安装nano库</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo apt install nano</span>
 </pre></div>
@@ -490,11 +491,100 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 <div class="section" id="wordpress">
 <h2>6.3. WordPress的安装<a class="headerlink" href="#wordpress" title="永久链接至标题">¶</a></h2>
 <p>1、下载并解压</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@192:~# cd /var/www/html/       # 进入到 /var/www/html/ 文件夹下
+root@192:/var/www/html# wget https://raw.githubusercontent.com/vvlink/vvBoard-app/master/latest.zip       #提示 wordpress官网下载有限制，官网地址：https://wordpress.org/latest.zip
+--2020-02-29 10:06:08--  https://raw.githubusercontent.com/vvlink/vvBoard-app/master/latest.zip
+正在解析主机 raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.108.133
+正在连接 raw.githubusercontent.com (raw.githubusercontent.com)|151.101.108.133|:443... 已连接。
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度： 13360988 (13M) [application/zip]
+正在保存至: “latest.zip”
+
+latest.zip        100%[============&gt;]  12.74M  23.8KB/s    in 10m 44s
+
+2020-02-29 10:16:54 (20.3 KB/s) - 已保存 “latest.zip” [13360988/13360988])
+
+root@192:/var/www/html# sudo unzip -q latest.zip        # 解压
+root@192:/var/www/html# sudo cp -r wordpress/* /var/www/html/       # 把解压后得到的 wordpress 文件夹内的所有文件，复制到 /var/www/html/ 文件夹下
+root@192:/var/www/html# sudo rm -rf wordpress   # 删除 wrodpress 文件夹
+root@192:/var/www/html# sudo rm -rf latest.zip  # 删除下载包
+root@192:/var/www/html#
+</pre></div>
+</div>
 <p>2、在MySQL中创建数据库</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="c1"># mysql -u root -p  #用root用户和密码登录数据库</span>
+<span class="n">Enter</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Welcome</span> <span class="n">to</span> <span class="n">the</span> <span class="n">MariaDB</span> <span class="n">monitor</span><span class="o">.</span>  <span class="n">Commands</span> <span class="n">end</span> <span class="k">with</span> <span class="p">;</span> <span class="ow">or</span> \<span class="n">g</span><span class="o">.</span>
+<span class="n">Your</span> <span class="n">MariaDB</span> <span class="n">connection</span> <span class="nb">id</span> <span class="ow">is</span> <span class="mi">7</span>
+<span class="n">Server</span> <span class="n">version</span><span class="p">:</span> <span class="mf">10.0</span><span class="o">.</span><span class="mi">38</span><span class="o">-</span><span class="n">MariaDB</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="o">.</span><span class="mf">16.04</span><span class="o">.</span><span class="mi">1</span> <span class="n">Ubuntu</span> <span class="mf">16.04</span>
+
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="n">Oracle</span><span class="p">,</span> <span class="n">MariaDB</span> <span class="n">Corporation</span> <span class="n">Ab</span> <span class="ow">and</span> <span class="n">others</span><span class="o">.</span>
+
+<span class="n">Type</span> <span class="s1">&#39;help;&#39;</span> <span class="ow">or</span> <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> <span class="n">help</span><span class="o">.</span> <span class="n">Type</span> <span class="s1">&#39;\c&#39;</span> <span class="n">to</span> <span class="n">clear</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">input</span> <span class="n">statement</span><span class="o">.</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="n">create</span> <span class="n">database</span> <span class="n">wordpress</span><span class="p">;</span> <span class="c1">#新建数据库文件“wordpress”</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="n">row</span> <span class="n">affected</span> <span class="p">(</span><span class="mf">0.01</span> <span class="n">sec</span><span class="p">)</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="n">show</span> <span class="n">databases</span><span class="p">;</span>   <span class="c1">#刷新数据库</span>
+<span class="o">+--------------------+</span>
+<span class="o">|</span> <span class="n">Database</span>           <span class="o">|</span>
+<span class="o">+--------------------+</span>
+<span class="o">|</span> <span class="n">information_schema</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">mysql</span>              <span class="o">|</span>
+<span class="o">|</span> <span class="n">performance_schema</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">wordpress</span>          <span class="o">|</span>
+<span class="o">+--------------------+</span>
+<span class="mi">4</span> <span class="n">rows</span> <span class="ow">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.03</span> <span class="n">sec</span><span class="p">)</span>
+
+<span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="n">exit</span> <span class="c1">#退出</span>
+<span class="n">Bye</span>
+<span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="c1">#</span>
+</pre></div>
+</div>
 <p>3、安装WordPress</p>
+<p>1）浏览器地址栏中，输入虚谷号IP地址</p>
+<img alt="../_images/8.6-lnmp09.png" src="../_images/8.6-lnmp09.png" />
+<p>2）输入创建的数据库名称 wordpress、用户名 root、密码为设置的 root 密码，其他两项不改</p>
+<img alt="../_images/8.6-lnmp10.png" src="../_images/8.6-lnmp10.png" />
+<p>3）根据提示在 /var/www/html 文件夹下创建 wp-config.php 文件，并考入页面的代码</p>
+<img alt="../_images/8.6-lnmp11.png" src="../_images/8.6-lnmp11.png" />
+<img alt="../_images/8.6-lnmp13.png" src="../_images/8.6-lnmp13.png" />
+<img alt="../_images/8.6-lnmp12.png" src="../_images/8.6-lnmp12.png" />
+<p>4）拷入代码并添加： define( ‘FS_METHOD’, ‘direct’);</p>
+<img alt="../_images/8.6-lnmp12.png" src="../_images/8.6-lnmp12.png" />
+<p>5）点击 Run the installation</p>
+<img alt="../_images/8.6-lnmp13.png" src="../_images/8.6-lnmp13.png" />
+<p>6）创建标题，注册用户名和密码</p>
+<img alt="../_images/8.6-lnmp14.png" src="../_images/8.6-lnmp14.png" />
+<p>7）安装完成</p>
+<img alt="../_images/8.6-lnmp15.png" src="../_images/8.6-lnmp15.png" />
+<p>8）使用注册的用户名和密码进行登录</p>
+<img alt="../_images/8.6-lnmp16.png" src="../_images/8.6-lnmp16.png" />
+<img alt="../_images/8.6-lnmp17.png" src="../_images/8.6-lnmp17.png" />
 <p>4、WordPress配置</p>
 <p>1）配置上传权限问题</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo chown -R www-data:www-data /var/www/html/</span>
+</pre></div>
+</div>
 <p>2）配置上传图片大小</p>
+<p>修改PHP配置文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo nano /etc/php/7.0/fpm/php.ini</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">修改下面两项内容的参数</span>
+<span class="sd">post_max_size = 8M</span>
+<span class="sd">upload_max_filesize = 2M</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<img alt="../_images/8.6-lnmp18.png" src="../_images/8.6-lnmp18.png" />
+<img alt="../_images/8.6-lnmp19.png" src="../_images/8.6-lnmp19.png" />
+<p>重启PHP：</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@192</span><span class="p">:</span><span class="o">~</span><span class="c1"># sudo systemctl restart php7.0-fpm.service</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 </div>
 

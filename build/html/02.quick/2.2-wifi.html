@@ -95,7 +95,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#wi-fi">3.2. 如何连接Wi-Fi</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jupyter">3.3. Jupyter服务</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ssh">3.4. SSH服务</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">3.5. 通过SSH开启远程桌面服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.5. 远程桌面服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">通过jupyter安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">通过ssh安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">使用方法</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="2.3-pc.html">4. 主机模式</a></li>
@@ -182,7 +187,7 @@
 <h1>3. 无线模式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>通过U盘模式可以给虚谷号设置Wi-Fi、编程等，如果要安装Python库或者安装其他应用软件，就要借助“无线模式”了。</p>
 <p>虚谷号内置了SSH和jupyter服务，在连接Wi-Fi的情况下，可以不用接鼠标键盘，即可实现对虚谷号的完全控制，如运行Python程序，给Arduino刷写代码，安装和卸载Python库文件、系统软件等。</p>
-<p>在无线模式下，还可以给虚谷号安装远程桌面服务。用windows自带的远程桌面访问，非常方便。</p>
+<p>新版固件中，虚谷号已经默认安装远程桌面服务。用windows自带的远程桌面访问，非常方便。</p>
 <div class="section" id="id2">
 <h2>3.1. 应用场景<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在不需要接鼠标键盘的前提下，通过修改vvBoard_config.ini文件设置SSID和密码，即可用无线模式来管理虚谷号，如：</p>
@@ -264,17 +269,31 @@
 <img alt="../_images/wifi10.jpg" src="../_images/wifi10.jpg" />
 </div>
 <div class="section" id="id3">
-<h2>3.5. 通过SSH开启远程桌面服务<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>通过SSH，可以开启虚谷号的远程桌面（Xrdp）服务，需要安装xrdp和tightvncserver，新版固件已经整合这一软件环境。</p>
-<p>Xrdp是Microsoft远程桌面协议 (RDP) 的开源版本，允许您以图形方式控制远程系统。使用RDP，您可以登录到远程计算机并创建一个真实的桌面会话，就像您已登录到本地计算机一样。</p>
-<p>连接SSH后，输入如下命令：</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>sudo apt install xrdp</p></li>
-<li><p>sudo apt install tightvncserver</p></li>
-</ul>
-</div></blockquote>
-<p>使用：</p>
+<h2>3.5. 远程桌面服务<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>虚谷号的“远程桌面服务”，即Xrdp服务，是Microsoft远程桌面协议 (RDP) 的开源版本，允许用户以图形方式控制远程系统。使用RDP登录到远程计算机并创建一个真实的桌面会话，就像已登录到本地计算机一样。</p>
+<p>注：2020年3月的固件，将预装了“远程桌面服务”。</p>
+<div class="section" id="id4">
+<h3>通过jupyter安装<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在jupyter的界面中，新建一个终端，然后输入如下命令：</p>
+<dl>
+<dt>::</dt><dd><p>sudo apt install xrdp</p>
+<p>sudo apt install tightvncserver</p>
+</dd>
+</dl>
+<img alt="../_images/2.2-wifi-10.png" src="../_images/2.2-wifi-10.png" />
+<img alt="../_images/2.2-wifi-11.png" src="../_images/2.2-wifi-11.png" />
+</div>
+<div class="section" id="id5">
+<h3>通过ssh安装<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>连接SSH后，同样输入如下命令：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">xrdp</span>
+
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">tightvncserver</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>使用方法<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>用win自带的mstsc.exe远程桌面软件即可连接，用户名和密码都是scope。这时看到的桌面和直接使用显示屏连接虚谷号看到的是一样的。</p>
 <img alt="../_images/wifi21.jpg" src="../_images/wifi21.jpg" />
 <img alt="../_images/wifi22.jpg" src="../_images/wifi22.jpg" />
@@ -283,6 +302,7 @@
 <p><a class="reference external" href="https://github.com/vvlink/vvBoard-docs/blob/master/source/08.advanced/8.1-troubleshooting.rst">https://github.com/vvlink/vvBoard-docs/blob/master/source/08.advanced/8.1-troubleshooting.rst</a></p>
 <p><strong>注意：</strong></p>
 <p>如果无线模式需要修改vvBoard盘里面的东西，需要断开OTG口的连接，使用电源口供电。因为OTG口供电，系统将处于U盘模式，vvBoard盘将锁定。</p>
+</div>
 </div>
 </div>
 
