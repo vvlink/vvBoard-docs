@@ -15,6 +15,7 @@
 - 论坛链接：http://www.vvboard.com.cn/bbs/
 - 固件及文档下载链接：http://www.vvboard.com.cn/plus/view.php?aid=6
 - 微信公众号：虚谷号
+- “虚谷计划”项目网站：http://www.vvplan.cn/
 
 ------------------------------------------------
 虚谷号的板载资源位置
