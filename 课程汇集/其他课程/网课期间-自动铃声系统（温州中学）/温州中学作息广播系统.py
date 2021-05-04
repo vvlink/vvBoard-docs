@@ -31,25 +31,16 @@ import schedule
 # In[2]:
 
 
-#获取天气预报
-API='https://api.seniverse.com/v3/weather/now.json'
-KEY='S_zw8qq3BQPUr1wMU'
-LANGUAGE='zh-Hans'
-UNIT='c'
-def fetchWeather(location):
-    #location：城市名称，如wenzhou、hangzhou
+#获取天气预报，参数为城市的名称，如wenzhou
+def get_weather(location):
+    API='https://api.seniverse.com/v3/weather/now.json'
+    KEY='S_zw8qq3BQPUr1wMU'
     result = requests.get(API, params={
         'key': KEY,
         'location': location,
-        'language': LANGUAGE,
-        'unit': UNIT
+        'language': 'zh-Hans',
+        'unit': 'c'
     }, timeout=1)
-    #print(result)
-    return result
-
-#解析天气预报
-def get_weather(location):
-    result = fetchWeather(location)
     result=result.json()
     r=result["results"][0]
     s1=r["location"]["name"] #城市名称
@@ -84,8 +75,6 @@ def getmryj():
     #替换空格
     text4 = text2[0].replace("'","")
     return text3,text4
-    
-#s1,s2=getmryj()
 
 
 # ### 4.语音合成的函数
