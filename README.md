@@ -7,11 +7,6 @@
 
 国内镜像地址（码云）：https://gitee.com/xiezuoru/vvBoard-docs
 
-本文档的阅读地址：https://vvboard.readthedocs.io/
-
-虚谷号购买地址：微信商城（http://vvboard.net.cn/plus/view.php?aid=25）、DF商城
-
-虚谷号网站：http://www.vvboard.com.cn/
 
 ## 资源库的目录说明：
 - 1.source（文档的源码）
@@ -25,7 +20,6 @@
 
 ## 文档维护
 - 谢作如（浙江省温州中学）
-- 元银萍（深圳希科普）
 - 郑祥（温州七中）
 - 林淼焱（温州大学）
 - 狄勇（宁波）
@@ -34,6 +28,4 @@
 
 ## 其他说明
 
-为了方便管理，虚谷号的一些应用已经逐步移到vvBoard-app中，如WebGPIO、xugu库等。
-
-地址：https://github.com/vvlink/vvBoard-app
+为了方便管理，虚谷号的一些应用已经逐步移到vvBoard-app中，如WebGPIO、pinpong库等。
